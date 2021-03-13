@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_tcg/collection/card_detail.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
-
-import 'card_detail.dart';
 
 class PokemondGridCard extends StatelessWidget {
   final PokemonCard _pokemoncard;

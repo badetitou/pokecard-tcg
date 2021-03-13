@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:pokemon_tcg/collection/pokemon_grid_card.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
 import 'package:pokemon_tcg/tcg_api/tcg.dart';
@@ -14,7 +13,8 @@ class _SearchPageState extends State<SearchPage> {
   final PagingController<int, PokemonCard> _pagingController =
       PagingController(firstPageKey: 1);
 
-  final _pageSize = 100;
+  final _pageSize = 20;
+  String query = "";
 
   @override
   void initState() {
@@ -42,50 +42,30 @@ class _SearchPageState extends State<SearchPage> {
     super.dispose();
   }
 
+  // _search(String text) {
+  //   query = text;
+  //   _pagingController.refresh();
+  // }
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        PagedListView<int, PokemonCard>(
-          pagingController: _pagingController,
-          padding: const EdgeInsets.all(8),
-          builderDelegate: PagedChildBuilderDelegate<PokemonCard>(
-            itemBuilder: (context, item, index) => PokemondGridCard(
-              item,
-            ),
-          ),
+    return PagedGridView<int, PokemonCard>(
+      showNewPageProgressIndicatorAsGridChild: true,
+      showNewPageErrorIndicatorAsGridChild: true,
+      showNoMoreItemsIndicatorAsGridChild: true,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        childAspectRatio: 100 / 150,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 3,
+      ),
+      pagingController: _pagingController,
+      padding: const EdgeInsets.all(8),
+      builderDelegate: PagedChildBuilderDelegate<PokemonCard>(
+        itemBuilder: (context, item, index) => PokemondGridCard(
+          item,
         ),
-        buildFloatingSearchBar(),
-      ],
-    );
-  }
-
-  Widget buildFloatingSearchBar() {
-    final isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
-
-    return FloatingSearchBar(
-      hint: 'Search...',
-      scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
-      transitionDuration: const Duration(milliseconds: 200),
-      transitionCurve: Curves.easeInOut,
-      physics: const BouncingScrollPhysics(),
-      axisAlignment: isPortrait ? 0.0 : -1.0,
-      openAxisAlignment: 0.0,
-      maxWidth: isPortrait ? 600 : 500,
-      debounceDelay: const Duration(milliseconds: 500),
-      onQueryChanged: (query) {
-        // Call your model, bloc, controller here.
-      },
-      // Specify a custom transition to be used for
-      // animating between opened and closed stated.
-      transition: CircularFloatingSearchBarTransition(),
-      builder: (context, transition) {
-        return ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-        );
-      },
+      ),
     );
   }
 }
