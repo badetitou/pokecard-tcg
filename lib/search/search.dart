@@ -122,7 +122,7 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
       showNewPageErrorIndicatorAsGridChild: true,
       showNoMoreItemsIndicatorAsGridChild: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 100 / 150,
+        childAspectRatio: 100 / 140,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         crossAxisCount: (width / 200).floor(),
