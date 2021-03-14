@@ -3,12 +3,10 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Dart
+name: Deploy
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
 jobs:
