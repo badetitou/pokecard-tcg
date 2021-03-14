@@ -17,11 +17,11 @@ class Prices {
   factory Prices.fromJson(String type, Map<String, dynamic> value) {
     return Prices(
       type: type,
-      low: value['low'],
-      mid: value['mid'],
-      high: value['high'],
-      market: value['market'],
-      directLow: value['directLow'],
+      low: value['low'] != null ? value['low'] : 0.0,
+      mid: value['mid'] != null ? value['mid'] : 0.0,
+      high: value['high'] != null ? value['high'] : 0.0,
+      market: value['market'] != null ? value['market'] : 0.0,
+      directLow: value['directLow'] != null ? value['directLow'] : 0.0,
     );
   }
 }

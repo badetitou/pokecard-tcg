@@ -39,7 +39,9 @@ class PokemonCard {
         flavorText: json['flavorText'] != null ? json['flavorText'] : '',
         artist: json['artist'].toString(),
         images: PokemonCardImage.fromJson(json['images']),
-        tcgPlayer: TCGPlayer.fromJson(json['tcgplayer']),
+        tcgPlayer: json['tcgplayer'] != null
+            ? TCGPlayer.fromJson(json['tcgplayer'])
+            : new TCGPlayer(prices: [], url: ''),
         nationalPokedexNumbers: json['nationalPokedexNumbers'] != null
             ? List<int>.from(json['nationalPokedexNumbers'])
             : [],
