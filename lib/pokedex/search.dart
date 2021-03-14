@@ -7,7 +7,7 @@ import 'package:pokemon_tcg/tcg_api/tcg.dart';
 class SearchPokemonPage extends StatefulWidget {
   final String search;
 
-  const SearchPokemonPage({Key key, this.search}) : super(key: key);
+  const SearchPokemonPage({required this.search}) : super();
 
   @override
   _SearchPokemonState createState() => _SearchPokemonState();

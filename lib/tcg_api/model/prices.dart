@@ -7,7 +7,12 @@ class Prices {
   final double directLow;
 
   Prices(
-      {this.type, this.low, this.mid, this.high, this.market, this.directLow});
+      {required this.type,
+      required this.low,
+      required this.mid,
+      required this.high,
+      required this.market,
+      required this.directLow});
 
   factory Prices.fromJson(String type, Map<String, dynamic> value) {
     return Prices(

@@ -4,12 +4,9 @@ class TCGPlayer {
   final String url;
   List<Prices> prices;
 
-  TCGPlayer({this.url, this.prices});
+  TCGPlayer({required this.url, required this.prices});
 
   factory TCGPlayer.fromJson(Map<String, dynamic> json) {
-    if (json == null) {
-      return TCGPlayer();
-    }
     return TCGPlayer(
       url: json['url'],
       prices: (json['prices'] as Map)

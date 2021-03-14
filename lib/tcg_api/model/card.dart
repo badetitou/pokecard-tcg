@@ -15,18 +15,18 @@ class PokemonCard {
   final String artist;
 
   PokemonCard(
-      {this.id,
-      this.name,
-      this.supertype,
-      this.subtypes,
-      this.hp,
-      this.flavorText,
-      this.number,
-      this.nationalPokedexNumbers,
-      this.types,
-      this.images,
-      this.tcgPlayer,
-      this.artist});
+      {required this.id,
+      required this.name,
+      required this.supertype,
+      required this.subtypes,
+      required this.hp,
+      required this.flavorText,
+      required this.number,
+      required this.nationalPokedexNumbers,
+      required this.types,
+      required this.images,
+      required this.tcgPlayer,
+      required this.artist});
 
   factory PokemonCard.fromJson(Map<String, dynamic> json) {
     var card = PokemonCard(
@@ -39,18 +39,11 @@ class PokemonCard {
         flavorText: json['flavorText'] != null ? json['flavorText'] : '',
         artist: json['artist'].toString(),
         images: PokemonCardImage.fromJson(json['images']),
-        tcgPlayer: TCGPlayer.fromJson(json['tcgplayer']));
-    if (json.containsKey('nationalPokedexNumbers')) {
-      card.nationalPokedexNumbers =
-          List<int>.from(json['nationalPokedexNumbers']);
-    } else {
-      card.nationalPokedexNumbers = [];
-    }
-    if (json.containsKey('types')) {
-      card.types = List<String>.from(json['types']);
-    } else {
-      card.types = [];
-    }
+        tcgPlayer: TCGPlayer.fromJson(json['tcgplayer']),
+        nationalPokedexNumbers: json['nationalPokedexNumbers'] != null
+            ? List<int>.from(json['nationalPokedexNumbers'])
+            : [],
+        types: json['types'] != null ? List<String>.from(json['types']) : []);
     return card;
   }
 }
@@ -59,7 +52,7 @@ class PokemonCardImage {
   final String small;
   final String large;
 
-  PokemonCardImage({this.small, this.large});
+  PokemonCardImage({required this.small, required this.large});
 
   factory PokemonCardImage.fromJson(Map<String, dynamic> json) {
     return PokemonCardImage(small: json['small'], large: json['large']);

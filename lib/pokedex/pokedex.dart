@@ -8,7 +8,7 @@ class PokedexPage extends StatefulWidget {
 }
 
 class _PokedexState extends State<PokedexPage> {
-  Future<List> getPokemons({BuildContext context}) async {
+  Future<List> getPokemons({required BuildContext context}) async {
     String data =
         await DefaultAssetBundle.of(context).loadString('assets/pokedex.json');
     return json.decode(data);
@@ -21,9 +21,9 @@ class _PokedexState extends State<PokedexPage> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return ListView.builder(
-            itemCount: snapshot.data.length,
+            itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
-              return PokemonListItem(snapshot.data[index]);
+              return PokemonListItem(snapshot.data![index]);
             },
           );
         }

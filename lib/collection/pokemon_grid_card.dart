@@ -16,7 +16,9 @@ class PokemondGridCard extends StatelessWidget {
       },
       child: Container(
         height: 30,
-        child: Image.network(_pokemoncard.images.small),
+        child: Image.network(
+          _pokemoncard.images.small,
+        ),
       ),
     );
   }

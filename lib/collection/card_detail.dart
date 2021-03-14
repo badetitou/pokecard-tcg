@@ -5,7 +5,7 @@ import 'package:pokemon_tcg/tcg_api/model/prices.dart';
 class PokemonCardDetailPage extends StatefulWidget {
   final PokemonCard pokemonCard;
 
-  const PokemonCardDetailPage({Key key, this.pokemonCard}) : super(key: key);
+  const PokemonCardDetailPage({required this.pokemonCard}) : super();
 
   @override
   _PokemonCardDetailState createState() => _PokemonCardDetailState();
@@ -41,15 +41,6 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                   trailing: RichText(
                       text: TextSpan(text: widget.pokemonCard.hp, children: [
                     TextSpan(text: ' HP '),
-                    WidgetSpan(
-                      child: widget.pokemonCard.types[0] != null
-                          ? Image(
-                              height: 20,
-                              image: AssetImage('color/' +
-                                  widget.pokemonCard.types[0].toLowerCase() +
-                                  '.png'))
-                          : null,
-                    ),
                   ])),
                 ),
                 Divider(),
@@ -96,12 +87,24 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                       rows: prices(widget.pokemonCard.tcgPlayer.prices),
                     )),
                 Divider(),
-                RichText(
-                    text: TextSpan(
-                        text: 'Illustrator: ',
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, height: 2),
-                        children: [TextSpan(text: widget.pokemonCard.artist)])),
+                Row(
+                  children: [
+                    RichText(
+                        text: TextSpan(
+                            text: 'Illustrator: ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, height: 2),
+                            children: [
+                          TextSpan(text: widget.pokemonCard.artist)
+                        ])),
+                    Expanded(child: Container()),
+                    OutlinedButton(
+                        onPressed: () {
+                          _showCardImage(context);
+                        },
+                        child: Text('View Card')),
+                  ],
+                ),
                 Divider(),
                 Text(
                   widget.pokemonCard.flavorText.toString(),
@@ -112,6 +115,14 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
         ],
       ),
     );
+  }
+
+  void _showCardImage(context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Image.network(widget.pokemonCard.images.large);
+        });
   }
 
   List<DataRow> prices(List<Prices> prices) {

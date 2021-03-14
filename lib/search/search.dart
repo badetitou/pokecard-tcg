@@ -11,13 +11,12 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  String _query;
+  String _query = '';
 
-  FloatingSearchBarController controller;
+  FloatingSearchBarController controller = FloatingSearchBarController();
 
   @override
   initState() {
-    controller = FloatingSearchBarController();
     super.initState();
   }
 
@@ -42,7 +41,7 @@ class _SearchPageState extends State<SearchPage> {
           child: (new SearchResultsGridView(_query))),
       transition: CircularFloatingSearchBarTransition(),
       physics: const BouncingScrollPhysics(),
-      title: _query != null
+      title: _query != ''
           ? Text(
               _query,
               style: Theme.of(context).textTheme.headline6,
