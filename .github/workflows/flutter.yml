@@ -26,3 +26,5 @@ jobs:
         build_dir: build/web
         # The committer name and email address
         jekyll: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
