@@ -1,11 +1,11 @@
 {
-    "name": "test_flutter",
-    "short_name": "test_flutter",
-    "start_url": ".",
+    "name": "pokemon_tcg",
+    "short_name": "pokemon_tcg",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A Pokemon TCP Project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
