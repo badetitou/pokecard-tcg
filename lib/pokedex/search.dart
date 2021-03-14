@@ -48,6 +48,7 @@ class _SearchPokemonState extends State<SearchPokemonPage> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.search),
@@ -57,11 +58,11 @@ class _SearchPokemonState extends State<SearchPokemonPage> {
         showNewPageProgressIndicatorAsGridChild: false,
         showNewPageErrorIndicatorAsGridChild: false,
         showNoMoreItemsIndicatorAsGridChild: false,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 100 / 150,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          crossAxisCount: 3,
+          crossAxisCount: (width / 200).floor(),
         ),
         pagingController: _pagingController,
         padding: const EdgeInsets.all(8),

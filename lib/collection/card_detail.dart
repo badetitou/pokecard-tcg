@@ -28,7 +28,10 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                 ListTile(
-                  leading: Icon(Icons.album),
+                  leading: Image(
+                      image: AssetImage('color/' +
+                          widget.pokemonCard.types[0].toLowerCase() +
+                          '.png')),
                   title: Text(widget.pokemonCard.name),
                   subtitle: Text(widget.pokemonCard.types.toString()),
                   trailing: RichText(

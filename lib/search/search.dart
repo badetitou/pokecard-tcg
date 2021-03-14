@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
@@ -116,16 +114,17 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     _pagingController.refresh();
     return PagedGridView<int, PokemonCard>(
       showNewPageProgressIndicatorAsGridChild: true,
       showNewPageErrorIndicatorAsGridChild: true,
       showNoMoreItemsIndicatorAsGridChild: true,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 100 / 150,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        crossAxisCount: 3,
+        crossAxisCount: (width / 200).floor(),
       ),
       pagingController: _pagingController,
       padding: const EdgeInsets.all(8),
