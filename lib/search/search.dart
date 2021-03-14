@@ -51,7 +51,6 @@ class _SearchPageState extends State<SearchPage> {
       hint: 'Search... [name:bulba*]',
       controller: controller,
       scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
-      axisAlignment: isPortrait ? 0.0 : -1.0,
       openAxisAlignment: 0.0,
       maxWidth: isPortrait ? 600 : 500,
       debounceDelay: const Duration(milliseconds: 500),
