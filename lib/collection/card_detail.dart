@@ -54,7 +54,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 )),
                 SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
+                    scrollDirection: Axis.horizontal,
                     child: DataTable(
                       columns: const <DataColumn>[
                         DataColumn(
