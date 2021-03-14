@@ -36,7 +36,7 @@ class PokemonCard {
         subtypes: List<String>.from(json['subtypes'] as List),
         hp: json['hp'] != null ? json['hp'] : '',
         number: json['number'] != null ? json['number'] : '',
-        flavorText: json['flavorText'].toString(),
+        flavorText: json['flavorText'] != null ? json['flavorText'] : '',
         artist: json['artist'].toString(),
         images: PokemonCardImage.fromJson(json['images']),
         tcgPlayer: TCGPlayer.fromJson(json['tcgplayer']));
