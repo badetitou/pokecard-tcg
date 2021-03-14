@@ -27,6 +27,7 @@ dependencies:
   infinite_scroll_pagination: ^3.0.0
   material_floating_search_bar: ^0.3.0
   animations: ^2.0.0
+  localstorage: ^3.0.6
 
 
   # The following adds the Cupertino Icons font to your application.
