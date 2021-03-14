@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.test_flutter">
+    package="fr.badetitou.pokecard_tcg">
    <application
-        android:label="test_flutter"
+        android:label="Pokécard TCG"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

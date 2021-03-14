@@ -1,4 +1,4 @@
-package com.example.test_flutter
+package fr.badetitou.pokecard_tcg
 
 import io.flutter.embedding.android.FlutterActivity
 
