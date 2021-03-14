@@ -16,7 +16,11 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.pokemonCard.name),
+        title: Text(widget.pokemonCard.supertype +
+            ' ' +
+            widget.pokemonCard.subtypes.toString() +
+            ' : ' +
+            widget.pokemonCard.name),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
