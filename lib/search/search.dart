@@ -56,7 +56,6 @@ class _SearchPageState extends State<SearchPage> {
       debounceDelay: const Duration(milliseconds: 500),
       onSubmitted: (query) {
         _search(query);
-        // Call your model, bloc, controller here.
       },
       actions: [],
       builder: (context, transition) {

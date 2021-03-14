@@ -37,11 +37,13 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                       text: TextSpan(text: widget.pokemonCard.hp, children: [
                     TextSpan(text: ' HP '),
                     WidgetSpan(
-                      child: Image(
-                          height: 20,
-                          image: AssetImage('color/' +
-                              widget.pokemonCard.types[0].toLowerCase() +
-                              '.png')),
+                      child: widget.pokemonCard.types[0] != null
+                          ? Image(
+                              height: 20,
+                              image: AssetImage('color/' +
+                                  widget.pokemonCard.types[0].toLowerCase() +
+                                  '.png'))
+                          : null,
                     ),
                   ])),
                 ),
