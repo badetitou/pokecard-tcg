@@ -17,9 +17,16 @@ class PokemondGridCard extends StatelessWidget {
       },
       child: Container(
         height: 30,
-        child: Image.network(
-          _pokemoncard.images.small,
-        ),
+        child: Image.network(_pokemoncard.images.small, loadingBuilder:
+            (BuildContext context, Widget child,
+                ImageChunkEvent? loadingProgress) {
+          if (loadingProgress == null) {
+            return child;
+          }
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }),
       ),
     );
   }
