@@ -123,7 +123,7 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
         childAspectRatio: 100 / 140,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        crossAxisCount: (width / 200).floor(),
+        crossAxisCount: (width / 200) < 2 ? 2 : (width / 200).floor(),
       ),
       pagingController: _pagingController,
       padding: const EdgeInsets.all(8),
