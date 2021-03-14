@@ -42,11 +42,13 @@ class _SearchPageState extends State<SearchPage> {
           child: (new SearchResultsGridView(_query))),
       transition: CircularFloatingSearchBarTransition(),
       physics: const BouncingScrollPhysics(),
-      title: Text(
-        _query ?? 'The Search App',
-        style: Theme.of(context).textTheme.headline6,
-      ),
-      hint: 'Search...',
+      title: _query != null
+          ? Text(
+              _query,
+              style: Theme.of(context).textTheme.headline6,
+            )
+          : null,
+      hint: 'Search... [name:bulba*]',
       controller: controller,
       scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
       axisAlignment: isPortrait ? 0.0 : -1.0,
