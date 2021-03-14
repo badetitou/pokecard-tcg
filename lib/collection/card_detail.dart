@@ -16,7 +16,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.pokemonCard.name + ' - ' + widget.pokemonCard.id),
+        title: Text(widget.pokemonCard.name),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,6 +33,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                   //         widget.pokemonCard.types[0].toLowerCase() +
                   //         '.png')),
                   title: Text(widget.pokemonCard.name),
+                  subtitle: Text(widget.pokemonCard.id),
                   trailing: RichText(
                       text: TextSpan(text: widget.pokemonCard.hp, children: [
                     TextSpan(text: ' HP '),
