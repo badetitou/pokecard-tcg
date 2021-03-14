@@ -28,16 +28,22 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                 ListTile(
-                  leading: Image(
-                      image: AssetImage('color/' +
-                          widget.pokemonCard.types[0].toLowerCase() +
-                          '.png')),
+                  // leading: Image(
+                  //     image: AssetImage('color/' +
+                  //         widget.pokemonCard.types[0].toLowerCase() +
+                  //         '.png')),
                   title: Text(widget.pokemonCard.name),
-                  subtitle: Text(widget.pokemonCard.types.toString()),
                   trailing: RichText(
-                      text: TextSpan(
-                          text: widget.pokemonCard.hp,
-                          children: [TextSpan(text: ' HP')])),
+                      text: TextSpan(text: widget.pokemonCard.hp, children: [
+                    TextSpan(text: ' HP '),
+                    WidgetSpan(
+                      child: Image(
+                          height: 20,
+                          image: AssetImage('color/' +
+                              widget.pokemonCard.types[0].toLowerCase() +
+                              '.png')),
+                    ),
+                  ])),
                 ),
                 Divider(),
                 RichText(
