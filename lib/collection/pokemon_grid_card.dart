@@ -33,7 +33,7 @@ Route _toDetail(PokemonCard pokemoncard) {
     ),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return SharedAxisTransition(
-          animation: animation.,
+          animation: animation,
           secondaryAnimation: secondaryAnimation,
           transitionType: SharedAxisTransitionType.horizontal,
           child: child);
