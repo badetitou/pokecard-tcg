@@ -20,6 +20,9 @@ class PokemondGridCard extends StatelessWidget {
         child: Image.network(_pokemoncard.images.small, loadingBuilder:
             (BuildContext context, Widget child,
                 ImageChunkEvent? loadingProgress) {
+          if (loadingProgress == null) {
+            return child;
+          }
           return Center(
             child: CircularProgressIndicator(),
           );
