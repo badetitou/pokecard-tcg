@@ -38,7 +38,9 @@ class _SearchPageState extends State<SearchPage> {
 
     return FloatingSearchBar(
       body: FloatingSearchBarScrollNotifier(
-          child: (new SearchResultsGridView(_query))),
+          child: new Container(
+              child: (new SearchResultsGridView(_query,
+                  padding: EdgeInsets.only(top: 55))))),
       transition: CircularFloatingSearchBarTransition(),
       physics: const BouncingScrollPhysics(),
       title: _query != ''
@@ -51,7 +53,7 @@ class _SearchPageState extends State<SearchPage> {
       controller: controller,
       scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
       openAxisAlignment: 0.0,
-      maxWidth: isPortrait ? 600 : 500,
+      width: isPortrait ? 600 : 500,
       debounceDelay: const Duration(milliseconds: 500),
       onSubmitted: (query) {
         _search(query);
@@ -73,7 +75,10 @@ class _SearchPageState extends State<SearchPage> {
 class SearchResultsGridView extends StatefulWidget {
   final String _search;
 
-  const SearchResultsGridView(this._search) : super();
+  final EdgeInsets padding;
+
+  const SearchResultsGridView(this._search, {this.padding = EdgeInsets.zero})
+      : super();
 
   @override
   _SearchResultsGridViewState createState() => _SearchResultsGridViewState();
@@ -116,6 +121,8 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
     double width = MediaQuery.of(context).size.width;
     _pagingController.refresh();
     return PagedGridView<int, PokemonCard>(
+      padding: EdgeInsets.only(
+          top: 8 + widget.padding.top, bottom: 8, right: 8, left: 8),
       showNewPageProgressIndicatorAsGridChild: true,
       showNewPageErrorIndicatorAsGridChild: true,
       showNoMoreItemsIndicatorAsGridChild: true,
@@ -126,7 +133,6 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
         crossAxisCount: (width / 200) < 2 ? 2 : (width / 200).floor(),
       ),
       pagingController: _pagingController,
-      padding: const EdgeInsets.all(8),
       builderDelegate: PagedChildBuilderDelegate<PokemonCard>(
         itemBuilder: (context, item, index) => PokemondGridCard(
           item,

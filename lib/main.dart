@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pokemon TCG collection',
+      title: 'Pokécard TCG',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Pokemon TCG collection'),
+      home: MyHomePage(title: 'Pokécard TCG'),
     );
   }
 }
