@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_tcg/my_collection/my_collection.dart';
 import 'package:pokemon_tcg/pokedex/pokedex.dart';
 import 'package:pokemon_tcg/search/search.dart';
 
@@ -44,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static List<Widget> _widgetOptions = <Widget>[
     PokedexPage(),
     SearchPage(),
+    MyCollectionPage()
   ];
 
   void _onItemTapped(int index) {
@@ -73,6 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_to_photos_outlined),
+            label: 'My Collection',
           ),
         ],
         currentIndex: _selectedIndex,
