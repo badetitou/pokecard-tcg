@@ -13,6 +13,17 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   String _query = '';
 
+  Map<String, String> _existingCategory = {
+    'name': 'name:',
+    'id': 'id:',
+    'supertype': 'supertype:',
+    'subtypes': 'subtypes:',
+    'hp': 'hp:',
+    'types': 'types:',
+    'attacks name': 'attacks.name:',
+    'artist': 'artist:'
+  };
+
   FloatingSearchBarController controller = FloatingSearchBarController();
 
   @override
@@ -63,9 +74,29 @@ class _SearchPageState extends State<SearchPage> {
         return ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Material(
-            color: Colors.white,
-            elevation: 4.0,
-          ),
+              color: Colors.white,
+              elevation: 4.0,
+              child: Builder(
+                builder: (context) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: _existingCategory.entries
+                        .map(
+                          (term) => ListTile(
+                            title: Text(
+                              term.key,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            onTap: () {
+                              controller.query += term.value;
+                            },
+                          ),
+                        )
+                        .toList(),
+                  );
+                },
+              )),
         );
       },
     );
