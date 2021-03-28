@@ -178,6 +178,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
     myDatabase.addCard(MyCardsCompanion(
         name: moor.Value(widget.pokemonCard.name),
         etat: moor.Value('nice'),
+        language: moor.Value('english'),
         cardID: moor.Value(widget.pokemonCard.id)));
   }
 
