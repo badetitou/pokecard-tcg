@@ -7,6 +7,7 @@ part 'database.g.dart';
 class MyCards extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get name => text()();
+  TextColumn get language => text()();
   TextColumn get etat => text()();
   TextColumn get cardID => text()();
 }

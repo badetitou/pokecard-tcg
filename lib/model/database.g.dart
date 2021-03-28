@@ -10,11 +10,13 @@ part of 'database.dart';
 class MyCard extends DataClass implements Insertable<MyCard> {
   final int id;
   final String name;
+  final String language;
   final String etat;
   final String cardID;
   MyCard(
       {required this.id,
       required this.name,
+      required this.language,
       required this.etat,
       required this.cardID});
   factory MyCard.fromData(Map<String, dynamic> data, GeneratedDatabase db,
@@ -25,6 +27,8 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     return MyCard(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
       name: stringType.mapFromDatabaseResponse(data['${effectivePrefix}name'])!,
+      language: stringType
+          .mapFromDatabaseResponse(data['${effectivePrefix}language'])!,
       etat: stringType.mapFromDatabaseResponse(data['${effectivePrefix}etat'])!,
       cardID: stringType
           .mapFromDatabaseResponse(data['${effectivePrefix}card_i_d'])!,
@@ -35,6 +39,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     final map = <String, Expression>{};
     map['id'] = Variable<int>(id);
     map['name'] = Variable<String>(name);
+    map['language'] = Variable<String>(language);
     map['etat'] = Variable<String>(etat);
     map['card_i_d'] = Variable<String>(cardID);
     return map;
@@ -44,6 +49,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     return MyCardsCompanion(
       id: Value(id),
       name: Value(name),
+      language: Value(language),
       etat: Value(etat),
       cardID: Value(cardID),
     );
@@ -55,6 +61,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     return MyCard(
       id: serializer.fromJson<int>(json['id']),
       name: serializer.fromJson<String>(json['name']),
+      language: serializer.fromJson<String>(json['language']),
       etat: serializer.fromJson<String>(json['etat']),
       cardID: serializer.fromJson<String>(json['cardID']),
     );
@@ -65,15 +72,22 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'name': serializer.toJson<String>(name),
+      'language': serializer.toJson<String>(language),
       'etat': serializer.toJson<String>(etat),
       'cardID': serializer.toJson<String>(cardID),
     };
   }
 
-  MyCard copyWith({int? id, String? name, String? etat, String? cardID}) =>
+  MyCard copyWith(
+          {int? id,
+          String? name,
+          String? language,
+          String? etat,
+          String? cardID}) =>
       MyCard(
         id: id ?? this.id,
         name: name ?? this.name,
+        language: language ?? this.language,
         etat: etat ?? this.etat,
         cardID: cardID ?? this.cardID,
       );
@@ -82,6 +96,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     return (StringBuffer('MyCard(')
           ..write('id: $id, ')
           ..write('name: $name, ')
+          ..write('language: $language, ')
           ..write('etat: $etat, ')
           ..write('cardID: $cardID')
           ..write(')'))
@@ -89,14 +104,17 @@ class MyCard extends DataClass implements Insertable<MyCard> {
   }
 
   @override
-  int get hashCode => $mrjf($mrjc(id.hashCode,
-      $mrjc(name.hashCode, $mrjc(etat.hashCode, cardID.hashCode))));
+  int get hashCode => $mrjf($mrjc(
+      id.hashCode,
+      $mrjc(name.hashCode,
+          $mrjc(language.hashCode, $mrjc(etat.hashCode, cardID.hashCode)))));
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
       (other is MyCard &&
           other.id == this.id &&
           other.name == this.name &&
+          other.language == this.language &&
           other.etat == this.etat &&
           other.cardID == this.cardID);
 }
@@ -104,31 +122,37 @@ class MyCard extends DataClass implements Insertable<MyCard> {
 class MyCardsCompanion extends UpdateCompanion<MyCard> {
   final Value<int> id;
   final Value<String> name;
+  final Value<String> language;
   final Value<String> etat;
   final Value<String> cardID;
   const MyCardsCompanion({
     this.id = const Value.absent(),
     this.name = const Value.absent(),
+    this.language = const Value.absent(),
     this.etat = const Value.absent(),
     this.cardID = const Value.absent(),
   });
   MyCardsCompanion.insert({
     this.id = const Value.absent(),
     required String name,
+    required String language,
     required String etat,
     required String cardID,
   })   : name = Value(name),
+        language = Value(language),
         etat = Value(etat),
         cardID = Value(cardID);
   static Insertable<MyCard> custom({
     Expression<int>? id,
     Expression<String>? name,
+    Expression<String>? language,
     Expression<String>? etat,
     Expression<String>? cardID,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (name != null) 'name': name,
+      if (language != null) 'language': language,
       if (etat != null) 'etat': etat,
       if (cardID != null) 'card_i_d': cardID,
     });
@@ -137,11 +161,13 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
   MyCardsCompanion copyWith(
       {Value<int>? id,
       Value<String>? name,
+      Value<String>? language,
       Value<String>? etat,
       Value<String>? cardID}) {
     return MyCardsCompanion(
       id: id ?? this.id,
       name: name ?? this.name,
+      language: language ?? this.language,
       etat: etat ?? this.etat,
       cardID: cardID ?? this.cardID,
     );
@@ -155,6 +181,9 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     }
     if (name.present) {
       map['name'] = Variable<String>(name.value);
+    }
+    if (language.present) {
+      map['language'] = Variable<String>(language.value);
     }
     if (etat.present) {
       map['etat'] = Variable<String>(etat.value);
@@ -170,6 +199,7 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     return (StringBuffer('MyCardsCompanion(')
           ..write('id: $id, ')
           ..write('name: $name, ')
+          ..write('language: $language, ')
           ..write('etat: $etat, ')
           ..write('cardID: $cardID')
           ..write(')'))
@@ -200,6 +230,17 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
     );
   }
 
+  final VerificationMeta _languageMeta = const VerificationMeta('language');
+  @override
+  late final GeneratedTextColumn language = _constructLanguage();
+  GeneratedTextColumn _constructLanguage() {
+    return GeneratedTextColumn(
+      'language',
+      $tableName,
+      false,
+    );
+  }
+
   final VerificationMeta _etatMeta = const VerificationMeta('etat');
   @override
   late final GeneratedTextColumn etat = _constructEtat();
@@ -223,7 +264,7 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
   }
 
   @override
-  List<GeneratedColumn> get $columns => [id, name, etat, cardID];
+  List<GeneratedColumn> get $columns => [id, name, language, etat, cardID];
   @override
   $MyCardsTable get asDslTable => this;
   @override
@@ -243,6 +284,12 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
           _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
     } else if (isInserting) {
       context.missing(_nameMeta);
+    }
+    if (data.containsKey('language')) {
+      context.handle(_languageMeta,
+          language.isAcceptableOrUnknown(data['language']!, _languageMeta));
+    } else if (isInserting) {
+      context.missing(_languageMeta);
     }
     if (data.containsKey('etat')) {
       context.handle(
