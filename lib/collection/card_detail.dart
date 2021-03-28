@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:localstorage/localstorage.dart';
-import 'package:pokemon_tcg/model/card.dart';
+import 'package:moor/moor.dart' as moor;
+import 'package:pokemon_tcg/collection/my_card_tile.dart';
+import 'package:pokemon_tcg/model/database.dart';
+import 'package:pokemon_tcg/model/database/shared.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
 import 'package:pokemon_tcg/tcg_api/model/prices.dart';
 
@@ -14,9 +16,7 @@ class PokemonCardDetailPage extends StatefulWidget {
 }
 
 class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
-  final storage = new LocalStorage('my_collection.json');
-  bool initialized = false;
-  MyCardList list = new MyCardList();
+  final myDatabase = constructDb();
 
   @override
   Widget build(BuildContext context) {
@@ -132,44 +132,37 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
               child: Container(
                 padding: EdgeInsets.all(10.0),
                 child: FutureBuilder(
-                  future: storage.ready,
-                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  future: myDatabase.allCardWithId(widget.pokemonCard.id),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<List<MyCard>> snapshot) {
                     if (!snapshot.hasData) {
                       return Center(
                         child: CircularProgressIndicator(),
                       );
                     }
 
-                    if (!initialized) {
-                      list.items = storage.getItem(widget.pokemonCard.id) ?? [];
-                      initialized = true;
-                    }
-
-                    List<Widget> widgets = list.items.map((item) {
-                      return Card(
-                        child: ListTile(
-                            title: Text(item.name),
-                            subtitle: Text(item.etat),
-                            trailing: IconButton(
-                              icon: Icon(Icons.remove),
-                              onPressed: () => setState(
-                                () {
-                                  _removeCard(item);
-                                },
-                              ),
-                              tooltip: 'Remove',
-                            )),
+                    List<Widget> widgets = snapshot.data!.map((item) {
+                      return MyCardTile(
+                        myCard: item,
+                        onDelete: () => setState(
+                          () {
+                            _removeCard(item);
+                          },
+                        ),
                       );
                     }).toList();
 
-                    return Column(children: <Widget>[
-                      Expanded(
-                        flex: 1,
-                        child: ListView(
-                          children: widgets,
-                        ),
-                      )
-                    ]);
+                    if (widgets.isNotEmpty) {
+                      return Column(children: <Widget>[
+                        Expanded(
+                          flex: 1,
+                          child: ListView(
+                            children: widgets,
+                          ),
+                        )
+                      ]);
+                    }
+                    return Center(child: Text('Add a Card'));
                   },
                 ),
               ),
@@ -186,16 +179,14 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
   }
 
   void _addCard() {
-    list.items.add(new MyCard(
-        name: widget.pokemonCard.name,
-        etat: 'nice',
-        cardID: widget.pokemonCard.id));
-    storage.setItem(widget.pokemonCard.id, list.items);
+    myDatabase.addCard(MyCardsCompanion(
+        name: moor.Value(widget.pokemonCard.name),
+        etat: moor.Value('nice'),
+        cardID: moor.Value(widget.pokemonCard.id)));
   }
 
   void _removeCard(MyCard item) {
-    list.items.remove(item);
-    storage.setItem(widget.pokemonCard.id, list.items);
+    myDatabase.removeCard(item.id);
   }
 
   // List _getCards() {

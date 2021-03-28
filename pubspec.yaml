@@ -27,7 +27,10 @@ dependencies:
   infinite_scroll_pagination: ^3.0.0
   material_floating_search_bar: ^0.3.3
   animations: ^2.0.0
-  localstorage: ^4.0.0
+  moor: ^4.2.1
+  path_provider: ^2.0.1
+  path: ^1.8.0
+  sqlite3_flutter_libs: ^0.4.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -37,7 +40,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.8.0"
+  flutter_launcher_icons: "^0.9.0"
+  moor_generator: ^ 4.2.1
+  build_runner: ^1.12.2
+
 
 flutter_icons:
   android: "launcher_icon"
