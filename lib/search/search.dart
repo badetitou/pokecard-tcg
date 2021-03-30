@@ -69,7 +69,18 @@ class _SearchPageState extends State<SearchPage> {
       onSubmitted: (query) {
         _search(query);
       },
-      actions: [],
+      actions: [
+        FloatingSearchBarAction(
+          showIfClosed: false,
+          showIfOpened: true,
+          child: CircularButton(
+            icon: const Icon(Icons.help),
+            onPressed: () {
+              _showSearchHelper(context);
+            },
+          ),
+        ),
+      ],
       builder: (context, transition) {
         return ClipRRect(
           borderRadius: BorderRadius.circular(8),
@@ -100,6 +111,87 @@ class _SearchPageState extends State<SearchPage> {
         );
       },
     );
+  }
+
+  void _showSearchHelper(context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text.rich(TextSpan(
+                  text: 'Request: ',
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 3),
+                )),
+                Text.rich(TextSpan(
+                  text: 'Keyword matching: ',
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
+                )),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for all cards that have “charizard” in the name field: ',
+                )),
+                CommandExample(
+                  text: 'name:charizard',
+                ),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for “charizard” in the name field AND the type “mega” in the subtypes field: ',
+                )),
+                CommandExample(
+                  text: 'name:charizard subtypes:mega',
+                ),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for “charizard” in the name field AND either the subtypes of “mega” or “vmax.”',
+                )),
+                CommandExample(
+                  text: 'name:charizard (subtypes:mega OR subtypes:vmax)',
+                ),
+                Text.rich(TextSpan(
+                  text: 'Wildcard Matching: ',
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
+                )),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for any card that starts with “char” in the name field.',
+                )),
+                CommandExample(
+                  text: 'name:char*',
+                ),
+                Text.rich(TextSpan(
+                  text: 'Range Searches: ',
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
+                )),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for only cards that feature the original 151 pokemon.',
+                )),
+                CommandExample(text: 'nationalPokedexNumbers:[1 TO 151]'),
+              ],
+            ),
+          );
+        });
+  }
+}
+
+class CommandExample extends StatelessWidget {
+  final String text;
+
+  const CommandExample({Key? key, required this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+        margin: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(12)),
+        child: Text(text));
   }
 }
 
