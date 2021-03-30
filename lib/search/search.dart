@@ -21,7 +21,8 @@ class _SearchPageState extends State<SearchPage> {
     'hp': 'hp:',
     'types': 'types:',
     'attacks name': 'attacks.name:',
-    'artist': 'artist:'
+    'artist': 'artist:',
+    'nationalPokedexNumber': 'nationalPokedexNumber:',
   };
 
   FloatingSearchBarController controller = FloatingSearchBarController();
