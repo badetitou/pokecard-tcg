@@ -24,4 +24,20 @@ class TCG {
       return [];
     }
   }
+
+  static Future<PokemonCard> fetchCard(String cardId) async {
+    final response =
+        await http.get(Uri.https('api.pokemontcg.io', '/v2/cards/' + cardId));
+
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      Map<String, dynamic> card = jsonDecode(response.body)['data'];
+      return PokemonCard.fromJson(card);
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Error();
+    }
+  }
 }
