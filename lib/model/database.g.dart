@@ -12,12 +12,14 @@ class MyCard extends DataClass implements Insertable<MyCard> {
   final String name;
   final String language;
   final String etat;
+  final int nationalPokedexNumbers;
   final String cardID;
   MyCard(
       {required this.id,
       required this.name,
       required this.language,
       required this.etat,
+      required this.nationalPokedexNumbers,
       required this.cardID});
   factory MyCard.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String? prefix}) {
@@ -30,6 +32,8 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       language: stringType
           .mapFromDatabaseResponse(data['${effectivePrefix}language'])!,
       etat: stringType.mapFromDatabaseResponse(data['${effectivePrefix}etat'])!,
+      nationalPokedexNumbers: intType.mapFromDatabaseResponse(
+          data['${effectivePrefix}national_pokedex_numbers'])!,
       cardID: stringType
           .mapFromDatabaseResponse(data['${effectivePrefix}card_i_d'])!,
     );
@@ -41,6 +45,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     map['name'] = Variable<String>(name);
     map['language'] = Variable<String>(language);
     map['etat'] = Variable<String>(etat);
+    map['national_pokedex_numbers'] = Variable<int>(nationalPokedexNumbers);
     map['card_i_d'] = Variable<String>(cardID);
     return map;
   }
@@ -51,6 +56,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       name: Value(name),
       language: Value(language),
       etat: Value(etat),
+      nationalPokedexNumbers: Value(nationalPokedexNumbers),
       cardID: Value(cardID),
     );
   }
@@ -63,6 +69,8 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       name: serializer.fromJson<String>(json['name']),
       language: serializer.fromJson<String>(json['language']),
       etat: serializer.fromJson<String>(json['etat']),
+      nationalPokedexNumbers:
+          serializer.fromJson<int>(json['nationalPokedexNumbers']),
       cardID: serializer.fromJson<String>(json['cardID']),
     );
   }
@@ -74,6 +82,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       'name': serializer.toJson<String>(name),
       'language': serializer.toJson<String>(language),
       'etat': serializer.toJson<String>(etat),
+      'nationalPokedexNumbers': serializer.toJson<int>(nationalPokedexNumbers),
       'cardID': serializer.toJson<String>(cardID),
     };
   }
@@ -83,12 +92,15 @@ class MyCard extends DataClass implements Insertable<MyCard> {
           String? name,
           String? language,
           String? etat,
+          int? nationalPokedexNumbers,
           String? cardID}) =>
       MyCard(
         id: id ?? this.id,
         name: name ?? this.name,
         language: language ?? this.language,
         etat: etat ?? this.etat,
+        nationalPokedexNumbers:
+            nationalPokedexNumbers ?? this.nationalPokedexNumbers,
         cardID: cardID ?? this.cardID,
       );
   @override
@@ -98,6 +110,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
           ..write('name: $name, ')
           ..write('language: $language, ')
           ..write('etat: $etat, ')
+          ..write('nationalPokedexNumbers: $nationalPokedexNumbers, ')
           ..write('cardID: $cardID')
           ..write(')'))
         .toString();
@@ -106,8 +119,12 @@ class MyCard extends DataClass implements Insertable<MyCard> {
   @override
   int get hashCode => $mrjf($mrjc(
       id.hashCode,
-      $mrjc(name.hashCode,
-          $mrjc(language.hashCode, $mrjc(etat.hashCode, cardID.hashCode)))));
+      $mrjc(
+          name.hashCode,
+          $mrjc(
+              language.hashCode,
+              $mrjc(etat.hashCode,
+                  $mrjc(nationalPokedexNumbers.hashCode, cardID.hashCode))))));
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
@@ -116,6 +133,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
           other.name == this.name &&
           other.language == this.language &&
           other.etat == this.etat &&
+          other.nationalPokedexNumbers == this.nationalPokedexNumbers &&
           other.cardID == this.cardID);
 }
 
@@ -124,12 +142,14 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
   final Value<String> name;
   final Value<String> language;
   final Value<String> etat;
+  final Value<int> nationalPokedexNumbers;
   final Value<String> cardID;
   const MyCardsCompanion({
     this.id = const Value.absent(),
     this.name = const Value.absent(),
     this.language = const Value.absent(),
     this.etat = const Value.absent(),
+    this.nationalPokedexNumbers = const Value.absent(),
     this.cardID = const Value.absent(),
   });
   MyCardsCompanion.insert({
@@ -137,16 +157,19 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     required String name,
     required String language,
     required String etat,
+    required int nationalPokedexNumbers,
     required String cardID,
   })   : name = Value(name),
         language = Value(language),
         etat = Value(etat),
+        nationalPokedexNumbers = Value(nationalPokedexNumbers),
         cardID = Value(cardID);
   static Insertable<MyCard> custom({
     Expression<int>? id,
     Expression<String>? name,
     Expression<String>? language,
     Expression<String>? etat,
+    Expression<int>? nationalPokedexNumbers,
     Expression<String>? cardID,
   }) {
     return RawValuesInsertable({
@@ -154,6 +177,8 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
       if (name != null) 'name': name,
       if (language != null) 'language': language,
       if (etat != null) 'etat': etat,
+      if (nationalPokedexNumbers != null)
+        'national_pokedex_numbers': nationalPokedexNumbers,
       if (cardID != null) 'card_i_d': cardID,
     });
   }
@@ -163,12 +188,15 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
       Value<String>? name,
       Value<String>? language,
       Value<String>? etat,
+      Value<int>? nationalPokedexNumbers,
       Value<String>? cardID}) {
     return MyCardsCompanion(
       id: id ?? this.id,
       name: name ?? this.name,
       language: language ?? this.language,
       etat: etat ?? this.etat,
+      nationalPokedexNumbers:
+          nationalPokedexNumbers ?? this.nationalPokedexNumbers,
       cardID: cardID ?? this.cardID,
     );
   }
@@ -188,6 +216,10 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     if (etat.present) {
       map['etat'] = Variable<String>(etat.value);
     }
+    if (nationalPokedexNumbers.present) {
+      map['national_pokedex_numbers'] =
+          Variable<int>(nationalPokedexNumbers.value);
+    }
     if (cardID.present) {
       map['card_i_d'] = Variable<String>(cardID.value);
     }
@@ -201,6 +233,7 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
           ..write('name: $name, ')
           ..write('language: $language, ')
           ..write('etat: $etat, ')
+          ..write('nationalPokedexNumbers: $nationalPokedexNumbers, ')
           ..write('cardID: $cardID')
           ..write(')'))
         .toString();
@@ -252,6 +285,19 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
     );
   }
 
+  final VerificationMeta _nationalPokedexNumbersMeta =
+      const VerificationMeta('nationalPokedexNumbers');
+  @override
+  late final GeneratedIntColumn nationalPokedexNumbers =
+      _constructNationalPokedexNumbers();
+  GeneratedIntColumn _constructNationalPokedexNumbers() {
+    return GeneratedIntColumn(
+      'national_pokedex_numbers',
+      $tableName,
+      false,
+    );
+  }
+
   final VerificationMeta _cardIDMeta = const VerificationMeta('cardID');
   @override
   late final GeneratedTextColumn cardID = _constructCardID();
@@ -264,7 +310,8 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
   }
 
   @override
-  List<GeneratedColumn> get $columns => [id, name, language, etat, cardID];
+  List<GeneratedColumn> get $columns =>
+      [id, name, language, etat, nationalPokedexNumbers, cardID];
   @override
   $MyCardsTable get asDslTable => this;
   @override
@@ -296,6 +343,14 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
           _etatMeta, etat.isAcceptableOrUnknown(data['etat']!, _etatMeta));
     } else if (isInserting) {
       context.missing(_etatMeta);
+    }
+    if (data.containsKey('national_pokedex_numbers')) {
+      context.handle(
+          _nationalPokedexNumbersMeta,
+          nationalPokedexNumbers.isAcceptableOrUnknown(
+              data['national_pokedex_numbers']!, _nationalPokedexNumbersMeta));
+    } else if (isInserting) {
+      context.missing(_nationalPokedexNumbersMeta);
     }
     if (data.containsKey('card_i_d')) {
       context.handle(_cardIDMeta,

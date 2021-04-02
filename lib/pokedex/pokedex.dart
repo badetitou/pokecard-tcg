@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:pokemon_tcg/pokedex/search.dart';
+import 'package:pokemon_tcg/model/database/shared.dart';
 
 class PokedexPage extends StatefulWidget {
   @override
@@ -35,6 +36,7 @@ class _PokedexState extends State<PokedexPage> {
 
 class PokemonListItem extends StatelessWidget {
   final dynamic data;
+  final myDatabase = constructDb();
 
   PokemonListItem(this.data);
 
@@ -46,12 +48,28 @@ class PokemonListItem extends StatelessWidget {
           Navigator.of(context).push(_toSearch((data['name'])['english']));
         },
         child: ListTile(
+          leading: (new FutureBuilder(
+              future: _isCapture(data['id']),
+              builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+                if (!snapshot.hasData) {
+                  return const Icon(Icons.circle);
+                }
+                if (snapshot.data!) {
+                  return const Icon(Icons.check_box);
+                }
+                return const Icon(Icons.check_box_outline_blank);
+              })),
           title: Text((data['name'])['french']),
           subtitle: Text('Pokemon Number ' +
               (data['id']).toString() +
               ' - ' +
               (data['name'])['english']),
         ));
+  }
+
+  Future<bool> _isCapture(int id) {
+    return myDatabase.allCardEntries.then((value) =>
+        value.any((element) => element.nationalPokedexNumbers == id));
   }
 }
 

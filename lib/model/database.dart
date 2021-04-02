@@ -9,6 +9,7 @@ class MyCards extends Table {
   TextColumn get name => text()();
   TextColumn get language => text()();
   TextColumn get etat => text()();
+  IntColumn get nationalPokedexNumbers => integer()();
   TextColumn get cardID => text()();
 }
 
@@ -36,5 +37,5 @@ class Database extends _$Database {
   // you should bump this number whenever you change or add a table definition. Migrations
   // are covered later in this readme.
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 }
