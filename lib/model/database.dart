@@ -38,4 +38,14 @@ class Database extends _$Database {
   // are covered later in this readme.
   @override
   int get schemaVersion => 2;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(onCreate: (Migrator m) {
+        return m.createAll();
+      }, onUpgrade: (Migrator m, int from, int to) async {
+        if (from == 1) {
+          // we added the dueDate property in the change from version 1
+          await m.addColumn(myCards, myCards.nationalPokedexNumbers);
+        }
+      });
 }
