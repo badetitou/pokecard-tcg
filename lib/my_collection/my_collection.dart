@@ -49,6 +49,7 @@ class _MyCollectionState extends State<MyCollectionPage> {
                 child: GridView.count(
                   crossAxisCount: (width / 200) < 2 ? 2 : (width / 200).floor(),
                   crossAxisSpacing: 8,
+                  childAspectRatio: 100 / 140,
                   mainAxisSpacing: 8,
                   children: widgets,
                 ),

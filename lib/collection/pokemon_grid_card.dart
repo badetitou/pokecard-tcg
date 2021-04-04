@@ -10,25 +10,27 @@ class PokemondGridCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      splashColor: Colors.blue.withAlpha(30),
-      onTap: () {
-        Navigator.of(context).push(_toDetail(_pokemoncard));
-      },
-      child: Container(
-        height: 30,
-        child: Image.network(_pokemoncard.images.small, loadingBuilder:
-            (BuildContext context, Widget child,
-                ImageChunkEvent? loadingProgress) {
-          if (loadingProgress == null) {
-            return child;
-          }
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }),
+    return Stack(children: [
+      Image.network(_pokemoncard.images.small, loadingBuilder:
+          (BuildContext context, Widget child,
+              ImageChunkEvent? loadingProgress) {
+        if (loadingProgress == null) {
+          return child;
+        }
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      }),
+      Positioned.fill(
+        child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+                splashColor: Colors.blue.withAlpha(30),
+                onTap: () {
+                  Navigator.of(context).push(_toDetail(_pokemoncard));
+                })),
       ),
-    );
+    ]);
   }
 }
 
