@@ -12,14 +12,14 @@ class MyCard extends DataClass implements Insertable<MyCard> {
   final String name;
   final String language;
   final String etat;
-  final int nationalPokedexNumbers;
+  final int? nationalPokedexNumbers;
   final String cardID;
   MyCard(
       {required this.id,
       required this.name,
       required this.language,
       required this.etat,
-      required this.nationalPokedexNumbers,
+      this.nationalPokedexNumbers,
       required this.cardID});
   factory MyCard.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String? prefix}) {
@@ -33,7 +33,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
           .mapFromDatabaseResponse(data['${effectivePrefix}language'])!,
       etat: stringType.mapFromDatabaseResponse(data['${effectivePrefix}etat'])!,
       nationalPokedexNumbers: intType.mapFromDatabaseResponse(
-          data['${effectivePrefix}national_pokedex_numbers'])!,
+          data['${effectivePrefix}national_pokedex_numbers']),
       cardID: stringType
           .mapFromDatabaseResponse(data['${effectivePrefix}card_i_d'])!,
     );
@@ -45,7 +45,9 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     map['name'] = Variable<String>(name);
     map['language'] = Variable<String>(language);
     map['etat'] = Variable<String>(etat);
-    map['national_pokedex_numbers'] = Variable<int>(nationalPokedexNumbers);
+    if (!nullToAbsent || nationalPokedexNumbers != null) {
+      map['national_pokedex_numbers'] = Variable<int?>(nationalPokedexNumbers);
+    }
     map['card_i_d'] = Variable<String>(cardID);
     return map;
   }
@@ -56,7 +58,9 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       name: Value(name),
       language: Value(language),
       etat: Value(etat),
-      nationalPokedexNumbers: Value(nationalPokedexNumbers),
+      nationalPokedexNumbers: nationalPokedexNumbers == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nationalPokedexNumbers),
       cardID: Value(cardID),
     );
   }
@@ -70,7 +74,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       language: serializer.fromJson<String>(json['language']),
       etat: serializer.fromJson<String>(json['etat']),
       nationalPokedexNumbers:
-          serializer.fromJson<int>(json['nationalPokedexNumbers']),
+          serializer.fromJson<int?>(json['nationalPokedexNumbers']),
       cardID: serializer.fromJson<String>(json['cardID']),
     );
   }
@@ -82,7 +86,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       'name': serializer.toJson<String>(name),
       'language': serializer.toJson<String>(language),
       'etat': serializer.toJson<String>(etat),
-      'nationalPokedexNumbers': serializer.toJson<int>(nationalPokedexNumbers),
+      'nationalPokedexNumbers': serializer.toJson<int?>(nationalPokedexNumbers),
       'cardID': serializer.toJson<String>(cardID),
     };
   }
@@ -142,7 +146,7 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
   final Value<String> name;
   final Value<String> language;
   final Value<String> etat;
-  final Value<int> nationalPokedexNumbers;
+  final Value<int?> nationalPokedexNumbers;
   final Value<String> cardID;
   const MyCardsCompanion({
     this.id = const Value.absent(),
@@ -157,19 +161,18 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     required String name,
     required String language,
     required String etat,
-    required int nationalPokedexNumbers,
+    this.nationalPokedexNumbers = const Value.absent(),
     required String cardID,
   })   : name = Value(name),
         language = Value(language),
         etat = Value(etat),
-        nationalPokedexNumbers = Value(nationalPokedexNumbers),
         cardID = Value(cardID);
   static Insertable<MyCard> custom({
     Expression<int>? id,
     Expression<String>? name,
     Expression<String>? language,
     Expression<String>? etat,
-    Expression<int>? nationalPokedexNumbers,
+    Expression<int?>? nationalPokedexNumbers,
     Expression<String>? cardID,
   }) {
     return RawValuesInsertable({
@@ -188,7 +191,7 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
       Value<String>? name,
       Value<String>? language,
       Value<String>? etat,
-      Value<int>? nationalPokedexNumbers,
+      Value<int?>? nationalPokedexNumbers,
       Value<String>? cardID}) {
     return MyCardsCompanion(
       id: id ?? this.id,
@@ -218,7 +221,7 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     }
     if (nationalPokedexNumbers.present) {
       map['national_pokedex_numbers'] =
-          Variable<int>(nationalPokedexNumbers.value);
+          Variable<int?>(nationalPokedexNumbers.value);
     }
     if (cardID.present) {
       map['card_i_d'] = Variable<String>(cardID.value);
@@ -294,7 +297,7 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
     return GeneratedIntColumn(
       'national_pokedex_numbers',
       $tableName,
-      false,
+      true,
     );
   }
 
@@ -349,8 +352,6 @@ class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
           _nationalPokedexNumbersMeta,
           nationalPokedexNumbers.isAcceptableOrUnknown(
               data['national_pokedex_numbers']!, _nationalPokedexNumbersMeta));
-    } else if (isInserting) {
-      context.missing(_nationalPokedexNumbersMeta);
     }
     if (data.containsKey('card_i_d')) {
       context.handle(_cardIDMeta,
