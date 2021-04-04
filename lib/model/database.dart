@@ -9,7 +9,8 @@ class MyCards extends Table {
   TextColumn get name => text()();
   TextColumn get language => text()();
   TextColumn get etat => text()();
-  IntColumn get nationalPokedexNumbers => integer()();
+  IntColumn get nationalPokedexNumbers => integer()
+      .nullable()(); // Nullable for card without pokemon (trainer card for example)
   TextColumn get cardID => text()();
 }
 
