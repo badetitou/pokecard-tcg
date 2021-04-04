@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:moor/moor.dart' as moor;
 import 'package:pokemon_tcg/collection/my_card_tile.dart';
 import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/model/database/shared.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
 import 'package:pokemon_tcg/tcg_api/model/prices.dart';
+import 'package:provider/provider.dart';
 
 class PokemonCardDetailPage extends StatefulWidget {
   final PokemonCard pokemonCard;
@@ -16,10 +16,11 @@ class PokemonCardDetailPage extends StatefulWidget {
 }
 
 class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
-  final myDatabase = constructDb();
+  late Database myDatabase;
 
   @override
   Widget build(BuildContext context) {
+    myDatabase = Provider.of<Database>(context);
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.pokemonCard.supertype +

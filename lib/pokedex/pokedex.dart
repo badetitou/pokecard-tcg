@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:pokemon_tcg/model/database.dart';
 import 'package:pokemon_tcg/pokedex/search.dart';
-import 'package:pokemon_tcg/model/database/shared.dart';
+import 'package:provider/provider.dart';
 
 class PokedexPage extends StatefulWidget {
   @override
@@ -24,7 +25,8 @@ class _PokedexState extends State<PokedexPage> {
           return ListView.builder(
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
-              return PokemonListItem(snapshot.data![index]);
+              return PokemonListItem(
+                  snapshot.data![index], Provider.of<Database>(context));
             },
           );
         }
@@ -36,9 +38,9 @@ class _PokedexState extends State<PokedexPage> {
 
 class PokemonListItem extends StatelessWidget {
   final dynamic data;
-  final myDatabase = constructDb();
+  final Database myDatabase;
 
-  PokemonListItem(this.data);
+  PokemonListItem(this.data, this.myDatabase);
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_tcg/model/database.dart';
 import 'package:pokemon_tcg/my_collection/my_collection.dart';
 import 'package:pokemon_tcg/pokedex/pokedex.dart';
 import 'package:pokemon_tcg/search/search.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Provider<Database>(
+    create: (context) => constructDb(),
+    child: MyApp(),
+    dispose: (context, db) => db.close(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

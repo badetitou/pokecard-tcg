@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_tcg/collection/pokemon_grid_card.dart';
 import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/model/database/shared.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
 import 'package:pokemon_tcg/tcg_api/tcg.dart';
+import 'package:provider/provider.dart';
 
 class MyCollectionPage extends StatefulWidget {
   @override
@@ -11,8 +11,6 @@ class MyCollectionPage extends StatefulWidget {
 }
 
 class _MyCollectionState extends State<MyCollectionPage> {
-  final myDatabase = constructDb();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,6 +61,6 @@ class _MyCollectionState extends State<MyCollectionPage> {
   }
 
   Future<List<MyCard>> _myCards() async {
-    return myDatabase.allCardEntries;
+    return Provider.of<Database>(context).allCardEntries;
   }
 }
