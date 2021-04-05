@@ -175,14 +175,27 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
         ));
   }
 
-  void _addCard() {
-    myDatabase.addCard(MyCardsCompanion(
-        name: moor.Value(widget.pokemonCard.name),
-        etat: moor.Value('nice'),
-        nationalPokedexNumbers:
-            moor.Value(widget.pokemonCard.nationalPokedexNumbers.first),
-        language: moor.Value('english'),
-        cardID: moor.Value(widget.pokemonCard.id)));
+  Future<void> _addCard() async {
+    String? cardState = await showDialog<String>(
+        context: context,
+        builder: (BuildContext context) {
+          return CreateWidget()
+        });
+    if (cardState == null) {
+      return;
+    }
+  setState(() {
+    myDatabase.addCard(
+        MyCardsCompanion(
+          name: moor.Value(widget.pokemonCard.name),
+          etat: moor.Value(cardState),
+          nationalPokedexNumbers:
+              moor.Value(widget.pokemonCard.nationalPokedexNumbers.first),
+          language: moor.Value('english'),
+          cardID: moor.Value(widget.pokemonCard.id))
+        );
+  });
+    
   }
 
   void _removeCard(MyCard item) {
@@ -213,4 +226,57 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
         ])
     ];
   }
+}
+
+class CreateWidget extends StatefulWidget {
+
+
+  @override
+  State<StatefulWidget> createState() => _CreateWidgetState();
+
+}
+
+
+class _CreateWidgetState extends State<CreateWidget> {
+  String _selectedCardState = "Mint";
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> _cardStates = ["Mint", "Near Mint", "Played", "Damaged"];
+    return SimpleDialog(
+            title: const Text('Add card'),
+            children: <Widget>[
+              Column(
+                children: [
+                  DropdownButton(
+                    value: _selectedCardState,
+                    items: _cardStates
+                        .map((code) => new DropdownMenuItem(
+                            value: code, child: new Text(code)))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedCardState = value.toString();  
+                      });
+                    },
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    OutlinedButton(
+                        child: Text('Abort'),
+                        onPressed: () => {Navigator.pop(context, null)}),
+                            SizedBox(width: 8),
+                    OutlinedButton(child: Text('Add'),onPressed: () => {Navigator.pop(context, _selectedCardState)})
+                  ],
+                ),
+              )
+            ],
+          );
+  }
+
 }
