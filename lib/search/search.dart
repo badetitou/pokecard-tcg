@@ -4,6 +4,7 @@ import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:pokemon_tcg/collection/pokemon_grid_card.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
 import 'package:pokemon_tcg/tcg_api/tcg.dart';
+import 'package:pokemon_tcg/search/search.i18n.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -61,7 +62,7 @@ class _SearchPageState extends State<SearchPage> {
               style: Theme.of(context).textTheme.headline6,
             )
           : null,
-      hint: 'Search... [name:bulba*]',
+      hint: 'Search... [name:bulba*]'.i18n,
       controller: controller,
       scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
       openAxisAlignment: 0.0,

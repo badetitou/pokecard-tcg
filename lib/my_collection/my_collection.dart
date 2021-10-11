@@ -4,6 +4,7 @@ import 'package:pokemon_tcg/model/database.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
 import 'package:pokemon_tcg/tcg_api/tcg.dart';
 import 'package:provider/provider.dart';
+import 'package:pokemon_tcg/my_collection/my_collection.i18n.dart';
 
 class MyCollectionPage extends StatefulWidget {
   @override
@@ -54,7 +55,7 @@ class _MyCollectionState extends State<MyCollectionPage> {
               )
             ]);
           }
-          return Center(child: Text('My Collection'));
+          return Center(child: Text('My Collection'.i18n));
         },
       ),
     );

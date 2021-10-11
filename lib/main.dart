@@ -4,6 +4,9 @@ import 'package:pokemon_tcg/my_collection/my_collection.dart';
 import 'package:pokemon_tcg/pokedex/pokedex.dart';
 import 'package:pokemon_tcg/search/search.dart';
 import 'package:provider/provider.dart';
+import 'package:i18n_extension/i18n_widget.dart';
+import 'package:pokemon_tcg/main.i18n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(Provider<Database>(
@@ -22,7 +25,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Pokécard TCG'),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', "US"),
+        const Locale('fr', "FR"),
+      ],
+      home: I18n(child: MyHomePage(title: 'Pokécard TCG')),
     );
   }
 }
@@ -73,18 +85,18 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
             label: 'Pokédex',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Search',
+            label: 'Search'.i18n,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_to_photos_outlined),
-            label: 'My Collection',
+            label: 'My Collection'.i18n,
           ),
         ],
         currentIndex: _selectedIndex,

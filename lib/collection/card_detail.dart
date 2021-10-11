@@ -5,6 +5,7 @@ import 'package:pokemon_tcg/model/database.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
 import 'package:pokemon_tcg/tcg_api/model/prices.dart';
 import 'package:provider/provider.dart';
+import 'package:pokemon_tcg/collection/card_detail.i18n.dart';
 
 class PokemonCardDetailPage extends StatefulWidget {
   final PokemonCard pokemonCard;
@@ -51,7 +52,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text.rich(TextSpan(
                       style: TextStyle(fontWeight: FontWeight.bold),
-                      text: 'Price: ',
+                      text: 'Price:'.i18n,
                     )),
                   ),
                   Padding(
@@ -59,7 +60,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                     child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: DataTable(
-                          columns: const <DataColumn>[
+                          columns: <DataColumn>[
                             DataColumn(
                               label: Text(
                                 'Type',
@@ -68,25 +69,25 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                             ),
                             DataColumn(
                               label: Text(
-                                'Market',
+                                'Market'.i18n,
                                 style: TextStyle(fontStyle: FontStyle.italic),
                               ),
                             ),
                             DataColumn(
                               label: Text(
-                                'Low',
+                                'Low'.i18n,
                                 style: TextStyle(fontStyle: FontStyle.italic),
                               ),
                             ),
                             DataColumn(
                               label: Text(
-                                'Mid',
+                                'Mid'.i18n,
                                 style: TextStyle(fontStyle: FontStyle.italic),
                               ),
                             ),
                             DataColumn(
                               label: Text(
-                                'High',
+                                'High'.i18n,
                                 style: TextStyle(fontStyle: FontStyle.italic),
                               ),
                             ),
@@ -100,7 +101,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                     child: Row(
                       children: [
                         Text.rich(TextSpan(
-                            text: 'Illustrator: ',
+                            text: 'Illustrator: '.i18n,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, height: 2),
                             children: [
@@ -111,7 +112,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                             onPressed: () {
                               _showCardImage(context);
                             },
-                            child: Text('View Card')),
+                            child: Text('View Card'.i18n)),
                       ],
                     ),
                   ),
@@ -159,7 +160,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
                         )
                       ]);
                     }
-                    return Center(child: Text('Add a Card'));
+                    return Center(child: Text('Add a Card'.i18n));
                   },
                 ),
               ),
@@ -170,7 +171,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
           onPressed: () => setState(() {
             this._addCard();
           }),
-          tooltip: 'Add card to my collection',
+          tooltip: 'Add card to my collection'.i18n,
           child: const Icon(Icons.add),
         ));
   }
@@ -244,7 +245,7 @@ class _CreateWidgetState extends State<CreateWidget> {
   Widget build(BuildContext context) {
     List<String> _cardStates = ["Mint", "Near Mint", "Played", "Damaged"];
     return SimpleDialog(
-            title: const Text('Add card'),
+            title: Text('Add a card'.i18n),
             children: <Widget>[
               Column(
                 children: [
@@ -268,10 +269,10 @@ class _CreateWidgetState extends State<CreateWidget> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     OutlinedButton(
-                        child: Text('Abort'),
+                        child: Text('Abort'.i18n),
                         onPressed: () => {Navigator.pop(context, null)}),
                             SizedBox(width: 8),
-                    OutlinedButton(child: Text('Add'),onPressed: () => {Navigator.pop(context, _selectedCardState)})
+                    OutlinedButton(child: Text('Add'.i18n),onPressed: () => {Navigator.pop(context, _selectedCardState)})
                   ],
                 ),
               )
