@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pokemon_tcg/model/database.dart';
 import 'package:pokemon_tcg/pokedex/search.dart';
 import 'package:provider/provider.dart';
+import 'package:pokemon_tcg/pokedex/pokedex.i18n.dart';
 
 class PokedexPage extends StatefulWidget {
   @override
@@ -62,7 +63,7 @@ class PokemonListItem extends StatelessWidget {
                 return const Icon(Icons.check_box_outline_blank);
               })),
           title: Text((data['name'])['french']),
-          subtitle: Text('Pokemon Number ' +
+          subtitle: Text('Pokemon Number '.i18n +
               (data['id']).toString() +
               ' - ' +
               (data['name'])['english']),

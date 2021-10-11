@@ -125,30 +125,33 @@ class _SearchPageState extends State<SearchPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text.rich(TextSpan(
-                  text: 'Request: ',
+                  text: 'Request:'.i18n,
                   style: TextStyle(fontWeight: FontWeight.bold, height: 3),
                 )),
                 Text.rich(TextSpan(
-                  text: 'Keyword matching: ',
+                  text: 'Keyword matching:'.i18n,
                   style: TextStyle(fontWeight: FontWeight.bold, height: 2),
                 )),
                 Text.rich(TextSpan(
                   text:
-                      'Search for all cards that have “charizard” in the name field: ',
+                      'Search for all cards that have “charizard” in the name field:'
+                          .i18n,
                 )),
                 CommandExample(
                   text: 'name:charizard',
                 ),
                 Text.rich(TextSpan(
                   text:
-                      'Search for “charizard” in the name field AND the type “mega” in the subtypes field: ',
+                      'Search for “charizard” in the name field AND the type “mega” in the subtypes field:'
+                          .i18n,
                 )),
                 CommandExample(
                   text: 'name:charizard subtypes:mega',
                 ),
                 Text.rich(TextSpan(
                   text:
-                      'Search for “charizard” in the name field AND either the subtypes of “mega” or “vmax.”',
+                      'Search for “charizard” in the name field AND either the subtypes of “mega” or “vmax.”'
+                          .i18n,
                 )),
                 CommandExample(
                   text: 'name:charizard (subtypes:mega OR subtypes:vmax)',
@@ -159,18 +162,20 @@ class _SearchPageState extends State<SearchPage> {
                 )),
                 Text.rich(TextSpan(
                   text:
-                      'Search for any card that starts with “char” in the name field.',
+                      'Search for any card that starts with “char” in the name field.'
+                          .i18n,
                 )),
                 CommandExample(
                   text: 'name:char*',
                 ),
                 Text.rich(TextSpan(
-                  text: 'Range Searches: ',
+                  text: 'Range Searches:'.i18n,
                   style: TextStyle(fontWeight: FontWeight.bold, height: 2),
                 )),
                 Text.rich(TextSpan(
                   text:
-                      'Search for only cards that feature the original 151 pokemon.',
+                      'Search for only cards that feature the original 151 pokemon:'
+                          .i18n,
                 )),
                 CommandExample(text: 'nationalPokedexNumbers:[1 TO 151]'),
               ],
