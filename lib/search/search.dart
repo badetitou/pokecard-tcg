@@ -118,10 +118,14 @@ class _SearchPageState extends State<SearchPage> {
   void _showSearchHelper(context) {
     showModalBottomSheet(
         context: context,
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
         builder: (BuildContext bc) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text.rich(TextSpan(
