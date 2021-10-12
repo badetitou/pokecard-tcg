@@ -177,7 +177,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
   }
 
   Future<void> _addCard() async {
-    String? cardState = await showDialog<String>(
+    CreateWidgetState? cardState = await showDialog<CreateWidgetState>(
         context: context,
         builder: (BuildContext context) {
           return CreateWidget()
@@ -189,10 +189,10 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
     myDatabase.addCard(
         MyCardsCompanion(
           name: moor.Value(widget.pokemonCard.name),
-          etat: moor.Value(cardState),
+          etat: moor.Value(cardState._selectedCardState),
           nationalPokedexNumbers:
               moor.Value(widget.pokemonCard.nationalPokedexNumbers.first),
-          language: moor.Value('english'),
+          language: moor.Value(cardState._selectedCardLanguage),
           cardID: moor.Value(widget.pokemonCard.id))
         );
   });
@@ -237,31 +237,62 @@ class CreateWidget extends StatefulWidget {
 
 }
 
+class CreateWidgetState {
+  String _selectedCardState = "Mint";
+  String _selectedCardLanguage = "English";
+}
 
 class _CreateWidgetState extends State<CreateWidget> {
-  String _selectedCardState = "Mint";
-
+  CreateWidgetState wid = new CreateWidgetState();
   @override
   Widget build(BuildContext context) {
-    List<String> _cardStates = ["Mint", "Near Mint", "Played", "Damaged"];
+    Map<String, String> _cardStates = {"Mint": 'Mint'.i18n, "Near Mint":"Near Mint".i18n , "Played":"Played".i18n , "Damaged": "Damaged".i18n};
+    Map<String, String> _cardLanguages = {"English": "English".i18n, "French": "French".i18n};
+
     return SimpleDialog(
             title: Text('Add a card'.i18n),
             children: <Widget>[
-              Column(
-                children: [
-                  DropdownButton(
-                    value: _selectedCardState,
-                    items: _cardStates
-                        .map((code) => new DropdownMenuItem(
-                            value: code, child: new Text(code)))
-                        .toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedCardState = value.toString();  
-                      });
-                    },
-                  )
-                ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                      Text('Quality'.i18n),
+                      DropdownButton(
+                      value: wid._selectedCardState,
+                      items: _cardStates.entries
+                          .map((code) => new DropdownMenuItem(
+                              value: code.key, child: new Text(code.value)))
+                          .toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          wid._selectedCardState = value.toString();  
+                        });
+                      },
+                    )],)
+                    ,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text('Language'.i18n),
+                        DropdownButton(
+                          value: wid._selectedCardLanguage,
+                          items: _cardLanguages.entries
+                              .map((code) => new DropdownMenuItem(
+                                  value: code.key, child: new Text(code.value)))
+                              .toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              wid._selectedCardLanguage = value.toString();  
+                            });
+                          },
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -272,7 +303,7 @@ class _CreateWidgetState extends State<CreateWidget> {
                         child: Text('Abort'.i18n),
                         onPressed: () => {Navigator.pop(context, null)}),
                             SizedBox(width: 8),
-                    OutlinedButton(child: Text('Add'.i18n),onPressed: () => {Navigator.pop(context, _selectedCardState)})
+                    OutlinedButton(child: Text('Add'.i18n),onPressed: () => {Navigator.pop(context, wid)})
                   ],
                 ),
               )

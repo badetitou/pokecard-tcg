@@ -49,6 +49,38 @@ extension Localization on String {
       {
         "en_us": "Add",
         "fr": "Ajouter",
+      } +
+      {
+        "en_us": "Mint",
+        "fr": "Parfaite",
+      } +
+      {
+        "en_us": "Near Mint",
+        "fr": "Presque parfaite",
+      } +
+      {
+        "en_us": "Played",
+        "fr": "Jouée",
+      } +
+      {
+        "en_us": "Damaged",
+        "fr": "Endomagée",
+      } +
+      {
+        "en_us": "English",
+        "fr": "Anglais",
+      } +
+      {
+        "en_us": "French",
+        "fr": "Français",
+      } +
+      {
+        "en_us": "Quality",
+        "fr": "Qualité",
+      } +
+      {
+        "en_us": "Language",
+        "fr": "Langue",
       };
 
   String get i18n => localize(this, _t);

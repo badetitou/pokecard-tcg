@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_tcg/model/database.dart';
+import 'package:pokemon_tcg/collection/card_detail.i18n.dart';
 
 class MyCardTile extends StatelessWidget {
   final MyCard myCard;
@@ -12,11 +13,13 @@ class MyCardTile extends StatelessWidget {
     return Card(
       child: ListTile(
           title: Text(myCard.name.toString()),
-          subtitle: Text(myCard.etat.toString()),
+          subtitle: Text(myCard.etat.toString().i18n +
+              ' - ' +
+              myCard.language.toString().i18n),
           trailing: IconButton(
             icon: Icon(Icons.remove),
             onPressed: onDelete,
-            tooltip: 'Remove',
+            tooltip: 'Remove'.i18n,
           )),
     );
   }
