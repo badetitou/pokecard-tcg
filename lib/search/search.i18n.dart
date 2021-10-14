@@ -21,21 +21,21 @@ extension Localization on String {
       } +
       {
         "en_us":
-            'Search for “charizard” in the name field AND the type “mega” in the subtypes field:',
+            'Search for "charizard" in the name field AND the type "mega" in the subtypes field:',
         "fr":
             'Recherchez "charizard" comme nom ET le type "mega" comme un des  sous-types :',
       } +
       {
         "en_us":
-            'Search for “charizard” in the name field AND either the subtypes of “mega” or “vmax":',
+            'Search for "charizard" in the name field AND either the subtypes of "mega" or "vmax":',
         "fr":
-            'Recherchez "charizard" comme nom ET les sous-types "mega" ou "vmax".',
+            'Recherchez "charizard" comme nom ET les sous-types "mega" ou "vmax" :',
       } +
       {
         "en_us":
-            'Search for any card that starts with “char” in the name field.',
+            'Search for any card that starts with "char" in the name field:',
         "fr":
-            'Recherchez toute carte dont le nom commence par "char" dans le champ du nom.',
+            'Recherchez toute carte dont le nom commence par "char" dans le champ du nom :',
       } +
       {
         "en_us": 'Range Searches:',

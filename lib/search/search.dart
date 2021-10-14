@@ -138,7 +138,7 @@ class _SearchPageState extends State<SearchPage> {
                 )),
                 Text.rich(TextSpan(
                   text:
-                      'Search for all cards that have “charizard” in the name field:'
+                      'Search for all cards that have "charizard" in the name field:'
                           .i18n,
                 )),
                 CommandExample(
@@ -146,7 +146,7 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 Text.rich(TextSpan(
                   text:
-                      'Search for “charizard” in the name field AND the type “mega” in the subtypes field:'
+                      'Search for "charizard" in the name field AND the type "mega" in the subtypes field:'
                           .i18n,
                 )),
                 CommandExample(
@@ -154,7 +154,7 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 Text.rich(TextSpan(
                   text:
-                      'Search for “charizard” in the name field AND either the subtypes of “mega” or “vmax.”'
+                      'Search for "charizard" in the name field AND either the subtypes of "mega" or "vmax":'
                           .i18n,
                 )),
                 CommandExample(
@@ -166,7 +166,7 @@ class _SearchPageState extends State<SearchPage> {
                 )),
                 Text.rich(TextSpan(
                   text:
-                      'Search for any card that starts with “char” in the name field.'
+                      'Search for any card that starts with "char" in the name field:'
                           .i18n,
                 )),
                 CommandExample(
