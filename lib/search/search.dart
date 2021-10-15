@@ -161,7 +161,7 @@ class _SearchPageState extends State<SearchPage> {
                   text: 'name:charizard (subtypes:mega OR subtypes:vmax)',
                 ),
                 Text.rich(TextSpan(
-                  text: 'Wildcard Matching: ',
+                  text: 'Wildcard Matching:'.i18n,
                   style: TextStyle(fontWeight: FontWeight.bold, height: 2),
                 )),
                 Text.rich(TextSpan(
