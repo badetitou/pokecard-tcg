@@ -75,6 +75,30 @@ extension Localization on String {
         "fr": "Français",
       } +
       {
+        "en_us": "Italian",
+        "fr": "Italien",
+      } +
+      {
+        "en_us": "Spanish",
+        "fr": "Espagnol",
+      } +
+      {
+        "en_us": "Chinese",
+        "fr": "Chinois",
+      } +
+      {
+        "en_us": "German",
+        "fr": "Allemand",
+      } +
+      {
+        "en_us": "Japanese",
+        "fr": "Japonais",
+      } +
+      {
+        "en_us": "Korean",
+        "fr": "Coréen",
+      } +
+      {
         "en_us": "Quality",
         "fr": "Qualité",
       } +

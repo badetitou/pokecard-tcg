@@ -239,7 +239,7 @@ class CreateWidget extends StatefulWidget {
 
 class CreateWidgetState {
   String _selectedCardState = "Mint";
-  String _selectedCardLanguage = "English";
+  String _selectedCardLanguage = "French";
 }
 
 class _CreateWidgetState extends State<CreateWidget> {
@@ -247,7 +247,7 @@ class _CreateWidgetState extends State<CreateWidget> {
   @override
   Widget build(BuildContext context) {
     Map<String, String> _cardStates = {"Mint": 'Mint'.i18n, "Near Mint":"Near Mint".i18n , "Played":"Played".i18n , "Damaged": "Damaged".i18n};
-    Map<String, String> _cardLanguages = {"English": "English".i18n, "French": "French".i18n};
+    Map<String, String> _cardLanguages = {"English": "English".i18n, "French": "French".i18n, "Italian": "Italian".i18n, "Spanish": "Spanish".i18n, "Chinese": "Chinese".i18n, "German": "German".i18n, "Japanese": "Japanese".i18n, "Korean": "Korean".i18n};
 
     return SimpleDialog(
             title: Text('Add a card'.i18n),
