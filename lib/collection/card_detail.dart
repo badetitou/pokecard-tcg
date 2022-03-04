@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moor/moor.dart' as moor;
+import 'package:drift/drift.dart' as drift;
 import 'package:pokemon_tcg/collection/my_card_tile.dart';
 import 'package:pokemon_tcg/model/database.dart';
 import 'package:pokemon_tcg/tcg_api/model/card.dart';
@@ -180,32 +180,27 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
     CreateWidgetState? cardState = await showDialog<CreateWidgetState>(
         context: context,
         builder: (BuildContext context) {
-          return CreateWidget()
+          return CreateWidget(
+            pokemonCard: widget.pokemonCard,
+          )
         });
     if (cardState == null) {
       return;
     }
-  setState(() {
-    myDatabase.addCard(
-        MyCardsCompanion(
-          name: moor.Value(widget.pokemonCard.name),
-          etat: moor.Value(cardState._selectedCardState),
+    setState(() {
+      myDatabase.addCard(MyCardsCompanion(
+          name: drift.Value(widget.pokemonCard.name),
+          etat: drift.Value(cardState._selectedCardState),
           nationalPokedexNumbers:
-              moor.Value(widget.pokemonCard.nationalPokedexNumbers.first),
-          language: moor.Value(cardState._selectedCardLanguage),
-          cardID: moor.Value(widget.pokemonCard.id))
-        );
-  });
-    
+              drift.Value(widget.pokemonCard.nationalPokedexNumbers.first),
+          language: drift.Value(cardState._selectedCardLanguage),
+          cardID: drift.Value(widget.pokemonCard.id)));
+    });
   }
 
   void _removeCard(MyCard item) {
     myDatabase.removeCard(item.id);
   }
-
-  // List _getCards() {
-  //   return storage.getItem(widget.pokemonCard.id) ?? [];
-  // }
 
   void _showCardImage(context) {
     showModalBottomSheet(
@@ -230,85 +225,125 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
 }
 
 class CreateWidget extends StatefulWidget {
-
+  final PokemonCard pokemonCard;
+  CreateWidget({Key? key, required this.pokemonCard}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _CreateWidgetState();
-
 }
 
 class CreateWidgetState {
+    final PokemonCard pokemonCard;
   String _selectedCardState = "Mint";
   String _selectedCardLanguage = "French";
+  String _type = "normal";
+
+
+  CreateWidgetState(this.pokemonCard) : _type = pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
 }
 
 class _CreateWidgetState extends State<CreateWidget> {
-  CreateWidgetState wid = new CreateWidgetState();
+  late CreateWidgetState wid;
   @override
   Widget build(BuildContext context) {
-    Map<String, String> _cardStates = {"Mint": 'Mint'.i18n, "Near Mint":"Near Mint".i18n , "Played":"Played".i18n , "Damaged": "Damaged".i18n};
-    Map<String, String> _cardLanguages = {"English": "English".i18n, "French": "French".i18n, "Italian": "Italian".i18n, "Spanish": "Spanish".i18n, "Chinese": "Chinese".i18n, "German": "German".i18n, "Japanese": "Japanese".i18n, "Korean": "Korean".i18n};
+    wid = new CreateWidgetState(widget.pokemonCard);
+    Map<String, String> _cardStates = {
+      "Mint": 'Mint'.i18n,
+      "Near Mint": "Near Mint".i18n,
+      "Played": "Played".i18n,
+      "Damaged": "Damaged".i18n
+    };
+    Map<String, String> _cardLanguages = {
+      "English": "English".i18n,
+      "French": "French".i18n,
+      "Italian": "Italian".i18n,
+      "Spanish": "Spanish".i18n,
+      "Chinese": "Chinese".i18n,
+      "German": "German".i18n,
+      "Japanese": "Japanese".i18n,
+      "Korean": "Korean".i18n
+    };
 
     return SimpleDialog(
-            title: Text('Add a card'.i18n),
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                      Text('Quality'.i18n),
-                      DropdownButton(
-                      value: wid._selectedCardState,
-                      items: _cardStates.entries
-                          .map((code) => new DropdownMenuItem(
-                              value: code.key, child: new Text(code.value)))
-                          .toList(),
-                      onChanged: (value) {
-                        setState(() {
-                          wid._selectedCardState = value.toString();  
-                        });
-                      },
-                    )],)
-                    ,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text('Language'.i18n),
-                        DropdownButton(
-                          value: wid._selectedCardLanguage,
-                          items: _cardLanguages.entries
-                              .map((code) => new DropdownMenuItem(
-                                  value: code.key, child: new Text(code.value)))
-                              .toList(),
-                          onChanged: (value) {
-                            setState(() {
-                              wid._selectedCardLanguage = value.toString();  
-                            });
-                          },
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+      title: Text('Add a card'.i18n),
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Quality'.i18n),
+                  DropdownButton(
+                    value: wid._selectedCardState,
+                    items: _cardStates.entries
+                        .map((code) => new DropdownMenuItem(
+                            value: code.key, child: new Text(code.value)))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        wid._selectedCardState = value.toString();
+                      });
+                    },
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    OutlinedButton(
-                        child: Text('Abort'.i18n),
-                        onPressed: () => {Navigator.pop(context, null)}),
-                            SizedBox(width: 8),
-                    OutlinedButton(child: Text('Add'.i18n),onPressed: () => {Navigator.pop(context, wid)})
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Language'.i18n),
+                  DropdownButton(
+                    value: wid._selectedCardLanguage,
+                    items: _cardLanguages.entries
+                        .map((code) => new DropdownMenuItem(
+                            value: code.key, child: new Text(code.value)))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        wid._selectedCardLanguage = value.toString();
+                      });
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Type'),
+                  DropdownButton(
+                    value: widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first,
+                    items: widget.pokemonCard.tcgPlayer.prices.map((e) => e.type)
+                        .map((type) => new DropdownMenuItem(
+                            value: type, child: new Text(type)))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        wid._type = value.toString();
+                      });
+                    },
+                  ),
+                ],
               )
             ],
-          );
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              OutlinedButton(
+                  child: Text('Abort'.i18n),
+                  onPressed: () => {Navigator.pop(context, null)}),
+              SizedBox(width: 8),
+              OutlinedButton(
+                  child: Text('Add'.i18n),
+                  onPressed: () => {Navigator.pop(context, wid)})
+            ],
+          ),
+        )
+      ],
+    );
   }
-
 }
