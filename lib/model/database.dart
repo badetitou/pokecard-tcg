@@ -49,5 +49,9 @@ class Database extends _$Database {
           // we added the dueDate property in the change from version 1
           await m.addColumn(myCards, myCards.nationalPokedexNumbers);
         }
+        if (from < 3) {
+          // we added the dueDate property in the change from version 1
+          await m.addColumn(myCards, myCards.cardType);
+        }
       });
 }
