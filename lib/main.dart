@@ -22,9 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pokécard TCG',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -34,6 +32,10 @@ class MyApp extends StatelessWidget {
         const Locale('en', "US"),
         const Locale('fr', "FR"),
       ],
+      darkTheme: ThemeData(
+          colorSchemeSeed: Colors.brown,
+          brightness: Brightness.dark,
+          useMaterial3: true),
       home: I18n(child: MyHomePage(title: 'Pokécard TCG')),
     );
   }
