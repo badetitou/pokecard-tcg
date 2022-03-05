@@ -194,6 +194,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
           nationalPokedexNumbers:
               drift.Value(widget.pokemonCard.nationalPokedexNumbers.first),
           language: drift.Value(cardState._selectedCardLanguage),
+          cardType: drift.Value(cardState._type),
           cardID: drift.Value(widget.pokemonCard.id)));
     });
   }
