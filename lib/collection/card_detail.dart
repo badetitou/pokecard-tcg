@@ -234,20 +234,17 @@ class CreateWidget extends StatefulWidget {
 }
 
 class CreateWidgetState {
-    final PokemonCard pokemonCard;
+  
   String _selectedCardState = "Mint";
   String _selectedCardLanguage = "French";
   String _type = "normal";
-
-
-  CreateWidgetState(this.pokemonCard) : _type = pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
 }
 
 class _CreateWidgetState extends State<CreateWidget> {
-  late CreateWidgetState wid;
+  late CreateWidgetState wid = new CreateWidgetState();
   @override
   Widget build(BuildContext context) {
-    wid = new CreateWidgetState(widget.pokemonCard);
+    wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
     Map<String, String> _cardStates = {
       "Mint": 'Mint'.i18n,
       "Near Mint": "Near Mint".i18n,
