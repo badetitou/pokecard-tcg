@@ -5,6 +5,18 @@ extension Localization on String {
       {
         "en_us": "Pokemon Number ",
         "fr": "Pokémon n° ",
+      } +
+      {
+        "en_us": "All",
+        "fr": "Tous",
+      } +
+      {
+        "en_us": "Catched",
+        "fr": "Attrapés",
+      } +
+      {
+        "en_us": "Not catched",
+        "fr": "Non attrapés",
       };
 
   String get i18n => localize(this, _t);

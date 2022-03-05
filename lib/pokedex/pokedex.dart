@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:pokemon_tcg/model/database.dart';
+import 'package:pokemon_tcg/pokedex/pokemon.dart';
 import 'package:pokemon_tcg/pokedex/search.dart';
 import 'package:provider/provider.dart';
 import 'package:pokemon_tcg/pokedex/pokedex.i18n.dart';
@@ -11,34 +12,103 @@ class PokedexPage extends StatefulWidget {
 }
 
 class _PokedexState extends State<PokedexPage> {
-  Future<List> getPokemons({required BuildContext context}) async {
+  Future<List<Pokemon>> getPokemons({required BuildContext context}) async {
     String data =
         await DefaultAssetBundle.of(context).loadString('assets/pokedex.json');
-    return json.decode(data);
+    return (json.decode(data) as List)
+        .map((e) => new Pokemon.fromJson(e))
+        .toList();
   }
+
+  Future<List<Pokemon>> filterPokemons(
+      List<Pokemon> pokemons, Database myDatabase) async {
+    List<Pokemon> selectedPokemon = [];
+    if (_value == 1) {
+      return pokemons;
+    } else if (_value == 2) {
+      await Future.forEach(pokemons, (element) async {
+        bool b = await _isCaptured((element as Pokemon).id, myDatabase);
+        if (b) {
+          selectedPokemon.add(element);
+        }
+      });
+    } else {
+      await Future.forEach(pokemons, (element) async {
+        bool b = await _isCaptured((element as Pokemon).id, myDatabase);
+        if (!b) {
+          selectedPokemon.add(element);
+        }
+      });
+    }
+    return selectedPokemon;
+  }
+
+  Future<List<Pokemon>> getFilteredPokemons(
+      {required BuildContext context, required Database myDatabase}) async {
+    Future<List<Pokemon>> pokemons = getPokemons(context: context);
+    return filterPokemons(await pokemons, myDatabase);
+  }
+
+  /// 1 all
+  /// 2 Catched
+  /// 3 Not Catched
+  int? _value = 1;
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List>(
-      future: getPokemons(context: context),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return ListView.builder(
-            itemCount: snapshot.data!.length,
-            itemBuilder: (context, index) {
-              return PokemonListItem(
-                  snapshot.data![index], Provider.of<Database>(context));
-            },
-          );
-        }
-        return CircularProgressIndicator();
-      },
+    return Column(
+      children: [
+        FutureBuilder<List<Pokemon>>(
+          future: getFilteredPokemons(
+              context: context, myDatabase: Provider.of<Database>(context)),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Expanded(
+                child: ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index) {
+                    return PokemonListItem(
+                        snapshot.data![index], Provider.of<Database>(context));
+                  },
+                ),
+              );
+            }
+            return CircularProgressIndicator();
+          },
+        ),
+        Wrap(spacing: 3, children: [
+          ChoiceChip(
+              label: Text("All".i18n),
+              selected: _value == 1,
+              onSelected: (bool selected) {
+                setState(() {
+                  _value = 1;
+                });
+              }),
+          ChoiceChip(
+              label: Text("Catched".i18n),
+              selected: _value == 2,
+              onSelected: (bool selected) {
+                setState(() {
+                  _value = 2;
+                });
+              }),
+          ChoiceChip(
+              label: Text("Not catched".i18n),
+              selected: _value == 3,
+              onSelected: (bool selected) {
+                setState(() {
+                  _value = 3;
+                });
+              })
+        ])
+      ],
     );
   }
 }
 
 class PokemonListItem extends StatelessWidget {
-  final dynamic data;
+  final Pokemon data;
   final Database myDatabase;
 
   PokemonListItem(this.data, this.myDatabase);
@@ -48,11 +118,11 @@ class PokemonListItem extends StatelessWidget {
     return InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          Navigator.of(context).push(_toSearch((data['name'])['english']));
+          Navigator.of(context).push(_toSearch((data.name)['english']));
         },
         child: ListTile(
           leading: (new FutureBuilder(
-              future: _isCapture(data['id']),
+              future: _isCaptured(data.id, myDatabase),
               builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
                 if (!snapshot.hasData) {
                   return const Icon(Icons.circle);
@@ -62,18 +132,18 @@ class PokemonListItem extends StatelessWidget {
                 }
                 return const Icon(Icons.check_box_outline_blank);
               })),
-          title: Text((data['name'])['french']),
+          title: Text((data.name)['french']),
           subtitle: Text('Pokemon Number '.i18n +
-              (data['id']).toString() +
+              (data.id).toString() +
               ' - ' +
-              (data['name'])['english']),
+              (data.name)['english']),
         ));
   }
+}
 
-  Future<bool> _isCapture(int id) {
-    return myDatabase.allCardEntries.then((value) =>
-        value.any((element) => element.nationalPokedexNumbers == id));
-  }
+Future<bool> _isCaptured(int id, Database myDatabase) async {
+  return myDatabase.allCardEntries.then(
+      (value) => value.any((element) => element.nationalPokedexNumbers == id));
 }
 
 Route _toSearch(String aResearchString) {
