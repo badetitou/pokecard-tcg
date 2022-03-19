@@ -118,7 +118,8 @@ class PokemonListItem extends StatelessWidget {
     return InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          Navigator.of(context).push(_toSearch((data.name)['english']));
+          Navigator.of(context).push(
+              _toSearch(new SearchCriteria(data.id, (data.name)['french'])));
         },
         child: ListTile(
           leading: (new FutureBuilder(
@@ -146,10 +147,10 @@ Future<bool> _isCaptured(int id, Database myDatabase) async {
       (value) => value.any((element) => element.nationalPokedexNumbers == id));
 }
 
-Route _toSearch(String aResearchString) {
+Route _toSearch(SearchCriteria aSearchCriteria) {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => SearchPokemonPage(
-      search: (aResearchString),
+      search: (aSearchCriteria),
     ),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return child;

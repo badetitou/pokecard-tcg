@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_tcg/search/search.dart';
 
+class SearchCriteria {
+  final int pokemonId;
+  final String pokemonName;
+
+  SearchCriteria(this.pokemonId, this.pokemonName);
+}
+
 class SearchPokemonPage extends StatefulWidget {
-  final String search;
+  final SearchCriteria search;
 
   const SearchPokemonPage({required this.search}) : super();
 
@@ -25,9 +32,10 @@ class _SearchPokemonState extends State<SearchPokemonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.search),
+        title: Text(widget.search.pokemonName),
       ),
-      body: SearchResultsGridView('name:' + widget.search),
+      body: SearchResultsGridView(
+          'nationalPokedexNumbers:' + widget.search.pokemonId.toString()),
     );
   }
 }
