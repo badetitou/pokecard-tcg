@@ -23,7 +23,7 @@ class _SearchPageState extends State<SearchPage> {
     'types': 'types:',
     'attacks name': 'attacks.name:',
     'artist': 'artist:',
-    'nationalPokedexNumber': 'nationalPokedexNumber:',
+    'nationalPokedexNumbers': 'nationalPokedexNumbers:',
   };
 
   FloatingSearchBarController controller = FloatingSearchBarController();
@@ -56,6 +56,8 @@ class _SearchPageState extends State<SearchPage> {
                   padding: EdgeInsets.only(top: 55))))),
       transition: CircularFloatingSearchBarTransition(),
       physics: const BouncingScrollPhysics(),
+      backgroundColor: Theme.of(context).backgroundColor,
+      accentColor: Theme.of(context).cardColor,
       title: _query != ''
           ? Text(
               _query,
@@ -87,7 +89,7 @@ class _SearchPageState extends State<SearchPage> {
         return ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Material(
-              color: Colors.white,
+              color: Theme.of(context).backgroundColor,
               elevation: 4.0,
               child: Builder(
                 builder: (context) {
