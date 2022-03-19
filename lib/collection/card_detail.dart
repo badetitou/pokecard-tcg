@@ -234,7 +234,6 @@ class CreateWidget extends StatefulWidget {
 }
 
 class CreateWidgetState {
-  
   String _selectedCardState = "Mint";
   String _selectedCardLanguage = "French";
   String _type = "normal";
@@ -242,9 +241,14 @@ class CreateWidgetState {
 
 class _CreateWidgetState extends State<CreateWidget> {
   late CreateWidgetState wid = new CreateWidgetState();
+
+  void initState() {
+    super.initState();
+    wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
+  } 
+
   @override
   Widget build(BuildContext context) {
-    wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
     Map<String, String> _cardStates = {
       "Mint": 'Mint'.i18n,
       "Near Mint": "Near Mint".i18n,
@@ -310,7 +314,7 @@ class _CreateWidgetState extends State<CreateWidget> {
                 children: [
                   Text('Type'),
                   DropdownButton(
-                    value: widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first,
+                    value: wid._type,
                     items: widget.pokemonCard.tcgPlayer.prices.map((e) => e.type)
                         .map((type) => new DropdownMenuItem(
                             value: type, child: new Text(type)))
