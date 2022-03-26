@@ -71,12 +71,3 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/pokedex.json
-    - assets/color/colorless.png
-    - assets/color/darkness.png
-    - assets/color/fighting.png
-    - assets/color/fire.png
-    - assets/color/grass.png
-    - assets/color/lightning.png
-    - assets/color/metal.png
-    - assets/color/psychic.png
-    - assets/color/water.png
