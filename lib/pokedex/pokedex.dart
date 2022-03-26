@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/pokedex/pokemon.dart';
-import 'package:pokemon_tcg/pokedex/search.dart';
+import 'package:pokecard_tcg/model/database.dart';
+import 'package:pokecard_tcg/pokedex/pokemon.dart';
+import 'package:pokecard_tcg/pokedex/search.dart';
 import 'package:provider/provider.dart';
-import 'package:pokemon_tcg/pokedex/pokedex.i18n.dart';
+import 'package:pokecard_tcg/pokedex/pokedex.i18n.dart';
 
 class PokedexPage extends StatefulWidget {
   @override

@@ -1,4 +1,4 @@
-import 'package:pokemon_tcg/tcg_api/model/prices.dart';
+import 'package:pokecard_tcg/tcg_api/model/prices.dart';
 
 class TCGPlayer {
   final String url;

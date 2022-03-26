@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_tcg/collection/pokemon_grid_card.dart';
-import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/tcg_api/model/card.dart';
-import 'package:pokemon_tcg/tcg_api/tcg.dart';
+import 'package:pokecard_tcg/collection/pokemon_grid_card.dart';
+import 'package:pokecard_tcg/model/database.dart';
+import 'package:pokecard_tcg/tcg_api/model/card.dart';
+import 'package:pokecard_tcg/tcg_api/tcg.dart';
 import 'package:provider/provider.dart';
-import 'package:pokemon_tcg/my_collection/my_collection.i18n.dart';
+import 'package:pokecard_tcg/my_collection/my_collection.i18n.dart';
 
 class MyCollectionPage extends StatefulWidget {
   @override

@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/my_collection/my_collection.dart';
-import 'package:pokemon_tcg/pokedex/pokedex.dart';
-import 'package:pokemon_tcg/search/search.dart';
+import 'package:pokecard_tcg/model/database.dart';
+import 'package:pokecard_tcg/my_collection/my_collection.dart';
+import 'package:pokecard_tcg/pokedex/pokedex.dart';
+import 'package:pokecard_tcg/search/search.dart';
 import 'package:provider/provider.dart';
 import 'package:i18n_extension/i18n_widget.dart';
-import 'package:pokemon_tcg/main.i18n.dart';
+import 'package:pokecard_tcg/main.i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:path_provider/path_provider.dart' as paths;

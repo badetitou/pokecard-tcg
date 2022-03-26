@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_tcg/search/search.dart';
+import 'package:pokecard_tcg/search/search.dart';
 
 class SearchCriteria {
   final int pokemonId;

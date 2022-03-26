@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/collection/card_detail.i18n.dart';
+import 'package:pokecard_tcg/model/database.dart';
+import 'package:pokecard_tcg/collection/card_detail.i18n.dart';
 
 class MyCardTile extends StatelessWidget {
   final MyCard myCard;

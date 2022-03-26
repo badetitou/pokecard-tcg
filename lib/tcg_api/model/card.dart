@@ -1,4 +1,4 @@
-import 'package:pokemon_tcg/tcg_api/model/tcgplayer.dart';
+import 'package:pokecard_tcg/tcg_api/model/tcgplayer.dart';
 
 class PokemonCard {
   final String id;

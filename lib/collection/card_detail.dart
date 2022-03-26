@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:drift/drift.dart' as drift;
-import 'package:pokemon_tcg/collection/my_card_tile.dart';
-import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/tcg_api/model/card.dart';
-import 'package:pokemon_tcg/tcg_api/model/prices.dart';
+import 'package:pokecard_tcg/collection/my_card_tile.dart';
+import 'package:pokecard_tcg/model/database.dart';
+import 'package:pokecard_tcg/tcg_api/model/card.dart';
+import 'package:pokecard_tcg/tcg_api/model/prices.dart';
 import 'package:provider/provider.dart';
-import 'package:pokemon_tcg/collection/card_detail.i18n.dart';
+import 'package:pokecard_tcg/collection/card_detail.i18n.dart';
 
 class PokemonCardDetailPage extends StatefulWidget {
   final PokemonCard pokemonCard;

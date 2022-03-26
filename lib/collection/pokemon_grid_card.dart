@@ -1,8 +1,8 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:pokemon_tcg/collection/card_detail.dart';
-import 'package:pokemon_tcg/model/database.dart';
-import 'package:pokemon_tcg/tcg_api/model/card.dart';
+import 'package:pokecard_tcg/collection/card_detail.dart';
+import 'package:pokecard_tcg/model/database.dart';
+import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:provider/provider.dart';
 
 class PokemondGridCard extends StatelessWidget {

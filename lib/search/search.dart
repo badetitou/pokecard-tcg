@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
-import 'package:pokemon_tcg/collection/pokemon_grid_card.dart';
-import 'package:pokemon_tcg/tcg_api/model/card.dart';
-import 'package:pokemon_tcg/tcg_api/tcg.dart';
-import 'package:pokemon_tcg/search/search.i18n.dart';
+import 'package:pokecard_tcg/collection/pokemon_grid_card.dart';
+import 'package:pokecard_tcg/tcg_api/model/card.dart';
+import 'package:pokecard_tcg/tcg_api/tcg.dart';
+import 'package:pokecard_tcg/search/search.i18n.dart';
 
 class SearchPage extends StatefulWidget {
   @override

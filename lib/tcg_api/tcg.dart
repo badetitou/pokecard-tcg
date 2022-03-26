@@ -1,4 +1,4 @@
-import 'package:pokemon_tcg/tcg_api/model/card.dart';
+import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
