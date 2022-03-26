@@ -1,6 +1,6 @@
 {
-    "name": "pokemon_tcg",
-    "short_name": "pokemon_tcg",
+    "name": "pokecard_tcg",
+    "short_name": "pokecard_tcg",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#0175C2",
