@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1043218848326",
+    "project_id": "pokecard-tcg",
+    "storage_bucket": "pokecard-tcg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043218848326:android:ff7e788a1ada89ccc88847",
+        "android_client_info": {
+          "package_name": "fr.badetitou.pokecard_tcg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043218848326-kkcrrbleavcte4dvo27i2t8glekvb7p9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.badetitou.pokecard_tcg",
+            "certificate_hash": "a2b8cb960413f85cd58012c40006b61db4a546d5"
+          }
+        },
+        {
+          "client_id": "1043218848326-hkjfmqmr1vcanvq2ktj7kjlobq29fdul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtU7CMuGX_tqBdRXF_IDkOOYfakxTEn5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043218848326-hkjfmqmr1vcanvq2ktj7kjlobq29fdul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

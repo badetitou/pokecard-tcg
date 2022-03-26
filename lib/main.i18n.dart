@@ -9,6 +9,22 @@ extension Localization on String {
       {
         "en_us": "Search",
         "fr": "Rechercher",
+      } +
+      {
+        "en_us": "Backed up!",
+        "fr": "Pokédex sauvegardé !",
+      } +
+      {
+        "en_us": "Restored!",
+        "fr": "Pokédex restauré !",
+      } +
+      {
+        "en_us": "Backup Pokédex",
+        "fr": "Sauvegarder le Pokédex",
+      } +
+      {
+        "en_us": "Restore Pokédex",
+        "fr": "Restaurer le Pokédex",
       };
 
   String get i18n => localize(this, _t);

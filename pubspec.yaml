@@ -41,6 +41,8 @@ dependencies:
   flutter_localizations: 
     sdk: flutter
     version: ^0.0.0
+  googleapis: ^8.1.0
+  google_sign_in: ^5.2.4
 
 dev_dependencies:
   flutter_test:

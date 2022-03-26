@@ -44,9 +44,9 @@ class _PokedexState extends State<PokedexPage> {
   }
 
   Future<List<Pokemon>> getFilteredPokemons(
-      {required BuildContext context}) async {
+      {required BuildContext context, required Database database}) async {
     Future<List<Pokemon>> pokemons = getPokemons(context: context);
-    return filterPokemons(await pokemons, Provider.of<Database>(context));
+    return filterPokemons(await pokemons, database);
   }
 
   /// 1 all
@@ -59,7 +59,8 @@ class _PokedexState extends State<PokedexPage> {
     return Column(
       children: [
         FutureBuilder<List<Pokemon>>(
-          future: getFilteredPokemons(context: context),
+          future: getFilteredPokemons(
+              context: context, database: Provider.of<Database>(context)),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Expanded(
