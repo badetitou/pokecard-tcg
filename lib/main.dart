@@ -20,34 +20,34 @@ import 'package:google_sign_in/google_sign_in.dart' as signIn;
 import 'GoogleAuthClient.dart';
 
 void main() {
-  runApp(Provider<Database>(
-    create: (context) => constructDb(),
-    child: MyApp(),
-    dispose: (context, db) => db.close(),
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pokécard TCG',
-      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('en', "US"),
-        const Locale('fr', "FR"),
-      ],
-      darkTheme: ThemeData(
-          colorSchemeSeed: Colors.brown,
-          brightness: Brightness.dark,
-          useMaterial3: true),
-      home: I18n(child: MyHomePage(title: 'Pokécard TCG')),
+    return Provider<Database>(
+      create: (context) => constructDb(),
+      dispose: (context, db) => db.close(),
+      child: MaterialApp(
+        title: 'Pokécard TCG',
+        theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en', "US"),
+          const Locale('fr', "FR"),
+        ],
+        darkTheme: ThemeData(
+            colorSchemeSeed: Colors.brown,
+            brightness: Brightness.dark,
+            useMaterial3: true),
+        home: I18n(child: MyHomePage(title: 'Pokécard TCG')),
+      ),
     );
   }
 }
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    this.database = Provider.of<Database>(context);
+    this.database = context.read<Database>();
 
     return Scaffold(
       appBar: AppBar(
