@@ -53,6 +53,7 @@ class _PokedexState extends State<PokedexPage> {
   /// 2 Catched
   /// 3 Not Catched
   int? _value = 1;
+  final ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,13 +65,19 @@ class _PokedexState extends State<PokedexPage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Expanded(
-                child: ListView.builder(
-                  itemCount: snapshot.data!.length,
-                  itemBuilder: (context, index) {
-                    return PokemonListItem(
-                        snapshot.data![index], Provider.of<Database>(context));
-                  },
-                ),
+                child: Scrollbar(
+                    controller: controller,
+                    thumbVisibility: true,
+                    interactive: true,
+                    child: ListView.builder(
+                      controller: controller,
+                      itemExtent: 60,
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        return PokemonListItem(snapshot.data![index],
+                            Provider.of<Database>(context));
+                      },
+                    )),
               );
             }
             return CircularProgressIndicator();
@@ -123,21 +130,17 @@ class PokemonListItem extends StatelessWidget {
         },
         child: ListTile(
           leading: (new FutureBuilder(
+              initialData: false,
               future: _isCaptured(data.id, myDatabase),
               builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-                if (!snapshot.hasData) {
-                  return const Icon(Icons.circle);
-                }
                 if (snapshot.data!) {
                   return const Icon(Icons.check_box);
                 }
                 return const Icon(Icons.check_box_outline_blank);
               })),
           title: Text((data.name)['french']),
-          subtitle: Text('Pokemon Number '.i18n +
-              (data.id).toString() +
-              ' - ' +
-              (data.name)['english']),
+          subtitle: Text(
+              "${'Pokemon Number '.i18n} ${data.id} - ${(data.name)['english']}"),
         ));
   }
 }
