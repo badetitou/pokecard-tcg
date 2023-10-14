@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:pokecard_tcg/collection/pokemon_grid_card.dart';
 import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:pokecard_tcg/tcg_api/tcg.dart';
@@ -40,7 +40,7 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   _search(String text) {
-    setState(() => {_query = text});
+    setState(() => _query = text);
     controller.close();
   }
 
@@ -56,12 +56,12 @@ class _SearchPageState extends State<SearchPage> {
                   padding: EdgeInsets.only(top: 55))))),
       transition: CircularFloatingSearchBarTransition(),
       physics: const BouncingScrollPhysics(),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       accentColor: Theme.of(context).cardColor,
       title: _query != ''
           ? Text(
               _query,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             )
           : null,
       hint: 'Search... [name:bulba*]'.i18n,
@@ -89,7 +89,7 @@ class _SearchPageState extends State<SearchPage> {
         return ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Material(
-              color: Theme.of(context).backgroundColor,
+              color: Theme.of(context).colorScheme.background,
               elevation: 4.0,
               child: Builder(
                 builder: (context) {

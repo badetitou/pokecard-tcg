@@ -13,9 +13,7 @@ class MyCardTile extends StatelessWidget {
     return Card(
       child: ListTile(
           title: Text(myCard.name.toString()),
-          subtitle: Text(myCard.etat.toString().i18n +
-              ' - ' +
-              myCard.language.toString().i18n),
+          subtitle: Text("${myCard.etat.toString().i18n} - ${myCard.language.toString().i18n} - ${myCard.cardType}"),
           trailing: IconButton(
             icon: Icon(Icons.remove),
             onPressed: onDelete,

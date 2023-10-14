@@ -2,11 +2,138 @@
 
 part of 'database.dart';
 
-// **************************************************************************
-// MoorGenerator
-// **************************************************************************
+// ignore_for_file: type=lint
+class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $MyCardsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+      'id', aliasedName, false,
+      hasAutoIncrement: true,
+      type: DriftSqlType.int,
+      requiredDuringInsert: false,
+      defaultConstraints:
+          GeneratedColumn.constraintIsAlways('PRIMARY KEY AUTOINCREMENT'));
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+      'name', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _languageMeta =
+      const VerificationMeta('language');
+  @override
+  late final GeneratedColumn<String> language = GeneratedColumn<String>(
+      'language', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _etatMeta = const VerificationMeta('etat');
+  @override
+  late final GeneratedColumn<String> etat = GeneratedColumn<String>(
+      'etat', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _cardTypeMeta =
+      const VerificationMeta('cardType');
+  @override
+  late final GeneratedColumn<String> cardType = GeneratedColumn<String>(
+      'card_type', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _nationalPokedexNumbersMeta =
+      const VerificationMeta('nationalPokedexNumbers');
+  @override
+  late final GeneratedColumn<int> nationalPokedexNumbers = GeneratedColumn<int>(
+      'national_pokedex_numbers', aliasedName, true,
+      type: DriftSqlType.int, requiredDuringInsert: false);
+  static const VerificationMeta _cardIDMeta = const VerificationMeta('cardID');
+  @override
+  late final GeneratedColumn<String> cardID = GeneratedColumn<String>(
+      'card_i_d', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns =>
+      [id, name, language, etat, cardType, nationalPokedexNumbers, cardID];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'my_cards';
+  @override
+  VerificationContext validateIntegrity(Insertable<MyCard> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('language')) {
+      context.handle(_languageMeta,
+          language.isAcceptableOrUnknown(data['language']!, _languageMeta));
+    } else if (isInserting) {
+      context.missing(_languageMeta);
+    }
+    if (data.containsKey('etat')) {
+      context.handle(
+          _etatMeta, etat.isAcceptableOrUnknown(data['etat']!, _etatMeta));
+    } else if (isInserting) {
+      context.missing(_etatMeta);
+    }
+    if (data.containsKey('card_type')) {
+      context.handle(_cardTypeMeta,
+          cardType.isAcceptableOrUnknown(data['card_type']!, _cardTypeMeta));
+    } else if (isInserting) {
+      context.missing(_cardTypeMeta);
+    }
+    if (data.containsKey('national_pokedex_numbers')) {
+      context.handle(
+          _nationalPokedexNumbersMeta,
+          nationalPokedexNumbers.isAcceptableOrUnknown(
+              data['national_pokedex_numbers']!, _nationalPokedexNumbersMeta));
+    }
+    if (data.containsKey('card_i_d')) {
+      context.handle(_cardIDMeta,
+          cardID.isAcceptableOrUnknown(data['card_i_d']!, _cardIDMeta));
+    } else if (isInserting) {
+      context.missing(_cardIDMeta);
+    }
+    return context;
+  }
 
-// ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  MyCard map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return MyCard(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
+      name: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}name'])!,
+      language: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}language'])!,
+      etat: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}etat'])!,
+      cardType: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}card_type'])!,
+      nationalPokedexNumbers: attachedDatabase.typeMapping.read(
+          DriftSqlType.int, data['${effectivePrefix}national_pokedex_numbers']),
+      cardID: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}card_i_d'])!,
+    );
+  }
+
+  @override
+  $MyCardsTable createAlias(String alias) {
+    return $MyCardsTable(attachedDatabase, alias);
+  }
+}
+
 class MyCard extends DataClass implements Insertable<MyCard> {
   final int id;
   final String name;
@@ -15,7 +142,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
   final String cardType;
   final int? nationalPokedexNumbers;
   final String cardID;
-  MyCard(
+  const MyCard(
       {required this.id,
       required this.name,
       required this.language,
@@ -23,25 +150,6 @@ class MyCard extends DataClass implements Insertable<MyCard> {
       required this.cardType,
       this.nationalPokedexNumbers,
       required this.cardID});
-  factory MyCard.fromData(Map<String, dynamic> data, {String? prefix}) {
-    final effectivePrefix = prefix ?? '';
-    return MyCard(
-      id: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
-      name: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}name'])!,
-      language: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}language'])!,
-      etat: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}etat'])!,
-      cardType: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}card_type'])!,
-      nationalPokedexNumbers: const IntType().mapFromDatabaseResponse(
-          data['${effectivePrefix}national_pokedex_numbers']),
-      cardID: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}card_i_d'])!,
-    );
-  }
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -51,7 +159,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
     map['etat'] = Variable<String>(etat);
     map['card_type'] = Variable<String>(cardType);
     if (!nullToAbsent || nationalPokedexNumbers != null) {
-      map['national_pokedex_numbers'] = Variable<int?>(nationalPokedexNumbers);
+      map['national_pokedex_numbers'] = Variable<int>(nationalPokedexNumbers);
     }
     map['card_i_d'] = Variable<String>(cardID);
     return map;
@@ -105,7 +213,7 @@ class MyCard extends DataClass implements Insertable<MyCard> {
           String? language,
           String? etat,
           String? cardType,
-          int? nationalPokedexNumbers,
+          Value<int?> nationalPokedexNumbers = const Value.absent(),
           String? cardID}) =>
       MyCard(
         id: id ?? this.id,
@@ -113,8 +221,9 @@ class MyCard extends DataClass implements Insertable<MyCard> {
         language: language ?? this.language,
         etat: etat ?? this.etat,
         cardType: cardType ?? this.cardType,
-        nationalPokedexNumbers:
-            nationalPokedexNumbers ?? this.nationalPokedexNumbers,
+        nationalPokedexNumbers: nationalPokedexNumbers.present
+            ? nationalPokedexNumbers.value
+            : this.nationalPokedexNumbers,
         cardID: cardID ?? this.cardID,
       );
   @override
@@ -183,7 +292,7 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     Expression<String>? language,
     Expression<String>? etat,
     Expression<String>? cardType,
-    Expression<int?>? nationalPokedexNumbers,
+    Expression<int>? nationalPokedexNumbers,
     Expression<String>? cardID,
   }) {
     return RawValuesInsertable({
@@ -238,7 +347,7 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
     }
     if (nationalPokedexNumbers.present) {
       map['national_pokedex_numbers'] =
-          Variable<int?>(nationalPokedexNumbers.value);
+          Variable<int>(nationalPokedexNumbers.value);
     }
     if (cardID.present) {
       map['card_i_d'] = Variable<String>(cardID.value);
@@ -261,122 +370,12 @@ class MyCardsCompanion extends UpdateCompanion<MyCard> {
   }
 }
 
-class $MyCardsTable extends MyCards with TableInfo<$MyCardsTable, MyCard> {
-  @override
-  final GeneratedDatabase attachedDatabase;
-  final String? _alias;
-  $MyCardsTable(this.attachedDatabase, [this._alias]);
-  final VerificationMeta _idMeta = const VerificationMeta('id');
-  @override
-  late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
-      'id', aliasedName, false,
-      type: const IntType(),
-      requiredDuringInsert: false,
-      defaultConstraints: 'PRIMARY KEY AUTOINCREMENT');
-  final VerificationMeta _nameMeta = const VerificationMeta('name');
-  @override
-  late final GeneratedColumn<String?> name = GeneratedColumn<String?>(
-      'name', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _languageMeta = const VerificationMeta('language');
-  @override
-  late final GeneratedColumn<String?> language = GeneratedColumn<String?>(
-      'language', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _etatMeta = const VerificationMeta('etat');
-  @override
-  late final GeneratedColumn<String?> etat = GeneratedColumn<String?>(
-      'etat', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _cardTypeMeta = const VerificationMeta('cardType');
-  @override
-  late final GeneratedColumn<String?> cardType = GeneratedColumn<String?>(
-      'card_type', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _nationalPokedexNumbersMeta =
-      const VerificationMeta('nationalPokedexNumbers');
-  @override
-  late final GeneratedColumn<int?> nationalPokedexNumbers =
-      GeneratedColumn<int?>('national_pokedex_numbers', aliasedName, true,
-          type: const IntType(), requiredDuringInsert: false);
-  final VerificationMeta _cardIDMeta = const VerificationMeta('cardID');
-  @override
-  late final GeneratedColumn<String?> cardID = GeneratedColumn<String?>(
-      'card_i_d', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  @override
-  List<GeneratedColumn> get $columns =>
-      [id, name, language, etat, cardType, nationalPokedexNumbers, cardID];
-  @override
-  String get aliasedName => _alias ?? 'my_cards';
-  @override
-  String get actualTableName => 'my_cards';
-  @override
-  VerificationContext validateIntegrity(Insertable<MyCard> instance,
-      {bool isInserting = false}) {
-    final context = VerificationContext();
-    final data = instance.toColumns(true);
-    if (data.containsKey('id')) {
-      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
-    }
-    if (data.containsKey('name')) {
-      context.handle(
-          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
-    } else if (isInserting) {
-      context.missing(_nameMeta);
-    }
-    if (data.containsKey('language')) {
-      context.handle(_languageMeta,
-          language.isAcceptableOrUnknown(data['language']!, _languageMeta));
-    } else if (isInserting) {
-      context.missing(_languageMeta);
-    }
-    if (data.containsKey('etat')) {
-      context.handle(
-          _etatMeta, etat.isAcceptableOrUnknown(data['etat']!, _etatMeta));
-    } else if (isInserting) {
-      context.missing(_etatMeta);
-    }
-    if (data.containsKey('card_type')) {
-      context.handle(_cardTypeMeta,
-          cardType.isAcceptableOrUnknown(data['card_type']!, _cardTypeMeta));
-    } else if (isInserting) {
-      context.missing(_cardTypeMeta);
-    }
-    if (data.containsKey('national_pokedex_numbers')) {
-      context.handle(
-          _nationalPokedexNumbersMeta,
-          nationalPokedexNumbers.isAcceptableOrUnknown(
-              data['national_pokedex_numbers']!, _nationalPokedexNumbersMeta));
-    }
-    if (data.containsKey('card_i_d')) {
-      context.handle(_cardIDMeta,
-          cardID.isAcceptableOrUnknown(data['card_i_d']!, _cardIDMeta));
-    } else if (isInserting) {
-      context.missing(_cardIDMeta);
-    }
-    return context;
-  }
-
-  @override
-  Set<GeneratedColumn> get $primaryKey => {id};
-  @override
-  MyCard map(Map<String, dynamic> data, {String? tablePrefix}) {
-    return MyCard.fromData(data,
-        prefix: tablePrefix != null ? '$tablePrefix.' : null);
-  }
-
-  @override
-  $MyCardsTable createAlias(String alias) {
-    return $MyCardsTable(attachedDatabase, alias);
-  }
-}
-
 abstract class _$Database extends GeneratedDatabase {
-  _$Database(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+  _$Database(QueryExecutor e) : super(e);
   late final $MyCardsTable myCards = $MyCardsTable(this);
   @override
-  Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
+  Iterable<TableInfo<Table, Object?>> get allTables =>
+      allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [myCards];
 }

@@ -182,7 +182,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
         builder: (BuildContext context) {
           return CreateWidget(
             pokemonCard: widget.pokemonCard,
-          )
+          );
         });
     if (cardState == null) {
       return;
@@ -245,7 +245,7 @@ class _CreateWidgetState extends State<CreateWidget> {
   void initState() {
     super.initState();
     wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
-  } 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -315,7 +315,8 @@ class _CreateWidgetState extends State<CreateWidget> {
                   Text('Type'),
                   DropdownButton(
                     value: wid._type,
-                    items: widget.pokemonCard.tcgPlayer.prices.map((e) => e.type)
+                    items: widget.pokemonCard.tcgPlayer.prices
+                        .map((e) => e.type)
                         .map((type) => new DropdownMenuItem(
                             value: type, child: new Text(type)))
                         .toList(),

@@ -27,14 +27,14 @@ class _PokedexState extends State<PokedexPage> {
       return pokemons;
     } else if (_value == 2) {
       await Future.forEach(pokemons, (element) async {
-        bool b = await _isCaptured((element as Pokemon).id, myDatabase);
+        bool b = await _isCaptured((element).id, myDatabase);
         if (b) {
           selectedPokemon.add(element);
         }
       });
     } else {
       await Future.forEach(pokemons, (element) async {
-        bool b = await _isCaptured((element as Pokemon).id, myDatabase);
+        bool b = await _isCaptured(element.id, myDatabase);
         if (!b) {
           selectedPokemon.add(element);
         }
