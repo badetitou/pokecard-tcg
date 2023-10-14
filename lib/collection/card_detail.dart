@@ -244,7 +244,9 @@ class _CreateWidgetState extends State<CreateWidget> {
 
   void initState() {
     super.initState();
-    wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
+    if(widget.pokemonCard.tcgPlayer.prices.length > 0) {
+      wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
+    }
   }
 
   @override

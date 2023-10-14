@@ -105,6 +105,9 @@ extension Localization on String {
       {
         "en_us": "Language",
         "fr": "Langue",
+      } + {
+        "en_us": "Add card to my collection",
+        "fr": "Ajouter la carte à ma collection",
       };
 
   String get i18n => localize(this, _t);
