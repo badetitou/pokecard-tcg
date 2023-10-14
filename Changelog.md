@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.6
+
+- Fix issue when searching for inclomplete data in the API
+
 ## 1.2.5
 
 - Add scrollbar

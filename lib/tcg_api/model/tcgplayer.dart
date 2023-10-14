@@ -9,10 +9,12 @@ class TCGPlayer {
   factory TCGPlayer.fromJson(Map<String, dynamic> json) {
     return TCGPlayer(
       url: json['url'],
-      prices: (json['prices'] as Map)
-          .entries
-          .map((e) => Prices.fromJson(e.key, e.value))
-          .toList(),
+      prices: (json['prices'] != null
+          ? ((json['prices'] as Map)
+              .entries
+              .map((e) => Prices.fromJson(e.key, e.value))
+              .toList())
+          : []),
     );
   }
 }
