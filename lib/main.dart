@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/my_collection/my_collection.dart';
 import 'package:pokecard_tcg/pokedex/pokedex.dart';
@@ -34,7 +35,13 @@ class MyApp extends StatelessWidget {
       dispose: (context, db) => db.close(),
       child: MaterialApp(
         title: 'Pokécard TCG',
-        theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          useMaterial3: true,
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            elevation: 4,
+          ),
+        ),
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
@@ -65,10 +72,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  final FloatingSearchBarController controller = FloatingSearchBarController();
 
   static List<Widget> _widgetOptions = <Widget>[
     PokedexPage(),
-    SearchPage(),
+    // SearchPage(),
     MyCollectionPage()
   ];
 
@@ -81,19 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      // appBar: AppBar(
+      //   title: Text(widget.title),
+      // ),
       drawer: MyDrawer(context),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
             label: 'Pokédex',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search'.i18n,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_to_photos_outlined),
@@ -104,8 +108,165 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
-      body: _widgetOptions.elementAt(_selectedIndex),
+      body: buildSearchBar(),
     );
+  }
+
+  Widget buildSearchBar() {
+    final List<FloatingSearchBarAction> actions = <FloatingSearchBarAction>[
+      FloatingSearchBarAction(
+        showIfClosed: false,
+        showIfOpened: true,
+        child: CircularButton(
+          icon: const Icon(Icons.help),
+          onPressed: () {
+            _showSearchHelper(context);
+          },
+        ),
+      ),
+      FloatingSearchBarAction.searchToClear(
+        showIfClosed: true,
+      ),
+      FloatingSearchBarAction(
+        showIfOpened: false,
+        showIfClosed: _query != '',
+        child: IconButton(
+          icon: const Icon(Icons.clear),
+          onPressed: () {
+            setState(() {
+              _query = '';
+              controller.clear();
+            });
+          },
+        ),
+      )
+    ];
+
+    final bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+
+    return FloatingSearchBar(
+      automaticallyImplyBackButton: false,
+      controller: controller,
+      hint: 'Search... [name:bulba*]'.i18n,
+      scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
+      iconColor: Colors.grey,
+      transitionCurve: Curves.easeInOutCubic,
+      physics: const BouncingScrollPhysics(),
+      axisAlignment: isPortrait ? 0.0 : -1.0,
+      openAxisAlignment: 0.0,
+      actions: actions,
+      title: _query != '' ? Text(_query) : Text('Pokecard TCG'),
+      debounceDelay: const Duration(milliseconds: 500),
+      // onKeyEvent: (KeyEvent keyEvent) {
+      //   if (keyEvent.logicalKey == LogicalKeyboardKey.escape) {
+      //     controller.query = '';
+      //     controller.close();
+      //   }
+      // },
+      transition: CircularFloatingSearchBarTransition(spacing: 16),
+      builder: (BuildContext context, _) => Container(),
+      onSubmitted: (query) {
+        _search(query);
+      },
+      body: Container(
+          child: Padding(
+        padding: const EdgeInsets.only(top: 55),
+        child: buildBody(),
+      )),
+    );
+  }
+
+  String _query = '';
+
+  _search(String text) {
+    setState(() => _query = text);
+    controller.close();
+  }
+
+  Widget buildBody() {
+    if (_query != '') {
+      return SearchResultsGridView(
+        _query,
+        padding: const EdgeInsets.only(top: 55),
+        minGridSize: 3,
+      );
+    } else {
+      return _widgetOptions.elementAt(_selectedIndex);
+    }
+  }
+
+  void _showSearchHelper(context) {
+    showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+        builder: (BuildContext bc) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text.rich(TextSpan(
+                  text: 'Request:'.i18n,
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 3),
+                )),
+                Text.rich(TextSpan(
+                  text: 'Keyword matching:'.i18n,
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
+                )),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for all cards that have "charizard" in the name field:'
+                          .i18n,
+                )),
+                CommandExample(
+                  text: 'name:charizard',
+                ),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for "charizard" in the name field AND the type "mega" in the subtypes field:'
+                          .i18n,
+                )),
+                CommandExample(
+                  text: 'name:charizard subtypes:mega',
+                ),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for "charizard" in the name field AND either the subtypes of "mega" or "vmax":'
+                          .i18n,
+                )),
+                CommandExample(
+                  text: 'name:charizard (subtypes:mega OR subtypes:vmax)',
+                ),
+                Text.rich(TextSpan(
+                  text: 'Wildcard Matching:'.i18n,
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
+                )),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for any card that starts with "char" in the name field:'
+                          .i18n,
+                )),
+                CommandExample(
+                  text: 'name:char*',
+                ),
+                Text.rich(TextSpan(
+                  text: 'Range Searches:'.i18n,
+                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
+                )),
+                Text.rich(TextSpan(
+                  text:
+                      'Search for only cards that feature the original 151 pokemon:'
+                          .i18n,
+                )),
+                CommandExample(text: 'nationalPokedexNumbers:[1 TO 151]'),
+              ],
+            ),
+          );
+        });
   }
 }
 
