@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokecard_tcg/search/search.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SearchCriteria {
   final int pokemonId;
@@ -18,24 +19,38 @@ class SearchPokemonPage extends StatefulWidget {
 }
 
 class _SearchPokemonState extends State<SearchPokemonPage> {
+  int? minGridSize;
+
   @override
   void initState() {
     super.initState();
+    this.initGridSize();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
+  void initGridSize() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      minGridSize = prefs.getInt('gridSize') ?? 3;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    var result;
+    if (minGridSize == null) {
+      result = Center(
+        child: CircularProgressIndicator(),
+      );
+    } else {
+      result = SearchResultsGridView(
+          'nationalPokedexNumbers:' + widget.search.pokemonId.toString(),
+          minGridSize: minGridSize!);
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.search.pokemonName),
       ),
-      body: SearchResultsGridView(
-          'nationalPokedexNumbers:' + widget.search.pokemonId.toString()),
+      body: result,
     );
   }
 }

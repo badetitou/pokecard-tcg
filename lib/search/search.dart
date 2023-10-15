@@ -5,6 +5,7 @@ import 'package:pokecard_tcg/collection/pokemon_grid_card.dart';
 import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:pokecard_tcg/tcg_api/tcg.dart';
 import 'package:pokecard_tcg/search/search.i18n.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -27,10 +28,19 @@ class _SearchPageState extends State<SearchPage> {
   };
 
   FloatingSearchBarController controller = FloatingSearchBarController();
+  int? minGridSize;
 
   @override
   initState() {
     super.initState();
+    initGridSize();
+  }
+
+  void initGridSize() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      minGridSize = prefs.getInt('gridSize') ?? 3;
+    });
   }
 
   @override
@@ -46,75 +56,81 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
+    if (minGridSize == null) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    } else {
+      final isPortrait =
+          MediaQuery.of(context).orientation == Orientation.portrait;
 
-    return FloatingSearchBar(
-      body: FloatingSearchBarScrollNotifier(
-          child: new Container(
-              child: (new SearchResultsGridView(_query,
-                  padding: EdgeInsets.only(top: 55))))),
-      transition: CircularFloatingSearchBarTransition(),
-      physics: const BouncingScrollPhysics(),
-      backgroundColor: Theme.of(context).colorScheme.background,
-      accentColor: Theme.of(context).cardColor,
-      title: _query != ''
-          ? Text(
-              _query,
-              style: Theme.of(context).textTheme.titleLarge,
-            )
-          : null,
-      hint: 'Search... [name:bulba*]'.i18n,
-      controller: controller,
-      scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
-      openAxisAlignment: 0.0,
-      width: isPortrait ? 600 : 500,
-      debounceDelay: const Duration(milliseconds: 500),
-      onSubmitted: (query) {
-        _search(query);
-      },
-      actions: [
-        FloatingSearchBarAction(
-          showIfClosed: false,
-          showIfOpened: true,
-          child: CircularButton(
-            icon: const Icon(Icons.help),
-            onPressed: () {
-              _showSearchHelper(context);
-            },
-          ),
-        ),
-      ],
-      builder: (context, transition) {
-        return ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Material(
-              color: Theme.of(context).colorScheme.background,
-              elevation: 4.0,
-              child: Builder(
-                builder: (context) {
-                  return Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: _existingCategory.entries
-                        .map(
-                          (term) => ListTile(
-                            title: Text(
-                              term.key,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            onTap: () {
-                              controller.query += term.value;
-                            },
-                          ),
-                        )
-                        .toList(),
-                  );
+      return FloatingSearchBar(
+          body: FloatingSearchBarScrollNotifier(
+              child: new Container(
+                  child: (new SearchResultsGridView(_query,
+                      minGridSize: minGridSize!,
+                      padding: EdgeInsets.only(top: 55))))),
+          transition: CircularFloatingSearchBarTransition(),
+          physics: const BouncingScrollPhysics(),
+          backgroundColor: Theme.of(context).colorScheme.background,
+          accentColor: Theme.of(context).cardColor,
+          title: _query != ''
+              ? Text(
+                  _query,
+                  style: Theme.of(context).textTheme.titleLarge,
+                )
+              : null,
+          hint: 'Search... [name:bulba*]'.i18n,
+          controller: controller,
+          scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
+          openAxisAlignment: 0.0,
+          width: isPortrait ? 600 : 500,
+          debounceDelay: const Duration(milliseconds: 500),
+          onSubmitted: (query) {
+            _search(query);
+          },
+          actions: [
+            FloatingSearchBarAction(
+              showIfClosed: false,
+              showIfOpened: true,
+              child: CircularButton(
+                icon: const Icon(Icons.help),
+                onPressed: () {
+                  _showSearchHelper(context);
                 },
-              )),
-        );
-      },
-    );
+              ),
+            ),
+          ],
+          builder: (context, transition) {
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Material(
+                  color: Theme.of(context).colorScheme.background,
+                  elevation: 4.0,
+                  child: Builder(
+                    builder: (context) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: _existingCategory.entries
+                            .map(
+                              (term) => ListTile(
+                                title: Text(
+                                  term.key,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                onTap: () {
+                                  controller.query += term.value;
+                                },
+                              ),
+                            )
+                            .toList(),
+                      );
+                    },
+                  )),
+            );
+          });
+    }
   }
 
   void _showSearchHelper(context) {
@@ -213,11 +229,15 @@ class SearchResultsGridView extends StatefulWidget {
 
   final EdgeInsets padding;
 
-  const SearchResultsGridView(this._search, {this.padding = EdgeInsets.zero})
+  final int minGridSize;
+
+  const SearchResultsGridView(this._search,
+      {this.padding = EdgeInsets.zero, required this.minGridSize})
       : super();
 
   @override
-  _SearchResultsGridViewState createState() => _SearchResultsGridViewState();
+  _SearchResultsGridViewState createState() =>
+      _SearchResultsGridViewState(minGridSize: minGridSize);
 }
 
 class _SearchResultsGridViewState extends State<SearchResultsGridView> {
@@ -225,8 +245,22 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
       PagingController(firstPageKey: 1);
 
   final _pageSize = 20;
+  final int minGridSize;
+  _SearchResultsGridViewState({required this.minGridSize});
 
+  @override
   void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _pagingController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     _pagingController.addPageRequestListener((pageKey) async {
       try {
         final newItems =
@@ -243,17 +277,7 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
         _pagingController.error = error;
       }
     });
-    super.initState();
-  }
 
-  @override
-  void dispose() {
-    _pagingController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     _pagingController.refresh();
     return PagedGridView<int, PokemonCard>(
@@ -266,7 +290,8 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
         childAspectRatio: 100 / 140,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        crossAxisCount: (width / 200) < 2 ? 2 : (width / 200).floor(),
+        crossAxisCount:
+            ((width / 200) < minGridSize) ? minGridSize : (width / 200).floor(),
       ),
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate<PokemonCard>(

@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/my_collection/my_collection.dart';
 import 'package:pokecard_tcg/pokedex/pokedex.dart';
 import 'package:pokecard_tcg/search/search.dart';
+import 'package:pokecard_tcg/settings/settings.dart';
 import 'package:provider/provider.dart';
 import 'package:i18n_extension/i18n_widget.dart';
 import 'package:pokecard_tcg/main.i18n.dart';
@@ -63,7 +65,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  late Database database;
 
   static List<Widget> _widgetOptions = <Widget>[
     PokedexPage(),
@@ -77,30 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  List<Choice> choices = <Choice>[
-    Choice(title: 'Backup Pokédex'.i18n),
-    Choice(title: 'Restore Pokédex'.i18n),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    this.database = context.read<Database>();
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        actions: [
-          PopupMenuButton<Choice>(
-            onSelected: _select,
-            itemBuilder: (BuildContext context) {
-              return choices.map((Choice choice) {
-                return PopupMenuItem<Choice>(
-                    value: choice, child: Text(choice.title));
-              }).toList();
-            },
-          ),
-        ],
       ),
+      drawer: MyDrawer(context),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -123,13 +107,46 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _widgetOptions.elementAt(_selectedIndex),
     );
   }
+}
 
-  void _select(Choice choice) {
-    if (choice == choices.first) {
-      _save();
-    } else {
-      _restore();
-    }
+class MyDrawer extends StatelessWidget {
+  late Database database;
+
+  BuildContext originContext;
+
+  MyDrawer(this.originContext);
+
+  @override
+  Widget build(BuildContext context) {
+    this.database = context.read<Database>();
+
+    return Drawer(
+      child: ListView(
+        children: [
+          ListTile(
+              title: Text('Backup Pokédex'.i18n), onTap: () => _save(context)),
+          ListTile(
+              title: Text('Restore Pokédex'.i18n),
+              onTap: () => _restore(context)),
+          ListTile(
+              title: Text('Settings'),
+              onTap: () => _navPush(originContext, SettingsPage())),
+        ],
+      ),
+    );
+  }
+
+  Future<dynamic> _navPush(BuildContext context, Widget page) {
+    return Navigator.of(context).push(PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => SettingsPage(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return SharedAxisTransition(
+            animation: animation,
+            secondaryAnimation: secondaryAnimation,
+            transitionType: SharedAxisTransitionType.horizontal,
+            child: child);
+      },
+    ));
   }
 
   FutureOr<signIn.GoogleSignInAccount?> _connectToGoogle() async {
@@ -140,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return account;
   }
 
-  void _save() async {
+  void _save(context) async {
     final signIn.GoogleSignInAccount? account = await _connectToGoogle();
     if (account != null) {
       drive.DriveApi driveApi = await configureDriveApi(account);
@@ -172,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return driveApi;
   }
 
-  void _restore() async {
+  void _restore(context) async {
     final signIn.GoogleSignInAccount? account = await _connectToGoogle();
     if (account != null) {
       drive.DriveApi driveApi = await configureDriveApi(account);
@@ -203,10 +220,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
-}
-
-class Choice {
-  const Choice({required this.title});
-
-  final String title;
 }

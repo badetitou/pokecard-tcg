@@ -5,6 +5,7 @@ import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:pokecard_tcg/tcg_api/tcg.dart';
 import 'package:provider/provider.dart';
 import 'package:pokecard_tcg/my_collection/my_collection.i18n.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyCollectionPage extends StatefulWidget {
   @override
@@ -12,6 +13,19 @@ class MyCollectionPage extends StatefulWidget {
 }
 
 class _MyCollectionState extends State<MyCollectionPage> {
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  late int minGridSize;
+
+  @override
+  void initState() {
+    super.initState();
+    _prefs.then((SharedPreferences prefs) {
+      setState(() {
+        minGridSize = prefs.getInt('gridSize') ?? 3;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,7 +60,9 @@ class _MyCollectionState extends State<MyCollectionPage> {
               Expanded(
                 flex: 1,
                 child: GridView.count(
-                  crossAxisCount: (width / 200) < 2 ? 2 : (width / 200).floor(),
+                  crossAxisCount: (width / 200) < minGridSize
+                      ? minGridSize
+                      : (width / 200).floor(),
                   crossAxisSpacing: 8,
                   childAspectRatio: 100 / 140,
                   mainAxisSpacing: 8,

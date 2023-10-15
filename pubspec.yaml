@@ -44,6 +44,7 @@ dependencies:
   googleapis: ^11.4.0
   google_sign_in: ^6.1.5
   scrollable_positioned_list: ^0.3.8
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
