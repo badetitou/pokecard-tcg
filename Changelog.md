@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.7
+
+- Can specify minimum number of card on each row
+- Fix size card on card detail
+
 ## 1.2.6
 
 - Fix issue when searching for inclomplete data in the API

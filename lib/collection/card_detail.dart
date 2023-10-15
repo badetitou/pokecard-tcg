@@ -30,142 +30,152 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
               ' : ' +
               widget.pokemonCard.name),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Card(
-                child: Column(
-                    // Header
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                  ListTile(
-                    title: Text(widget.pokemonCard.name),
-                    subtitle: Text(widget.pokemonCard.id),
-                    trailing: Text.rich(
-                        TextSpan(text: widget.pokemonCard.hp, children: [
-                      TextSpan(text: ' HP '),
-                    ])),
-                  ),
-                  Divider(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text.rich(TextSpan(
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                      text: 'Price:'.i18n,
-                    )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: DataTable(
-                          columns: <DataColumn>[
-                            DataColumn(
-                              label: Text(
-                                'Type',
-                                style: TextStyle(fontStyle: FontStyle.italic),
-                              ),
-                            ),
-                            DataColumn(
-                              label: Text(
-                                'Market'.i18n,
-                                style: TextStyle(fontStyle: FontStyle.italic),
-                              ),
-                            ),
-                            DataColumn(
-                              label: Text(
-                                'Low'.i18n,
-                                style: TextStyle(fontStyle: FontStyle.italic),
-                              ),
-                            ),
-                            DataColumn(
-                              label: Text(
-                                'Mid'.i18n,
-                                style: TextStyle(fontStyle: FontStyle.italic),
-                              ),
-                            ),
-                            DataColumn(
-                              label: Text(
-                                'High'.i18n,
-                                style: TextStyle(fontStyle: FontStyle.italic),
-                              ),
-                            ),
-                          ],
-                          rows: prices(widget.pokemonCard.tcgPlayer.prices),
-                        )),
-                  ),
-                  Divider(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Card(
+                  child: Column(
+                      // Header
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text.rich(TextSpan(
-                            text: 'Illustrator: '.i18n,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, height: 2),
+                    ListTile(
+                      title: Text(widget.pokemonCard.name),
+                      subtitle: Text(widget.pokemonCard.id),
+                      trailing: Text.rich(
+                          TextSpan(text: widget.pokemonCard.hp, children: [
+                        TextSpan(text: ' HP '),
+                      ])),
+                    ),
+                    Divider(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text.rich(TextSpan(
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                        text: 'Price:'.i18n,
+                      )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: DataTable(
+                            columns: <DataColumn>[
+                              DataColumn(
+                                label: Text(
+                                  'Type',
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Market'.i18n,
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Low'.i18n,
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Mid'.i18n,
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'High'.i18n,
+                                  style: TextStyle(fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                            ],
+                            rows: prices(widget.pokemonCard.tcgPlayer.prices),
+                          )),
+                    ),
+                    Divider(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Column(
                             children: [
-                              TextSpan(text: widget.pokemonCard.artist)
-                            ])),
-                        Expanded(child: Container()),
-                        OutlinedButton(
-                            onPressed: () {
-                              _showCardImage(context);
-                            },
-                            child: Text('View Card'.i18n)),
-                      ],
-                    ),
-                  ),
-                  Divider(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      widget.pokemonCard.flavorText.toString(),
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                      softWrap: true,
-                    ),
-                  ),
-                ])),
-            Flexible(
-              child: Container(
-                padding: EdgeInsets.all(10.0),
-                child: FutureBuilder(
-                  future: myDatabase.allCardWithId(widget.pokemonCard.id),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<List<MyCard>> snapshot) {
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-
-                    List<Widget> widgets = snapshot.data!.map((item) {
-                      return MyCardTile(
-                        myCard: item,
-                        onDelete: () => setState(
-                          () {
-                            _removeCard(item);
-                          },
-                        ),
-                      );
-                    }).toList();
-
-                    if (widgets.isNotEmpty) {
-                      return Column(children: <Widget>[
-                        Expanded(
-                          flex: 1,
-                          child: ListView(
-                            children: widgets,
+                              Text.rich(TextSpan(
+                                text: 'Illustrator: '.i18n,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, height: 2),
+                              )),
+                              Text.rich(TextSpan(
+                                text: widget.pokemonCard.artist,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal, height: 2),
+                              )),
+                            ],
                           ),
-                        )
-                      ]);
-                    }
-                    return Center(child: Text('Add a Card'.i18n));
-                  },
+                          Expanded(child: Container()),
+                          OutlinedButton(
+                              onPressed: () {
+                                _showCardImage(context);
+                              },
+                              child: Text('View Card'.i18n)),
+                        ],
+                      ),
+                    ),
+                    Divider(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        widget.pokemonCard.flavorText.toString(),
+                        style: TextStyle(fontStyle: FontStyle.italic),
+                        softWrap: true,
+                      ),
+                    ),
+                  ])),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: FutureBuilder(
+                    future: myDatabase.allCardWithId(widget.pokemonCard.id),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<List<MyCard>> snapshot) {
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+
+                      List<Widget> widgets = snapshot.data!.map((item) {
+                        return MyCardTile(
+                          myCard: item,
+                          onDelete: () => setState(
+                            () {
+                              _removeCard(item);
+                            },
+                          ),
+                        );
+                      }).toList();
+
+                      if (widgets.isNotEmpty) {
+                        return Column(children: <Widget>[
+                          Expanded(
+                            flex: 1,
+                            child: ListView(
+                              children: widgets,
+                            ),
+                          )
+                        ]);
+                      }
+                      return Center(child: Text('Add a Card'.i18n));
+                    },
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => setState(() {
@@ -244,7 +254,7 @@ class _CreateWidgetState extends State<CreateWidget> {
 
   void initState() {
     super.initState();
-    if(widget.pokemonCard.tcgPlayer.prices.length > 0) {
+    if (widget.pokemonCard.tcgPlayer.prices.length > 0) {
       wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
     }
   }
