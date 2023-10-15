@@ -19,6 +19,7 @@ import 'package:path/path.dart' as p;
 
 import 'package:googleapis/drive/v3.dart' as drive;
 import 'package:google_sign_in/google_sign_in.dart' as signIn;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'GoogleAuthClient.dart';
 
@@ -73,6 +74,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final FloatingSearchBarController controller = FloatingSearchBarController();
+  int? minGridSize;
+
+  @override
+  initState() {
+    super.initState();
+    initGridSize();
+  }
 
   static List<Widget> _widgetOptions = <Widget>[
     PokedexPage(),
@@ -112,6 +120,25 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  Map<String, String> _existingCategory = {
+    'name': 'name:',
+    'id': 'id:',
+    'supertype': 'supertype:',
+    'subtypes': 'subtypes:',
+    'hp': 'hp:',
+    'types': 'types:',
+    'attacks name': 'attacks.name:',
+    'artist': 'artist:',
+    'nationalPokedexNumbers': 'nationalPokedexNumbers:',
+  };
+
+  void initGridSize() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      minGridSize = prefs.getInt('gridSize') ?? 3;
+    });
+  }
+
   Widget buildSearchBar() {
     final List<FloatingSearchBarAction> actions = <FloatingSearchBarAction>[
       FloatingSearchBarAction(
@@ -146,35 +173,62 @@ class _MyHomePageState extends State<MyHomePage> {
         MediaQuery.of(context).orientation == Orientation.portrait;
 
     return FloatingSearchBar(
-      automaticallyImplyBackButton: false,
-      controller: controller,
-      hint: 'Search... [name:bulba*]'.i18n,
-      scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
-      iconColor: Colors.grey,
-      transitionCurve: Curves.easeInOutCubic,
-      physics: const BouncingScrollPhysics(),
-      axisAlignment: isPortrait ? 0.0 : -1.0,
-      openAxisAlignment: 0.0,
-      actions: actions,
-      title: _query != '' ? Text(_query) : Text('Pokecard TCG'),
-      debounceDelay: const Duration(milliseconds: 500),
-      // onKeyEvent: (KeyEvent keyEvent) {
-      //   if (keyEvent.logicalKey == LogicalKeyboardKey.escape) {
-      //     controller.query = '';
-      //     controller.close();
-      //   }
-      // },
-      transition: CircularFloatingSearchBarTransition(spacing: 16),
-      builder: (BuildContext context, _) => Container(),
-      onSubmitted: (query) {
-        _search(query);
-      },
-      body: Container(
-          child: Padding(
-        padding: const EdgeInsets.only(top: 55),
-        child: buildBody(),
-      )),
-    );
+        automaticallyImplyBackButton: false,
+        controller: controller,
+        hint: 'Search... [name:bulba*]'.i18n,
+        scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
+        iconColor: Colors.grey,
+        transitionCurve: Curves.easeInOutCubic,
+        physics: const BouncingScrollPhysics(),
+        axisAlignment: isPortrait ? 0.0 : -1.0,
+        openAxisAlignment: 0.0,
+        actions: actions,
+        title: _query != '' ? Text(_query) : Text('Pokecard TCG'),
+        debounceDelay: const Duration(milliseconds: 500),
+        // onKeyEvent: (KeyEvent keyEvent) {
+        //   if (keyEvent.logicalKey == LogicalKeyboardKey.escape) {
+        //     controller.query = '';
+        //     controller.close();
+        //   }
+        // },
+        transition: CircularFloatingSearchBarTransition(spacing: 16),
+        onSubmitted: (query) {
+          _search(query);
+        },
+        body: Container(
+            child: Padding(
+          padding: const EdgeInsets.only(top: 55),
+          child: buildBody(),
+        )),
+        builder: (context, transition) {
+          return ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Material(
+                color: Theme.of(context).colorScheme.background,
+                elevation: 4.0,
+                child: Builder(
+                  builder: (context) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: _existingCategory.entries
+                          .map(
+                            (term) => ListTile(
+                              title: Text(
+                                term.key,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              onTap: () {
+                                controller.query += term.value;
+                              },
+                            ),
+                          )
+                          .toList(),
+                    );
+                  },
+                )),
+          );
+        });
   }
 
   String _query = '';
@@ -185,11 +239,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget buildBody() {
+    if (minGridSize == null) {
+      return Center(child: CircularProgressIndicator());
+    }
     if (_query != '') {
       return SearchResultsGridView(
         _query,
         padding: const EdgeInsets.only(top: 55),
-        minGridSize: 3,
+        minGridSize: minGridSize!,
       );
     } else {
       return _widgetOptions.elementAt(_selectedIndex);
