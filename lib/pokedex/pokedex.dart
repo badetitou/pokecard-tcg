@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/pokedex/pokemon.dart';
@@ -23,22 +24,16 @@ class _PokedexState extends State<PokedexPage> {
   Future<List<Pokemon>> filterPokemons(
       List<Pokemon> pokemons, Database myDatabase) async {
     List<Pokemon> selectedPokemon = [];
-    if (_value == 1) {
+    if (_value == _Filter.all) {
       return pokemons;
-    } else if (_value == 2) {
-      await Future.forEach(pokemons, (element) async {
-        bool b = await _isCaptured((element).id, myDatabase);
-        if (b) {
-          selectedPokemon.add(element);
-        }
-      });
+    } else if (_value == _Filter.catched) {
+      var captured = await capturedPokemonNumbers(myDatabase);
+      selectedPokemon.addAll(pokemons.where((element) =>
+          captured.any((capturedElement) => capturedElement == element.id)));
     } else {
-      await Future.forEach(pokemons, (element) async {
-        bool b = await _isCaptured(element.id, myDatabase);
-        if (!b) {
-          selectedPokemon.add(element);
-        }
-      });
+      var captured = await capturedPokemonNumbers(myDatabase);
+      selectedPokemon.addAll(pokemons.whereNot((element) =>
+          captured.any((capturedElement) => capturedElement == element.id)));
     }
     return selectedPokemon;
   }
@@ -49,10 +44,7 @@ class _PokedexState extends State<PokedexPage> {
     return filterPokemons(await pokemons, database);
   }
 
-  /// 1 all
-  /// 2 Catched
-  /// 3 Not Catched
-  int? _value = 1;
+  _Filter _value = _Filter.all;
   final ScrollController controller = ScrollController();
 
   @override
@@ -86,26 +78,26 @@ class _PokedexState extends State<PokedexPage> {
         Wrap(spacing: 3, children: [
           ChoiceChip(
               label: Text("All".i18n),
-              selected: _value == 1,
+              selected: _value == _Filter.all,
               onSelected: (bool selected) {
                 setState(() {
-                  _value = 1;
+                  _value = _Filter.all;
                 });
               }),
           ChoiceChip(
               label: Text("Catched".i18n),
-              selected: _value == 2,
+              selected: _value == _Filter.catched,
               onSelected: (bool selected) {
                 setState(() {
-                  _value = 2;
+                  _value = _Filter.catched;
                 });
               }),
           ChoiceChip(
               label: Text("Not catched".i18n),
-              selected: _value == 3,
+              selected: _value == _Filter.notcatched,
               onSelected: (bool selected) {
                 setState(() {
-                  _value = 3;
+                  _value = _Filter.notcatched;
                 });
               })
         ])
@@ -150,6 +142,11 @@ Future<bool> _isCaptured(int id, Database myDatabase) async {
       (value) => value.any((element) => element.nationalPokedexNumbers == id));
 }
 
+Future<Set<int?>> capturedPokemonNumbers(Database myDatabase) async {
+  return myDatabase.allCardEntries
+      .then((value) => value.map((e) => e.nationalPokedexNumbers).toSet());
+}
+
 Route _toSearch(SearchCriteria aSearchCriteria) {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => SearchPokemonPage(
@@ -160,3 +157,5 @@ Route _toSearch(SearchCriteria aSearchCriteria) {
     },
   );
 }
+
+enum _Filter { all, catched, notcatched }

@@ -84,7 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static List<Widget> _widgetOptions = <Widget>[
     PokedexPage(),
-    // SearchPage(),
     MyCollectionPage()
   ];
 
@@ -133,9 +132,9 @@ class _MyHomePageState extends State<MyHomePage> {
   };
 
   void initGridSize() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     setState(() {
-      minGridSize = prefs.getInt('gridSize') ?? 3;
+      minGridSize = sharedPreferences.getInt('gridSize') ?? 3;
     });
   }
 
@@ -324,6 +323,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           );
         });
+  }
+}
+
+class CommandExample extends StatelessWidget {
+  final String text;
+
+  const CommandExample({Key? key, required this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+        margin: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(12)),
+        child: Text(text));
   }
 }
 

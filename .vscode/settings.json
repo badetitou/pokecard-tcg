@@ -1,3 +1,10 @@
 {
-    "java.configuration.updateBuildConfiguration": "disabled"
+    "java.configuration.updateBuildConfiguration": "disabled",
+    "cSpell.words": [
+        "charizard",
+        "googleapis",
+        "pokecard",
+        "Pokécard",
+        "Pokédex"
+    ]
 }

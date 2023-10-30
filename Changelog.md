@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.8
+
+- Making switch from to catched and not catched pokemon super fast
+
 ## 1.2.7
 
 - Can specify minimum number of card on each row
