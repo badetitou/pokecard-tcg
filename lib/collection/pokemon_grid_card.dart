@@ -35,13 +35,13 @@ class PokemondGridCard extends StatelessWidget {
                 margin: const EdgeInsets.all(5.0),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.secondary),
+                    color: Theme.of(context).colorScheme.secondaryContainer),
                 child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Icon(
                       Icons.check,
                       size: 30.0,
-                      color: Theme.of(context).colorScheme.inversePrimary,
+                      color: Theme.of(context).colorScheme.secondary,
                     )));
           }),
       Positioned.fill(
