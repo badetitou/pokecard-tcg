@@ -3,6 +3,7 @@
 ## 1.2.8
 
 - Making switch from to catched and not catched pokemon super fast
+- Optimize view my_collection
 
 ## 1.2.7
 
