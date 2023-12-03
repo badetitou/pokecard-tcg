@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.9
+
+- Update pokedex
+
 ## 1.2.8
 
 - Making switch from to catched and not catched pokemon super fast
