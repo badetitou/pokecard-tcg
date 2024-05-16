@@ -5,6 +5,7 @@ import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class PokemondGridCard extends StatelessWidget {
   final PokemonCard _pokemoncard;
   late Database _database;

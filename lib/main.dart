@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:i18n_extension/i18n_extension.dart';
 import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/my_collection/my_collection.dart';
@@ -10,7 +11,6 @@ import 'package:pokecard_tcg/pokedex/pokedex.dart';
 import 'package:pokecard_tcg/search/search.dart';
 import 'package:pokecard_tcg/settings/settings.dart';
 import 'package:provider/provider.dart';
-import 'package:i18n_extension/i18n_widget.dart';
 import 'package:pokecard_tcg/main.i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -203,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
           return ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Material(
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).colorScheme.surface,
                 elevation: 4.0,
                 child: Builder(
                   builder: (context) {
@@ -343,6 +343,7 @@ class CommandExample extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class MyDrawer extends StatelessWidget {
   late Database database;
 
