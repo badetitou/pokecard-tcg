@@ -4,110 +4,110 @@ extension Localization on String {
   static var _t = Translations.byText("en_us") +
       {
         "en_us": "Price:",
-        "fr": "Prix :",
+        "fr_fr": "Prix :",
       } +
       {
         "en_us": "Low",
-        "fr": "Bas",
+        "fr_fr": "Bas",
       } +
       {
         "en_us": "Market",
-        "fr": "Marché",
+        "fr_fr": "Marché",
       } +
       {
         "en_us": "Mid",
-        "fr": "Moyen",
+        "fr_fr": "Moyen",
       } +
       {
         "en_us": "High",
-        "fr": "Haut",
+        "fr_fr": "Haut",
       } +
       {
         "en_us": "Illustrator: ",
-        "fr": "Illustrateur.rice : ",
+        "fr_fr": "Illustrateur.rice : ",
       } +
       {
         "en_us": "View Card",
-        "fr": "Voir la carte",
+        "fr_fr": "Voir la carte",
       } +
       {
         "en_us": "Add a Card",
-        "fr": "Ajouter une carte",
+        "fr_fr": "Ajouter une carte",
       } +
       {
         "en_us": "Add a Card",
-        "fr": "Ajouter une carte à ma collection",
+        "fr_fr": "Ajouter une carte à ma collection",
       } +
       {
         "en_us": "Add a card",
-        "fr": "Ajouter une carte",
+        "fr_fr": "Ajouter une carte",
       } +
       {
         "en_us": "Abort",
-        "fr": "Annuler",
+        "fr_fr": "Annuler",
       } +
       {
         "en_us": "Add",
-        "fr": "Ajouter",
+        "fr_fr": "Ajouter",
       } +
       {
         "en_us": "Mint",
-        "fr": "Parfaite",
+        "fr_fr": "Parfaite",
       } +
       {
         "en_us": "Near Mint",
-        "fr": "Presque parfaite",
+        "fr_fr": "Presque parfaite",
       } +
       {
         "en_us": "Played",
-        "fr": "Jouée",
+        "fr_fr": "Jouée",
       } +
       {
         "en_us": "Damaged",
-        "fr": "Endomagée",
+        "fr_fr": "Endomagée",
       } +
       {
         "en_us": "English",
-        "fr": "Anglais",
+        "fr_fr": "Anglais",
       } +
       {
         "en_us": "French",
-        "fr": "Français",
+        "fr_fr": "Français",
       } +
       {
         "en_us": "Italian",
-        "fr": "Italien",
+        "fr_fr": "Italien",
       } +
       {
         "en_us": "Spanish",
-        "fr": "Espagnol",
+        "fr_fr": "Espagnol",
       } +
       {
         "en_us": "Chinese",
-        "fr": "Chinois",
+        "fr_fr": "Chinois",
       } +
       {
         "en_us": "German",
-        "fr": "Allemand",
+        "fr_fr": "Allemand",
       } +
       {
         "en_us": "Japanese",
-        "fr": "Japonais",
+        "fr_fr": "Japonais",
       } +
       {
         "en_us": "Korean",
-        "fr": "Coréen",
+        "fr_fr": "Coréen",
       } +
       {
         "en_us": "Quality",
-        "fr": "Qualité",
+        "fr_fr": "Qualité",
       } +
       {
         "en_us": "Language",
-        "fr": "Langue",
+        "fr_fr": "Langue",
       } + {
         "en_us": "Add card to my collection",
-        "fr": "Ajouter la carte à ma collection",
+        "fr_fr": "Ajouter la carte à ma collection",
       };
 
   String get i18n => localize(this, _t);

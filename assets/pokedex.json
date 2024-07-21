@@ -8735,5 +8735,61 @@
 			"english" : "Ogerpon",
 			"french" : "Ogerpon"
 		}
+	},
+	{
+		"id": 1018,
+		"name": {
+			"english": "Archaludon",
+			"french": "Pondralugon"
+		}
+	},
+	{
+		"id": 1019,
+		"name": {
+			"english": "Hydrapple",
+			"french": "Pomdorochi"
+		}
+	},
+	{
+		"id": 1020,
+		"name": {
+			"english": "Gouging Fire",
+			"french": "Feu-Perçant"
+		}
+	},
+	{
+		"id": 1021,
+		"name": {
+			"english": "Raging Bolt",
+			"french": "Ire-Foudre"
+		}
+	},
+	{
+		"id": 1022,
+		"name": {
+			"english": "Iron Boulder",
+			"french": "Roc-de-Fer"
+		}
+	},
+	{
+		"id": 1023,
+		"name": {
+			"english": "Iron Crown",
+			"french": "Chef-de-Fer"
+		}
+	},
+	{
+		"id": 1024,
+		"name": {
+			"english": "Terapagos",
+			"french": "Terapagos"
+		}
+	},
+	{
+		"id": 1025,
+		"name": {
+			"english": "Pecharunt",
+			"french": "Pêchaminus"
+		}
 	}
 ]

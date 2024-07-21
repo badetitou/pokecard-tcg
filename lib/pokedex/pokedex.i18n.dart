@@ -4,19 +4,19 @@ extension Localization on String {
   static var _t = Translations.byText("en_us") +
       {
         "en_us": "Pokemon Number ",
-        "fr": "Pokémon n° ",
+        "fr_fr": "Pokémon n° ",
       } +
       {
         "en_us": "All",
-        "fr": "Tous",
+        "fr_fr": "Tous",
       } +
       {
         "en_us": "Catched",
-        "fr": "Attrapés",
+        "fr_fr": "Attrapés",
       } +
       {
         "en_us": "Not catched",
-        "fr": "Non attrapés",
+        "fr_fr": "Non attrapés",
       };
 
   String get i18n => localize(this, _t);

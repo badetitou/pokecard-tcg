@@ -4,31 +4,31 @@ extension Localization on String {
   static var _t = Translations.byText("en_us") +
       {
         "en_us": "Remove",
-        "fr": "Supprimer",
+        "fr_fr": "Supprimer",
       } +
       {
         "en_us": "Mint",
-        "fr": "Parfaite",
+        "fr_fr": "Parfaite",
       } +
       {
         "en_us": "Near Mint",
-        "fr": "Presque parfaite",
+        "fr_fr": "Presque parfaite",
       } +
       {
         "en_us": "Played",
-        "fr": "Jouée",
+        "fr_fr": "Jouée",
       } +
       {
         "en_us": "Damaged",
-        "fr": "Endomagée",
+        "fr_fr": "Endomagée",
       } +
       {
         "en_us": "English",
-        "fr": "Anglais",
+        "fr_fr": "Anglais",
       } +
       {
         "en_us": "French",
-        "fr": "Français",
+        "fr_fr": "Français",
       };
 
   String get i18n => localize(this, _t);

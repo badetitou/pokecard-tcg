@@ -4,7 +4,7 @@ extension Localization on String {
   static var _t = Translations.byText("en_us") +
       {
         "en_us": "My Collection",
-        "fr": "Ma Collection",
+        "fr_fr": "Ma Collection",
       };
 
   String get i18n => localize(this, _t);
