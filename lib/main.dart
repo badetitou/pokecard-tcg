@@ -384,12 +384,27 @@ class MyDrawer extends StatelessWidget {
     ));
   }
 
-  FutureOr<signIn.GoogleSignInAccount?> _connectToGoogle() async {
-    final googleSignIn = signIn.GoogleSignIn.standard(
-        scopes: [drive.DriveApi.driveAppdataScope]);
-    final signIn.GoogleSignInAccount? account = await googleSignIn.signIn();
-    print("User account $account");
-    return account;
+  Future<signIn.GoogleSignInAccount?> _connectToGoogle() async {
+    try {
+      final googleSignIn = signIn.GoogleSignIn.instance;
+      if (googleSignIn.supportsAuthenticate()) {
+        final account = await googleSignIn.authenticate();
+        // Demander explicitement les scopes Drive si besoin
+        final scopes = [
+          'https://www.googleapis.com/auth/drive.appdata',
+          'https://www.googleapis.com/auth/drive.file',
+        ];
+        await account.authorizationClient.authorizeScopes(scopes);
+        print("User account $account");
+        return account;
+      } else {
+        print("L'API authenticate() n'est pas supportée sur cette plateforme.");
+        return null;
+      }
+    } catch (e) {
+      print("Erreur d'authentification Google: $e");
+      return null;
+    }
   }
 
   void _save(context) async {
@@ -418,7 +433,18 @@ class MyDrawer extends StatelessWidget {
 
   Future<drive.DriveApi> configureDriveApi(
       signIn.GoogleSignInAccount account) async {
-    final authHeaders = await account.authHeaders;
+    // Récupération du token d'accès via authorizationClient
+    const scopes = [drive.DriveApi.driveAppdataScope];
+    final authorization =
+        await account.authorizationClient.authorizationForScopes(scopes);
+    final accessToken = authorization?.accessToken;
+    if (accessToken == null) {
+      throw Exception('Impossible de récupérer le token Google.');
+    }
+    final authHeaders = {
+      'Authorization': 'Bearer $accessToken',
+      'X-Goog-AuthUser': '0',
+    };
     final authenticateClient = GoogleAuthClient(authHeaders);
     final driveApi = drive.DriveApi(authenticateClient);
     return driveApi;

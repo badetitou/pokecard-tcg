@@ -1,22 +1,22 @@
 import 'package:i18n_extension/i18n_extension.dart';
 
 extension Localization on String {
-  static var _t = Translations.byText("en_us") +
+  static var _t = Translations.byText("en-US") +
       {
-        "en_us": "Pokemon Number ",
-        "fr_fr": "Pokémon n° ",
+        "en-US": "Pokemon Number ",
+        "fr-FR": "Pokémon n° ",
       } +
       {
-        "en_us": "All",
-        "fr_fr": "Tous",
+        "en-US": "All",
+        "fr-FR": "Tous",
       } +
       {
-        "en_us": "Catched",
-        "fr_fr": "Attrapés",
+        "en-US": "Catched",
+        "fr-FR": "Attrapés",
       } +
       {
-        "en_us": "Not catched",
-        "fr_fr": "Non attrapés",
+        "en-US": "Not catched",
+        "fr-FR": "Non attrapés",
       };
 
   String get i18n => localize(this, _t);
