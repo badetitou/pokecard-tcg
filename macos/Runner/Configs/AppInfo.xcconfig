@@ -1,4 +1,7 @@
 // Application-level settings for the Runner target.
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"
 //
 // This may be replaced with something auto-generated from metadata (e.g., pubspec.yaml) in the
 // future. If not, the values below would default to using the project name when this becomes a
@@ -12,3 +15,4 @@ PRODUCT_BUNDLE_IDENTIFIER = fr.badetitou.pokecardTcg
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2024 fr.badetitou. All rights reserved.
+MACOSX_DEPLOYMENT_TARGET = 14.0
