@@ -23,7 +23,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'GoogleAuthClient.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -386,19 +393,19 @@ class MyDrawer extends StatelessWidget {
 
   Future<signIn.GoogleSignInAccount?> _connectToGoogle() async {
     try {
-      final googleSignIn = signIn.GoogleSignIn.instance;
-      if (googleSignIn.supportsAuthenticate()) {
-        final account = await googleSignIn.authenticate();
-        // Demander explicitement les scopes Drive si besoin
-        final scopes = [
+      final googleSignIn = signIn.GoogleSignIn(
+        clientId: DefaultFirebaseOptions.web.appId,
+        scopes: [
           'https://www.googleapis.com/auth/drive.appdata',
           'https://www.googleapis.com/auth/drive.file',
-        ];
-        await account.authorizationClient.authorizeScopes(scopes);
-        print("User account $account");
+        ],
+      );
+      final account = await googleSignIn.signIn();
+      if (account != null) {
+        print("User account: ${account.email}");
         return account;
       } else {
-        print("L'API authenticate() n'est pas supportée sur cette plateforme.");
+        print("L'utilisateur a annulé la connexion.");
         return null;
       }
     } catch (e) {
@@ -434,10 +441,8 @@ class MyDrawer extends StatelessWidget {
   Future<drive.DriveApi> configureDriveApi(
       signIn.GoogleSignInAccount account) async {
     // Récupération du token d'accès via authorizationClient
-    const scopes = [drive.DriveApi.driveAppdataScope];
-    final authorization =
-        await account.authorizationClient.authorizationForScopes(scopes);
-    final accessToken = authorization?.accessToken;
+    final authentication = await account.authentication;
+    final accessToken = authentication.accessToken;
     if (accessToken == null) {
       throw Exception('Impossible de récupérer le token Google.');
     }
