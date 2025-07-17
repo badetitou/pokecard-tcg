@@ -42,10 +42,12 @@ dependencies:
     sdk: flutter
     version: ^0.0.0
   googleapis: ^14.0.0
-  google_sign_in: ^7.1.0
   scrollable_positioned_list: ^0.3.8
   shared_preferences: ^2.2.2
   collection: ^1.17.2
+  firebase_core: ^3.15.1
+  firebase_auth: ^5.6.2
+  flutter_lints: ^6.0.0
 
 dev_dependencies:
   flutter_test:
