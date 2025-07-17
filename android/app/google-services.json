@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "1043218848326",
     "project_id": "pokecard-tcg",
-    "storage_bucket": "pokecard-tcg.appspot.com"
+    "storage_bucket": "pokecard-tcg.firebasestorage.app"
   },
   "client": [
     {
@@ -13,6 +13,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1043218848326-glmoq829qntqfnb00m3ie31btneb1h2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.badetitou.pokecard_tcg",
+            "certificate_hash": "a9383d8967b1d18d9a9a1224eb973d1d47bac308"
+          }
+        },
         {
           "client_id": "1043218848326-kkcrrbleavcte4dvo27i2t8glekvb7p9.apps.googleusercontent.com",
           "client_type": 1,
