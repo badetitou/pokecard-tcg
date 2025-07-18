@@ -1,0 +1,8795 @@
+[
+	{
+		"name" : {
+			"chinese" : "妙蛙种子",
+			"english" : "Bulbasaur",
+			"japanese" : "フシギダネ",
+			"french" : "Bulbizarre"
+		},
+		"id" : 1
+	},
+	{
+		"name" : {
+			"chinese" : "妙蛙草",
+			"english" : "Ivysaur",
+			"japanese" : "フシギソウ",
+			"french" : "Herbizarre"
+		},
+		"id" : 2
+	},
+	{
+		"name" : {
+			"chinese" : "妙蛙花",
+			"english" : "Venusaur",
+			"japanese" : "フシギバナ",
+			"french" : "Florizarre"
+		},
+		"id" : 3
+	},
+	{
+		"name" : {
+			"chinese" : "小火龙",
+			"english" : "Charmander",
+			"japanese" : "ヒトカゲ",
+			"french" : "Salamèche"
+		},
+		"id" : 4
+	},
+	{
+		"name" : {
+			"chinese" : "火恐龙",
+			"english" : "Charmeleon",
+			"japanese" : "リザード",
+			"french" : "Reptincel"
+		},
+		"id" : 5
+	},
+	{
+		"name" : {
+			"chinese" : "喷火龙",
+			"english" : "Charizard",
+			"japanese" : "リザードン",
+			"french" : "Dracaufeu"
+		},
+		"id" : 6
+	},
+	{
+		"name" : {
+			"chinese" : "杰尼龟",
+			"english" : "Squirtle",
+			"japanese" : "ゼニガメ",
+			"french" : "Carapuce"
+		},
+		"id" : 7
+	},
+	{
+		"name" : {
+			"chinese" : "卡咪龟",
+			"english" : "Wartortle",
+			"japanese" : "カメール",
+			"french" : "Carabaffe"
+		},
+		"id" : 8
+	},
+	{
+		"name" : {
+			"chinese" : "水箭龟",
+			"english" : "Blastoise",
+			"japanese" : "カメックス",
+			"french" : "Tortank"
+		},
+		"id" : 9
+	},
+	{
+		"name" : {
+			"chinese" : "绿毛虫",
+			"english" : "Caterpie",
+			"japanese" : "キャタピー",
+			"french" : "Chenipan"
+		},
+		"id" : 10
+	},
+	{
+		"name" : {
+			"chinese" : "铁甲蛹",
+			"english" : "Metapod",
+			"japanese" : "トランセル",
+			"french" : "Chrysacier"
+		},
+		"id" : 11
+	},
+	{
+		"name" : {
+			"chinese" : "巴大蝶",
+			"english" : "Butterfree",
+			"japanese" : "バタフリー",
+			"french" : "Papilusion"
+		},
+		"id" : 12
+	},
+	{
+		"name" : {
+			"chinese" : "独角虫",
+			"english" : "Weedle",
+			"japanese" : "ビードル",
+			"french" : "Aspicot"
+		},
+		"id" : 13
+	},
+	{
+		"name" : {
+			"chinese" : "铁壳蛹",
+			"english" : "Kakuna",
+			"japanese" : "コクーン",
+			"french" : "Coconfort"
+		},
+		"id" : 14
+	},
+	{
+		"name" : {
+			"chinese" : "大针蜂",
+			"english" : "Beedrill",
+			"japanese" : "スピアー",
+			"french" : "Dardargnan"
+		},
+		"id" : 15
+	},
+	{
+		"name" : {
+			"chinese" : "波波",
+			"english" : "Pidgey",
+			"japanese" : "ポッポ",
+			"french" : "Roucool"
+		},
+		"id" : 16
+	},
+	{
+		"name" : {
+			"chinese" : "比比鸟",
+			"english" : "Pidgeotto",
+			"japanese" : "ピジョン",
+			"french" : "Roucoups"
+		},
+		"id" : 17
+	},
+	{
+		"name" : {
+			"chinese" : "大比鸟",
+			"english" : "Pidgeot",
+			"japanese" : "ピジョット",
+			"french" : "Roucarnage"
+		},
+		"id" : 18
+	},
+	{
+		"name" : {
+			"chinese" : "小拉达",
+			"english" : "Rattata",
+			"japanese" : "コラッタ",
+			"french" : "Rattata"
+		},
+		"id" : 19
+	},
+	{
+		"name" : {
+			"chinese" : "拉达",
+			"english" : "Raticate",
+			"japanese" : "ラッタ",
+			"french" : "Rattatac"
+		},
+		"id" : 20
+	},
+	{
+		"name" : {
+			"chinese" : "烈雀",
+			"english" : "Spearow",
+			"japanese" : "オニスズメ",
+			"french" : "Piafabec"
+		},
+		"id" : 21
+	},
+	{
+		"name" : {
+			"chinese" : "大嘴雀",
+			"english" : "Fearow",
+			"japanese" : "オニドリル",
+			"french" : "Rapasdepic"
+		},
+		"id" : 22
+	},
+	{
+		"name" : {
+			"chinese" : "阿柏蛇",
+			"english" : "Ekans",
+			"japanese" : "アーボ",
+			"french" : "Abo"
+		},
+		"id" : 23
+	},
+	{
+		"name" : {
+			"chinese" : "阿柏怪",
+			"english" : "Arbok",
+			"japanese" : "アーボック",
+			"french" : "Arbok"
+		},
+		"id" : 24
+	},
+	{
+		"name" : {
+			"chinese" : "皮卡丘",
+			"english" : "Pikachu",
+			"japanese" : "ピカチュウ",
+			"french" : "Pikachu"
+		},
+		"id" : 25
+	},
+	{
+		"name" : {
+			"chinese" : "雷丘",
+			"english" : "Raichu",
+			"japanese" : "ライチュウ",
+			"french" : "Raichu"
+		},
+		"id" : 26
+	},
+	{
+		"name" : {
+			"chinese" : "穿山鼠",
+			"english" : "Sandshrew",
+			"japanese" : "サンド",
+			"french" : "Sabelette"
+		},
+		"id" : 27
+	},
+	{
+		"name" : {
+			"chinese" : "穿山王",
+			"english" : "Sandslash",
+			"japanese" : "サンドパン",
+			"french" : "Sablaireau"
+		},
+		"id" : 28
+	},
+	{
+		"name" : {
+			"chinese" : "尼多兰",
+			"english" : "Nidoran♀",
+			"japanese" : "ニドラン♀",
+			"french" : "Nidoran♀"
+		},
+		"id" : 29
+	},
+	{
+		"name" : {
+			"chinese" : "尼多娜",
+			"english" : "Nidorina",
+			"japanese" : "ニドリーナ",
+			"french" : "Nidorina"
+		},
+		"id" : 30
+	},
+	{
+		"name" : {
+			"chinese" : "尼多后",
+			"english" : "Nidoqueen",
+			"japanese" : "ニドクイン",
+			"french" : "Nidoqueen"
+		},
+		"id" : 31
+	},
+	{
+		"name" : {
+			"chinese" : "尼多朗",
+			"english" : "Nidoran♂",
+			"japanese" : "ニドラン♂",
+			"french" : "Nidoran♂"
+		},
+		"id" : 32
+	},
+	{
+		"name" : {
+			"chinese" : "尼多力诺",
+			"english" : "Nidorino",
+			"japanese" : "ニドリーノ",
+			"french" : "Nidorino"
+		},
+		"id" : 33
+	},
+	{
+		"name" : {
+			"chinese" : "尼多王",
+			"english" : "Nidoking",
+			"japanese" : "ニドキング",
+			"french" : "Nidoking"
+		},
+		"id" : 34
+	},
+	{
+		"name" : {
+			"chinese" : "皮皮",
+			"english" : "Clefairy",
+			"japanese" : "ピッピ",
+			"french" : "Mélofée"
+		},
+		"id" : 35
+	},
+	{
+		"name" : {
+			"chinese" : "皮可西",
+			"english" : "Clefable",
+			"japanese" : "ピクシー",
+			"french" : "Mélodelfe"
+		},
+		"id" : 36
+	},
+	{
+		"name" : {
+			"chinese" : "六尾",
+			"english" : "Vulpix",
+			"japanese" : "ロコン",
+			"french" : "Goupix"
+		},
+		"id" : 37
+	},
+	{
+		"name" : {
+			"chinese" : "九尾",
+			"english" : "Ninetales",
+			"japanese" : "キュウコン",
+			"french" : "Feunard"
+		},
+		"id" : 38
+	},
+	{
+		"name" : {
+			"chinese" : "胖丁",
+			"english" : "Jigglypuff",
+			"japanese" : "プリン",
+			"french" : "Rondoudou"
+		},
+		"id" : 39
+	},
+	{
+		"name" : {
+			"chinese" : "胖可丁",
+			"english" : "Wigglytuff",
+			"japanese" : "プクリン",
+			"french" : "Grodoudou"
+		},
+		"id" : 40
+	},
+	{
+		"name" : {
+			"chinese" : "超音蝠",
+			"english" : "Zubat",
+			"japanese" : "ズバット",
+			"french" : "Nosferapti"
+		},
+		"id" : 41
+	},
+	{
+		"name" : {
+			"chinese" : "大嘴蝠",
+			"english" : "Golbat",
+			"japanese" : "ゴルバット",
+			"french" : "Nosferalto"
+		},
+		"id" : 42
+	},
+	{
+		"name" : {
+			"chinese" : "走路草",
+			"english" : "Oddish",
+			"japanese" : "ナゾノクサ",
+			"french" : "Mystherbe"
+		},
+		"id" : 43
+	},
+	{
+		"name" : {
+			"chinese" : "臭臭花",
+			"english" : "Gloom",
+			"japanese" : "クサイハナ",
+			"french" : "Ortide"
+		},
+		"id" : 44
+	},
+	{
+		"name" : {
+			"chinese" : "霸王花",
+			"english" : "Vileplume",
+			"japanese" : "ラフレシア",
+			"french" : "Rafflesia"
+		},
+		"id" : 45
+	},
+	{
+		"name" : {
+			"chinese" : "派拉斯",
+			"english" : "Paras",
+			"japanese" : "パラス",
+			"french" : "Paras"
+		},
+		"id" : 46
+	},
+	{
+		"name" : {
+			"chinese" : "派拉斯特",
+			"english" : "Parasect",
+			"japanese" : "パラセクト",
+			"french" : "Parasect"
+		},
+		"id" : 47
+	},
+	{
+		"name" : {
+			"chinese" : "毛球",
+			"english" : "Venonat",
+			"japanese" : "コンパン",
+			"french" : "Mimitoss"
+		},
+		"id" : 48
+	},
+	{
+		"name" : {
+			"chinese" : "摩鲁蛾",
+			"english" : "Venomoth",
+			"japanese" : "モルフォン",
+			"french" : "Aéromite"
+		},
+		"id" : 49
+	},
+	{
+		"name" : {
+			"chinese" : "地鼠",
+			"english" : "Diglett",
+			"japanese" : "ディグダ",
+			"french" : "Taupiqueur"
+		},
+		"id" : 50
+	},
+	{
+		"name" : {
+			"chinese" : "三地鼠",
+			"english" : "Dugtrio",
+			"japanese" : "ダグトリオ",
+			"french" : "Triopikeur"
+		},
+		"id" : 51
+	},
+	{
+		"name" : {
+			"chinese" : "喵喵",
+			"english" : "Meowth",
+			"japanese" : "ニャース",
+			"french" : "Miaouss"
+		},
+		"id" : 52
+	},
+	{
+		"name" : {
+			"chinese" : "猫老大",
+			"english" : "Persian",
+			"japanese" : "ペルシアン",
+			"french" : "Persian"
+		},
+		"id" : 53
+	},
+	{
+		"name" : {
+			"chinese" : "可达鸭",
+			"english" : "Psyduck",
+			"japanese" : "コダック",
+			"french" : "Psykokwak"
+		},
+		"id" : 54
+	},
+	{
+		"name" : {
+			"chinese" : "哥达鸭",
+			"english" : "Golduck",
+			"japanese" : "ゴルダック",
+			"french" : "Akwakwak"
+		},
+		"id" : 55
+	},
+	{
+		"name" : {
+			"chinese" : "猴怪",
+			"english" : "Mankey",
+			"japanese" : "マンキー",
+			"french" : "Férosinge"
+		},
+		"id" : 56
+	},
+	{
+		"name" : {
+			"chinese" : "火暴猴",
+			"english" : "Primeape",
+			"japanese" : "オコリザル",
+			"french" : "Colossinge"
+		},
+		"id" : 57
+	},
+	{
+		"name" : {
+			"chinese" : "卡蒂狗",
+			"english" : "Growlithe",
+			"japanese" : "ガーディ",
+			"french" : "Caninos"
+		},
+		"id" : 58
+	},
+	{
+		"name" : {
+			"chinese" : "风速狗",
+			"english" : "Arcanine",
+			"japanese" : "ウインディ",
+			"french" : "Arcanin"
+		},
+		"id" : 59
+	},
+	{
+		"name" : {
+			"chinese" : "蚊香蝌蚪",
+			"english" : "Poliwag",
+			"japanese" : "ニョロモ",
+			"french" : "Ptitard"
+		},
+		"id" : 60
+	},
+	{
+		"name" : {
+			"chinese" : "蚊香君",
+			"english" : "Poliwhirl",
+			"japanese" : "ニョロゾ",
+			"french" : "Têtarte"
+		},
+		"id" : 61
+	},
+	{
+		"name" : {
+			"chinese" : "蚊香泳士",
+			"english" : "Poliwrath",
+			"japanese" : "ニョロボン",
+			"french" : "Tartard"
+		},
+		"id" : 62
+	},
+	{
+		"name" : {
+			"chinese" : "凯西",
+			"english" : "Abra",
+			"japanese" : "ケーシィ",
+			"french" : "Abra"
+		},
+		"id" : 63
+	},
+	{
+		"name" : {
+			"chinese" : "勇基拉",
+			"english" : "Kadabra",
+			"japanese" : "ユンゲラー",
+			"french" : "Kadabra"
+		},
+		"id" : 64
+	},
+	{
+		"name" : {
+			"chinese" : "胡地",
+			"english" : "Alakazam",
+			"japanese" : "フーディン",
+			"french" : "Alakazam"
+		},
+		"id" : 65
+	},
+	{
+		"name" : {
+			"chinese" : "腕力",
+			"english" : "Machop",
+			"japanese" : "ワンリキー",
+			"french" : "Machoc"
+		},
+		"id" : 66
+	},
+	{
+		"name" : {
+			"chinese" : "豪力",
+			"english" : "Machoke",
+			"japanese" : "ゴーリキー",
+			"french" : "Machopeur"
+		},
+		"id" : 67
+	},
+	{
+		"name" : {
+			"chinese" : "怪力",
+			"english" : "Machamp",
+			"japanese" : "カイリキー",
+			"french" : "Mackogneur"
+		},
+		"id" : 68
+	},
+	{
+		"name" : {
+			"chinese" : "喇叭芽",
+			"english" : "Bellsprout",
+			"japanese" : "マダツボミ",
+			"french" : "Chétiflor"
+		},
+		"id" : 69
+	},
+	{
+		"name" : {
+			"chinese" : "口呆花",
+			"english" : "Weepinbell",
+			"japanese" : "ウツドン",
+			"french" : "Boustiflor"
+		},
+		"id" : 70
+	},
+	{
+		"name" : {
+			"chinese" : "大食花",
+			"english" : "Victreebel",
+			"japanese" : "ウツボット",
+			"french" : "Empiflor"
+		},
+		"id" : 71
+	},
+	{
+		"name" : {
+			"chinese" : "玛瑙水母",
+			"english" : "Tentacool",
+			"japanese" : "メノクラゲ",
+			"french" : "Tentacool"
+		},
+		"id" : 72
+	},
+	{
+		"name" : {
+			"chinese" : "毒刺水母",
+			"english" : "Tentacruel",
+			"japanese" : "ドククラゲ",
+			"french" : "Tentacruel"
+		},
+		"id" : 73
+	},
+	{
+		"name" : {
+			"chinese" : "小拳石",
+			"english" : "Geodude",
+			"japanese" : "イシツブテ",
+			"french" : "Racaillou"
+		},
+		"id" : 74
+	},
+	{
+		"name" : {
+			"chinese" : "隆隆石",
+			"english" : "Graveler",
+			"japanese" : "ゴローン",
+			"french" : "Gravalanch"
+		},
+		"id" : 75
+	},
+	{
+		"name" : {
+			"chinese" : "隆隆岩",
+			"english" : "Golem",
+			"japanese" : "ゴローニャ",
+			"french" : "Grolem"
+		},
+		"id" : 76
+	},
+	{
+		"name" : {
+			"chinese" : "小火马",
+			"english" : "Ponyta",
+			"japanese" : "ポニータ",
+			"french" : "Ponyta"
+		},
+		"id" : 77
+	},
+	{
+		"name" : {
+			"chinese" : "烈焰马",
+			"english" : "Rapidash",
+			"japanese" : "ギャロップ",
+			"french" : "Galopa"
+		},
+		"id" : 78
+	},
+	{
+		"name" : {
+			"chinese" : "呆呆兽",
+			"english" : "Slowpoke",
+			"japanese" : "ヤドン",
+			"french" : "Ramoloss"
+		},
+		"id" : 79
+	},
+	{
+		"name" : {
+			"chinese" : "呆壳兽",
+			"english" : "Slowbro",
+			"japanese" : "ヤドラン",
+			"french" : "Flagadoss"
+		},
+		"id" : 80
+	},
+	{
+		"name" : {
+			"chinese" : "小磁怪",
+			"english" : "Magnemite",
+			"japanese" : "コイル",
+			"french" : "Magnéti"
+		},
+		"id" : 81
+	},
+	{
+		"name" : {
+			"chinese" : "三合一磁怪",
+			"english" : "Magneton",
+			"japanese" : "レアコイル",
+			"french" : "Magnéton"
+		},
+		"id" : 82
+	},
+	{
+		"name" : {
+			"chinese" : "大葱鸭",
+			"english" : "Farfetch'd",
+			"japanese" : "カモネギ",
+			"french" : "Canarticho"
+		},
+		"id" : 83
+	},
+	{
+		"name" : {
+			"chinese" : "嘟嘟",
+			"english" : "Doduo",
+			"japanese" : "ドードー",
+			"french" : "Doduo"
+		},
+		"id" : 84
+	},
+	{
+		"name" : {
+			"chinese" : "嘟嘟利",
+			"english" : "Dodrio",
+			"japanese" : "ドードリオ",
+			"french" : "Dodrio"
+		},
+		"id" : 85
+	},
+	{
+		"name" : {
+			"chinese" : "小海狮",
+			"english" : "Seel",
+			"japanese" : "パウワウ",
+			"french" : "Otaria"
+		},
+		"id" : 86
+	},
+	{
+		"name" : {
+			"chinese" : "白海狮",
+			"english" : "Dewgong",
+			"japanese" : "ジュゴン",
+			"french" : "Lamantine"
+		},
+		"id" : 87
+	},
+	{
+		"name" : {
+			"chinese" : "臭泥",
+			"english" : "Grimer",
+			"japanese" : "ベトベター",
+			"french" : "Tadmorv"
+		},
+		"id" : 88
+	},
+	{
+		"name" : {
+			"chinese" : "臭臭泥",
+			"english" : "Muk",
+			"japanese" : "ベトベトン",
+			"french" : "Grotadmorv"
+		},
+		"id" : 89
+	},
+	{
+		"name" : {
+			"chinese" : "大舌贝",
+			"english" : "Shellder",
+			"japanese" : "シェルダー",
+			"french" : "Kokiyas"
+		},
+		"id" : 90
+	},
+	{
+		"name" : {
+			"chinese" : "刺甲贝",
+			"english" : "Cloyster",
+			"japanese" : "パルシェン",
+			"french" : "Crustabri"
+		},
+		"id" : 91
+	},
+	{
+		"name" : {
+			"chinese" : "鬼斯",
+			"english" : "Gastly",
+			"japanese" : "ゴース",
+			"french" : "Fantominus"
+		},
+		"id" : 92
+	},
+	{
+		"name" : {
+			"chinese" : "鬼斯通",
+			"english" : "Haunter",
+			"japanese" : "ゴースト",
+			"french" : "Spectrum"
+		},
+		"id" : 93
+	},
+	{
+		"name" : {
+			"chinese" : "耿鬼",
+			"english" : "Gengar",
+			"japanese" : "ゲンガー",
+			"french" : "Ectoplasma"
+		},
+		"id" : 94
+	},
+	{
+		"name" : {
+			"chinese" : "大岩蛇",
+			"english" : "Onix",
+			"japanese" : "イワーク",
+			"french" : "Onix"
+		},
+		"id" : 95
+	},
+	{
+		"name" : {
+			"chinese" : "催眠貘",
+			"english" : "Drowzee",
+			"japanese" : "スリープ",
+			"french" : "Soporifik"
+		},
+		"id" : 96
+	},
+	{
+		"name" : {
+			"chinese" : "引梦貘人",
+			"english" : "Hypno",
+			"japanese" : "スリーパー",
+			"french" : "Hypnomade"
+		},
+		"id" : 97
+	},
+	{
+		"name" : {
+			"chinese" : "大钳蟹",
+			"english" : "Krabby",
+			"japanese" : "クラブ",
+			"french" : "Krabby"
+		},
+		"id" : 98
+	},
+	{
+		"name" : {
+			"chinese" : "巨钳蟹",
+			"english" : "Kingler",
+			"japanese" : "キングラー",
+			"french" : "Krabboss"
+		},
+		"id" : 99
+	},
+	{
+		"name" : {
+			"chinese" : "霹雳电球",
+			"english" : "Voltorb",
+			"japanese" : "ビリリダマ",
+			"french" : "Voltorbe"
+		},
+		"id" : 100
+	},
+	{
+		"name" : {
+			"chinese" : "顽皮雷弹",
+			"english" : "Electrode",
+			"japanese" : "マルマイン",
+			"french" : "Électrode"
+		},
+		"id" : 101
+	},
+	{
+		"name" : {
+			"chinese" : "蛋蛋",
+			"english" : "Exeggcute",
+			"japanese" : "タマタマ",
+			"french" : "Noeunoeuf"
+		},
+		"id" : 102
+	},
+	{
+		"name" : {
+			"chinese" : "椰蛋树",
+			"english" : "Exeggutor",
+			"japanese" : "ナッシー",
+			"french" : "Noadkoko"
+		},
+		"id" : 103
+	},
+	{
+		"name" : {
+			"chinese" : "卡拉卡拉",
+			"english" : "Cubone",
+			"japanese" : "カラカラ",
+			"french" : "Osselait"
+		},
+		"id" : 104
+	},
+	{
+		"name" : {
+			"chinese" : "嘎啦嘎啦",
+			"english" : "Marowak",
+			"japanese" : "ガラガラ",
+			"french" : "Ossatueur"
+		},
+		"id" : 105
+	},
+	{
+		"name" : {
+			"chinese" : "飞腿郎",
+			"english" : "Hitmonlee",
+			"japanese" : "サワムラー",
+			"french" : "Kicklee"
+		},
+		"id" : 106
+	},
+	{
+		"name" : {
+			"chinese" : "快拳郎",
+			"english" : "Hitmonchan",
+			"japanese" : "エビワラー",
+			"french" : "Tygnon"
+		},
+		"id" : 107
+	},
+	{
+		"name" : {
+			"chinese" : "大舌头",
+			"english" : "Lickitung",
+			"japanese" : "ベロリンガ",
+			"french" : "Excelangue"
+		},
+		"id" : 108
+	},
+	{
+		"name" : {
+			"chinese" : "瓦斯弹",
+			"english" : "Koffing",
+			"japanese" : "ドガース",
+			"french" : "Smogo"
+		},
+		"id" : 109
+	},
+	{
+		"name" : {
+			"chinese" : "双弹瓦斯",
+			"english" : "Weezing",
+			"japanese" : "マタドガス",
+			"french" : "Smogogo"
+		},
+		"id" : 110
+	},
+	{
+		"name" : {
+			"chinese" : "独角犀牛",
+			"english" : "Rhyhorn",
+			"japanese" : "サイホーン",
+			"french" : "Rhinocorne"
+		},
+		"id" : 111
+	},
+	{
+		"name" : {
+			"chinese" : "钻角犀兽",
+			"english" : "Rhydon",
+			"japanese" : "サイドン",
+			"french" : "Rhinoféros"
+		},
+		"id" : 112
+	},
+	{
+		"name" : {
+			"chinese" : "吉利蛋",
+			"english" : "Chansey",
+			"japanese" : "ラッキー",
+			"french" : "Leveinard"
+		},
+		"id" : 113
+	},
+	{
+		"name" : {
+			"chinese" : "蔓藤怪",
+			"english" : "Tangela",
+			"japanese" : "モンジャラ",
+			"french" : "Saquedeneu"
+		},
+		"id" : 114
+	},
+	{
+		"name" : {
+			"chinese" : "袋兽",
+			"english" : "Kangaskhan",
+			"japanese" : "ガルーラ",
+			"french" : "Kangourex"
+		},
+		"id" : 115
+	},
+	{
+		"name" : {
+			"chinese" : "墨海马",
+			"english" : "Horsea",
+			"japanese" : "タッツー",
+			"french" : "Hypotrempe"
+		},
+		"id" : 116
+	},
+	{
+		"name" : {
+			"chinese" : "海刺龙",
+			"english" : "Seadra",
+			"japanese" : "シードラ",
+			"french" : "Hypocéan"
+		},
+		"id" : 117
+	},
+	{
+		"name" : {
+			"chinese" : "角金鱼",
+			"english" : "Goldeen",
+			"japanese" : "トサキント",
+			"french" : "Poissirène"
+		},
+		"id" : 118
+	},
+	{
+		"name" : {
+			"chinese" : "金鱼王",
+			"english" : "Seaking",
+			"japanese" : "アズマオウ",
+			"french" : "Poissoroy"
+		},
+		"id" : 119
+	},
+	{
+		"name" : {
+			"chinese" : "海星星",
+			"english" : "Staryu",
+			"japanese" : "ヒトデマン",
+			"french" : "Stari"
+		},
+		"id" : 120
+	},
+	{
+		"name" : {
+			"chinese" : "宝石海星",
+			"english" : "Starmie",
+			"japanese" : "スターミー",
+			"french" : "Staross"
+		},
+		"id" : 121
+	},
+	{
+		"name" : {
+			"chinese" : "魔墙人偶",
+			"english" : "Mr. Mime",
+			"japanese" : "バリヤード",
+			"french" : "M. Mime"
+		},
+		"id" : 122
+	},
+	{
+		"name" : {
+			"chinese" : "飞天螳螂",
+			"english" : "Scyther",
+			"japanese" : "ストライク",
+			"french" : "Insécateur"
+		},
+		"id" : 123
+	},
+	{
+		"name" : {
+			"chinese" : "迷唇姐",
+			"english" : "Jynx",
+			"japanese" : "ルージュラ",
+			"french" : "Lippoutou"
+		},
+		"id" : 124
+	},
+	{
+		"name" : {
+			"chinese" : "电击兽",
+			"english" : "Electabuzz",
+			"japanese" : "エレブー",
+			"french" : "Élektek"
+		},
+		"id" : 125
+	},
+	{
+		"name" : {
+			"chinese" : "鸭嘴火兽",
+			"english" : "Magmar",
+			"japanese" : "ブーバー",
+			"french" : "Magmar"
+		},
+		"id" : 126
+	},
+	{
+		"name" : {
+			"chinese" : "凯罗斯",
+			"english" : "Pinsir",
+			"japanese" : "カイロス",
+			"french" : "Scarabrute"
+		},
+		"id" : 127
+	},
+	{
+		"name" : {
+			"chinese" : "肯泰罗",
+			"english" : "Tauros",
+			"japanese" : "ケンタロス",
+			"french" : "Tauros"
+		},
+		"id" : 128
+	},
+	{
+		"name" : {
+			"chinese" : "鲤鱼王",
+			"english" : "Magikarp",
+			"japanese" : "コイキング",
+			"french" : "Magicarpe"
+		},
+		"id" : 129
+	},
+	{
+		"name" : {
+			"chinese" : "暴鲤龙",
+			"english" : "Gyarados",
+			"japanese" : "ギャラドス",
+			"french" : "Léviator"
+		},
+		"id" : 130
+	},
+	{
+		"name" : {
+			"chinese" : "拉普拉斯",
+			"english" : "Lapras",
+			"japanese" : "ラプラス",
+			"french" : "Lokhlass"
+		},
+		"id" : 131
+	},
+	{
+		"name" : {
+			"chinese" : "百变怪",
+			"english" : "Ditto",
+			"japanese" : "メタモン",
+			"french" : "Métamorph"
+		},
+		"id" : 132
+	},
+	{
+		"name" : {
+			"chinese" : "伊布",
+			"english" : "Eevee",
+			"japanese" : "イーブイ",
+			"french" : "Évoli"
+		},
+		"id" : 133
+	},
+	{
+		"name" : {
+			"chinese" : "水伊布",
+			"english" : "Vaporeon",
+			"japanese" : "シャワーズ",
+			"french" : "Aquali"
+		},
+		"id" : 134
+	},
+	{
+		"name" : {
+			"chinese" : "雷伊布",
+			"english" : "Jolteon",
+			"japanese" : "サンダース",
+			"french" : "Voltali"
+		},
+		"id" : 135
+	},
+	{
+		"name" : {
+			"chinese" : "火伊布",
+			"english" : "Flareon",
+			"japanese" : "ブースター",
+			"french" : "Pyroli"
+		},
+		"id" : 136
+	},
+	{
+		"name" : {
+			"chinese" : "多边兽",
+			"english" : "Porygon",
+			"japanese" : "ポリゴン",
+			"french" : "Porygon"
+		},
+		"id" : 137
+	},
+	{
+		"name" : {
+			"chinese" : "菊石兽",
+			"english" : "Omanyte",
+			"japanese" : "オムナイト",
+			"french" : "Amonita"
+		},
+		"id" : 138
+	},
+	{
+		"name" : {
+			"chinese" : "多刺菊石兽",
+			"english" : "Omastar",
+			"japanese" : "オムスター",
+			"french" : "Amonistar"
+		},
+		"id" : 139
+	},
+	{
+		"name" : {
+			"chinese" : "化石盔",
+			"english" : "Kabuto",
+			"japanese" : "カブト",
+			"french" : "Kabuto"
+		},
+		"id" : 140
+	},
+	{
+		"name" : {
+			"chinese" : "镰刀盔",
+			"english" : "Kabutops",
+			"japanese" : "カブトプス",
+			"french" : "Kabutops"
+		},
+		"id" : 141
+	},
+	{
+		"name" : {
+			"chinese" : "化石翼龙",
+			"english" : "Aerodactyl",
+			"japanese" : "プテラ",
+			"french" : "Ptéra"
+		},
+		"id" : 142
+	},
+	{
+		"name" : {
+			"chinese" : "卡比兽",
+			"english" : "Snorlax",
+			"japanese" : "カビゴン",
+			"french" : "Ronflex"
+		},
+		"id" : 143
+	},
+	{
+		"name" : {
+			"chinese" : "急冻鸟",
+			"english" : "Articuno",
+			"japanese" : "フリーザー",
+			"french" : "Artikodin"
+		},
+		"id" : 144
+	},
+	{
+		"name" : {
+			"chinese" : "闪电鸟",
+			"english" : "Zapdos",
+			"japanese" : "サンダー",
+			"french" : "Électhor"
+		},
+		"id" : 145
+	},
+	{
+		"name" : {
+			"chinese" : "火焰鸟",
+			"english" : "Moltres",
+			"japanese" : "ファイヤー",
+			"french" : "Sulfura"
+		},
+		"id" : 146
+	},
+	{
+		"name" : {
+			"chinese" : "迷你龙",
+			"english" : "Dratini",
+			"japanese" : "ミニリュウ",
+			"french" : "Minidraco"
+		},
+		"id" : 147
+	},
+	{
+		"name" : {
+			"chinese" : "哈克龙",
+			"english" : "Dragonair",
+			"japanese" : "ハクリュー",
+			"french" : "Draco"
+		},
+		"id" : 148
+	},
+	{
+		"name" : {
+			"chinese" : "快龙",
+			"english" : "Dragonite",
+			"japanese" : "カイリュー",
+			"french" : "Dracolosse"
+		},
+		"id" : 149
+	},
+	{
+		"name" : {
+			"chinese" : "超梦",
+			"english" : "Mewtwo",
+			"japanese" : "ミュウツー",
+			"french" : "Mewtwo"
+		},
+		"id" : 150
+	},
+	{
+		"name" : {
+			"chinese" : "梦幻",
+			"english" : "Mew",
+			"japanese" : "ミュウ",
+			"french" : "Mew"
+		},
+		"id" : 151
+	},
+	{
+		"name" : {
+			"chinese" : "菊草叶",
+			"english" : "Chikorita",
+			"japanese" : "チコリータ",
+			"french" : "Germignon"
+		},
+		"id" : 152
+	},
+	{
+		"name" : {
+			"chinese" : "月桂叶",
+			"english" : "Bayleef",
+			"japanese" : "ベイリーフ",
+			"french" : "Macronium"
+		},
+		"id" : 153
+	},
+	{
+		"name" : {
+			"chinese" : "大竺葵",
+			"english" : "Meganium",
+			"japanese" : "メガニウム",
+			"french" : "Méganium"
+		},
+		"id" : 154
+	},
+	{
+		"name" : {
+			"chinese" : "火球鼠",
+			"english" : "Cyndaquil",
+			"japanese" : "ヒノアラシ",
+			"french" : "Héricendre"
+		},
+		"id" : 155
+	},
+	{
+		"name" : {
+			"chinese" : "火岩鼠",
+			"english" : "Quilava",
+			"japanese" : "マグマラシ",
+			"french" : "Feurisson"
+		},
+		"id" : 156
+	},
+	{
+		"name" : {
+			"chinese" : "火暴兽",
+			"english" : "Typhlosion",
+			"japanese" : "バクフーン",
+			"french" : "Typhlosion"
+		},
+		"id" : 157
+	},
+	{
+		"name" : {
+			"chinese" : "小锯鳄",
+			"english" : "Totodile",
+			"japanese" : "ワニノコ",
+			"french" : "Kaiminus"
+		},
+		"id" : 158
+	},
+	{
+		"name" : {
+			"chinese" : "蓝鳄",
+			"english" : "Croconaw",
+			"japanese" : "アリゲイツ",
+			"french" : "Crocrodil"
+		},
+		"id" : 159
+	},
+	{
+		"name" : {
+			"chinese" : "大力鳄",
+			"english" : "Feraligatr",
+			"japanese" : "オーダイル",
+			"french" : "Aligatueur"
+		},
+		"id" : 160
+	},
+	{
+		"name" : {
+			"chinese" : "尾立",
+			"english" : "Sentret",
+			"japanese" : "オタチ",
+			"french" : "Fouinette"
+		},
+		"id" : 161
+	},
+	{
+		"name" : {
+			"chinese" : "大尾立",
+			"english" : "Furret",
+			"japanese" : "オオタチ",
+			"french" : "Fouinar"
+		},
+		"id" : 162
+	},
+	{
+		"name" : {
+			"chinese" : "咕咕",
+			"english" : "Hoothoot",
+			"japanese" : "ホーホー",
+			"french" : "Hoothoot"
+		},
+		"id" : 163
+	},
+	{
+		"name" : {
+			"chinese" : "猫头夜鹰",
+			"english" : "Noctowl",
+			"japanese" : "ヨルノズク",
+			"french" : "Noarfang"
+		},
+		"id" : 164
+	},
+	{
+		"name" : {
+			"chinese" : "芭瓢虫",
+			"english" : "Ledyba",
+			"japanese" : "レディバ",
+			"french" : "Coxy"
+		},
+		"id" : 165
+	},
+	{
+		"name" : {
+			"chinese" : "安瓢虫",
+			"english" : "Ledian",
+			"japanese" : "レディアン",
+			"french" : "Coxyclaque"
+		},
+		"id" : 166
+	},
+	{
+		"name" : {
+			"chinese" : "圆丝蛛",
+			"english" : "Spinarak",
+			"japanese" : "イトマル",
+			"french" : "Mimigal"
+		},
+		"id" : 167
+	},
+	{
+		"name" : {
+			"chinese" : "阿利多斯",
+			"english" : "Ariados",
+			"japanese" : "アリアドス",
+			"french" : "Migalos"
+		},
+		"id" : 168
+	},
+	{
+		"name" : {
+			"chinese" : "叉字蝠",
+			"english" : "Crobat",
+			"japanese" : "クロバット",
+			"french" : "Nostenfer"
+		},
+		"id" : 169
+	},
+	{
+		"name" : {
+			"chinese" : "灯笼鱼",
+			"english" : "Chinchou",
+			"japanese" : "チョンチー",
+			"french" : "Loupio"
+		},
+		"id" : 170
+	},
+	{
+		"name" : {
+			"chinese" : "电灯怪",
+			"english" : "Lanturn",
+			"japanese" : "ランターン",
+			"french" : "Lanturn"
+		},
+		"id" : 171
+	},
+	{
+		"name" : {
+			"chinese" : "皮丘",
+			"english" : "Pichu",
+			"japanese" : "ピチュー",
+			"french" : "Pichu"
+		},
+		"id" : 172
+	},
+	{
+		"name" : {
+			"chinese" : "皮宝宝",
+			"english" : "Cleffa",
+			"japanese" : "ピィ",
+			"french" : "Mélo"
+		},
+		"id" : 173
+	},
+	{
+		"name" : {
+			"chinese" : "宝宝丁",
+			"english" : "Igglybuff",
+			"japanese" : "ププリン",
+			"french" : "Toudoudou"
+		},
+		"id" : 174
+	},
+	{
+		"name" : {
+			"chinese" : "波克比",
+			"english" : "Togepi",
+			"japanese" : "トゲピー",
+			"french" : "Togepi"
+		},
+		"id" : 175
+	},
+	{
+		"name" : {
+			"chinese" : "波克基古",
+			"english" : "Togetic",
+			"japanese" : "トゲチック",
+			"french" : "Togetic"
+		},
+		"id" : 176
+	},
+	{
+		"name" : {
+			"chinese" : "天然雀",
+			"english" : "Natu",
+			"japanese" : "ネイティ",
+			"french" : "Natu"
+		},
+		"id" : 177
+	},
+	{
+		"name" : {
+			"chinese" : "天然鸟",
+			"english" : "Xatu",
+			"japanese" : "ネイティオ",
+			"french" : "Xatu"
+		},
+		"id" : 178
+	},
+	{
+		"name" : {
+			"chinese" : "咩利羊",
+			"english" : "Mareep",
+			"japanese" : "メリープ",
+			"french" : "Wattouat"
+		},
+		"id" : 179
+	},
+	{
+		"name" : {
+			"chinese" : "茸茸羊",
+			"english" : "Flaaffy",
+			"japanese" : "モココ",
+			"french" : "Lainergie"
+		},
+		"id" : 180
+	},
+	{
+		"name" : {
+			"chinese" : "电龙",
+			"english" : "Ampharos",
+			"japanese" : "デンリュウ",
+			"french" : "Pharamp"
+		},
+		"id" : 181
+	},
+	{
+		"name" : {
+			"chinese" : "美丽花",
+			"english" : "Bellossom",
+			"japanese" : "キレイハナ",
+			"french" : "Joliflor"
+		},
+		"id" : 182
+	},
+	{
+		"name" : {
+			"chinese" : "玛力露",
+			"english" : "Marill",
+			"japanese" : "マリル",
+			"french" : "Marill"
+		},
+		"id" : 183
+	},
+	{
+		"name" : {
+			"chinese" : "玛力露丽",
+			"english" : "Azumarill",
+			"japanese" : "マリルリ",
+			"french" : "Azumarill"
+		},
+		"id" : 184
+	},
+	{
+		"name" : {
+			"chinese" : "树才怪‎",
+			"english" : "Sudowoodo",
+			"japanese" : "ウソッキー",
+			"french" : "Simularbre"
+		},
+		"id" : 185
+	},
+	{
+		"name" : {
+			"chinese" : "蚊香蛙皇",
+			"english" : "Politoed",
+			"japanese" : "ニョロトノ",
+			"french" : "Tarpaud"
+		},
+		"id" : 186
+	},
+	{
+		"name" : {
+			"chinese" : "毽子草",
+			"english" : "Hoppip",
+			"japanese" : "ハネッコ",
+			"french" : "Granivol"
+		},
+		"id" : 187
+	},
+	{
+		"name" : {
+			"chinese" : "毽子花",
+			"english" : "Skiploom",
+			"japanese" : "ポポッコ",
+			"french" : "Floravol"
+		},
+		"id" : 188
+	},
+	{
+		"name" : {
+			"chinese" : "毽子棉",
+			"english" : "Jumpluff",
+			"japanese" : "ワタッコ",
+			"french" : "Cotovol"
+		},
+		"id" : 189
+	},
+	{
+		"name" : {
+			"chinese" : "长尾怪手",
+			"english" : "Aipom",
+			"japanese" : "エイパム",
+			"french" : "Capumain"
+		},
+		"id" : 190
+	},
+	{
+		"name" : {
+			"chinese" : "向日种子",
+			"english" : "Sunkern",
+			"japanese" : "ヒマナッツ",
+			"french" : "Tournegrin"
+		},
+		"id" : 191
+	},
+	{
+		"name" : {
+			"chinese" : "向日花怪",
+			"english" : "Sunflora",
+			"japanese" : "キマワリ",
+			"french" : "Héliatronc"
+		},
+		"id" : 192
+	},
+	{
+		"name" : {
+			"chinese" : "蜻蜻蜓",
+			"english" : "Yanma",
+			"japanese" : "ヤンヤンマ",
+			"french" : "Yanma"
+		},
+		"id" : 193
+	},
+	{
+		"name" : {
+			"chinese" : "乌波",
+			"english" : "Wooper",
+			"japanese" : "ウパー",
+			"french" : "Axoloto"
+		},
+		"id" : 194
+	},
+	{
+		"name" : {
+			"chinese" : "沼王",
+			"english" : "Quagsire",
+			"japanese" : "ヌオー",
+			"french" : "Maraiste"
+		},
+		"id" : 195
+	},
+	{
+		"name" : {
+			"chinese" : "太阳伊布",
+			"english" : "Espeon",
+			"japanese" : "エーフィ",
+			"french" : "Mentali"
+		},
+		"id" : 196
+	},
+	{
+		"name" : {
+			"chinese" : "月亮伊布",
+			"english" : "Umbreon",
+			"japanese" : "ブラッキー",
+			"french" : "Noctali"
+		},
+		"id" : 197
+	},
+	{
+		"name" : {
+			"chinese" : "黑暗鸦",
+			"english" : "Murkrow",
+			"japanese" : "ヤミカラス",
+			"french" : "Cornèbre"
+		},
+		"id" : 198
+	},
+	{
+		"name" : {
+			"chinese" : "呆呆王",
+			"english" : "Slowking",
+			"japanese" : "ヤドキング",
+			"french" : "Roigada"
+		},
+		"id" : 199
+	},
+	{
+		"name" : {
+			"chinese" : "梦妖",
+			"english" : "Misdreavus",
+			"japanese" : "ムウマ",
+			"french" : "Feuforêve"
+		},
+		"id" : 200
+	},
+	{
+		"name" : {
+			"chinese" : "未知图腾",
+			"english" : "Unown",
+			"japanese" : "アンノーン",
+			"french" : "Zarbi"
+		},
+		"id" : 201
+	},
+	{
+		"name" : {
+			"chinese" : "果然翁",
+			"english" : "Wobbuffet",
+			"japanese" : "ソーナンス",
+			"french" : "Qulbutoké"
+		},
+		"id" : 202
+	},
+	{
+		"name" : {
+			"chinese" : "麒麟奇",
+			"english" : "Girafarig",
+			"japanese" : "キリンリキ",
+			"french" : "Girafarig"
+		},
+		"id" : 203
+	},
+	{
+		"name" : {
+			"chinese" : "榛果球",
+			"english" : "Pineco",
+			"japanese" : "クヌギダマ",
+			"french" : "Pomdepik"
+		},
+		"id" : 204
+	},
+	{
+		"name" : {
+			"chinese" : "佛烈托斯",
+			"english" : "Forretress",
+			"japanese" : "フォレトス",
+			"french" : "Foretress"
+		},
+		"id" : 205
+	},
+	{
+		"name" : {
+			"chinese" : "土龙弟弟",
+			"english" : "Dunsparce",
+			"japanese" : "ノコッチ",
+			"french" : "Insolourdo"
+		},
+		"id" : 206
+	},
+	{
+		"name" : {
+			"chinese" : "天蝎",
+			"english" : "Gligar",
+			"japanese" : "グライガー",
+			"french" : "Scorplane"
+		},
+		"id" : 207
+	},
+	{
+		"name" : {
+			"chinese" : "大钢蛇",
+			"english" : "Steelix",
+			"japanese" : "ハガネール",
+			"french" : "Steelix"
+		},
+		"id" : 208
+	},
+	{
+		"name" : {
+			"chinese" : "布鲁",
+			"english" : "Snubbull",
+			"japanese" : "ブルー",
+			"french" : "Snubbull"
+		},
+		"id" : 209
+	},
+	{
+		"name" : {
+			"chinese" : "布鲁皇",
+			"english" : "Granbull",
+			"japanese" : "グランブル",
+			"french" : "Granbull"
+		},
+		"id" : 210
+	},
+	{
+		"name" : {
+			"chinese" : "千针鱼",
+			"english" : "Qwilfish",
+			"japanese" : "ハリーセン",
+			"french" : "Qwilfish"
+		},
+		"id" : 211
+	},
+	{
+		"name" : {
+			"chinese" : "巨钳螳螂",
+			"english" : "Scizor",
+			"japanese" : "ハッサム",
+			"french" : "Cizayox"
+		},
+		"id" : 212
+	},
+	{
+		"name" : {
+			"chinese" : "壶壶",
+			"english" : "Shuckle",
+			"japanese" : "ツボツボ",
+			"french" : "Caratroc"
+		},
+		"id" : 213
+	},
+	{
+		"name" : {
+			"chinese" : "赫拉克罗斯",
+			"english" : "Heracross",
+			"japanese" : "ヘラクロス",
+			"french" : "Scarhino"
+		},
+		"id" : 214
+	},
+	{
+		"name" : {
+			"chinese" : "狃拉",
+			"english" : "Sneasel",
+			"japanese" : "ニューラ",
+			"french" : "Farfuret"
+		},
+		"id" : 215
+	},
+	{
+		"name" : {
+			"chinese" : "熊宝宝",
+			"english" : "Teddiursa",
+			"japanese" : "ヒメグマ",
+			"french" : "Teddiursa"
+		},
+		"id" : 216
+	},
+	{
+		"name" : {
+			"chinese" : "圈圈熊",
+			"english" : "Ursaring",
+			"japanese" : "リングマ",
+			"french" : "Ursaring"
+		},
+		"id" : 217
+	},
+	{
+		"name" : {
+			"chinese" : "熔岩虫",
+			"english" : "Slugma",
+			"japanese" : "マグマッグ",
+			"french" : "Limagma"
+		},
+		"id" : 218
+	},
+	{
+		"name" : {
+			"chinese" : "熔岩蜗牛",
+			"english" : "Magcargo",
+			"japanese" : "マグカルゴ",
+			"french" : "Volcaropod"
+		},
+		"id" : 219
+	},
+	{
+		"name" : {
+			"chinese" : "小山猪",
+			"english" : "Swinub",
+			"japanese" : "ウリムー",
+			"french" : "Marcacrin"
+		},
+		"id" : 220
+	},
+	{
+		"name" : {
+			"chinese" : "长毛猪",
+			"english" : "Piloswine",
+			"japanese" : "イノムー",
+			"french" : "Cochignon"
+		},
+		"id" : 221
+	},
+	{
+		"name" : {
+			"chinese" : "太阳珊瑚",
+			"english" : "Corsola",
+			"japanese" : "サニーゴ",
+			"french" : "Corayon"
+		},
+		"id" : 222
+	},
+	{
+		"name" : {
+			"chinese" : "铁炮鱼",
+			"english" : "Remoraid",
+			"japanese" : "テッポウオ",
+			"french" : "Rémoraid"
+		},
+		"id" : 223
+	},
+	{
+		"name" : {
+			"chinese" : "章鱼桶",
+			"english" : "Octillery",
+			"japanese" : "オクタン",
+			"french" : "Octillery"
+		},
+		"id" : 224
+	},
+	{
+		"name" : {
+			"chinese" : "信使鸟",
+			"english" : "Delibird",
+			"japanese" : "デリバード",
+			"french" : "Cadoizo"
+		},
+		"id" : 225
+	},
+	{
+		"name" : {
+			"chinese" : "巨翅飞鱼",
+			"english" : "Mantine",
+			"japanese" : "マンタイン",
+			"french" : "Démanta"
+		},
+		"id" : 226
+	},
+	{
+		"name" : {
+			"chinese" : "盔甲鸟",
+			"english" : "Skarmory",
+			"japanese" : "エアームド",
+			"french" : "Airmure"
+		},
+		"id" : 227
+	},
+	{
+		"name" : {
+			"chinese" : "戴鲁比",
+			"english" : "Houndour",
+			"japanese" : "デルビル",
+			"french" : "Malosse"
+		},
+		"id" : 228
+	},
+	{
+		"name" : {
+			"chinese" : "黑鲁加",
+			"english" : "Houndoom",
+			"japanese" : "ヘルガー",
+			"french" : "Démolosse"
+		},
+		"id" : 229
+	},
+	{
+		"name" : {
+			"chinese" : "刺龙王",
+			"english" : "Kingdra",
+			"japanese" : "キングドラ",
+			"french" : "Hyporoi"
+		},
+		"id" : 230
+	},
+	{
+		"name" : {
+			"chinese" : "小小象",
+			"english" : "Phanpy",
+			"japanese" : "ゴマゾウ",
+			"french" : "Phanpy"
+		},
+		"id" : 231
+	},
+	{
+		"name" : {
+			"chinese" : "顿甲",
+			"english" : "Donphan",
+			"japanese" : "ドンファン",
+			"french" : "Donphan"
+		},
+		"id" : 232
+	},
+	{
+		"name" : {
+			"chinese" : "多边兽Ⅱ",
+			"english" : "Porygon2",
+			"japanese" : "ポリゴン２",
+			"french" : "Porygon2"
+		},
+		"id" : 233
+	},
+	{
+		"name" : {
+			"chinese" : "惊角鹿",
+			"english" : "Stantler",
+			"japanese" : "オドシシ",
+			"french" : "Cerfrousse"
+		},
+		"id" : 234
+	},
+	{
+		"name" : {
+			"chinese" : "图图犬",
+			"english" : "Smeargle",
+			"japanese" : "ドーブル",
+			"french" : "Queulorior"
+		},
+		"id" : 235
+	},
+	{
+		"name" : {
+			"chinese" : "无畏小子",
+			"english" : "Tyrogue",
+			"japanese" : "バルキー",
+			"french" : "Debugant"
+		},
+		"id" : 236
+	},
+	{
+		"name" : {
+			"chinese" : "战舞郎",
+			"english" : "Hitmontop",
+			"japanese" : "カポエラー",
+			"french" : "Kapoera"
+		},
+		"id" : 237
+	},
+	{
+		"name" : {
+			"chinese" : "迷唇娃",
+			"english" : "Smoochum",
+			"japanese" : "ムチュール",
+			"french" : "Lippouti"
+		},
+		"id" : 238
+	},
+	{
+		"name" : {
+			"chinese" : "电击怪",
+			"english" : "Elekid",
+			"japanese" : "エレキッド",
+			"french" : "Élekid"
+		},
+		"id" : 239
+	},
+	{
+		"name" : {
+			"chinese" : "鸭嘴宝宝",
+			"english" : "Magby",
+			"japanese" : "ブビィ",
+			"french" : "Magby"
+		},
+		"id" : 240
+	},
+	{
+		"name" : {
+			"chinese" : "大奶罐",
+			"english" : "Miltank",
+			"japanese" : "ミルタンク",
+			"french" : "Écrémeuh"
+		},
+		"id" : 241
+	},
+	{
+		"name" : {
+			"chinese" : "幸福蛋",
+			"english" : "Blissey",
+			"japanese" : "ハピナス",
+			"french" : "Leuphorie"
+		},
+		"id" : 242
+	},
+	{
+		"name" : {
+			"chinese" : "雷公",
+			"english" : "Raikou",
+			"japanese" : "ライコウ",
+			"french" : "Raikou"
+		},
+		"id" : 243
+	},
+	{
+		"name" : {
+			"chinese" : "炎帝",
+			"english" : "Entei",
+			"japanese" : "エンテイ",
+			"french" : "Entei"
+		},
+		"id" : 244
+	},
+	{
+		"name" : {
+			"chinese" : "水君",
+			"english" : "Suicune",
+			"japanese" : "スイクン",
+			"french" : "Suicune"
+		},
+		"id" : 245
+	},
+	{
+		"name" : {
+			"chinese" : "幼基拉斯",
+			"english" : "Larvitar",
+			"japanese" : "ヨーギラス",
+			"french" : "Embrylex"
+		},
+		"id" : 246
+	},
+	{
+		"name" : {
+			"chinese" : "沙基拉斯",
+			"english" : "Pupitar",
+			"japanese" : "サナギラス",
+			"french" : "Ymphect"
+		},
+		"id" : 247
+	},
+	{
+		"name" : {
+			"chinese" : "班基拉斯",
+			"english" : "Tyranitar",
+			"japanese" : "バンギラス",
+			"french" : "Tyranocif"
+		},
+		"id" : 248
+	},
+	{
+		"name" : {
+			"chinese" : "洛奇亚",
+			"english" : "Lugia",
+			"japanese" : "ルギア",
+			"french" : "Lugia"
+		},
+		"id" : 249
+	},
+	{
+		"name" : {
+			"chinese" : "凤王",
+			"english" : "Ho-Oh",
+			"japanese" : "ホウオウ",
+			"french" : "Ho-Oh"
+		},
+		"id" : 250
+	},
+	{
+		"name" : {
+			"chinese" : "时拉比",
+			"english" : "Celebi",
+			"japanese" : "セレビィ",
+			"french" : "Celebi"
+		},
+		"id" : 251
+	},
+	{
+		"name" : {
+			"chinese" : "木守宫",
+			"english" : "Treecko",
+			"japanese" : "キモリ",
+			"french" : "Arcko"
+		},
+		"id" : 252
+	},
+	{
+		"name" : {
+			"chinese" : "森林蜥蜴",
+			"english" : "Grovyle",
+			"japanese" : "ジュプトル",
+			"french" : "Massko"
+		},
+		"id" : 253
+	},
+	{
+		"name" : {
+			"chinese" : "蜥蜴王",
+			"english" : "Sceptile",
+			"japanese" : "ジュカイン",
+			"french" : "Jungko"
+		},
+		"id" : 254
+	},
+	{
+		"name" : {
+			"chinese" : "火稚鸡",
+			"english" : "Torchic",
+			"japanese" : "アチャモ",
+			"french" : "Poussifeu"
+		},
+		"id" : 255
+	},
+	{
+		"name" : {
+			"chinese" : "力壮鸡",
+			"english" : "Combusken",
+			"japanese" : "ワカシャモ",
+			"french" : "Galifeu"
+		},
+		"id" : 256
+	},
+	{
+		"name" : {
+			"chinese" : "火焰鸡",
+			"english" : "Blaziken",
+			"japanese" : "バシャーモ",
+			"french" : "Braségali"
+		},
+		"id" : 257
+	},
+	{
+		"name" : {
+			"chinese" : "水跃鱼",
+			"english" : "Mudkip",
+			"japanese" : "ミズゴロウ",
+			"french" : "Gobou"
+		},
+		"id" : 258
+	},
+	{
+		"name" : {
+			"chinese" : "沼跃鱼",
+			"english" : "Marshtomp",
+			"japanese" : "ヌマクロー",
+			"french" : "Flobio"
+		},
+		"id" : 259
+	},
+	{
+		"name" : {
+			"chinese" : "巨沼怪",
+			"english" : "Swampert",
+			"japanese" : "ラグラージ",
+			"french" : "Laggron"
+		},
+		"id" : 260
+	},
+	{
+		"name" : {
+			"chinese" : "土狼犬",
+			"english" : "Poochyena",
+			"japanese" : "ポチエナ",
+			"french" : "Medhyèna"
+		},
+		"id" : 261
+	},
+	{
+		"name" : {
+			"chinese" : "大狼犬",
+			"english" : "Mightyena",
+			"japanese" : "グラエナ",
+			"french" : "Grahyèna"
+		},
+		"id" : 262
+	},
+	{
+		"name" : {
+			"chinese" : "蛇纹熊",
+			"english" : "Zigzagoon",
+			"japanese" : "ジグザグマ",
+			"french" : "Zigzaton"
+		},
+		"id" : 263
+	},
+	{
+		"name" : {
+			"chinese" : "直冲熊",
+			"english" : "Linoone",
+			"japanese" : "マッスグマ",
+			"french" : "Linéon"
+		},
+		"id" : 264
+	},
+	{
+		"name" : {
+			"chinese" : "刺尾虫",
+			"english" : "Wurmple",
+			"japanese" : "ケムッソ",
+			"french" : "Chenipotte"
+		},
+		"id" : 265
+	},
+	{
+		"name" : {
+			"chinese" : "甲壳茧",
+			"english" : "Silcoon",
+			"japanese" : "カラサリス",
+			"french" : "Armulys"
+		},
+		"id" : 266
+	},
+	{
+		"name" : {
+			"chinese" : "狩猎凤蝶",
+			"english" : "Beautifly",
+			"japanese" : "アゲハント",
+			"french" : "Charmillon"
+		},
+		"id" : 267
+	},
+	{
+		"name" : {
+			"chinese" : "盾甲茧",
+			"english" : "Cascoon",
+			"japanese" : "マユルド",
+			"french" : "Blindalys"
+		},
+		"id" : 268
+	},
+	{
+		"name" : {
+			"chinese" : "毒粉蛾",
+			"english" : "Dustox",
+			"japanese" : "ドクケイル",
+			"french" : "Papinox"
+		},
+		"id" : 269
+	},
+	{
+		"name" : {
+			"chinese" : "莲叶童子",
+			"english" : "Lotad",
+			"japanese" : "ハスボー",
+			"french" : "Nénupiot"
+		},
+		"id" : 270
+	},
+	{
+		"name" : {
+			"chinese" : "莲帽小童",
+			"english" : "Lombre",
+			"japanese" : "ハスブレロ",
+			"french" : "Lombre"
+		},
+		"id" : 271
+	},
+	{
+		"name" : {
+			"chinese" : "乐天河童",
+			"english" : "Ludicolo",
+			"japanese" : "ルンパッパ",
+			"french" : "Ludicolo"
+		},
+		"id" : 272
+	},
+	{
+		"name" : {
+			"chinese" : "橡实果",
+			"english" : "Seedot",
+			"japanese" : "タネボー",
+			"french" : "Grainipiot"
+		},
+		"id" : 273
+	},
+	{
+		"name" : {
+			"chinese" : "长鼻叶",
+			"english" : "Nuzleaf",
+			"japanese" : "コノハナ",
+			"french" : "Pifeuil"
+		},
+		"id" : 274
+	},
+	{
+		"name" : {
+			"chinese" : "狡猾天狗",
+			"english" : "Shiftry",
+			"japanese" : "ダーテング",
+			"french" : "Tengalice"
+		},
+		"id" : 275
+	},
+	{
+		"name" : {
+			"chinese" : "傲骨燕",
+			"english" : "Taillow",
+			"japanese" : "スバメ",
+			"french" : "Nirondelle"
+		},
+		"id" : 276
+	},
+	{
+		"name" : {
+			"chinese" : "大王燕",
+			"english" : "Swellow",
+			"japanese" : "オオスバメ",
+			"french" : "Hélédelle"
+		},
+		"id" : 277
+	},
+	{
+		"name" : {
+			"chinese" : "长翅鸥",
+			"english" : "Wingull",
+			"japanese" : "キャモメ",
+			"french" : "Goélise"
+		},
+		"id" : 278
+	},
+	{
+		"name" : {
+			"chinese" : "大嘴鸥",
+			"english" : "Pelipper",
+			"japanese" : "ペリッパー",
+			"french" : "Bekipan"
+		},
+		"id" : 279
+	},
+	{
+		"name" : {
+			"chinese" : "拉鲁拉丝",
+			"english" : "Ralts",
+			"japanese" : "ラルトス",
+			"french" : "Tarsal"
+		},
+		"id" : 280
+	},
+	{
+		"name" : {
+			"chinese" : "奇鲁莉安",
+			"english" : "Kirlia",
+			"japanese" : "キルリア",
+			"french" : "Kirlia"
+		},
+		"id" : 281
+	},
+	{
+		"name" : {
+			"chinese" : "沙奈朵",
+			"english" : "Gardevoir",
+			"japanese" : "サーナイト",
+			"french" : "Gardevoir"
+		},
+		"id" : 282
+	},
+	{
+		"name" : {
+			"chinese" : "溜溜糖球",
+			"english" : "Surskit",
+			"japanese" : "アメタマ",
+			"french" : "Arakdo"
+		},
+		"id" : 283
+	},
+	{
+		"name" : {
+			"chinese" : "雨翅蛾",
+			"english" : "Masquerain",
+			"japanese" : "アメモース",
+			"french" : "Maskadra"
+		},
+		"id" : 284
+	},
+	{
+		"name" : {
+			"chinese" : "蘑蘑菇",
+			"english" : "Shroomish",
+			"japanese" : "キノココ",
+			"french" : "Balignon"
+		},
+		"id" : 285
+	},
+	{
+		"name" : {
+			"chinese" : "斗笠菇",
+			"english" : "Breloom",
+			"japanese" : "キノガッサ",
+			"french" : "Chapignon"
+		},
+		"id" : 286
+	},
+	{
+		"name" : {
+			"chinese" : "懒人獭",
+			"english" : "Slakoth",
+			"japanese" : "ナマケロ",
+			"french" : "Parecool"
+		},
+		"id" : 287
+	},
+	{
+		"name" : {
+			"chinese" : "过动猿",
+			"english" : "Vigoroth",
+			"japanese" : "ヤルキモノ",
+			"french" : "Vigoroth"
+		},
+		"id" : 288
+	},
+	{
+		"name" : {
+			"chinese" : "请假王",
+			"english" : "Slaking",
+			"japanese" : "ケッキング",
+			"french" : "Monaflèmit"
+		},
+		"id" : 289
+	},
+	{
+		"name" : {
+			"chinese" : "土居忍士",
+			"english" : "Nincada",
+			"japanese" : "ツチニン",
+			"french" : "Ningale"
+		},
+		"id" : 290
+	},
+	{
+		"name" : {
+			"chinese" : "铁面忍者",
+			"english" : "Ninjask",
+			"japanese" : "テッカニン",
+			"french" : "Ninjask"
+		},
+		"id" : 291
+	},
+	{
+		"name" : {
+			"chinese" : "脱壳忍者",
+			"english" : "Shedinja",
+			"japanese" : "ヌケニン",
+			"french" : "Munja"
+		},
+		"id" : 292
+	},
+	{
+		"name" : {
+			"chinese" : "咕妞妞",
+			"english" : "Whismur",
+			"japanese" : "ゴニョニョ",
+			"french" : "Chuchmur"
+		},
+		"id" : 293
+	},
+	{
+		"name" : {
+			"chinese" : "吼爆弹",
+			"english" : "Loudred",
+			"japanese" : "ドゴーム",
+			"french" : "Ramboum"
+		},
+		"id" : 294
+	},
+	{
+		"name" : {
+			"chinese" : "爆音怪",
+			"english" : "Exploud",
+			"japanese" : "バクオング",
+			"french" : "Brouhabam"
+		},
+		"id" : 295
+	},
+	{
+		"name" : {
+			"chinese" : "幕下力士",
+			"english" : "Makuhita",
+			"japanese" : "マクノシタ",
+			"french" : "Makuhita"
+		},
+		"id" : 296
+	},
+	{
+		"name" : {
+			"chinese" : "铁掌力士",
+			"english" : "Hariyama",
+			"japanese" : "ハリテヤマ",
+			"french" : "Hariyama"
+		},
+		"id" : 297
+	},
+	{
+		"name" : {
+			"chinese" : "露力丽",
+			"english" : "Azurill",
+			"japanese" : "ルリリ",
+			"french" : "Azurill"
+		},
+		"id" : 298
+	},
+	{
+		"name" : {
+			"chinese" : "朝北鼻",
+			"english" : "Nosepass",
+			"japanese" : "ノズパス",
+			"french" : "Tarinor"
+		},
+		"id" : 299
+	},
+	{
+		"name" : {
+			"chinese" : "向尾喵",
+			"english" : "Skitty",
+			"japanese" : "エネコ",
+			"french" : "Skitty"
+		},
+		"id" : 300
+	},
+	{
+		"name" : {
+			"chinese" : "优雅猫",
+			"english" : "Delcatty",
+			"japanese" : "エネコロロ",
+			"french" : "Delcatty"
+		},
+		"id" : 301
+	},
+	{
+		"name" : {
+			"chinese" : "勾魂眼",
+			"english" : "Sableye",
+			"japanese" : "ヤミラミ",
+			"french" : "Ténéfix"
+		},
+		"id" : 302
+	},
+	{
+		"name" : {
+			"chinese" : "大嘴娃",
+			"english" : "Mawile",
+			"japanese" : "クチート",
+			"french" : "Mysdibule"
+		},
+		"id" : 303
+	},
+	{
+		"name" : {
+			"chinese" : "可可多拉",
+			"english" : "Aron",
+			"japanese" : "ココドラ",
+			"french" : "Galekid"
+		},
+		"id" : 304
+	},
+	{
+		"name" : {
+			"chinese" : "可多拉",
+			"english" : "Lairon",
+			"japanese" : "コドラ",
+			"french" : "Galegon"
+		},
+		"id" : 305
+	},
+	{
+		"name" : {
+			"chinese" : "波士可多拉",
+			"english" : "Aggron",
+			"japanese" : "ボスゴドラ",
+			"french" : "Galeking"
+		},
+		"id" : 306
+	},
+	{
+		"name" : {
+			"chinese" : "玛沙那",
+			"english" : "Meditite",
+			"japanese" : "アサナン",
+			"french" : "Méditikka"
+		},
+		"id" : 307
+	},
+	{
+		"name" : {
+			"chinese" : "恰雷姆",
+			"english" : "Medicham",
+			"japanese" : "チャーレム",
+			"french" : "Charmina"
+		},
+		"id" : 308
+	},
+	{
+		"name" : {
+			"chinese" : "落雷兽",
+			"english" : "Electrike",
+			"japanese" : "ラクライ",
+			"french" : "Dynavolt"
+		},
+		"id" : 309
+	},
+	{
+		"name" : {
+			"chinese" : "雷电兽",
+			"english" : "Manectric",
+			"japanese" : "ライボルト",
+			"french" : "Élecsprint"
+		},
+		"id" : 310
+	},
+	{
+		"name" : {
+			"chinese" : "正电拍拍",
+			"english" : "Plusle",
+			"japanese" : "プラスル",
+			"french" : "Posipi"
+		},
+		"id" : 311
+	},
+	{
+		"name" : {
+			"chinese" : "负电拍拍",
+			"english" : "Minun",
+			"japanese" : "マイナン",
+			"french" : "Négapi"
+		},
+		"id" : 312
+	},
+	{
+		"name" : {
+			"chinese" : "电萤虫",
+			"english" : "Volbeat",
+			"japanese" : "バルビート",
+			"french" : "Muciole"
+		},
+		"id" : 313
+	},
+	{
+		"name" : {
+			"chinese" : "甜甜萤",
+			"english" : "Illumise",
+			"japanese" : "イルミーゼ",
+			"french" : "Lumivole"
+		},
+		"id" : 314
+	},
+	{
+		"name" : {
+			"chinese" : "毒蔷薇",
+			"english" : "Roselia",
+			"japanese" : "ロゼリア",
+			"french" : "Rosélia"
+		},
+		"id" : 315
+	},
+	{
+		"name" : {
+			"chinese" : "溶食兽",
+			"english" : "Gulpin",
+			"japanese" : "ゴクリン",
+			"french" : "Gloupti"
+		},
+		"id" : 316
+	},
+	{
+		"name" : {
+			"chinese" : "吞食兽",
+			"english" : "Swalot",
+			"japanese" : "マルノーム",
+			"french" : "Avaltout"
+		},
+		"id" : 317
+	},
+	{
+		"name" : {
+			"chinese" : "利牙鱼",
+			"english" : "Carvanha",
+			"japanese" : "キバニア",
+			"french" : "Carvanha"
+		},
+		"id" : 318
+	},
+	{
+		"name" : {
+			"chinese" : "巨牙鲨",
+			"english" : "Sharpedo",
+			"japanese" : "サメハダー",
+			"french" : "Sharpedo"
+		},
+		"id" : 319
+	},
+	{
+		"name" : {
+			"chinese" : "吼吼鲸",
+			"english" : "Wailmer",
+			"japanese" : "ホエルコ",
+			"french" : "Wailmer"
+		},
+		"id" : 320
+	},
+	{
+		"name" : {
+			"chinese" : "吼鲸王",
+			"english" : "Wailord",
+			"japanese" : "ホエルオー",
+			"french" : "Wailord"
+		},
+		"id" : 321
+	},
+	{
+		"name" : {
+			"chinese" : "呆火驼",
+			"english" : "Numel",
+			"japanese" : "ドンメル",
+			"french" : "Chamallot"
+		},
+		"id" : 322
+	},
+	{
+		"name" : {
+			"chinese" : "喷火驼",
+			"english" : "Camerupt",
+			"japanese" : "バクーダ",
+			"french" : "Camérupt"
+		},
+		"id" : 323
+	},
+	{
+		"name" : {
+			"chinese" : "煤炭龟",
+			"english" : "Torkoal",
+			"japanese" : "コータス",
+			"french" : "Chartor"
+		},
+		"id" : 324
+	},
+	{
+		"name" : {
+			"chinese" : "跳跳猪",
+			"english" : "Spoink",
+			"japanese" : "バネブー",
+			"french" : "Spoink"
+		},
+		"id" : 325
+	},
+	{
+		"name" : {
+			"chinese" : "噗噗猪",
+			"english" : "Grumpig",
+			"japanese" : "ブーピッグ",
+			"french" : "Groret"
+		},
+		"id" : 326
+	},
+	{
+		"name" : {
+			"chinese" : "晃晃斑",
+			"english" : "Spinda",
+			"japanese" : "パッチール",
+			"french" : "Spinda"
+		},
+		"id" : 327
+	},
+	{
+		"name" : {
+			"chinese" : "大颚蚁",
+			"english" : "Trapinch",
+			"japanese" : "ナックラー",
+			"french" : "Kraknoix"
+		},
+		"id" : 328
+	},
+	{
+		"name" : {
+			"chinese" : "超音波幼虫",
+			"english" : "Vibrava",
+			"japanese" : "ビブラーバ",
+			"french" : "Vibraninf"
+		},
+		"id" : 329
+	},
+	{
+		"name" : {
+			"chinese" : "沙漠蜻蜓",
+			"english" : "Flygon",
+			"japanese" : "フライゴン",
+			"french" : "Libégon"
+		},
+		"id" : 330
+	},
+	{
+		"name" : {
+			"chinese" : "刺球仙人掌",
+			"english" : "Cacnea",
+			"japanese" : "サボネア",
+			"french" : "Cacnea"
+		},
+		"id" : 331
+	},
+	{
+		"name" : {
+			"chinese" : "梦歌仙人掌",
+			"english" : "Cacturne",
+			"japanese" : "ノクタス",
+			"french" : "Cacturne"
+		},
+		"id" : 332
+	},
+	{
+		"name" : {
+			"chinese" : "青绵鸟",
+			"english" : "Swablu",
+			"japanese" : "チルット",
+			"french" : "Tylton"
+		},
+		"id" : 333
+	},
+	{
+		"name" : {
+			"chinese" : "七夕青鸟",
+			"english" : "Altaria",
+			"japanese" : "チルタリス",
+			"french" : "Altaria"
+		},
+		"id" : 334
+	},
+	{
+		"name" : {
+			"chinese" : "猫鼬斩",
+			"english" : "Zangoose",
+			"japanese" : "ザングース",
+			"french" : "Mangriff"
+		},
+		"id" : 335
+	},
+	{
+		"name" : {
+			"chinese" : "饭匙蛇",
+			"english" : "Seviper",
+			"japanese" : "ハブネーク",
+			"french" : "Séviper"
+		},
+		"id" : 336
+	},
+	{
+		"name" : {
+			"chinese" : "月石",
+			"english" : "Lunatone",
+			"japanese" : "ルナトーン",
+			"french" : "Séléroc"
+		},
+		"id" : 337
+	},
+	{
+		"name" : {
+			"chinese" : "太阳岩",
+			"english" : "Solrock",
+			"japanese" : "ソルロック",
+			"french" : "Solaroc"
+		},
+		"id" : 338
+	},
+	{
+		"name" : {
+			"chinese" : "泥泥鳅",
+			"english" : "Barboach",
+			"japanese" : "ドジョッチ",
+			"french" : "Barloche"
+		},
+		"id" : 339
+	},
+	{
+		"name" : {
+			"chinese" : "鲶鱼王",
+			"english" : "Whiscash",
+			"japanese" : "ナマズン",
+			"french" : "Barbicha"
+		},
+		"id" : 340
+	},
+	{
+		"name" : {
+			"chinese" : "龙虾小兵",
+			"english" : "Corphish",
+			"japanese" : "ヘイガニ",
+			"french" : "Écrapince"
+		},
+		"id" : 341
+	},
+	{
+		"name" : {
+			"chinese" : "铁螯龙虾",
+			"english" : "Crawdaunt",
+			"japanese" : "シザリガー",
+			"french" : "Colhomard"
+		},
+		"id" : 342
+	},
+	{
+		"name" : {
+			"chinese" : "天秤偶",
+			"english" : "Baltoy",
+			"japanese" : "ヤジロン",
+			"french" : "Balbuto"
+		},
+		"id" : 343
+	},
+	{
+		"name" : {
+			"chinese" : "念力土偶",
+			"english" : "Claydol",
+			"japanese" : "ネンドール",
+			"french" : "Kaorine"
+		},
+		"id" : 344
+	},
+	{
+		"name" : {
+			"chinese" : "触手百合",
+			"english" : "Lileep",
+			"japanese" : "リリーラ",
+			"french" : "Lilia"
+		},
+		"id" : 345
+	},
+	{
+		"name" : {
+			"chinese" : "摇篮百合",
+			"english" : "Cradily",
+			"japanese" : "ユレイドル",
+			"french" : "Vacilys"
+		},
+		"id" : 346
+	},
+	{
+		"name" : {
+			"chinese" : "太古羽虫",
+			"english" : "Anorith",
+			"japanese" : "アノプス",
+			"french" : "Anorith"
+		},
+		"id" : 347
+	},
+	{
+		"name" : {
+			"chinese" : "太古盔甲",
+			"english" : "Armaldo",
+			"japanese" : "アーマルド",
+			"french" : "Armaldo"
+		},
+		"id" : 348
+	},
+	{
+		"name" : {
+			"chinese" : "丑丑鱼",
+			"english" : "Feebas",
+			"japanese" : "ヒンバス",
+			"french" : "Barpau"
+		},
+		"id" : 349
+	},
+	{
+		"name" : {
+			"chinese" : "美纳斯",
+			"english" : "Milotic",
+			"japanese" : "ミロカロス",
+			"french" : "Milobellus"
+		},
+		"id" : 350
+	},
+	{
+		"name" : {
+			"chinese" : "飘浮泡泡",
+			"english" : "Castform",
+			"japanese" : "ポワルン",
+			"french" : "Morphéo"
+		},
+		"id" : 351
+	},
+	{
+		"name" : {
+			"chinese" : "变隐龙",
+			"english" : "Kecleon",
+			"japanese" : "カクレオン",
+			"french" : "Kecleon"
+		},
+		"id" : 352
+	},
+	{
+		"name" : {
+			"chinese" : "怨影娃娃",
+			"english" : "Shuppet",
+			"japanese" : "カゲボウズ",
+			"french" : "Polichombr"
+		},
+		"id" : 353
+	},
+	{
+		"name" : {
+			"chinese" : "诅咒娃娃",
+			"english" : "Banette",
+			"japanese" : "ジュペッタ",
+			"french" : "Branette"
+		},
+		"id" : 354
+	},
+	{
+		"name" : {
+			"chinese" : "夜巡灵",
+			"english" : "Duskull",
+			"japanese" : "ヨマワル",
+			"french" : "Skelénox"
+		},
+		"id" : 355
+	},
+	{
+		"name" : {
+			"chinese" : "彷徨夜灵",
+			"english" : "Dusclops",
+			"japanese" : "サマヨール",
+			"french" : "Téraclope"
+		},
+		"id" : 356
+	},
+	{
+		"name" : {
+			"chinese" : "热带龙",
+			"english" : "Tropius",
+			"japanese" : "トロピウス",
+			"french" : "Tropius"
+		},
+		"id" : 357
+	},
+	{
+		"name" : {
+			"chinese" : "风铃铃",
+			"english" : "Chimecho",
+			"japanese" : "チリーン",
+			"french" : "Éoko"
+		},
+		"id" : 358
+	},
+	{
+		"name" : {
+			"chinese" : "阿勃梭鲁",
+			"english" : "Absol",
+			"japanese" : "アブソル",
+			"french" : "Absol"
+		},
+		"id" : 359
+	},
+	{
+		"name" : {
+			"chinese" : "小果然",
+			"english" : "Wynaut",
+			"japanese" : "ソーナノ",
+			"french" : "Okéoké"
+		},
+		"id" : 360
+	},
+	{
+		"name" : {
+			"chinese" : "雪童子",
+			"english" : "Snorunt",
+			"japanese" : "ユキワラシ",
+			"french" : "Stalgamin"
+		},
+		"id" : 361
+	},
+	{
+		"name" : {
+			"chinese" : "冰鬼护",
+			"english" : "Glalie",
+			"japanese" : "オニゴーリ",
+			"french" : "Oniglali"
+		},
+		"id" : 362
+	},
+	{
+		"name" : {
+			"chinese" : "海豹球",
+			"english" : "Spheal",
+			"japanese" : "タマザラシ",
+			"french" : "Obalie"
+		},
+		"id" : 363
+	},
+	{
+		"name" : {
+			"chinese" : "海魔狮",
+			"english" : "Sealeo",
+			"japanese" : "トドグラー",
+			"french" : "Phogleur"
+		},
+		"id" : 364
+	},
+	{
+		"name" : {
+			"chinese" : "帝牙海狮",
+			"english" : "Walrein",
+			"japanese" : "トドゼルガ",
+			"french" : "Kaimorse"
+		},
+		"id" : 365
+	},
+	{
+		"name" : {
+			"chinese" : "珍珠贝",
+			"english" : "Clamperl",
+			"japanese" : "パールル",
+			"french" : "Coquiperl"
+		},
+		"id" : 366
+	},
+	{
+		"name" : {
+			"chinese" : "猎斑鱼",
+			"english" : "Huntail",
+			"japanese" : "ハンテール",
+			"french" : "Serpang"
+		},
+		"id" : 367
+	},
+	{
+		"name" : {
+			"chinese" : "樱花鱼",
+			"english" : "Gorebyss",
+			"japanese" : "サクラビス",
+			"french" : "Rosabyss"
+		},
+		"id" : 368
+	},
+	{
+		"name" : {
+			"chinese" : "古空棘鱼",
+			"english" : "Relicanth",
+			"japanese" : "ジーランス",
+			"french" : "Relicanth"
+		},
+		"id" : 369
+	},
+	{
+		"name" : {
+			"chinese" : "爱心鱼",
+			"english" : "Luvdisc",
+			"japanese" : "ラブカス",
+			"french" : "Lovdisc"
+		},
+		"id" : 370
+	},
+	{
+		"name" : {
+			"chinese" : "宝贝龙",
+			"english" : "Bagon",
+			"japanese" : "タツベイ",
+			"french" : "Draby"
+		},
+		"id" : 371
+	},
+	{
+		"name" : {
+			"chinese" : "甲壳龙",
+			"english" : "Shelgon",
+			"japanese" : "コモルー",
+			"french" : "Drackhaus"
+		},
+		"id" : 372
+	},
+	{
+		"name" : {
+			"chinese" : "暴飞龙",
+			"english" : "Salamence",
+			"japanese" : "ボーマンダ",
+			"french" : "Drattak"
+		},
+		"id" : 373
+	},
+	{
+		"name" : {
+			"chinese" : "铁哑铃",
+			"english" : "Beldum",
+			"japanese" : "ダンバル",
+			"french" : "Terhal"
+		},
+		"id" : 374
+	},
+	{
+		"name" : {
+			"chinese" : "金属怪",
+			"english" : "Metang",
+			"japanese" : "メタング",
+			"french" : "Métang"
+		},
+		"id" : 375
+	},
+	{
+		"name" : {
+			"chinese" : "巨金怪",
+			"english" : "Metagross",
+			"japanese" : "メタグロス",
+			"french" : "Métalosse"
+		},
+		"id" : 376
+	},
+	{
+		"name" : {
+			"chinese" : "雷吉洛克",
+			"english" : "Regirock",
+			"japanese" : "レジロック",
+			"french" : "Regirock"
+		},
+		"id" : 377
+	},
+	{
+		"name" : {
+			"chinese" : "雷吉艾斯",
+			"english" : "Regice",
+			"japanese" : "レジアイス",
+			"french" : "Regice"
+		},
+		"id" : 378
+	},
+	{
+		"name" : {
+			"chinese" : "雷吉斯奇鲁",
+			"english" : "Registeel",
+			"japanese" : "レジスチル",
+			"french" : "Registeel"
+		},
+		"id" : 379
+	},
+	{
+		"name" : {
+			"chinese" : "拉帝亚斯",
+			"english" : "Latias",
+			"japanese" : "ラティアス",
+			"french" : "Latias"
+		},
+		"id" : 380
+	},
+	{
+		"name" : {
+			"chinese" : "拉帝欧斯",
+			"english" : "Latios",
+			"japanese" : "ラティオス",
+			"french" : "Latios"
+		},
+		"id" : 381
+	},
+	{
+		"name" : {
+			"chinese" : "盖欧卡",
+			"english" : "Kyogre",
+			"japanese" : "カイオーガ",
+			"french" : "Kyogre"
+		},
+		"id" : 382
+	},
+	{
+		"name" : {
+			"chinese" : "固拉多",
+			"english" : "Groudon",
+			"japanese" : "グラードン",
+			"french" : "Groudon"
+		},
+		"id" : 383
+	},
+	{
+		"name" : {
+			"chinese" : "烈空坐",
+			"english" : "Rayquaza",
+			"japanese" : "レックウザ",
+			"french" : "Rayquaza"
+		},
+		"id" : 384
+	},
+	{
+		"name" : {
+			"chinese" : "基拉祈",
+			"english" : "Jirachi",
+			"japanese" : "ジラーチ",
+			"french" : "Jirachi"
+		},
+		"id" : 385
+	},
+	{
+		"name" : {
+			"chinese" : "代欧奇希斯",
+			"english" : "Deoxys",
+			"japanese" : "デオキシス",
+			"french" : "Deoxys"
+		},
+		"id" : 386
+	},
+	{
+		"name" : {
+			"chinese" : "草苗龟",
+			"english" : "Turtwig",
+			"japanese" : "ナエトル",
+			"french" : "Tortipouss"
+		},
+		"id" : 387
+	},
+	{
+		"name" : {
+			"chinese" : "树林龟",
+			"english" : "Grotle",
+			"japanese" : "ハヤシガメ",
+			"french" : "Boskara"
+		},
+		"id" : 388
+	},
+	{
+		"name" : {
+			"chinese" : "土台龟",
+			"english" : "Torterra",
+			"japanese" : "ドダイトス",
+			"french" : "Torterra"
+		},
+		"id" : 389
+	},
+	{
+		"name" : {
+			"chinese" : "小火焰猴",
+			"english" : "Chimchar",
+			"japanese" : "ヒコザル",
+			"french" : "Ouisticram"
+		},
+		"id" : 390
+	},
+	{
+		"name" : {
+			"chinese" : "猛火猴",
+			"english" : "Monferno",
+			"japanese" : "モウカザル",
+			"french" : "Chimpenfeu"
+		},
+		"id" : 391
+	},
+	{
+		"name" : {
+			"chinese" : "烈焰猴",
+			"english" : "Infernape",
+			"japanese" : "ゴウカザル",
+			"french" : "Simiabraz"
+		},
+		"id" : 392
+	},
+	{
+		"name" : {
+			"chinese" : "波加曼",
+			"english" : "Piplup",
+			"japanese" : "ポッチャマ",
+			"french" : "Tiplouf"
+		},
+		"id" : 393
+	},
+	{
+		"name" : {
+			"chinese" : "波皇子",
+			"english" : "Prinplup",
+			"japanese" : "ポッタイシ",
+			"french" : "Prinplouf"
+		},
+		"id" : 394
+	},
+	{
+		"name" : {
+			"chinese" : "帝王拿波",
+			"english" : "Empoleon",
+			"japanese" : "エンペルト",
+			"french" : "Pingoléon"
+		},
+		"id" : 395
+	},
+	{
+		"name" : {
+			"chinese" : "姆克儿",
+			"english" : "Starly",
+			"japanese" : "ムックル",
+			"french" : "Étourmi"
+		},
+		"id" : 396
+	},
+	{
+		"name" : {
+			"chinese" : "姆克鸟",
+			"english" : "Staravia",
+			"japanese" : "ムクバード",
+			"french" : "Étourvol"
+		},
+		"id" : 397
+	},
+	{
+		"name" : {
+			"chinese" : "姆克鹰",
+			"english" : "Staraptor",
+			"japanese" : "ムクホーク",
+			"french" : "Étouraptor"
+		},
+		"id" : 398
+	},
+	{
+		"name" : {
+			"chinese" : "大牙狸",
+			"english" : "Bidoof",
+			"japanese" : "ビッパ",
+			"french" : "Keunotor"
+		},
+		"id" : 399
+	},
+	{
+		"name" : {
+			"chinese" : "大尾狸",
+			"english" : "Bibarel",
+			"japanese" : "ビーダル",
+			"french" : "Castorno"
+		},
+		"id" : 400
+	},
+	{
+		"name" : {
+			"chinese" : "圆法师",
+			"english" : "Kricketot",
+			"japanese" : "コロボーシ",
+			"french" : "Crikzik"
+		},
+		"id" : 401
+	},
+	{
+		"name" : {
+			"chinese" : "音箱蟀",
+			"english" : "Kricketune",
+			"japanese" : "コロトック",
+			"french" : "Mélokrik"
+		},
+		"id" : 402
+	},
+	{
+		"name" : {
+			"chinese" : "小猫怪",
+			"english" : "Shinx",
+			"japanese" : "コリンク",
+			"french" : "Lixy"
+		},
+		"id" : 403
+	},
+	{
+		"name" : {
+			"chinese" : "勒克猫",
+			"english" : "Luxio",
+			"japanese" : "ルクシオ",
+			"french" : "Luxio"
+		},
+		"id" : 404
+	},
+	{
+		"name" : {
+			"chinese" : "伦琴猫",
+			"english" : "Luxray",
+			"japanese" : "レントラー",
+			"french" : "Luxray"
+		},
+		"id" : 405
+	},
+	{
+		"name" : {
+			"chinese" : "含羞苞",
+			"english" : "Budew",
+			"japanese" : "スボミー",
+			"french" : "Rozbouton"
+		},
+		"id" : 406
+	},
+	{
+		"name" : {
+			"chinese" : "罗丝雷朵",
+			"english" : "Roserade",
+			"japanese" : "ロズレイド",
+			"french" : "Roserade"
+		},
+		"id" : 407
+	},
+	{
+		"name" : {
+			"chinese" : "头盖龙",
+			"english" : "Cranidos",
+			"japanese" : "ズガイドス",
+			"french" : "Kranidos"
+		},
+		"id" : 408
+	},
+	{
+		"name" : {
+			"chinese" : "战槌龙",
+			"english" : "Rampardos",
+			"japanese" : "ラムパルド",
+			"french" : "Charkos"
+		},
+		"id" : 409
+	},
+	{
+		"name" : {
+			"chinese" : "盾甲龙",
+			"english" : "Shieldon",
+			"japanese" : "タテトプス",
+			"french" : "Dinoclier"
+		},
+		"id" : 410
+	},
+	{
+		"name" : {
+			"chinese" : "护城龙",
+			"english" : "Bastiodon",
+			"japanese" : "トリデプス",
+			"french" : "Bastiodon"
+		},
+		"id" : 411
+	},
+	{
+		"name" : {
+			"chinese" : "结草儿",
+			"english" : "Burmy",
+			"japanese" : "ミノムッチ",
+			"french" : "Cheniti"
+		},
+		"id" : 412
+	},
+	{
+		"name" : {
+			"chinese" : "结草贵妇",
+			"english" : "Wormadam",
+			"japanese" : "ミノマダム",
+			"french" : "Cheniselle"
+		},
+		"id" : 413
+	},
+	{
+		"name" : {
+			"chinese" : "绅士蛾",
+			"english" : "Mothim",
+			"japanese" : "ガーメイル",
+			"french" : "Papilord"
+		},
+		"id" : 414
+	},
+	{
+		"name" : {
+			"chinese" : "三蜜蜂",
+			"english" : "Combee",
+			"japanese" : "ミツハニー",
+			"french" : "Apitrini"
+		},
+		"id" : 415
+	},
+	{
+		"name" : {
+			"chinese" : "蜂女王",
+			"english" : "Vespiquen",
+			"japanese" : "ビークイン",
+			"french" : "Apireine"
+		},
+		"id" : 416
+	},
+	{
+		"name" : {
+			"chinese" : "帕奇利兹",
+			"english" : "Pachirisu",
+			"japanese" : "パチリス",
+			"french" : "Pachirisu"
+		},
+		"id" : 417
+	},
+	{
+		"name" : {
+			"chinese" : "泳圈鼬",
+			"english" : "Buizel",
+			"japanese" : "ブイゼル",
+			"french" : "Mustébouée"
+		},
+		"id" : 418
+	},
+	{
+		"name" : {
+			"chinese" : "浮潜鼬",
+			"english" : "Floatzel",
+			"japanese" : "フローゼル",
+			"french" : "Mustéflott"
+		},
+		"id" : 419
+	},
+	{
+		"name" : {
+			"chinese" : "樱花宝",
+			"english" : "Cherubi",
+			"japanese" : "チェリンボ",
+			"french" : "Ceribou"
+		},
+		"id" : 420
+	},
+	{
+		"name" : {
+			"chinese" : "樱花儿",
+			"english" : "Cherrim",
+			"japanese" : "チェリム",
+			"french" : "Ceriflor"
+		},
+		"id" : 421
+	},
+	{
+		"name" : {
+			"chinese" : "无壳海兔",
+			"english" : "Shellos",
+			"japanese" : "カラナクシ",
+			"french" : "Sancoki"
+		},
+		"id" : 422
+	},
+	{
+		"name" : {
+			"chinese" : "海兔兽",
+			"english" : "Gastrodon",
+			"japanese" : "トリトドン",
+			"french" : "Tritosor"
+		},
+		"id" : 423
+	},
+	{
+		"name" : {
+			"chinese" : "双尾怪手",
+			"english" : "Ambipom",
+			"japanese" : "エテボース",
+			"french" : "Capidextre"
+		},
+		"id" : 424
+	},
+	{
+		"name" : {
+			"chinese" : "飘飘球",
+			"english" : "Drifloon",
+			"japanese" : "フワンテ",
+			"french" : "Baudrive"
+		},
+		"id" : 425
+	},
+	{
+		"name" : {
+			"chinese" : "随风球",
+			"english" : "Drifblim",
+			"japanese" : "フワライド",
+			"french" : "Grodrive"
+		},
+		"id" : 426
+	},
+	{
+		"name" : {
+			"chinese" : "卷卷耳",
+			"english" : "Buneary",
+			"japanese" : "ミミロル",
+			"french" : "Laporeille"
+		},
+		"id" : 427
+	},
+	{
+		"name" : {
+			"chinese" : "长耳兔",
+			"english" : "Lopunny",
+			"japanese" : "ミミロップ",
+			"french" : "Lockpin"
+		},
+		"id" : 428
+	},
+	{
+		"name" : {
+			"chinese" : "梦妖魔",
+			"english" : "Mismagius",
+			"japanese" : "ムウマージ",
+			"french" : "Magirêve"
+		},
+		"id" : 429
+	},
+	{
+		"name" : {
+			"chinese" : "乌鸦头头",
+			"english" : "Honchkrow",
+			"japanese" : "ドンカラス",
+			"french" : "Corboss"
+		},
+		"id" : 430
+	},
+	{
+		"name" : {
+			"chinese" : "魅力喵",
+			"english" : "Glameow",
+			"japanese" : "ニャルマー",
+			"french" : "Chaglam"
+		},
+		"id" : 431
+	},
+	{
+		"name" : {
+			"chinese" : "东施喵",
+			"english" : "Purugly",
+			"japanese" : "ブニャット",
+			"french" : "Chaffreux"
+		},
+		"id" : 432
+	},
+	{
+		"name" : {
+			"chinese" : "铃铛响",
+			"english" : "Chingling",
+			"japanese" : "リーシャン",
+			"french" : "Korillon"
+		},
+		"id" : 433
+	},
+	{
+		"name" : {
+			"chinese" : "臭鼬噗",
+			"english" : "Stunky",
+			"japanese" : "スカンプー",
+			"french" : "Moufouette"
+		},
+		"id" : 434
+	},
+	{
+		"name" : {
+			"chinese" : "坦克臭鼬",
+			"english" : "Skuntank",
+			"japanese" : "スカタンク",
+			"french" : "Moufflair"
+		},
+		"id" : 435
+	},
+	{
+		"name" : {
+			"chinese" : "铜镜怪",
+			"english" : "Bronzor",
+			"japanese" : "ドーミラー",
+			"french" : "Archéomire"
+		},
+		"id" : 436
+	},
+	{
+		"name" : {
+			"chinese" : "青铜钟",
+			"english" : "Bronzong",
+			"japanese" : "ドータクン",
+			"french" : "Archéodong"
+		},
+		"id" : 437
+	},
+	{
+		"name" : {
+			"chinese" : "盆才怪",
+			"english" : "Bonsly",
+			"japanese" : "ウソハチ",
+			"french" : "Manzaï"
+		},
+		"id" : 438
+	},
+	{
+		"name" : {
+			"chinese" : "魔尼尼",
+			"english" : "Mime Jr.",
+			"japanese" : "マネネ",
+			"french" : "Mime Jr"
+		},
+		"id" : 439
+	},
+	{
+		"name" : {
+			"chinese" : "小福蛋",
+			"english" : "Happiny",
+			"japanese" : "ピンプク",
+			"french" : "Ptiravi"
+		},
+		"id" : 440
+	},
+	{
+		"name" : {
+			"chinese" : "聒噪鸟",
+			"english" : "Chatot",
+			"japanese" : "ペラップ",
+			"french" : "Pijako"
+		},
+		"id" : 441
+	},
+	{
+		"name" : {
+			"chinese" : "花岩怪",
+			"english" : "Spiritomb",
+			"japanese" : "ミカルゲ",
+			"french" : "Spiritomb"
+		},
+		"id" : 442
+	},
+	{
+		"name" : {
+			"chinese" : "圆陆鲨",
+			"english" : "Gible",
+			"japanese" : "フカマル",
+			"french" : "Griknot"
+		},
+		"id" : 443
+	},
+	{
+		"name" : {
+			"chinese" : "尖牙陆鲨",
+			"english" : "Gabite",
+			"japanese" : "ガバイト",
+			"french" : "Carmache"
+		},
+		"id" : 444
+	},
+	{
+		"name" : {
+			"chinese" : "烈咬陆鲨",
+			"english" : "Garchomp",
+			"japanese" : "ガブリアス",
+			"french" : "Carchacrok"
+		},
+		"id" : 445
+	},
+	{
+		"name" : {
+			"chinese" : "小卡比兽",
+			"english" : "Munchlax",
+			"japanese" : "ゴンベ",
+			"french" : "Goinfrex"
+		},
+		"id" : 446
+	},
+	{
+		"name" : {
+			"chinese" : "利欧路",
+			"english" : "Riolu",
+			"japanese" : "リオル",
+			"french" : "Riolu"
+		},
+		"id" : 447
+	},
+	{
+		"name" : {
+			"chinese" : "路卡利欧",
+			"english" : "Lucario",
+			"japanese" : "ルカリオ",
+			"french" : "Lucario"
+		},
+		"id" : 448
+	},
+	{
+		"name" : {
+			"chinese" : "沙河马",
+			"english" : "Hippopotas",
+			"japanese" : "ヒポポタス",
+			"french" : "Hippopotas"
+		},
+		"id" : 449
+	},
+	{
+		"name" : {
+			"chinese" : "河马兽",
+			"english" : "Hippowdon",
+			"japanese" : "カバルドン",
+			"french" : "Hippodocus"
+		},
+		"id" : 450
+	},
+	{
+		"name" : {
+			"chinese" : "钳尾蝎",
+			"english" : "Skorupi",
+			"japanese" : "スコルピ",
+			"french" : "Rapion"
+		},
+		"id" : 451
+	},
+	{
+		"name" : {
+			"chinese" : "龙王蝎",
+			"english" : "Drapion",
+			"japanese" : "ドラピオン",
+			"french" : "Drascore"
+		},
+		"id" : 452
+	},
+	{
+		"name" : {
+			"chinese" : "不良蛙",
+			"english" : "Croagunk",
+			"japanese" : "グレッグル",
+			"french" : "Cradopaud"
+		},
+		"id" : 453
+	},
+	{
+		"name" : {
+			"chinese" : "毒骷蛙",
+			"english" : "Toxicroak",
+			"japanese" : "ドクロッグ",
+			"french" : "Coatox"
+		},
+		"id" : 454
+	},
+	{
+		"name" : {
+			"chinese" : "尖牙笼",
+			"english" : "Carnivine",
+			"japanese" : "マスキッパ",
+			"french" : "Vortente"
+		},
+		"id" : 455
+	},
+	{
+		"name" : {
+			"chinese" : "荧光鱼",
+			"english" : "Finneon",
+			"japanese" : "ケイコウオ",
+			"french" : "Écayon"
+		},
+		"id" : 456
+	},
+	{
+		"name" : {
+			"chinese" : "霓虹鱼",
+			"english" : "Lumineon",
+			"japanese" : "ネオラント",
+			"french" : "Luminéon"
+		},
+		"id" : 457
+	},
+	{
+		"name" : {
+			"chinese" : "小球飞鱼",
+			"english" : "Mantyke",
+			"japanese" : "タマンタ",
+			"french" : "Babimanta"
+		},
+		"id" : 458
+	},
+	{
+		"name" : {
+			"chinese" : "雪笠怪",
+			"english" : "Snover",
+			"japanese" : "ユキカブリ",
+			"french" : "Blizzi"
+		},
+		"id" : 459
+	},
+	{
+		"name" : {
+			"chinese" : "暴雪王",
+			"english" : "Abomasnow",
+			"japanese" : "ユキノオー",
+			"french" : "Blizzaroi"
+		},
+		"id" : 460
+	},
+	{
+		"name" : {
+			"chinese" : "玛狃拉",
+			"english" : "Weavile",
+			"japanese" : "マニューラ",
+			"french" : "Dimoret"
+		},
+		"id" : 461
+	},
+	{
+		"name" : {
+			"chinese" : "自爆磁怪",
+			"english" : "Magnezone",
+			"japanese" : "ジバコイル",
+			"french" : "Magnézone"
+		},
+		"id" : 462
+	},
+	{
+		"name" : {
+			"chinese" : "大舌舔",
+			"english" : "Lickilicky",
+			"japanese" : "ベロベルト",
+			"french" : "Coudlangue"
+		},
+		"id" : 463
+	},
+	{
+		"name" : {
+			"chinese" : "超甲狂犀",
+			"english" : "Rhyperior",
+			"japanese" : "ドサイドン",
+			"french" : "Rhinastoc"
+		},
+		"id" : 464
+	},
+	{
+		"name" : {
+			"chinese" : "巨蔓藤",
+			"english" : "Tangrowth",
+			"japanese" : "モジャンボ",
+			"french" : "Bouldeneu"
+		},
+		"id" : 465
+	},
+	{
+		"name" : {
+			"chinese" : "电击魔兽",
+			"english" : "Electivire",
+			"japanese" : "エレキブル",
+			"french" : "Élekable"
+		},
+		"id" : 466
+	},
+	{
+		"name" : {
+			"chinese" : "鸭嘴炎兽",
+			"english" : "Magmortar",
+			"japanese" : "ブーバーン",
+			"french" : "Maganon"
+		},
+		"id" : 467
+	},
+	{
+		"name" : {
+			"chinese" : "波克基斯",
+			"english" : "Togekiss",
+			"japanese" : "トゲキッス",
+			"french" : "Togekiss"
+		},
+		"id" : 468
+	},
+	{
+		"name" : {
+			"chinese" : "远古巨蜓",
+			"english" : "Yanmega",
+			"japanese" : "メガヤンマ",
+			"french" : "Yanmega"
+		},
+		"id" : 469
+	},
+	{
+		"name" : {
+			"chinese" : "叶伊布",
+			"english" : "Leafeon",
+			"japanese" : "リーフィア",
+			"french" : "Phyllali"
+		},
+		"id" : 470
+	},
+	{
+		"name" : {
+			"chinese" : "冰伊布",
+			"english" : "Glaceon",
+			"japanese" : "グレイシア",
+			"french" : "Givrali"
+		},
+		"id" : 471
+	},
+	{
+		"name" : {
+			"chinese" : "天蝎王",
+			"english" : "Gliscor",
+			"japanese" : "グライオン",
+			"french" : "Scorvol"
+		},
+		"id" : 472
+	},
+	{
+		"name" : {
+			"chinese" : "象牙猪",
+			"english" : "Mamoswine",
+			"japanese" : "マンムー",
+			"french" : "Mammochon"
+		},
+		"id" : 473
+	},
+	{
+		"name" : {
+			"chinese" : "多边兽Ｚ",
+			"english" : "Porygon-Z",
+			"japanese" : "ポリゴンＺ",
+			"french" : "Porygon-Z"
+		},
+		"id" : 474
+	},
+	{
+		"name" : {
+			"chinese" : "艾路雷朵",
+			"english" : "Gallade",
+			"japanese" : "エルレイド",
+			"french" : "Gallame"
+		},
+		"id" : 475
+	},
+	{
+		"name" : {
+			"chinese" : "大朝北鼻",
+			"english" : "Probopass",
+			"japanese" : "ダイノーズ",
+			"french" : "Tarinorme"
+		},
+		"id" : 476
+	},
+	{
+		"name" : {
+			"chinese" : "黑夜魔灵",
+			"english" : "Dusknoir",
+			"japanese" : "ヨノワール",
+			"french" : "Noctunoir"
+		},
+		"id" : 477
+	},
+	{
+		"name" : {
+			"chinese" : "雪妖女",
+			"english" : "Froslass",
+			"japanese" : "ユキメノコ",
+			"french" : "Momartik"
+		},
+		"id" : 478
+	},
+	{
+		"name" : {
+			"chinese" : "洛托姆",
+			"english" : "Rotom",
+			"japanese" : "ロトム",
+			"french" : "Motisma"
+		},
+		"id" : 479
+	},
+	{
+		"name" : {
+			"chinese" : "由克希",
+			"english" : "Uxie",
+			"japanese" : "ユクシー",
+			"french" : "Créhelf"
+		},
+		"id" : 480
+	},
+	{
+		"name" : {
+			"chinese" : "艾姆利多",
+			"english" : "Mesprit",
+			"japanese" : "エムリット",
+			"french" : "Créfollet"
+		},
+		"id" : 481
+	},
+	{
+		"name" : {
+			"chinese" : "亚克诺姆",
+			"english" : "Azelf",
+			"japanese" : "アグノム",
+			"french" : "Créfadet"
+		},
+		"id" : 482
+	},
+	{
+		"name" : {
+			"chinese" : "帝牙卢卡",
+			"english" : "Dialga",
+			"japanese" : "ディアルガ",
+			"french" : "Dialga"
+		},
+		"id" : 483
+	},
+	{
+		"name" : {
+			"chinese" : "帕路奇亚",
+			"english" : "Palkia",
+			"japanese" : "パルキア",
+			"french" : "Palkia"
+		},
+		"id" : 484
+	},
+	{
+		"name" : {
+			"chinese" : "席多蓝恩",
+			"english" : "Heatran",
+			"japanese" : "ヒードラン",
+			"french" : "Heatran"
+		},
+		"id" : 485
+	},
+	{
+		"name" : {
+			"chinese" : "雷吉奇卡斯",
+			"english" : "Regigigas",
+			"japanese" : "レジギガス",
+			"french" : "Regigigas"
+		},
+		"id" : 486
+	},
+	{
+		"name" : {
+			"chinese" : "骑拉帝纳",
+			"english" : "Giratina",
+			"japanese" : "ギラティナ",
+			"french" : "Giratina"
+		},
+		"id" : 487
+	},
+	{
+		"name" : {
+			"chinese" : "克雷色利亚",
+			"english" : "Cresselia",
+			"japanese" : "クレセリア",
+			"french" : "Cresselia"
+		},
+		"id" : 488
+	},
+	{
+		"name" : {
+			"chinese" : "霏欧纳",
+			"english" : "Phione",
+			"japanese" : "フィオネ",
+			"french" : "Phione"
+		},
+		"id" : 489
+	},
+	{
+		"name" : {
+			"chinese" : "玛纳霏",
+			"english" : "Manaphy",
+			"japanese" : "マナフィ",
+			"french" : "Manaphy"
+		},
+		"id" : 490
+	},
+	{
+		"name" : {
+			"chinese" : "达克莱伊",
+			"english" : "Darkrai",
+			"japanese" : "ダークライ",
+			"french" : "Darkrai"
+		},
+		"id" : 491
+	},
+	{
+		"name" : {
+			"chinese" : "谢米",
+			"english" : "Shaymin",
+			"japanese" : "シェイミ",
+			"french" : "Shaymin"
+		},
+		"id" : 492
+	},
+	{
+		"name" : {
+			"chinese" : "阿尔宙斯",
+			"english" : "Arceus",
+			"japanese" : "アルセウス",
+			"french" : "Arceus"
+		},
+		"id" : 493
+	},
+	{
+		"name" : {
+			"chinese" : "比克提尼",
+			"english" : "Victini",
+			"japanese" : "ビクティニ",
+			"french" : "Victini"
+		},
+		"id" : 494
+	},
+	{
+		"name" : {
+			"chinese" : "藤藤蛇",
+			"english" : "Snivy",
+			"japanese" : "ツタージャ",
+			"french" : "Vipélierre"
+		},
+		"id" : 495
+	},
+	{
+		"name" : {
+			"chinese" : "青藤蛇",
+			"english" : "Servine",
+			"japanese" : "ジャノビー",
+			"french" : "Lianaja"
+		},
+		"id" : 496
+	},
+	{
+		"name" : {
+			"chinese" : "君主蛇",
+			"english" : "Serperior",
+			"japanese" : "ジャローダ",
+			"french" : "Majaspic"
+		},
+		"id" : 497
+	},
+	{
+		"name" : {
+			"chinese" : "暖暖猪",
+			"english" : "Tepig",
+			"japanese" : "ポカブ",
+			"french" : "Gruikui"
+		},
+		"id" : 498
+	},
+	{
+		"name" : {
+			"chinese" : "炒炒猪",
+			"english" : "Pignite",
+			"japanese" : "チャオブー",
+			"french" : "Grotichon"
+		},
+		"id" : 499
+	},
+	{
+		"name" : {
+			"chinese" : "炎武王",
+			"english" : "Emboar",
+			"japanese" : "エンブオー",
+			"french" : "Roitiflam"
+		},
+		"id" : 500
+	},
+	{
+		"name" : {
+			"chinese" : "水水獭",
+			"english" : "Oshawott",
+			"japanese" : "ミジュマル",
+			"french" : "Moustillon"
+		},
+		"id" : 501
+	},
+	{
+		"name" : {
+			"chinese" : "双刃丸",
+			"english" : "Dewott",
+			"japanese" : "フタチマル",
+			"french" : "Mateloutre"
+		},
+		"id" : 502
+	},
+	{
+		"name" : {
+			"chinese" : "大剑鬼",
+			"english" : "Samurott",
+			"japanese" : "ダイケンキ",
+			"french" : "Clamiral"
+		},
+		"id" : 503
+	},
+	{
+		"name" : {
+			"chinese" : "探探鼠",
+			"english" : "Patrat",
+			"japanese" : "ミネズミ",
+			"french" : "Ratentif"
+		},
+		"id" : 504
+	},
+	{
+		"name" : {
+			"chinese" : "步哨鼠",
+			"english" : "Watchog",
+			"japanese" : "ミルホッグ",
+			"french" : "Miradar"
+		},
+		"id" : 505
+	},
+	{
+		"name" : {
+			"chinese" : "小约克",
+			"english" : "Lillipup",
+			"japanese" : "ヨーテリー",
+			"french" : "Ponchiot"
+		},
+		"id" : 506
+	},
+	{
+		"name" : {
+			"chinese" : "哈约克",
+			"english" : "Herdier",
+			"japanese" : "ハーデリア",
+			"french" : "Ponchien"
+		},
+		"id" : 507
+	},
+	{
+		"name" : {
+			"chinese" : "长毛狗",
+			"english" : "Stoutland",
+			"japanese" : "ムーランド",
+			"french" : "Mastouffe"
+		},
+		"id" : 508
+	},
+	{
+		"name" : {
+			"chinese" : "扒手猫",
+			"english" : "Purrloin",
+			"japanese" : "チョロネコ",
+			"french" : "Chacripan"
+		},
+		"id" : 509
+	},
+	{
+		"name" : {
+			"chinese" : "酷豹",
+			"english" : "Liepard",
+			"japanese" : "レパルダス",
+			"french" : "Léopardus"
+		},
+		"id" : 510
+	},
+	{
+		"name" : {
+			"chinese" : "花椰猴",
+			"english" : "Pansage",
+			"japanese" : "ヤナップ",
+			"french" : "Feuillajou"
+		},
+		"id" : 511
+	},
+	{
+		"name" : {
+			"chinese" : "花椰猿",
+			"english" : "Simisage",
+			"japanese" : "ヤナッキー",
+			"french" : "Feuiloutan"
+		},
+		"id" : 512
+	},
+	{
+		"name" : {
+			"chinese" : "爆香猴",
+			"english" : "Pansear",
+			"japanese" : "バオップ",
+			"french" : "Flamajou"
+		},
+		"id" : 513
+	},
+	{
+		"name" : {
+			"chinese" : "爆香猿",
+			"english" : "Simisear",
+			"japanese" : "バオッキー",
+			"french" : "Flamoutan"
+		},
+		"id" : 514
+	},
+	{
+		"name" : {
+			"chinese" : "冷水猴",
+			"english" : "Panpour",
+			"japanese" : "ヒヤップ",
+			"french" : "Flotajou"
+		},
+		"id" : 515
+	},
+	{
+		"name" : {
+			"chinese" : "冷水猿",
+			"english" : "Simipour",
+			"japanese" : "ヒヤッキー",
+			"french" : "Flotoutan"
+		},
+		"id" : 516
+	},
+	{
+		"name" : {
+			"chinese" : "食梦梦",
+			"english" : "Munna",
+			"japanese" : "ムンナ",
+			"french" : "Munna"
+		},
+		"id" : 517
+	},
+	{
+		"name" : {
+			"chinese" : "梦梦蚀",
+			"english" : "Musharna",
+			"japanese" : "ムシャーナ",
+			"french" : "Mushana"
+		},
+		"id" : 518
+	},
+	{
+		"name" : {
+			"chinese" : "豆豆鸽",
+			"english" : "Pidove",
+			"japanese" : "マメパト",
+			"french" : "Poichigeon"
+		},
+		"id" : 519
+	},
+	{
+		"name" : {
+			"chinese" : "咕咕鸽",
+			"english" : "Tranquill",
+			"japanese" : "ハトーボー",
+			"french" : "Colombeau"
+		},
+		"id" : 520
+	},
+	{
+		"name" : {
+			"chinese" : "高傲雉鸡",
+			"english" : "Unfezant",
+			"japanese" : "ケンホロウ",
+			"french" : "Déflaisan"
+		},
+		"id" : 521
+	},
+	{
+		"name" : {
+			"chinese" : "斑斑马",
+			"english" : "Blitzle",
+			"japanese" : "シママ",
+			"french" : "Zébibron"
+		},
+		"id" : 522
+	},
+	{
+		"name" : {
+			"chinese" : "雷电斑马",
+			"english" : "Zebstrika",
+			"japanese" : "ゼブライカ",
+			"french" : "Zéblitz"
+		},
+		"id" : 523
+	},
+	{
+		"name" : {
+			"chinese" : "石丸子",
+			"english" : "Roggenrola",
+			"japanese" : "ダンゴロ",
+			"french" : "Nodulithe"
+		},
+		"id" : 524
+	},
+	{
+		"name" : {
+			"chinese" : "地幔岩",
+			"english" : "Boldore",
+			"japanese" : "ガントル",
+			"french" : "Géolithe"
+		},
+		"id" : 525
+	},
+	{
+		"name" : {
+			"chinese" : "庞岩怪",
+			"english" : "Gigalith",
+			"japanese" : "ギガイアス",
+			"french" : "Gigalithe"
+		},
+		"id" : 526
+	},
+	{
+		"name" : {
+			"chinese" : "滚滚蝙蝠",
+			"english" : "Woobat",
+			"japanese" : "コロモリ",
+			"french" : "Chovsourir"
+		},
+		"id" : 527
+	},
+	{
+		"name" : {
+			"chinese" : "心蝙蝠",
+			"english" : "Swoobat",
+			"japanese" : "ココロモリ",
+			"french" : "Rhinolove"
+		},
+		"id" : 528
+	},
+	{
+		"name" : {
+			"chinese" : "螺钉地鼠",
+			"english" : "Drilbur",
+			"japanese" : "モグリュー",
+			"french" : "Rototaupe"
+		},
+		"id" : 529
+	},
+	{
+		"name" : {
+			"chinese" : "龙头地鼠",
+			"english" : "Excadrill",
+			"japanese" : "ドリュウズ",
+			"french" : "Minotaupe"
+		},
+		"id" : 530
+	},
+	{
+		"name" : {
+			"chinese" : "差不多娃娃",
+			"english" : "Audino",
+			"japanese" : "タブンネ",
+			"french" : "Nanméouïe"
+		},
+		"id" : 531
+	},
+	{
+		"name" : {
+			"chinese" : "搬运小匠",
+			"english" : "Timburr",
+			"japanese" : "ドッコラー",
+			"french" : "Charpenti"
+		},
+		"id" : 532
+	},
+	{
+		"name" : {
+			"chinese" : "铁骨土人",
+			"english" : "Gurdurr",
+			"japanese" : "ドテッコツ",
+			"french" : "Ouvrifier"
+		},
+		"id" : 533
+	},
+	{
+		"name" : {
+			"chinese" : "修建老匠",
+			"english" : "Conkeldurr",
+			"japanese" : "ローブシン",
+			"french" : "Bétochef"
+		},
+		"id" : 534
+	},
+	{
+		"name" : {
+			"chinese" : "圆蝌蚪",
+			"english" : "Tympole",
+			"japanese" : "オタマロ",
+			"french" : "Tritonde"
+		},
+		"id" : 535
+	},
+	{
+		"name" : {
+			"chinese" : "蓝蟾蜍",
+			"english" : "Palpitoad",
+			"japanese" : "ガマガル",
+			"french" : "Batracné"
+		},
+		"id" : 536
+	},
+	{
+		"name" : {
+			"chinese" : "蟾蜍王",
+			"english" : "Seismitoad",
+			"japanese" : "ガマゲロゲ",
+			"french" : "Crapustule"
+		},
+		"id" : 537
+	},
+	{
+		"name" : {
+			"chinese" : "投摔鬼",
+			"english" : "Throh",
+			"japanese" : "ナゲキ",
+			"french" : "Judokrak"
+		},
+		"id" : 538
+	},
+	{
+		"name" : {
+			"chinese" : "打击鬼",
+			"english" : "Sawk",
+			"japanese" : "ダゲキ",
+			"french" : "Karaclée"
+		},
+		"id" : 539
+	},
+	{
+		"name" : {
+			"chinese" : "虫宝包",
+			"english" : "Sewaddle",
+			"japanese" : "クルミル",
+			"french" : "Larveyette"
+		},
+		"id" : 540
+	},
+	{
+		"name" : {
+			"chinese" : "宝包茧",
+			"english" : "Swadloon",
+			"japanese" : "クルマユ",
+			"french" : "Couverdure"
+		},
+		"id" : 541
+	},
+	{
+		"name" : {
+			"chinese" : "保姆虫",
+			"english" : "Leavanny",
+			"japanese" : "ハハコモリ",
+			"french" : "Manternel"
+		},
+		"id" : 542
+	},
+	{
+		"name" : {
+			"chinese" : "百足蜈蚣",
+			"english" : "Venipede",
+			"japanese" : "フシデ",
+			"french" : "Venipatte"
+		},
+		"id" : 543
+	},
+	{
+		"name" : {
+			"chinese" : "车轮球",
+			"english" : "Whirlipede",
+			"japanese" : "ホイーガ",
+			"french" : "Scobolide"
+		},
+		"id" : 544
+	},
+	{
+		"name" : {
+			"chinese" : "蜈蚣王",
+			"english" : "Scolipede",
+			"japanese" : "ペンドラー",
+			"french" : "Brutapode"
+		},
+		"id" : 545
+	},
+	{
+		"name" : {
+			"chinese" : "木棉球",
+			"english" : "Cottonee",
+			"japanese" : "モンメン",
+			"french" : "Doudouvet"
+		},
+		"id" : 546
+	},
+	{
+		"name" : {
+			"chinese" : "风妖精",
+			"english" : "Whimsicott",
+			"japanese" : "エルフーン",
+			"french" : "Farfaduvet"
+		},
+		"id" : 547
+	},
+	{
+		"name" : {
+			"chinese" : "百合根娃娃",
+			"english" : "Petilil",
+			"japanese" : "チュリネ",
+			"french" : "Chlorobule"
+		},
+		"id" : 548
+	},
+	{
+		"name" : {
+			"chinese" : "裙儿小姐",
+			"english" : "Lilligant",
+			"japanese" : "ドレディア",
+			"french" : "Fragilady"
+		},
+		"id" : 549
+	},
+	{
+		"name" : {
+			"chinese" : "野蛮鲈鱼",
+			"english" : "Basculin",
+			"japanese" : "バスラオ",
+			"french" : "Bargantua"
+		},
+		"id" : 550
+	},
+	{
+		"name" : {
+			"chinese" : "黑眼鳄",
+			"english" : "Sandile",
+			"japanese" : "メグロコ",
+			"french" : "Mascaïman"
+		},
+		"id" : 551
+	},
+	{
+		"name" : {
+			"chinese" : "混混鳄",
+			"english" : "Krokorok",
+			"japanese" : "ワルビル",
+			"french" : "Escroco"
+		},
+		"id" : 552
+	},
+	{
+		"name" : {
+			"chinese" : "流氓鳄",
+			"english" : "Krookodile",
+			"japanese" : "ワルビアル",
+			"french" : "Crocorible"
+		},
+		"id" : 553
+	},
+	{
+		"name" : {
+			"chinese" : "火红不倒翁",
+			"english" : "Darumaka",
+			"japanese" : "ダルマッカ",
+			"french" : "Darumarond"
+		},
+		"id" : 554
+	},
+	{
+		"name" : {
+			"chinese" : "达摩狒狒",
+			"english" : "Darmanitan",
+			"japanese" : "ヒヒダルマ",
+			"french" : "Darumacho"
+		},
+		"id" : 555
+	},
+	{
+		"name" : {
+			"chinese" : "沙铃仙人掌",
+			"english" : "Maractus",
+			"japanese" : "マラカッチ",
+			"french" : "Maracachi"
+		},
+		"id" : 556
+	},
+	{
+		"name" : {
+			"chinese" : "石居蟹",
+			"english" : "Dwebble",
+			"japanese" : "イシズマイ",
+			"french" : "Crabicoque"
+		},
+		"id" : 557
+	},
+	{
+		"name" : {
+			"chinese" : "岩殿居蟹",
+			"english" : "Crustle",
+			"japanese" : "イワパレス",
+			"french" : "Crabaraque"
+		},
+		"id" : 558
+	},
+	{
+		"name" : {
+			"chinese" : "滑滑小子",
+			"english" : "Scraggy",
+			"japanese" : "ズルッグ",
+			"french" : "Baggiguane"
+		},
+		"id" : 559
+	},
+	{
+		"name" : {
+			"chinese" : "头巾混混",
+			"english" : "Scrafty",
+			"japanese" : "ズルズキン",
+			"french" : "Baggaïd"
+		},
+		"id" : 560
+	},
+	{
+		"name" : {
+			"chinese" : "象征鸟",
+			"english" : "Sigilyph",
+			"japanese" : "シンボラー",
+			"french" : "Cryptéro"
+		},
+		"id" : 561
+	},
+	{
+		"name" : {
+			"chinese" : "哭哭面具",
+			"english" : "Yamask",
+			"japanese" : "デスマス",
+			"french" : "Tutafeh"
+		},
+		"id" : 562
+	},
+	{
+		"name" : {
+			"chinese" : "死神棺",
+			"english" : "Cofagrigus",
+			"japanese" : "デスカーン",
+			"french" : "Tutankafer"
+		},
+		"id" : 563
+	},
+	{
+		"name" : {
+			"chinese" : "原盖海龟",
+			"english" : "Tirtouga",
+			"japanese" : "プロトーガ",
+			"french" : "Carapagos"
+		},
+		"id" : 564
+	},
+	{
+		"name" : {
+			"chinese" : "肋骨海龟",
+			"english" : "Carracosta",
+			"japanese" : "アバゴーラ",
+			"french" : "Mégapagos"
+		},
+		"id" : 565
+	},
+	{
+		"name" : {
+			"chinese" : "始祖小鸟",
+			"english" : "Archen",
+			"japanese" : "アーケン",
+			"french" : "Arkéapti"
+		},
+		"id" : 566
+	},
+	{
+		"name" : {
+			"chinese" : "始祖大鸟",
+			"english" : "Archeops",
+			"japanese" : "アーケオス",
+			"french" : "Aéroptéryx"
+		},
+		"id" : 567
+	},
+	{
+		"name" : {
+			"chinese" : "破破袋",
+			"english" : "Trubbish",
+			"japanese" : "ヤブクロン",
+			"french" : "Miamiasme"
+		},
+		"id" : 568
+	},
+	{
+		"name" : {
+			"chinese" : "灰尘山",
+			"english" : "Garbodor",
+			"japanese" : "ダストダス",
+			"french" : "Miasmax"
+		},
+		"id" : 569
+	},
+	{
+		"name" : {
+			"chinese" : "索罗亚",
+			"english" : "Zorua",
+			"japanese" : "ゾロア",
+			"french" : "Zorua"
+		},
+		"id" : 570
+	},
+	{
+		"name" : {
+			"chinese" : "索罗亚克",
+			"english" : "Zoroark",
+			"japanese" : "ゾロアーク",
+			"french" : "Zoroark"
+		},
+		"id" : 571
+	},
+	{
+		"name" : {
+			"chinese" : "泡沫栗鼠",
+			"english" : "Minccino",
+			"japanese" : "チラーミィ",
+			"french" : "Chinchidou"
+		},
+		"id" : 572
+	},
+	{
+		"name" : {
+			"chinese" : "奇诺栗鼠",
+			"english" : "Cinccino",
+			"japanese" : "チラチーノ",
+			"french" : "Pashmilla"
+		},
+		"id" : 573
+	},
+	{
+		"name" : {
+			"chinese" : "哥德宝宝",
+			"english" : "Gothita",
+			"japanese" : "ゴチム",
+			"french" : "Scrutella"
+		},
+		"id" : 574
+	},
+	{
+		"name" : {
+			"chinese" : "哥德小童",
+			"english" : "Gothorita",
+			"japanese" : "ゴチミル",
+			"french" : "Mesmérella"
+		},
+		"id" : 575
+	},
+	{
+		"name" : {
+			"chinese" : "哥德小姐",
+			"english" : "Gothitelle",
+			"japanese" : "ゴチルゼル",
+			"french" : "Sidérella"
+		},
+		"id" : 576
+	},
+	{
+		"name" : {
+			"chinese" : "单卵细胞球",
+			"english" : "Solosis",
+			"japanese" : "ユニラン",
+			"french" : "Nucléos"
+		},
+		"id" : 577
+	},
+	{
+		"name" : {
+			"chinese" : "双卵细胞球",
+			"english" : "Duosion",
+			"japanese" : "ダブラン",
+			"french" : "Méios"
+		},
+		"id" : 578
+	},
+	{
+		"name" : {
+			"chinese" : "人造细胞卵",
+			"english" : "Reuniclus",
+			"japanese" : "ランクルス",
+			"french" : "Symbios"
+		},
+		"id" : 579
+	},
+	{
+		"name" : {
+			"chinese" : "鸭宝宝",
+			"english" : "Ducklett",
+			"japanese" : "コアルヒー",
+			"french" : "Couaneton"
+		},
+		"id" : 580
+	},
+	{
+		"name" : {
+			"chinese" : "舞天鹅",
+			"english" : "Swanna",
+			"japanese" : "スワンナ",
+			"french" : "Lakmécygne"
+		},
+		"id" : 581
+	},
+	{
+		"name" : {
+			"chinese" : "迷你冰",
+			"english" : "Vanillite",
+			"japanese" : "バニプッチ",
+			"french" : "Sorbébé"
+		},
+		"id" : 582
+	},
+	{
+		"name" : {
+			"chinese" : "多多冰",
+			"english" : "Vanillish",
+			"japanese" : "バニリッチ",
+			"french" : "Sorboul"
+		},
+		"id" : 583
+	},
+	{
+		"name" : {
+			"chinese" : "双倍多多冰",
+			"english" : "Vanilluxe",
+			"japanese" : "バイバニラ",
+			"french" : "Sorbouboul"
+		},
+		"id" : 584
+	},
+	{
+		"name" : {
+			"chinese" : "四季鹿",
+			"english" : "Deerling",
+			"japanese" : "シキジカ",
+			"french" : "Vivaldaim"
+		},
+		"id" : 585
+	},
+	{
+		"name" : {
+			"chinese" : "萌芽鹿",
+			"english" : "Sawsbuck",
+			"japanese" : "メブキジカ",
+			"french" : "Haydaim"
+		},
+		"id" : 586
+	},
+	{
+		"name" : {
+			"chinese" : "电飞鼠",
+			"english" : "Emolga",
+			"japanese" : "エモンガ",
+			"french" : "Emolga"
+		},
+		"id" : 587
+	},
+	{
+		"name" : {
+			"chinese" : "盖盖虫",
+			"english" : "Karrablast",
+			"japanese" : "カブルモ",
+			"french" : "Carabing"
+		},
+		"id" : 588
+	},
+	{
+		"name" : {
+			"chinese" : "骑士蜗牛",
+			"english" : "Escavalier",
+			"japanese" : "シュバルゴ",
+			"french" : "Lançargot"
+		},
+		"id" : 589
+	},
+	{
+		"name" : {
+			"chinese" : "哎呀球菇",
+			"english" : "Foongus",
+			"japanese" : "タマゲタケ",
+			"french" : "Trompignon"
+		},
+		"id" : 590
+	},
+	{
+		"name" : {
+			"chinese" : "败露球菇",
+			"english" : "Amoonguss",
+			"japanese" : "モロバレル",
+			"french" : "Gaulet"
+		},
+		"id" : 591
+	},
+	{
+		"name" : {
+			"chinese" : "轻飘飘",
+			"english" : "Frillish",
+			"japanese" : "プルリル",
+			"french" : "Viskuse"
+		},
+		"id" : 592
+	},
+	{
+		"name" : {
+			"chinese" : "胖嘟嘟",
+			"english" : "Jellicent",
+			"japanese" : "ブルンゲル",
+			"french" : "Moyade"
+		},
+		"id" : 593
+	},
+	{
+		"name" : {
+			"chinese" : "保姆曼波",
+			"english" : "Alomomola",
+			"japanese" : "ママンボウ",
+			"french" : "Mamanbo"
+		},
+		"id" : 594
+	},
+	{
+		"name" : {
+			"chinese" : "电电虫",
+			"english" : "Joltik",
+			"japanese" : "バチュル",
+			"french" : "Statitik"
+		},
+		"id" : 595
+	},
+	{
+		"name" : {
+			"chinese" : "电蜘蛛",
+			"english" : "Galvantula",
+			"japanese" : "デンチュラ",
+			"french" : "Mygavolt"
+		},
+		"id" : 596
+	},
+	{
+		"name" : {
+			"chinese" : "种子铁球",
+			"english" : "Ferroseed",
+			"japanese" : "テッシード",
+			"french" : "Grindur"
+		},
+		"id" : 597
+	},
+	{
+		"name" : {
+			"chinese" : "坚果哑铃",
+			"english" : "Ferrothorn",
+			"japanese" : "ナットレイ",
+			"french" : "Noacier"
+		},
+		"id" : 598
+	},
+	{
+		"name" : {
+			"chinese" : "齿轮儿",
+			"english" : "Klink",
+			"japanese" : "ギアル",
+			"french" : "Tic"
+		},
+		"id" : 599
+	},
+	{
+		"name" : {
+			"chinese" : "齿轮组",
+			"english" : "Klang",
+			"japanese" : "ギギアル",
+			"french" : "Clic"
+		},
+		"id" : 600
+	},
+	{
+		"name" : {
+			"chinese" : "齿轮怪",
+			"english" : "Klinklang",
+			"japanese" : "ギギギアル",
+			"french" : "Cliticlic"
+		},
+		"id" : 601
+	},
+	{
+		"name" : {
+			"chinese" : "麻麻小鱼",
+			"english" : "Tynamo",
+			"japanese" : "シビシラス",
+			"french" : "Anchwatt"
+		},
+		"id" : 602
+	},
+	{
+		"name" : {
+			"chinese" : "麻麻鳗",
+			"english" : "Eelektrik",
+			"japanese" : "シビビール",
+			"french" : "Lampéroie"
+		},
+		"id" : 603
+	},
+	{
+		"name" : {
+			"chinese" : "麻麻鳗鱼王",
+			"english" : "Eelektross",
+			"japanese" : "シビルドン",
+			"french" : "Ohmassacre"
+		},
+		"id" : 604
+	},
+	{
+		"name" : {
+			"chinese" : "小灰怪",
+			"english" : "Elgyem",
+			"japanese" : "リグレー",
+			"french" : "Lewsor"
+		},
+		"id" : 605
+	},
+	{
+		"name" : {
+			"chinese" : "大宇怪",
+			"english" : "Beheeyem",
+			"japanese" : "オーベム",
+			"french" : "Neitram"
+		},
+		"id" : 606
+	},
+	{
+		"name" : {
+			"chinese" : "烛光灵",
+			"english" : "Litwick",
+			"japanese" : "ヒトモシ",
+			"french" : "Funécire"
+		},
+		"id" : 607
+	},
+	{
+		"name" : {
+			"chinese" : "灯火幽灵",
+			"english" : "Lampent",
+			"japanese" : "ランプラー",
+			"french" : "Mélancolux"
+		},
+		"id" : 608
+	},
+	{
+		"name" : {
+			"chinese" : "水晶灯火灵",
+			"english" : "Chandelure",
+			"japanese" : "シャンデラ",
+			"french" : "Lugulabre"
+		},
+		"id" : 609
+	},
+	{
+		"name" : {
+			"chinese" : "牙牙",
+			"english" : "Axew",
+			"japanese" : "キバゴ",
+			"french" : "Coupenotte"
+		},
+		"id" : 610
+	},
+	{
+		"name" : {
+			"chinese" : "斧牙龙",
+			"english" : "Fraxure",
+			"japanese" : "オノンド",
+			"french" : "Incisache"
+		},
+		"id" : 611
+	},
+	{
+		"name" : {
+			"chinese" : "双斧战龙",
+			"english" : "Haxorus",
+			"japanese" : "オノノクス",
+			"french" : "Tranchodon"
+		},
+		"id" : 612
+	},
+	{
+		"name" : {
+			"chinese" : "喷嚏熊",
+			"english" : "Cubchoo",
+			"japanese" : "クマシュン",
+			"french" : "Polarhume"
+		},
+		"id" : 613
+	},
+	{
+		"name" : {
+			"chinese" : "冻原熊",
+			"english" : "Beartic",
+			"japanese" : "ツンベアー",
+			"french" : "Polagriffe"
+		},
+		"id" : 614
+	},
+	{
+		"name" : {
+			"chinese" : "几何雪花",
+			"english" : "Cryogonal",
+			"japanese" : "フリージオ",
+			"french" : "Hexagel"
+		},
+		"id" : 615
+	},
+	{
+		"name" : {
+			"chinese" : "小嘴蜗",
+			"english" : "Shelmet",
+			"japanese" : "チョボマキ",
+			"french" : "Escargaume"
+		},
+		"id" : 616
+	},
+	{
+		"name" : {
+			"chinese" : "敏捷虫",
+			"english" : "Accelgor",
+			"japanese" : "アギルダー",
+			"french" : "Limaspeed"
+		},
+		"id" : 617
+	},
+	{
+		"name" : {
+			"chinese" : "泥巴鱼",
+			"english" : "Stunfisk",
+			"japanese" : "マッギョ",
+			"french" : "Limonde"
+		},
+		"id" : 618
+	},
+	{
+		"name" : {
+			"chinese" : "功夫鼬",
+			"english" : "Mienfoo",
+			"japanese" : "コジョフー",
+			"french" : "Kungfouine"
+		},
+		"id" : 619
+	},
+	{
+		"name" : {
+			"chinese" : "师父鼬",
+			"english" : "Mienshao",
+			"japanese" : "コジョンド",
+			"french" : "Shaofouine"
+		},
+		"id" : 620
+	},
+	{
+		"name" : {
+			"chinese" : "赤面龙",
+			"english" : "Druddigon",
+			"japanese" : "クリムガン",
+			"french" : "Drakkarmin"
+		},
+		"id" : 621
+	},
+	{
+		"name" : {
+			"chinese" : "泥偶小人",
+			"english" : "Golett",
+			"japanese" : "ゴビット",
+			"french" : "Gringolem"
+		},
+		"id" : 622
+	},
+	{
+		"name" : {
+			"chinese" : "泥偶巨人",
+			"english" : "Golurk",
+			"japanese" : "ゴルーグ",
+			"french" : "Golemastoc"
+		},
+		"id" : 623
+	},
+	{
+		"name" : {
+			"chinese" : "驹刀小兵",
+			"english" : "Pawniard",
+			"japanese" : "コマタナ",
+			"french" : "Scalpion"
+		},
+		"id" : 624
+	},
+	{
+		"name" : {
+			"chinese" : "劈斩司令",
+			"english" : "Bisharp",
+			"japanese" : "キリキザン",
+			"french" : "Scalproie"
+		},
+		"id" : 625
+	},
+	{
+		"name" : {
+			"chinese" : "爆炸头水牛",
+			"english" : "Bouffalant",
+			"japanese" : "バッフロン",
+			"french" : "Frison"
+		},
+		"id" : 626
+	},
+	{
+		"name" : {
+			"chinese" : "毛头小鹰",
+			"english" : "Rufflet",
+			"japanese" : "ワシボン",
+			"french" : "Furaiglon"
+		},
+		"id" : 627
+	},
+	{
+		"name" : {
+			"chinese" : "勇士雄鹰",
+			"english" : "Braviary",
+			"japanese" : "ウォーグル",
+			"french" : "Gueriaigle"
+		},
+		"id" : 628
+	},
+	{
+		"name" : {
+			"chinese" : "秃鹰丫头",
+			"english" : "Vullaby",
+			"japanese" : "バルチャイ",
+			"french" : "Vostourno"
+		},
+		"id" : 629
+	},
+	{
+		"name" : {
+			"chinese" : "秃鹰娜",
+			"english" : "Mandibuzz",
+			"japanese" : "バルジーナ",
+			"french" : "Vaututrice"
+		},
+		"id" : 630
+	},
+	{
+		"name" : {
+			"chinese" : "熔蚁兽",
+			"english" : "Heatmor",
+			"japanese" : "クイタラン",
+			"french" : "Aflamanoir"
+		},
+		"id" : 631
+	},
+	{
+		"name" : {
+			"chinese" : "铁蚁",
+			"english" : "Durant",
+			"japanese" : "アイアント",
+			"french" : "Fermite"
+		},
+		"id" : 632
+	},
+	{
+		"name" : {
+			"chinese" : "单首龙",
+			"english" : "Deino",
+			"japanese" : "モノズ",
+			"french" : "Solochi"
+		},
+		"id" : 633
+	},
+	{
+		"name" : {
+			"chinese" : "双首暴龙",
+			"english" : "Zweilous",
+			"japanese" : "ジヘッド",
+			"french" : "Diamat"
+		},
+		"id" : 634
+	},
+	{
+		"name" : {
+			"chinese" : "三首恶龙",
+			"english" : "Hydreigon",
+			"japanese" : "サザンドラ",
+			"french" : "Trioxhydre"
+		},
+		"id" : 635
+	},
+	{
+		"name" : {
+			"chinese" : "燃烧虫",
+			"english" : "Larvesta",
+			"japanese" : "メラルバ",
+			"french" : "Pyronille"
+		},
+		"id" : 636
+	},
+	{
+		"name" : {
+			"chinese" : "火神蛾",
+			"english" : "Volcarona",
+			"japanese" : "ウルガモス",
+			"french" : "Pyrax"
+		},
+		"id" : 637
+	},
+	{
+		"name" : {
+			"chinese" : "勾帕路翁",
+			"english" : "Cobalion",
+			"japanese" : "コバルオン",
+			"french" : "Cobaltium"
+		},
+		"id" : 638
+	},
+	{
+		"name" : {
+			"chinese" : "代拉基翁",
+			"english" : "Terrakion",
+			"japanese" : "テラキオン",
+			"french" : "Terrakium"
+		},
+		"id" : 639
+	},
+	{
+		"name" : {
+			"chinese" : "毕力吉翁",
+			"english" : "Virizion",
+			"japanese" : "ビリジオン",
+			"french" : "Viridium"
+		},
+		"id" : 640
+	},
+	{
+		"name" : {
+			"chinese" : "龙卷云",
+			"english" : "Tornadus",
+			"japanese" : "トルネロス",
+			"french" : "Boréas"
+		},
+		"id" : 641
+	},
+	{
+		"name" : {
+			"chinese" : "雷电云",
+			"english" : "Thundurus",
+			"japanese" : "ボルトロス",
+			"french" : "Fulguris"
+		},
+		"id" : 642
+	},
+	{
+		"name" : {
+			"chinese" : "莱希拉姆",
+			"english" : "Reshiram",
+			"japanese" : "レシラム",
+			"french" : "Reshiram"
+		},
+		"id" : 643
+	},
+	{
+		"name" : {
+			"chinese" : "捷克罗姆",
+			"english" : "Zekrom",
+			"japanese" : "ゼクロム",
+			"french" : "Zekrom"
+		},
+		"id" : 644
+	},
+	{
+		"name" : {
+			"chinese" : "土地云",
+			"english" : "Landorus",
+			"japanese" : "ランドロス",
+			"french" : "Démétéros"
+		},
+		"id" : 645
+	},
+	{
+		"name" : {
+			"chinese" : "酋雷姆",
+			"english" : "Kyurem",
+			"japanese" : "キュレム",
+			"french" : "Kyurem"
+		},
+		"id" : 646
+	},
+	{
+		"name" : {
+			"chinese" : "凯路迪欧",
+			"english" : "Keldeo",
+			"japanese" : "ケルディオ",
+			"french" : "Keldeo"
+		},
+		"id" : 647
+	},
+	{
+		"name" : {
+			"chinese" : "美洛耶塔",
+			"english" : "Meloetta",
+			"japanese" : "メロエッタ",
+			"french" : "Meloetta"
+		},
+		"id" : 648
+	},
+	{
+		"name" : {
+			"chinese" : "盖诺赛克特",
+			"english" : "Genesect",
+			"japanese" : "ゲノセクト",
+			"french" : "Genesect"
+		},
+		"id" : 649
+	},
+	{
+		"name" : {
+			"chinese" : "哈力栗",
+			"english" : "Chespin",
+			"japanese" : "ハリマロン",
+			"french" : "Marisson"
+		},
+		"id" : 650
+	},
+	{
+		"name" : {
+			"chinese" : "胖胖哈力",
+			"english" : "Quilladin",
+			"japanese" : "ハリボーグ",
+			"french" : "Boguérisse"
+		},
+		"id" : 651
+	},
+	{
+		"name" : {
+			"chinese" : "布里卡隆",
+			"english" : "Chesnaught",
+			"japanese" : "ブリガロン",
+			"french" : "Blindépique"
+		},
+		"id" : 652
+	},
+	{
+		"name" : {
+			"chinese" : "火狐狸",
+			"english" : "Fennekin",
+			"japanese" : "フォッコ",
+			"french" : "Feunnec"
+		},
+		"id" : 653
+	},
+	{
+		"name" : {
+			"chinese" : "长尾火狐",
+			"english" : "Braixen",
+			"japanese" : "テールナー",
+			"french" : "Roussil"
+		},
+		"id" : 654
+	},
+	{
+		"name" : {
+			"chinese" : "妖火红狐",
+			"english" : "Delphox",
+			"japanese" : "マフォクシー",
+			"french" : "Goupelin"
+		},
+		"id" : 655
+	},
+	{
+		"name" : {
+			"chinese" : "呱呱泡蛙",
+			"english" : "Froakie",
+			"japanese" : "ケロマツ",
+			"french" : "Grenousse"
+		},
+		"id" : 656
+	},
+	{
+		"name" : {
+			"chinese" : "呱头蛙",
+			"english" : "Frogadier",
+			"japanese" : "ゲコガシラ",
+			"french" : "Croâporal"
+		},
+		"id" : 657
+	},
+	{
+		"name" : {
+			"chinese" : "甲贺忍蛙",
+			"english" : "Greninja",
+			"japanese" : "ゲッコウガ",
+			"french" : "Amphinobi"
+		},
+		"id" : 658
+	},
+	{
+		"name" : {
+			"chinese" : "掘掘兔",
+			"english" : "Bunnelby",
+			"japanese" : "ホルビー",
+			"french" : "Sapereau"
+		},
+		"id" : 659
+	},
+	{
+		"name" : {
+			"chinese" : "掘地兔",
+			"english" : "Diggersby",
+			"japanese" : "ホルード",
+			"french" : "Excavarenne"
+		},
+		"id" : 660
+	},
+	{
+		"name" : {
+			"chinese" : "小箭雀",
+			"english" : "Fletchling",
+			"japanese" : "ヤヤコマ",
+			"french" : "Passerouge"
+		},
+		"id" : 661
+	},
+	{
+		"name" : {
+			"chinese" : "火箭雀",
+			"english" : "Fletchinder",
+			"japanese" : "ヒノヤコマ",
+			"french" : "Braisillon"
+		},
+		"id" : 662
+	},
+	{
+		"name" : {
+			"chinese" : "烈箭鹰",
+			"english" : "Talonflame",
+			"japanese" : "ファイアロー",
+			"french" : "Flambusard"
+		},
+		"id" : 663
+	},
+	{
+		"name" : {
+			"chinese" : "粉蝶虫",
+			"english" : "Scatterbug",
+			"japanese" : "コフキムシ",
+			"french" : "Lépidonille"
+		},
+		"id" : 664
+	},
+	{
+		"name" : {
+			"chinese" : "粉蝶蛹",
+			"english" : "Spewpa",
+			"japanese" : "コフーライ",
+			"french" : "Pérégrain"
+		},
+		"id" : 665
+	},
+	{
+		"name" : {
+			"chinese" : "彩粉蝶",
+			"english" : "Vivillon",
+			"japanese" : "ビビヨン",
+			"french" : "Prismillon"
+		},
+		"id" : 666
+	},
+	{
+		"name" : {
+			"chinese" : "小狮狮",
+			"english" : "Litleo",
+			"japanese" : "シシコ",
+			"french" : "Hélionceau"
+		},
+		"id" : 667
+	},
+	{
+		"name" : {
+			"chinese" : "火炎狮",
+			"english" : "Pyroar",
+			"japanese" : "カエンジシ",
+			"french" : "Némélios"
+		},
+		"id" : 668
+	},
+	{
+		"name" : {
+			"chinese" : "花蓓蓓",
+			"english" : "Flabébé",
+			"japanese" : "フラベベ",
+			"french" : "Flabébé"
+		},
+		"id" : 669
+	},
+	{
+		"name" : {
+			"chinese" : "花叶蒂",
+			"english" : "Floette",
+			"japanese" : "フラエッテ",
+			"french" : "FLOETTE"
+		},
+		"id" : 670
+	},
+	{
+		"name" : {
+			"chinese" : "花洁夫人",
+			"english" : "Florges",
+			"japanese" : "フラージェス",
+			"french" : "Florges"
+		},
+		"id" : 671
+	},
+	{
+		"name" : {
+			"chinese" : "坐骑小羊",
+			"english" : "Skiddo",
+			"japanese" : "メェークル",
+			"french" : "Cabriolaine"
+		},
+		"id" : 672
+	},
+	{
+		"name" : {
+			"chinese" : "坐骑山羊",
+			"english" : "Gogoat",
+			"japanese" : "ゴーゴート",
+			"french" : "Chevroum"
+		},
+		"id" : 673
+	},
+	{
+		"name" : {
+			"chinese" : "顽皮熊猫",
+			"english" : "Pancham",
+			"japanese" : "ヤンチャム",
+			"french" : "Pandespiègle"
+		},
+		"id" : 674
+	},
+	{
+		"name" : {
+			"chinese" : "流氓熊猫",
+			"english" : "Pangoro",
+			"japanese" : "ゴロンダ",
+			"french" : "Pandarbare"
+		},
+		"id" : 675
+	},
+	{
+		"name" : {
+			"chinese" : "多丽米亚",
+			"english" : "Furfrou",
+			"japanese" : "トリミアン",
+			"french" : "Couafarel"
+		},
+		"id" : 676
+	},
+	{
+		"name" : {
+			"chinese" : "妙喵",
+			"english" : "Espurr",
+			"japanese" : "ニャスパー",
+			"french" : "Psystigri"
+		},
+		"id" : 677
+	},
+	{
+		"name" : {
+			"chinese" : "超能妙喵",
+			"english" : "Meowstic",
+			"japanese" : "ニャオニクス",
+			"french" : "Mistigrix"
+		},
+		"id" : 678
+	},
+	{
+		"name" : {
+			"chinese" : "独剑鞘",
+			"english" : "Honedge",
+			"japanese" : "ヒトツキ",
+			"french" : "Monorpale"
+		},
+		"id" : 679
+	},
+	{
+		"name" : {
+			"chinese" : "双剑鞘",
+			"english" : "Doublade",
+			"japanese" : "ニダンギル",
+			"french" : "Dimoclès"
+		},
+		"id" : 680
+	},
+	{
+		"name" : {
+			"chinese" : "坚盾剑怪",
+			"english" : "Aegislash",
+			"japanese" : "ギルガルド",
+			"french" : "Exagide"
+		},
+		"id" : 681
+	},
+	{
+		"name" : {
+			"chinese" : "粉香香",
+			"english" : "Spritzee",
+			"japanese" : "シュシュプ",
+			"french" : "Fluvetin"
+		},
+		"id" : 682
+	},
+	{
+		"name" : {
+			"chinese" : "芳香精",
+			"english" : "Aromatisse",
+			"japanese" : "フレフワン",
+			"french" : "Cocotine"
+		},
+		"id" : 683
+	},
+	{
+		"name" : {
+			"chinese" : "绵绵泡芙",
+			"english" : "Swirlix",
+			"japanese" : "ペロッパフ",
+			"french" : "Sucroquin"
+		},
+		"id" : 684
+	},
+	{
+		"name" : {
+			"chinese" : "胖甜妮",
+			"english" : "Slurpuff",
+			"japanese" : "ペロリーム",
+			"french" : "Cupcanaille"
+		},
+		"id" : 685
+	},
+	{
+		"name" : {
+			"chinese" : "好啦鱿",
+			"english" : "Inkay",
+			"japanese" : "マーイーカ",
+			"french" : "Sepiatop"
+		},
+		"id" : 686
+	},
+	{
+		"name" : {
+			"chinese" : "乌贼王",
+			"english" : "Malamar",
+			"japanese" : "カラマネロ",
+			"french" : "Sepiatroce"
+		},
+		"id" : 687
+	},
+	{
+		"name" : {
+			"chinese" : "龟脚脚",
+			"english" : "Binacle",
+			"japanese" : "カメテテ",
+			"french" : "Opermine"
+		},
+		"id" : 688
+	},
+	{
+		"name" : {
+			"chinese" : "龟足巨铠",
+			"english" : "Barbaracle",
+			"japanese" : "ガメノデス",
+			"french" : "Golgopathe"
+		},
+		"id" : 689
+	},
+	{
+		"name" : {
+			"chinese" : "垃垃藻",
+			"english" : "Skrelp",
+			"japanese" : "クズモー",
+			"french" : "Venalgue"
+		},
+		"id" : 690
+	},
+	{
+		"name" : {
+			"chinese" : "毒藻龙",
+			"english" : "Dragalge",
+			"japanese" : "ドラミドロ",
+			"french" : "Kravarech"
+		},
+		"id" : 691
+	},
+	{
+		"name" : {
+			"chinese" : "铁臂枪虾",
+			"english" : "Clauncher",
+			"japanese" : "ウデッポウ",
+			"french" : "Flingouste"
+		},
+		"id" : 692
+	},
+	{
+		"name" : {
+			"chinese" : "钢炮臂虾",
+			"english" : "Clawitzer",
+			"japanese" : "ブロスター",
+			"french" : "Gamblast"
+		},
+		"id" : 693
+	},
+	{
+		"name" : {
+			"chinese" : "伞电蜥",
+			"english" : "Helioptile",
+			"japanese" : "エリキテル",
+			"french" : "Galvaran"
+		},
+		"id" : 694
+	},
+	{
+		"name" : {
+			"chinese" : "光电伞蜥",
+			"english" : "Heliolisk",
+			"japanese" : "エレザード",
+			"french" : "Iguolta"
+		},
+		"id" : 695
+	},
+	{
+		"name" : {
+			"chinese" : "宝宝暴龙",
+			"english" : "Tyrunt",
+			"japanese" : "チゴラス",
+			"french" : "Ptyranidur"
+		},
+		"id" : 696
+	},
+	{
+		"name" : {
+			"chinese" : "怪颚龙",
+			"english" : "Tyrantrum",
+			"japanese" : "ガチゴラス",
+			"french" : "Rexillius"
+		},
+		"id" : 697
+	},
+	{
+		"name" : {
+			"chinese" : "冰雪龙",
+			"english" : "Amaura",
+			"japanese" : "アマルス",
+			"french" : "Amagara"
+		},
+		"id" : 698
+	},
+	{
+		"name" : {
+			"chinese" : "冰雪巨龙",
+			"english" : "Aurorus",
+			"japanese" : "アマルルガ",
+			"french" : "Dragmara"
+		},
+		"id" : 699
+	},
+	{
+		"name" : {
+			"chinese" : "仙子伊布",
+			"english" : "Sylveon",
+			"japanese" : "ニンフィア",
+			"french" : "Nymphali"
+		},
+		"id" : 700
+	},
+	{
+		"name" : {
+			"chinese" : "摔角鹰人",
+			"english" : "Hawlucha",
+			"japanese" : "ルチャブル",
+			"french" : "Brutalibré"
+		},
+		"id" : 701
+	},
+	{
+		"name" : {
+			"chinese" : "咚咚鼠",
+			"english" : "Dedenne",
+			"japanese" : "デデンネ",
+			"french" : "DEDENNE"
+		},
+		"id" : 702
+	},
+	{
+		"name" : {
+			"chinese" : "小碎钻",
+			"english" : "Carbink",
+			"japanese" : "メレシー",
+			"french" : "Strassie"
+		},
+		"id" : 703
+	},
+	{
+		"name" : {
+			"chinese" : "黏黏宝",
+			"english" : "Goomy",
+			"japanese" : "ヌメラ",
+			"french" : "Mucuscule"
+		},
+		"id" : 704
+	},
+	{
+		"name" : {
+			"chinese" : "黏美儿",
+			"english" : "Sliggoo",
+			"japanese" : "ヌメイル",
+			"french" : "Colimucus"
+		},
+		"id" : 705
+	},
+	{
+		"name" : {
+			"chinese" : "黏美龙",
+			"english" : "Goodra",
+			"japanese" : "ヌメルゴン",
+			"french" : "Muplodocus"
+		},
+		"id" : 706
+	},
+	{
+		"name" : {
+			"chinese" : "钥圈儿",
+			"english" : "Klefki",
+			"japanese" : "クレッフィ",
+			"french" : "Trousselin"
+		},
+		"id" : 707
+	},
+	{
+		"name" : {
+			"chinese" : "小木灵",
+			"english" : "Phantump",
+			"japanese" : "ボクレー",
+			"french" : "Brocélôme"
+		},
+		"id" : 708
+	},
+	{
+		"name" : {
+			"chinese" : "朽木妖",
+			"english" : "Trevenant",
+			"japanese" : "オーロット",
+			"french" : "Desséliande"
+		},
+		"id" : 709
+	},
+	{
+		"name" : {
+			"chinese" : "南瓜精",
+			"english" : "Pumpkaboo",
+			"japanese" : "バケッチャ",
+			"french" : "Pitrouille"
+		},
+		"id" : 710
+	},
+	{
+		"name" : {
+			"chinese" : "南瓜怪人",
+			"english" : "Gourgeist",
+			"japanese" : "パンプジン",
+			"french" : "Banshitrouye"
+		},
+		"id" : 711
+	},
+	{
+		"name" : {
+			"chinese" : "冰宝",
+			"english" : "Bergmite",
+			"japanese" : "カチコール",
+			"french" : "Grelaçon"
+		},
+		"id" : 712
+	},
+	{
+		"name" : {
+			"chinese" : "冰岩怪",
+			"english" : "Avalugg",
+			"japanese" : "クレベース",
+			"french" : "Séracrawl"
+		},
+		"id" : 713
+	},
+	{
+		"name" : {
+			"chinese" : "嗡蝠",
+			"english" : "Noibat",
+			"japanese" : "オンバット",
+			"french" : "Sonistrelle"
+		},
+		"id" : 714
+	},
+	{
+		"name" : {
+			"chinese" : "音波龙",
+			"english" : "Noivern",
+			"japanese" : "オンバーン",
+			"french" : "Bruyverne"
+		},
+		"id" : 715
+	},
+	{
+		"name" : {
+			"chinese" : "哲尔尼亚斯",
+			"english" : "Xerneas",
+			"japanese" : "ゼルネアス",
+			"french" : "Xerneas"
+		},
+		"id" : 716
+	},
+	{
+		"name" : {
+			"chinese" : "伊裴尔塔尔",
+			"english" : "Yveltal",
+			"japanese" : "イベルタル",
+			"french" : "Yveltal"
+		},
+		"id" : 717
+	},
+	{
+		"name" : {
+			"chinese" : "基格尔德",
+			"english" : "Zygarde",
+			"japanese" : "ジガルデ",
+			"french" : "Zygarde"
+		},
+		"id" : 718
+	},
+	{
+		"name" : {
+			"chinese" : "蒂安希",
+			"english" : "Diancie",
+			"japanese" : "ディアンシー",
+			"french" : "Diancie"
+		},
+		"id" : 719
+	},
+	{
+		"name" : {
+			"chinese" : "胡帕",
+			"english" : "Hoopa",
+			"japanese" : "フーパ",
+			"french" : "Hoopa"
+		},
+		"id" : 720
+	},
+	{
+		"name" : {
+			"chinese" : "波尔凯尼恩",
+			"english" : "Volcanion",
+			"japanese" : "ボルケニオン",
+			"french" : "Volcanion"
+		},
+		"id" : 721
+	},
+	{
+		"name" : {
+			"chinese" : "木木枭",
+			"english" : "Rowlet",
+			"japanese" : "モクロー",
+			"french" : "Brindibou"
+		},
+		"id" : 722
+	},
+	{
+		"name" : {
+			"chinese" : "投羽枭",
+			"english" : "Dartrix",
+			"japanese" : "フクスロー",
+			"french" : "Efflèche"
+		},
+		"id" : 723
+	},
+	{
+		"name" : {
+			"chinese" : "狙射树枭",
+			"english" : "Decidueye",
+			"japanese" : "ジュナイパー",
+			"french" : "Archéduc"
+		},
+		"id" : 724
+	},
+	{
+		"name" : {
+			"chinese" : "火斑喵",
+			"english" : "Litten",
+			"japanese" : "ニャビー",
+			"french" : "Flamiaou"
+		},
+		"id" : 725
+	},
+	{
+		"name" : {
+			"chinese" : "炎热喵",
+			"english" : "Torracat",
+			"japanese" : "ニャヒート",
+			"french" : "Matoufeu"
+		},
+		"id" : 726
+	},
+	{
+		"name" : {
+			"chinese" : "炽焰咆哮虎",
+			"english" : "Incineroar",
+			"japanese" : "ガオガエン",
+			"french" : "Félinferno"
+		},
+		"id" : 727
+	},
+	{
+		"name" : {
+			"chinese" : "球球海狮",
+			"english" : "Popplio",
+			"japanese" : "アシマリ",
+			"french" : "Otaquin"
+		},
+		"id" : 728
+	},
+	{
+		"name" : {
+			"chinese" : "花漾海狮",
+			"english" : "Brionne",
+			"japanese" : "オシャマリ",
+			"french" : "Otarlette"
+		},
+		"id" : 729
+	},
+	{
+		"name" : {
+			"chinese" : "西狮海壬",
+			"english" : "Primarina",
+			"japanese" : "アシレーヌ",
+			"french" : "Oratoria"
+		},
+		"id" : 730
+	},
+	{
+		"name" : {
+			"chinese" : "小笃儿",
+			"english" : "Pikipek",
+			"japanese" : "ツツケラ",
+			"french" : "Picassaut"
+		},
+		"id" : 731
+	},
+	{
+		"name" : {
+			"chinese" : "喇叭啄鸟",
+			"english" : "Trumbeak",
+			"japanese" : "ケララッパ",
+			"french" : "Piclairon"
+		},
+		"id" : 732
+	},
+	{
+		"name" : {
+			"chinese" : "铳嘴大鸟",
+			"english" : "Toucannon",
+			"japanese" : "ドデカバシ",
+			"french" : "Bazoucan"
+		},
+		"id" : 733
+	},
+	{
+		"name" : {
+			"chinese" : "猫鼬少",
+			"english" : "Yungoos",
+			"japanese" : "ヤングース",
+			"french" : "Manglouton"
+		},
+		"id" : 734
+	},
+	{
+		"name" : {
+			"chinese" : "猫鼬探长",
+			"english" : "Gumshoos",
+			"japanese" : "デカグース",
+			"french" : "Argouste"
+		},
+		"id" : 735
+	},
+	{
+		"name" : {
+			"chinese" : "强颚鸡母虫",
+			"english" : "Grubbin",
+			"japanese" : "アゴジムシ",
+			"french" : "Larvibule"
+		},
+		"id" : 736
+	},
+	{
+		"name" : {
+			"chinese" : "虫电宝",
+			"english" : "Charjabug",
+			"japanese" : "デンヂムシ",
+			"french" : "Chrysapile"
+		},
+		"id" : 737
+	},
+	{
+		"name" : {
+			"chinese" : "锹农炮虫",
+			"english" : "Vikavolt",
+			"japanese" : "クワガノン",
+			"french" : "Lucanon"
+		},
+		"id" : 738
+	},
+	{
+		"name" : {
+			"chinese" : "好胜蟹",
+			"english" : "Crabrawler",
+			"japanese" : "マケンカニ",
+			"french" : "Crabagarre"
+		},
+		"id" : 739
+	},
+	{
+		"name" : {
+			"chinese" : "好胜毛蟹",
+			"english" : "Crabominable",
+			"japanese" : "ケケンカニ",
+			"french" : "Crabominable"
+		},
+		"id" : 740
+	},
+	{
+		"name" : {
+			"chinese" : "花舞鸟",
+			"english" : "Oricorio",
+			"japanese" : "オドリドリ",
+			"french" : "Plumeline"
+		},
+		"id" : 741
+	},
+	{
+		"name" : {
+			"chinese" : "萌虻",
+			"english" : "Cutiefly",
+			"japanese" : "アブリー",
+			"french" : "Bombydou"
+		},
+		"id" : 742
+	},
+	{
+		"name" : {
+			"chinese" : "蝶结萌虻",
+			"english" : "Ribombee",
+			"japanese" : "アブリボン",
+			"french" : "Rubombelle"
+		},
+		"id" : 743
+	},
+	{
+		"name" : {
+			"chinese" : "岩狗狗",
+			"english" : "Rockruff",
+			"japanese" : "イワンコ",
+			"french" : "Rocabot"
+		},
+		"id" : 744
+	},
+	{
+		"name" : {
+			"chinese" : "鬃岩狼人",
+			"english" : "Lycanroc",
+			"japanese" : "ルガルガン",
+			"french" : "Lougaroc"
+		},
+		"id" : 745
+	},
+	{
+		"name" : {
+			"chinese" : "弱丁鱼",
+			"english" : "Wishiwashi",
+			"japanese" : "ヨワシ",
+			"french" : "Froussardine"
+		},
+		"id" : 746
+	},
+	{
+		"name" : {
+			"chinese" : "好坏星",
+			"english" : "Mareanie",
+			"japanese" : "ヒドイデ",
+			"french" : "Vorastérie"
+		},
+		"id" : 747
+	},
+	{
+		"name" : {
+			"chinese" : "超坏星",
+			"english" : "Toxapex",
+			"japanese" : "ドヒドイデ",
+			"french" : "Prédastérie"
+		},
+		"id" : 748
+	},
+	{
+		"name" : {
+			"chinese" : "泥驴仔",
+			"english" : "Mudbray",
+			"japanese" : "ドロバンコ",
+			"french" : "Tiboudet"
+		},
+		"id" : 749
+	},
+	{
+		"name" : {
+			"chinese" : "重泥挽马",
+			"english" : "Mudsdale",
+			"japanese" : "バンバドロ",
+			"french" : "Bourrinos"
+		},
+		"id" : 750
+	},
+	{
+		"name" : {
+			"chinese" : "滴蛛",
+			"english" : "Dewpider",
+			"japanese" : "シズクモ",
+			"french" : "Araqua"
+		},
+		"id" : 751
+	},
+	{
+		"name" : {
+			"chinese" : "滴蛛霸",
+			"english" : "Araquanid",
+			"japanese" : "オニシズクモ",
+			"french" : "Tarenbulle"
+		},
+		"id" : 752
+	},
+	{
+		"name" : {
+			"chinese" : "伪螳草",
+			"english" : "Fomantis",
+			"japanese" : "カリキリ",
+			"french" : "Mimantis"
+		},
+		"id" : 753
+	},
+	{
+		"name" : {
+			"chinese" : "兰螳花",
+			"english" : "Lurantis",
+			"japanese" : "ラランテス",
+			"french" : "Floramantis"
+		},
+		"id" : 754
+	},
+	{
+		"name" : {
+			"chinese" : "睡睡菇",
+			"english" : "Morelull",
+			"japanese" : "ネマシュ",
+			"french" : "Spododo"
+		},
+		"id" : 755
+	},
+	{
+		"name" : {
+			"chinese" : "灯罩夜菇",
+			"english" : "Shiinotic",
+			"japanese" : "マシェード",
+			"french" : "Lampignon"
+		},
+		"id" : 756
+	},
+	{
+		"name" : {
+			"chinese" : "夜盗火蜥",
+			"english" : "Salandit",
+			"japanese" : "ヤトウモリ",
+			"french" : "Tritox"
+		},
+		"id" : 757
+	},
+	{
+		"name" : {
+			"chinese" : "焰后蜥",
+			"english" : "Salazzle",
+			"japanese" : "エンニュート",
+			"french" : "Malamandre"
+		},
+		"id" : 758
+	},
+	{
+		"name" : {
+			"chinese" : "童偶熊",
+			"english" : "Stufful",
+			"japanese" : "ヌイコグマ",
+			"french" : "Nounourson"
+		},
+		"id" : 759
+	},
+	{
+		"name" : {
+			"chinese" : "穿着熊",
+			"english" : "Bewear",
+			"japanese" : "キテルグマ",
+			"french" : "Chelours"
+		},
+		"id" : 760
+	},
+	{
+		"name" : {
+			"chinese" : "甜竹竹",
+			"english" : "Bounsweet",
+			"japanese" : "アマカジ",
+			"french" : "Croquine"
+		},
+		"id" : 761
+	},
+	{
+		"name" : {
+			"chinese" : "甜舞妮",
+			"english" : "Steenee",
+			"japanese" : "アママイコ",
+			"french" : "Candine"
+		},
+		"id" : 762
+	},
+	{
+		"name" : {
+			"chinese" : "甜冷美后",
+			"english" : "Tsareena",
+			"japanese" : "アマージョ",
+			"french" : "Sucreine"
+		},
+		"id" : 763
+	},
+	{
+		"name" : {
+			"chinese" : "花疗环环",
+			"english" : "Comfey",
+			"japanese" : "キュワワー",
+			"french" : "Guérilande"
+		},
+		"id" : 764
+	},
+	{
+		"name" : {
+			"chinese" : "智挥猩",
+			"english" : "Oranguru",
+			"japanese" : "ヤレユータン",
+			"french" : "Gouroutan"
+		},
+		"id" : 765
+	},
+	{
+		"name" : {
+			"chinese" : "投掷猴",
+			"english" : "Passimian",
+			"japanese" : "ナゲツケサル",
+			"french" : "Quartermac"
+		},
+		"id" : 766
+	},
+	{
+		"name" : {
+			"chinese" : "胆小虫",
+			"english" : "Wimpod",
+			"japanese" : "コソクムシ",
+			"french" : "Sovkipou"
+		},
+		"id" : 767
+	},
+	{
+		"name" : {
+			"chinese" : "具甲武者",
+			"english" : "Golisopod",
+			"japanese" : "グソクムシャ",
+			"french" : "Sarmuraï"
+		},
+		"id" : 768
+	},
+	{
+		"name" : {
+			"chinese" : "沙丘娃",
+			"english" : "Sandygast",
+			"japanese" : "スナバァ",
+			"french" : "Bacabouh"
+		},
+		"id" : 769
+	},
+	{
+		"name" : {
+			"chinese" : "噬沙堡爷",
+			"english" : "Palossand",
+			"japanese" : "シロデスナ",
+			"french" : "Trépassable"
+		},
+		"id" : 770
+	},
+	{
+		"name" : {
+			"chinese" : "拳海参",
+			"english" : "Pyukumuku",
+			"japanese" : "ナマコブシ",
+			"french" : "Concombaffe"
+		},
+		"id" : 771
+	},
+	{
+		"name" : {
+			"chinese" : "属性：空",
+			"english" : "Type: Null",
+			"japanese" : "タイプ：ヌル",
+			"french" : "Type:0"
+		},
+		"id" : 772
+	},
+	{
+		"name" : {
+			"chinese" : "银伴战兽",
+			"english" : "Silvally",
+			"japanese" : "シルヴァディ",
+			"french" : "Silvallié"
+		},
+		"id" : 773
+	},
+	{
+		"name" : {
+			"chinese" : "小陨星",
+			"english" : "Minior",
+			"japanese" : "メテノ",
+			"french" : "Météno"
+		},
+		"id" : 774
+	},
+	{
+		"name" : {
+			"chinese" : "树枕尾熊",
+			"english" : "Komala",
+			"japanese" : "ネッコアラ",
+			"french" : "Dodoala"
+		},
+		"id" : 775
+	},
+	{
+		"name" : {
+			"chinese" : "爆焰龟兽",
+			"english" : "Turtonator",
+			"japanese" : "バクガメス",
+			"french" : "Boumata"
+		},
+		"id" : 776
+	},
+	{
+		"name" : {
+			"chinese" : "托戈德玛尔",
+			"english" : "Togedemaru",
+			"japanese" : "トゲデマル",
+			"french" : "Togedemaru"
+		},
+		"id" : 777
+	},
+	{
+		"name" : {
+			"chinese" : "谜拟Ｑ",
+			"english" : "Mimikyu",
+			"japanese" : "ミミッキュ",
+			"french" : "Mimiqui"
+		},
+		"id" : 778
+	},
+	{
+		"name" : {
+			"chinese" : "磨牙彩皮鱼",
+			"english" : "Bruxish",
+			"japanese" : "ハギギシリ",
+			"french" : "Denticrisse"
+		},
+		"id" : 779
+	},
+	{
+		"name" : {
+			"chinese" : "老翁龙",
+			"english" : "Drampa",
+			"japanese" : "ジジーロン",
+			"french" : "Draïeul"
+		},
+		"id" : 780
+	},
+	{
+		"name" : {
+			"chinese" : "破破舵轮",
+			"english" : "Dhelmise",
+			"japanese" : "ダダリン",
+			"french" : "Sinistrail"
+		},
+		"id" : 781
+	},
+	{
+		"name" : {
+			"chinese" : "心鳞宝",
+			"english" : "Jangmo-o",
+			"japanese" : "ジャラコ",
+			"french" : "Bébécaille"
+		},
+		"id" : 782
+	},
+	{
+		"name" : {
+			"chinese" : "鳞甲龙",
+			"english" : "Hakamo-o",
+			"japanese" : "ジャランゴ",
+			"french" : "Écaïd"
+		},
+		"id" : 783
+	},
+	{
+		"name" : {
+			"chinese" : "杖尾鳞甲龙",
+			"english" : "Kommo-o",
+			"japanese" : "ジャラランガ",
+			"french" : "Ékaïser"
+		},
+		"id" : 784
+	},
+	{
+		"name" : {
+			"chinese" : "卡璞・鸣鸣",
+			"english" : "Tapu Koko",
+			"japanese" : "カプ・コケコ",
+			"french" : "Tokorico"
+		},
+		"id" : 785
+	},
+	{
+		"name" : {
+			"chinese" : "卡璞・蝶蝶",
+			"english" : "Tapu Lele",
+			"japanese" : "カプ・テテフ",
+			"french" : "Tokopiyon"
+		},
+		"id" : 786
+	},
+	{
+		"name" : {
+			"chinese" : "卡璞・哞哞",
+			"english" : "Tapu Bulu",
+			"japanese" : "カプ・ブルル",
+			"french" : "Tokotoro"
+		},
+		"id" : 787
+	},
+	{
+		"name" : {
+			"chinese" : "卡璞・鳍鳍",
+			"english" : "Tapu Fini",
+			"japanese" : "カプ・レヒレ",
+			"french" : "Tokopisco"
+		},
+		"id" : 788
+	},
+	{
+		"name" : {
+			"chinese" : "科斯莫古",
+			"english" : "Cosmog",
+			"japanese" : "コスモッグ",
+			"french" : "Cosmog"
+		},
+		"id" : 789
+	},
+	{
+		"name" : {
+			"chinese" : "科斯莫姆",
+			"english" : "Cosmoem",
+			"japanese" : "コスモウム",
+			"french" : "Cosmovum"
+		},
+		"id" : 790
+	},
+	{
+		"name" : {
+			"chinese" : "索尔迦雷欧",
+			"english" : "Solgaleo",
+			"japanese" : "ソルガレオ",
+			"french" : "Solgaleo"
+		},
+		"id" : 791
+	},
+	{
+		"name" : {
+			"chinese" : "露奈雅拉",
+			"english" : "Lunala",
+			"japanese" : "ルナアーラ",
+			"french" : "Lunala"
+		},
+		"id" : 792
+	},
+	{
+		"name" : {
+			"chinese" : "虚吾伊德",
+			"english" : "Nihilego",
+			"japanese" : "ウツロイド",
+			"french" : "Zéroïd"
+		},
+		"id" : 793
+	},
+	{
+		"name" : {
+			"chinese" : "爆肌蚊",
+			"english" : "Buzzwole",
+			"japanese" : "マッシブーン",
+			"french" : "Mouscoto"
+		},
+		"id" : 794
+	},
+	{
+		"name" : {
+			"chinese" : "费洛美螂",
+			"english" : "Pheromosa",
+			"japanese" : "フェローチェ",
+			"french" : "Cancrelove"
+		},
+		"id" : 795
+	},
+	{
+		"name" : {
+			"chinese" : "电束木",
+			"english" : "Xurkitree",
+			"japanese" : "デンジュモク",
+			"french" : "Câblifère"
+		},
+		"id" : 796
+	},
+	{
+		"name" : {
+			"chinese" : "铁火辉夜",
+			"english" : "Celesteela",
+			"japanese" : "テッカグヤ",
+			"french" : "Bamboiselle"
+		},
+		"id" : 797
+	},
+	{
+		"name" : {
+			"chinese" : "纸御剑",
+			"english" : "Kartana",
+			"japanese" : "カミツルギ",
+			"french" : "Katagami"
+		},
+		"id" : 798
+	},
+	{
+		"name" : {
+			"chinese" : "恶食大王",
+			"english" : "Guzzlord",
+			"japanese" : "アクジキング",
+			"french" : "Engloutyran"
+		},
+		"id" : 799
+	},
+	{
+		"name" : {
+			"chinese" : "奈克洛兹玛",
+			"english" : "Necrozma",
+			"japanese" : "ネクロズマ",
+			"french" : "Necrozma"
+		},
+		"id" : 800
+	},
+	{
+		"name" : {
+			"chinese" : "玛机雅娜",
+			"english" : "Magearna",
+			"japanese" : "マギアナ",
+			"french" : "Magearna"
+		},
+		"id" : 801
+	},
+	{
+		"name" : {
+			"chinese" : "玛夏多",
+			"english" : "Marshadow",
+			"japanese" : "マーシャドー",
+			"french" : "Marshadow"
+		},
+		"id" : 802
+	},
+	{
+		"name" : {
+			"chinese" : "毒贝比",
+			"english" : "Poipole",
+			"japanese" : "ベベノム",
+			"french" : "Vémini"
+		},
+		"id" : 803
+	},
+	{
+		"name" : {
+			"chinese" : "四颚针龙",
+			"english" : "Naganadel",
+			"japanese" : "アーゴヨン",
+			"french" : "Mandrillon"
+		},
+		"id" : 804
+	},
+	{
+		"name" : {
+			"chinese" : "垒磊石",
+			"english" : "Stakataka",
+			"japanese" : "ツンデツンデ",
+			"french" : "Ama-Ama"
+		},
+		"id" : 805
+	},
+	{
+		"name" : {
+			"chinese" : "砰头小丑",
+			"english" : "Blacephalon",
+			"japanese" : "ズガドーン",
+			"french" : "Pierroteknik"
+		},
+		"id" : 806
+	},
+	{
+		"name" : {
+			"chinese" : "捷拉奥拉",
+			"english" : "Zeraora",
+			"japanese" : "ゼラオラ",
+			"french" : "Zeraora"
+		},
+		"id" : 807
+	},
+	{
+		"name" : {
+			"chinese" : "美录坦",
+			"english" : "Meltan",
+			"japanese" : "メルタン",
+			"french" : "Meltan"
+		},
+		"id" : 808
+	},
+	{
+		"name" : {
+			"chinese" : "美录梅塔",
+			"english" : "Melmetal",
+			"japanese" : "メルメタル",
+			"french" : "Melmetal"
+		},
+		"id" : 809
+	},
+	{
+		"name" : {
+			"english" : "Grookey",
+			"french" : "Ouistempo"
+		},
+		"id" : 810
+	},
+	{
+		"name" : {
+			"english" : "Thwackey",
+			"french" : "Badabouin"
+		},
+		"id" : 811
+	},
+	{
+		"name" : {
+			"english" : "Rillaboom",
+			"french" : "Gorythmic"
+		},
+		"id" : 812
+	},
+	{
+		"name" : {
+			"english" : "Scorbunny",
+			"french" : "Flambino"
+		},
+		"id" : 813
+	},
+	{
+		"name" : {
+			"english" : "Raboot",
+			"french" : "Lapyro"
+		},
+		"id" : 814
+	},
+	{
+		"name" : {
+			"english" : "Cinderace",
+			"french" : "Pyrobut"
+		},
+		"id" : 815
+	},
+	{
+		"name" : {
+			"english" : "Sobble",
+			"french" : "Larméléon"
+		},
+		"id" : 816
+	},
+	{
+		"name" : {
+			"english" : "Drizzile",
+			"french" : "Arrozard"
+		},
+		"id" : 817
+	},
+	{
+		"name" : {
+			"english" : "Inteleon",
+			"french" : "Lézargus"
+		},
+		"id" : 818
+	},
+	{
+		"name" : {
+			"english" : "Skwovet",
+			"french" : "Rongourmand"
+		},
+		"id" : 819
+	},
+	{
+		"name" : {
+			"english" : "Greedent",
+			"french" : "Rongrigou"
+		},
+		"id" : 820
+	},
+	{
+		"name" : {
+			"english" : "Rookidee",
+			"french" : "Minisange"
+		},
+		"id" : 821
+	},
+	{
+		"name" : {
+			"english" : "Corvisquire",
+			"french" : "Bleuseille"
+		},
+		"id" : 822
+	},
+	{
+		"name" : {
+			"english" : "Corviknight",
+			"french" : "Corvaillus"
+		},
+		"id" : 823
+	},
+	{
+		"name" : {
+			"english" : "Blipbug",
+			"french" : "Larvadar"
+		},
+		"id" : 824
+	},
+	{
+		"name" : {
+			"english" : "Dottler",
+			"french" : "Coléodôme"
+		},
+		"id" : 825
+	},
+	{
+		"name" : {
+			"english" : "Orbeetle",
+			"french" : "Astronelle"
+		},
+		"id" : 826
+	},
+	{
+		"name" : {
+			"english" : "Nickit",
+			"french" : "Goupilou"
+		},
+		"id" : 827
+	},
+	{
+		"name" : {
+			"english" : "Thievul",
+			"french" : "Roublenard"
+		},
+		"id" : 828
+	},
+	{
+		"name" : {
+			"english" : "Gossifleur",
+			"french" : "Tournicoton"
+		},
+		"id" : 829
+	},
+	{
+		"name" : {
+			"english" : "Eldegoss",
+			"french" : "Blancoton"
+		},
+		"id" : 830
+	},
+	{
+		"name" : {
+			"english" : "Wooloo",
+			"french" : "Moumouton"
+		},
+		"id" : 831
+	},
+	{
+		"name" : {
+			"english" : "Dubwool",
+			"french" : "Moumouflon"
+		},
+		"id" : 832
+	},
+	{
+		"name" : {
+			"english" : "Chewtle",
+			"french" : "Khélocrok"
+		},
+		"id" : 833
+	},
+	{
+		"name" : {
+			"english" : "Drednaw",
+			"french" : "Torgamord"
+		},
+		"id" : 834
+	},
+	{
+		"name" : {
+			"english" : "Yamper",
+			"french" : "Voltoutou"
+		},
+		"id" : 835
+	},
+	{
+		"name" : {
+			"english" : "Boltund",
+			"french" : "Fulgudog"
+		},
+		"id" : 836
+	},
+	{
+		"name" : {
+			"english" : "Rolycoly",
+			"french" : "Charbi"
+		},
+		"id" : 837
+	},
+	{
+		"name" : {
+			"english" : "Carkol",
+			"french" : "Wagomine"
+		},
+		"id" : 838
+	},
+	{
+		"name" : {
+			"english" : "Coalossal",
+			"french" : "Monthracite"
+		},
+		"id" : 839
+	},
+	{
+		"name" : {
+			"english" : "Applin",
+			"french" : "Verpom"
+		},
+		"id" : 840
+	},
+	{
+		"name" : {
+			"english" : "Flapple",
+			"french" : "Pomdrapi"
+		},
+		"id" : 841
+	},
+	{
+		"name" : {
+			"english" : "Appletun",
+			"french" : "Dratatin"
+		},
+		"id" : 842
+	},
+	{
+		"name" : {
+			"english" : "Silicobra",
+			"french" : "Dunaja"
+		},
+		"id" : 843
+	},
+	{
+		"name" : {
+			"english" : "Sandaconda",
+			"french" : "Dunaconda"
+		},
+		"id" : 844
+	},
+	{
+		"name" : {
+			"english" : "Cramorant",
+			"french" : "Nigosier"
+		},
+		"id" : 845
+	},
+	{
+		"name" : {
+			"english" : "Arrokuda",
+			"french" : "Embrochet"
+		},
+		"id" : 846
+	},
+	{
+		"name" : {
+			"english" : "Barraskewda",
+			"french" : "Hastacuda"
+		},
+		"id" : 847
+	},
+	{
+		"name" : {
+			"english" : "Toxel",
+			"french" : "Toxizap"
+		},
+		"id" : 848
+	},
+	{
+		"name" : {
+			"english" : "Toxtricity",
+			"french" : "Salarsen"
+		},
+		"id" : 849
+	},
+	{
+		"name" : {
+			"english" : "Sizzlipede",
+			"french" : "Grillepattes"
+		},
+		"id" : 850
+	},
+	{
+		"name" : {
+			"english" : "Centiskorch",
+			"french" : "Scolocendre"
+		},
+		"id" : 851
+	},
+	{
+		"name" : {
+			"english" : "Clobbopus",
+			"french" : "Poulpaf"
+		},
+		"id" : 852
+	},
+	{
+		"name" : {
+			"english" : "Grapploct",
+			"french" : "Krakos"
+		},
+		"id" : 853
+	},
+	{
+		"name" : {
+			"english" : "Sinistea",
+			"french" : "Théffroi"
+		},
+		"id" : 854
+	},
+	{
+		"name" : {
+			"english" : "Polteageist",
+			"french" : "Polthégeist"
+		},
+		"id" : 855
+	},
+	{
+		"name" : {
+			"english" : "Hatenna",
+			"french" : "Bibichut"
+		},
+		"id" : 856
+	},
+	{
+		"name" : {
+			"english" : "Hattrem",
+			"french" : "Chapotus"
+		},
+		"id" : 857
+	},
+	{
+		"name" : {
+			"english" : "Hatterene",
+			"french" : "Sorcilence"
+		},
+		"id" : 858
+	},
+	{
+		"name" : {
+			"english" : "Impidimp",
+			"french" : "Grimalin"
+		},
+		"id" : 859
+	},
+	{
+		"name" : {
+			"english" : "Morgrem",
+			"french" : "Fourbelin"
+		},
+		"id" : 860
+	},
+	{
+		"name" : {
+			"english" : "Grimmsnarl",
+			"french" : "Angoliath"
+		},
+		"id" : 861
+	},
+	{
+		"name" : {
+			"english" : "Obstagoon",
+			"french" : "Ixon"
+		},
+		"id" : 862
+	},
+	{
+		"name" : {
+			"english" : "Perrserker",
+			"french" : "Berserkatt"
+		},
+		"id" : 863
+	},
+	{
+		"name" : {
+			"english" : "Cursola",
+			"french" : "Corayôme"
+		},
+		"id" : 864
+	},
+	{
+		"name" : {
+			"english" : "Sirfetch’d",
+			"french" : "Palarticho"
+		},
+		"id" : 865
+	},
+	{
+		"name" : {
+			"english" : "Mr. Rime",
+			"french" : "M. Glaquette"
+		},
+		"id" : 866
+	},
+	{
+		"name" : {
+			"english" : "Runerigus",
+			"french" : "Tutétékri"
+		},
+		"id" : 867
+	},
+	{
+		"name" : {
+			"english" : "Milcery",
+			"french" : "Crèmy"
+		},
+		"id" : 868
+	},
+	{
+		"name" : {
+			"english" : "Alcremie",
+			"french" : "Charmilly"
+		},
+		"id" : 869
+	},
+	{
+		"name" : {
+			"english" : "Falinks",
+			"french" : "Hexadron"
+		},
+		"id" : 870
+	},
+	{
+		"name" : {
+			"english" : "Pincurchin",
+			"french" : "Wattapik"
+		},
+		"id" : 871
+	},
+	{
+		"name" : {
+			"english" : "Snom",
+			"french" : "Frissonille"
+		},
+		"id" : 872
+	},
+	{
+		"name" : {
+			"english" : "Frosmoth",
+			"french" : "Beldeneige"
+		},
+		"id" : 873
+	},
+	{
+		"name" : {
+			"english" : "Stonjourner",
+			"french" : "Dolman"
+		},
+		"id" : 874
+	},
+	{
+		"name" : {
+			"english" : "Eiscue",
+			"french" : "Bekaglaçon"
+		},
+		"id" : 875
+	},
+	{
+		"name" : {
+			"english" : "Indeedee",
+			"french" : "Wimessir"
+		},
+		"id" : 876
+	},
+	{
+		"name" : {
+			"english" : "Morpeko",
+			"french" : "Morpeko"
+		},
+		"id" : 877
+	},
+	{
+		"name" : {
+			"english" : "Cufant",
+			"french" : "Charibari"
+		},
+		"id" : 878
+	},
+	{
+		"name" : {
+			"english" : "Copperajah",
+			"french" : "Pachyradjah"
+		},
+		"id" : 879
+	},
+	{
+		"name" : {
+			"english" : "Dracozolt",
+			"french" : "Galvagon"
+		},
+		"id" : 880
+	},
+	{
+		"name" : {
+			"english" : "Arctozolt",
+			"french" : "Galvagla"
+		},
+		"id" : 881
+	},
+	{
+		"name" : {
+			"english" : "Dracovish",
+			"french" : "Hydragon"
+		},
+		"id" : 882
+	},
+	{
+		"name" : {
+			"english" : "Arctovish",
+			"french" : "Hydragla"
+		},
+		"id" : 883
+	},
+	{
+		"name" : {
+			"english" : "Duraludon",
+			"french" : "Duralugon"
+		},
+		"id" : 884
+	},
+	{
+		"name" : {
+			"english" : "Dreepy",
+			"french" : "Fantyrm"
+		},
+		"id" : 885
+	},
+	{
+		"name" : {
+			"english" : "Drakloak",
+			"french" : "Dispareptil"
+		},
+		"id" : 886
+	},
+	{
+		"name" : {
+			"english" : "Dragapult",
+			"french" : "Lanssorien"
+		},
+		"id" : 887
+	},
+	{
+		"name" : {
+			"english" : "Zacian",
+			"french" : "Zacian"
+		},
+		"id" : 888
+	},
+	{
+		"name" : {
+			"english" : "Zamazenta",
+			"french" : "Zamazenta"
+		},
+		"id" : 889
+	},
+	{
+		"name" : {
+			"english" : "Eternatus",
+			"french" : "Éthernatos"
+		},
+		"id" : 890
+	},
+	{
+		"name" : {
+			"english" : "Kubfu",
+			"french" : "Wushours"
+		},
+		"id" : 891
+	},
+	{
+		"name" : {
+			"english" : "Urshifu",
+			"french" : "Shifours"
+		},
+		"id" : 892
+	},
+	{
+		"name" : {
+			"english" : "Zarude",
+			"french" : "Zarude"
+		},
+		"id" : 893
+	},
+	{
+		"name" : {
+			"english" : "Regieleki",
+			"french" : "Regieleki"
+		},
+		"id" : 894
+	},
+	{
+		"name" : {
+			"english" : "Regidrago",
+			"french" : "Regidrago"
+		},
+		"id" : 895
+	},
+	{
+		"name" : {
+			"english" : "Spectrier",
+			"french" : "Spectreval"
+		},
+		"id" : 896
+	},
+	{
+		"name" : {
+			"english" : "Glastrier",
+			"french" : "Blizzeval"
+		},
+		"id" : 897
+	},
+	{
+		"name" : {
+			"english" : "Calyrex",
+			"french" : "Sylveroy"
+		},
+		"id" : 898
+	},
+	{
+		"name" : {
+			"english" : "Wyrdeer",
+			"french" : "Cerbyllin"
+		},
+		"id" : 899
+	},
+	{
+		"name" : {
+			"english" : "Kleavor",
+			"french" : "Hachécateur"
+		},
+		"id" : 900
+	},
+	{
+		"name" : {
+			"english" : "Ursaluna",
+			"french" : "Ursaking"
+		},
+		"id" : 901
+	},
+	{
+		"name" : {
+			"english" : "Basculegion",
+			"french" : "Paragruel"
+		},
+		"id" : 902
+	},
+	{
+		"name" : {
+			"english" : "Sneasler",
+			"french" : "Farfurex"
+		},
+		"id" : 903
+	},
+	{
+		"name" : {
+			"english" : "Overqwil",
+			"french" : "Qwilpik"
+		},
+		"id" : 904
+	},
+	{
+		"name" : {
+			"english" : "Enamorus",
+			"french" : "Amovénus"
+		},
+		"id" : 905
+	},
+	{
+		"id" : 906,
+		"name" : {
+			"english" : "Sprigatito",
+			"french" : "Poussacha"
+		}
+	},
+	{
+		"id" : 907,
+		"name" : {
+			"english" : "Floragato",
+			"french" : "Matourgeon"
+		}
+	},
+	{
+		"id" : 908,
+		"name" : {
+			"english" : "Meowscarada",
+			"french" : "Miascarade"
+		}
+	},
+	{
+		"id" : 909,
+		"name" : {
+			"english" : "Fuecoco",
+			"french" : "Chochodile"
+		}
+	},
+	{
+		"id" : 910,
+		"name" : {
+			"english" : "Crocalor",
+			"french" : "Crocogril"
+		}
+	},
+	{
+		"id" : 911,
+		"name" : {
+			"english" : "Skeledirge",
+			"french" : "Flâmigator"
+		}
+	},
+	{
+		"id" : 912,
+		"name" : {
+			"english" : "Quaxly",
+			"french" : "Coiffeton"
+		}
+	},
+	{
+		"id" : 913,
+		"name" : {
+			"english" : "Quaxwell",
+			"french" : "Canarbello"
+		}
+	},
+	{
+		"id" : 914,
+		"name" : {
+			"english" : "Quaquaval",
+			"french" : "Palmaval"
+		}
+	},
+	{
+		"id" : 915,
+		"name" : {
+			"english" : "Lechonk",
+			"french" : "Gourmelet"
+		}
+	},
+	{
+		"id" : 916,
+		"name" : {
+			"english" : "Oinkologne",
+			"french" : "Fragroin"
+		}
+	},
+	{
+		"id" : 917,
+		"name" : {
+			"english" : "Tarountula",
+			"french" : "Tissenboule"
+		}
+	},
+	{
+		"id" : 918,
+		"name" : {
+			"english" : "Spidops",
+			"french" : "Filentrappe"
+		}
+	},
+	{
+		"id" : 919,
+		"name" : {
+			"english" : "Nymble",
+			"french" : "Lilliterelle"
+		}
+	},
+	{
+		"id" : 920,
+		"name" : {
+			"english" : "Lokix",
+			"french" : "Gambex"
+		}
+	},
+	{
+		"id" : 921,
+		"name" : {
+			"english" : "Pawmi",
+			"french" : "Pohm"
+		}
+	},
+	{
+		"id" : 922,
+		"name" : {
+			"english" : "Pawmo",
+			"french" : "Pohmotte"
+		}
+	},
+	{
+		"id" : 923,
+		"name" : {
+			"english" : "Pawmot",
+			"french" : "Pohmarmotte"
+		}
+	},
+	{
+		"id" : 924,
+		"name" : {
+			"english" : "Tandemaus",
+			"french" : "Compagnol"
+		}
+	},
+	{
+		"id" : 925,
+		"name" : {
+			"english" : "Maushold",
+			"french" : "Famignol"
+		}
+	},
+	{
+		"id" : 926,
+		"name" : {
+			"english" : "Fidough",
+			"french" : "Pâtachiot"
+		}
+	},
+	{
+		"id" : 927,
+		"name" : {
+			"english" : "Dachsbun",
+			"french" : "Briochien"
+		}
+	},
+	{
+		"id" : 928,
+		"name" : {
+			"english" : "Smoliv",
+			"french" : "Olivini"
+		}
+	},
+	{
+		"id" : 929,
+		"name" : {
+			"english" : "Dolliv",
+			"french" : "Olivado"
+		}
+	},
+	{
+		"id" : 930,
+		"name" : {
+			"english" : "Arboliva",
+			"french" : "Arboliva"
+		}
+	},
+	{
+		"id" : 931,
+		"name" : {
+			"english" : "Squawkabilly",
+			"french" : "Tapatoès"
+		}
+	},
+	{
+		"id" : 932,
+		"name" : {
+			"english" : "Nacli",
+			"french" : "Selutin"
+		}
+	},
+	{
+		"id" : 933,
+		"name" : {
+			"english" : "Naclstack",
+			"french" : "Amassel"
+		}
+	},
+	{
+		"id" : 934,
+		"name" : {
+			"english" : "Garganacl",
+			"french" : "Gigansel"
+		}
+	},
+	{
+		"id" : 935,
+		"name" : {
+			"english" : "Charcadet",
+			"french" : "Charbambin"
+		}
+	},
+	{
+		"id" : 936,
+		"name" : {
+			"english" : "Armarouge",
+			"french" : "Carmadura"
+		}
+	},
+	{
+		"id" : 937,
+		"name" : {
+			"english" : "Ceruledge",
+			"french" : "Malvalame"
+		}
+	},
+	{
+		"id" : 938,
+		"name" : {
+			"english" : "Tadbulb",
+			"french" : "Têtampoule"
+		}
+	},
+	{
+		"id" : 939,
+		"name" : {
+			"english" : "Bellibolt",
+			"french" : "Ampibidou"
+		}
+	},
+	{
+		"id" : 940,
+		"name" : {
+			"english" : "Wattrel",
+			"french" : "Zapétrel"
+		}
+	},
+	{
+		"id" : 941,
+		"name" : {
+			"english" : "Kilowattrel",
+			"french" : "Fulgulairo"
+		}
+	},
+	{
+		"id" : 942,
+		"name" : {
+			"english" : "Maschiff",
+			"french" : "Grondogue"
+		}
+	},
+	{
+		"id" : 943,
+		"name" : {
+			"english" : "Mabosstiff",
+			"french" : "Dogrino"
+		}
+	},
+	{
+		"id" : 944,
+		"name" : {
+			"english" : "Shroodle",
+			"french" : "Gribouraigne"
+		}
+	},
+	{
+		"id" : 945,
+		"name" : {
+			"english" : "Grafaiai",
+			"french" : "Tag-Tag"
+		}
+	},
+	{
+		"id" : 946,
+		"name" : {
+			"english" : "Bramblin",
+			"french" : "Virovent"
+		}
+	},
+	{
+		"id" : 947,
+		"name" : {
+			"english" : "Brambleghast",
+			"french" : "Virevorreur"
+		}
+	},
+	{
+		"id" : 948,
+		"name" : {
+			"english" : "Toedscool",
+			"french" : "Terracool"
+		}
+	},
+	{
+		"id" : 949,
+		"name" : {
+			"english" : "Toedscruel",
+			"french" : "Terracruel"
+		}
+	},
+	{
+		"id" : 950,
+		"name" : {
+			"english" : "Klawf",
+			"french" : "Craparoi"
+		}
+	},
+	{
+		"id" : 951,
+		"name" : {
+			"english" : "Capsakid",
+			"french" : "Pimito"
+		}
+	},
+	{
+		"id" : 952,
+		"name" : {
+			"english" : "Scovillain",
+			"french" : "Scovilain"
+		}
+	},
+	{
+		"id" : 953,
+		"name" : {
+			"english" : "Rellor",
+			"french" : "Léboulérou"
+		}
+	},
+	{
+		"id" : 954,
+		"name" : {
+			"english" : "Rabsca",
+			"french" : "Bérasca"
+		}
+	},
+	{
+		"id" : 955,
+		"name" : {
+			"english" : "Flittle",
+			"french" : "Flotillon"
+		}
+	},
+	{
+		"id" : 956,
+		"name" : {
+			"english" : "Espathra",
+			"french" : "Cléopsytra"
+		}
+	},
+	{
+		"id" : 957,
+		"name" : {
+			"english" : "Tinkatink",
+			"french" : "Forgerette"
+		}
+	},
+	{
+		"id" : 958,
+		"name" : {
+			"english" : "Tinkatuff",
+			"french" : "Forgella"
+		}
+	},
+	{
+		"id" : 959,
+		"name" : {
+			"english" : "Tinkaton",
+			"french" : "Forgelina"
+		}
+	},
+	{
+		"id" : 960,
+		"name" : {
+			"english" : "Wiglett",
+			"french" : "Taupikeau"
+		}
+	},
+	{
+		"id" : 961,
+		"name" : {
+			"english" : "Wugtrio",
+			"french" : "Triopikeau"
+		}
+	},
+	{
+		"id" : 962,
+		"name" : {
+			"english" : "Bombirdier",
+			"french" : "Lestombaile"
+		}
+	},
+	{
+		"id" : 963,
+		"name" : {
+			"english" : "Finizen",
+			"french" : "Dofin"
+		}
+	},
+	{
+		"id" : 964,
+		"name" : {
+			"english" : "Palafin",
+			"french" : "Superdofin"
+		}
+	},
+	{
+		"id" : 965,
+		"name" : {
+			"english" : "Varoom",
+			"french" : "Vrombi"
+		}
+	},
+	{
+		"id" : 966,
+		"name" : {
+			"english" : "Revavroom",
+			"french" : "Vrombotor"
+		}
+	},
+	{
+		"id" : 967,
+		"name" : {
+			"english" : "Cyclizar",
+			"french" : "Motorizard"
+		}
+	},
+	{
+		"id" : 968,
+		"name" : {
+			"english" : "Orthworm",
+			"french" : "Ferdeter"
+		}
+	},
+	{
+		"id" : 969,
+		"name" : {
+			"english" : "Glimmet",
+			"french" : "Germéclat"
+		}
+	},
+	{
+		"id" : 970,
+		"name" : {
+			"english" : "Glimmora",
+			"french" : "Floréclat"
+		}
+	},
+	{
+		"id" : 971,
+		"name" : {
+			"english" : "Greavard",
+			"french" : "Toutombe"
+		}
+	},
+	{
+		"id" : 972,
+		"name" : {
+			"english" : "Houndstone",
+			"french" : "Tomberro"
+		}
+	},
+	{
+		"id" : 973,
+		"name" : {
+			"english" : "Flamigo",
+			"french" : "Flamenroule"
+		}
+	},
+	{
+		"id" : 974,
+		"name" : {
+			"english" : "Cetoddle",
+			"french" : "Piétacé"
+		}
+	},
+	{
+		"id" : 975,
+		"name" : {
+			"english" : "Cetitan",
+			"french" : "Balbalèze"
+		}
+	},
+	{
+		"id" : 976,
+		"name" : {
+			"english" : "Veluza",
+			"french" : "Délestin"
+		}
+	},
+	{
+		"id" : 977,
+		"name" : {
+			"english" : "Dondozo",
+			"french" : "Oyacata"
+		}
+	},
+	{
+		"id" : 978,
+		"name" : {
+			"english" : "Tatsugiri",
+			"french" : "Nigirigon"
+		}
+	},
+	{
+		"id" : 979,
+		"name" : {
+			"english" : "Annihilape",
+			"french" : "Courrousinge"
+		}
+	},
+	{
+		"id" : 980,
+		"name" : {
+			"english" : "Clodsire",
+			"french" : "Terraiste"
+		}
+	},
+	{
+		"id" : 981,
+		"name" : {
+			"english" : "Farigiraf",
+			"french" : "Farigiraf"
+		}
+	},
+	{
+		"id" : 982,
+		"name" : {
+			"english" : "Dudunsparce",
+			"french" : "Deusolourdo"
+		}
+	},
+	{
+		"id" : 983,
+		"name" : {
+			"english" : "Kingambit",
+			"french" : "Scalpereur"
+		}
+	},
+	{
+		"id" : 984,
+		"name" : {
+			"english" : "Great Tusk",
+			"french" : "Fort-Ivoire"
+		}
+	},
+	{
+		"id" : 985,
+		"name" : {
+			"english" : "Scream Tail",
+			"french" : "Hurle-Queue"
+		}
+	},
+	{
+		"id" : 986,
+		"name" : {
+			"english" : "Brute Bonnet",
+			"french" : "Fongus-Furie"
+		}
+	},
+	{
+		"id" : 987,
+		"name" : {
+			"english" : "Flutter Mane",
+			"french" : "Flotte-Mèche"
+		}
+	},
+	{
+		"id" : 988,
+		"name" : {
+			"english" : "Slither Wing",
+			"french" : "Rampe-Ailes"
+		}
+	},
+	{
+		"id" : 989,
+		"name" : {
+			"english" : "Sandy Shocks",
+			"french" : "Pelage-Sablé"
+		}
+	},
+	{
+		"id" : 990,
+		"name" : {
+			"english" : "Iron Treads",
+			"french" : "Roue-de-Fer"
+		}
+	},
+	{
+		"id" : 991,
+		"name" : {
+			"english" : "Iron Bundle",
+			"french" : "Hotte-de-Fer"
+		}
+	},
+	{
+		"id" : 992,
+		"name" : {
+			"english" : "Iron Hands",
+			"french" : "Paume-de-Fer"
+		}
+	},
+	{
+		"id" : 993,
+		"name" : {
+			"english" : "Iron Jugulis",
+			"french" : "Têtes-de-Fer"
+		}
+	},
+	{
+		"id" : 994,
+		"name" : {
+			"english" : "Iron Moth",
+			"french" : "Mite-de-Fer"
+		}
+	},
+	{
+		"id" : 995,
+		"name" : {
+			"english" : "Iron Thorns",
+			"french" : "Épine-de-Fer"
+		}
+	},
+	{
+		"id" : 996,
+		"name" : {
+			"english" : "Frigibax",
+			"french" : "Frigodo"
+		}
+	},
+	{
+		"id" : 997,
+		"name" : {
+			"english" : "Arctibax",
+			"french" : "Cryodo"
+		}
+	},
+	{
+		"id" : 998,
+		"name" : {
+			"english" : "Baxcalibur",
+			"french" : "Glaivodo"
+		}
+	},
+	{
+		"id" : 999,
+		"name" : {
+			"english" : "Gimmighoul",
+			"french" : "Mordudor"
+		}
+	},
+	{
+		"id" : 1000,
+		"name" : {
+			"english" : "Gholdengo",
+			"french" : "Gromado"
+		}
+	},
+	{
+		"id" : 1001,
+		"name" : {
+			"english" : "Wo-Chien",
+			"french" : "Chongjian"
+		}
+	},
+	{
+		"id" : 1002,
+		"name" : {
+			"english" : "Chien-Pao",
+			"french" : "Baojian"
+		}
+	},
+	{
+		"id" : 1003,
+		"name" : {
+			"english" : "Ting-Lu",
+			"french" : "Dinglu"
+		}
+	},
+	{
+		"id" : 1004,
+		"name" : {
+			"english" : "Chi-Yu",
+			"french" : "Yuyu"
+		}
+	},
+	{
+		"id" : 1005,
+		"name" : {
+			"english" : "Roaring Moon",
+			"french" : "Rugit-Lune"
+		}
+	},
+	{
+		"id" : 1006,
+		"name" : {
+			"english" : "Iron Valiant",
+			"french" : "Garde-de-Fer"
+		}
+	},
+	{
+		"id" : 1007,
+		"name" : {
+			"english" : "Koraidon",
+			"french" : "Koraidon"
+		}
+	},
+	{
+		"id" : 1008,
+		"name" : {
+			"english" : "Miraidon",
+			"french" : "Miraidon"
+		}
+	},
+	{
+		"id" : 1009,
+		"name" : {
+			"english" : "Walking Wake",
+			"french" : "Serpente-Eau"
+		}
+	},
+	{
+		"id" : 1010,
+		"name" : {
+			"english" : "Iron Leaves",
+			"french" : "Vert-de-Fer"
+		}
+	},
+	{
+		"id" : 1011,
+		"name" : {
+			"english" : "Dipplin",
+			"french" : "Pomdramour"
+		}
+	},
+	{
+		"id" : 1012,
+		"name" : {
+			"english" : "Poltchageist",
+			"french" : "Poltchageist"
+		}
+	},
+	{
+		"id" : 1013,
+		"name" : {
+			"english" : "Sinistcha",
+			"french" : "Théffroyable"
+		}
+	},
+	{
+		"id" : 1014,
+		"name" : {
+			"english" : "Okidogi",
+			"french" : "Félicanis"
+		}
+	},
+	{
+		"id" : 1015,
+		"name" : {
+			"english" : "Munkidori",
+			"french" : "Fortusimia"
+		}
+	},
+	{
+		"id" : 1016,
+		"name" : {
+			"english" : "Fezandipiti",
+			"french" : "Favianos"
+		}
+	},
+	{
+		"id" : 1017,
+		"name" : {
+			"english" : "Ogerpon",
+			"french" : "Ogerpon"
+		}
+	},
+	{
+		"id": 1018,
+		"name": {
+			"english": "Archaludon",
+			"french": "Pondralugon"
+		}
+	},
+	{
+		"id": 1019,
+		"name": {
+			"english": "Hydrapple",
+			"french": "Pomdorochi"
+		}
+	},
+	{
+		"id": 1020,
+		"name": {
+			"english": "Gouging Fire",
+			"french": "Feu-Perçant"
+		}
+	},
+	{
+		"id": 1021,
+		"name": {
+			"english": "Raging Bolt",
+			"french": "Ire-Foudre"
+		}
+	},
+	{
+		"id": 1022,
+		"name": {
+			"english": "Iron Boulder",
+			"french": "Roc-de-Fer"
+		}
+	},
+	{
+		"id": 1023,
+		"name": {
+			"english": "Iron Crown",
+			"french": "Chef-de-Fer"
+		}
+	},
+	{
+		"id": 1024,
+		"name": {
+			"english": "Terapagos",
+			"french": "Terapagos"
+		}
+	},
+	{
+		"id": 1025,
+		"name": {
+			"english": "Pecharunt",
+			"french": "Pêchaminus"
+		}
+	}
+]
