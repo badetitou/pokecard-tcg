@@ -27,7 +27,7 @@ class TCG {
 
   static Future<PokemonCard> fetchCard(String cardId) async {
     final response =
-        await http.get(Uri.https('api.pokemontcg.io', '/v2/cards/' + cardId));
+        await http.get(Uri.https('api.pokemontcg.io', '/v2/cards/$cardId'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,

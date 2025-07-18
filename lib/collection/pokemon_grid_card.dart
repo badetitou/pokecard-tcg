@@ -10,11 +10,11 @@ class PokemondGridCard extends StatelessWidget {
   final PokemonCard _pokemoncard;
   late Database _database;
 
-  PokemondGridCard(this._pokemoncard);
+  PokemondGridCard(this._pokemoncard, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    this._database = Provider.of<Database>(context);
+    _database = Provider.of<Database>(context);
     return Stack(children: [
       Image.network(_pokemoncard.images.small, loadingBuilder:
           (BuildContext context, Widget child,
@@ -26,8 +26,8 @@ class PokemondGridCard extends StatelessWidget {
           child: CircularProgressIndicator(),
         );
       }),
-      new FutureBuilder(
-          future: _cardAcquired(this._pokemoncard),
+      FutureBuilder(
+          future: _cardAcquired(_pokemoncard),
           builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
             if (!snapshot.hasData || !snapshot.data!) {
               return Container();

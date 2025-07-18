@@ -12,6 +12,8 @@ import 'package:pokecard_tcg/my_collection/my_collection.i18n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyCollectionPage extends StatefulWidget {
+  const MyCollectionPage({super.key});
+
   @override
   _MyCollectionState createState() => _MyCollectionState();
 }
@@ -54,7 +56,7 @@ class _MyCollectionState extends State<MyCollectionPage> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10.0),
-      child: new FutureBuilder(
+      child: FutureBuilder(
         future: _myCards(),
         builder: (BuildContext context, AsyncSnapshot<List<MyCard>> snapshot) {
           if (!snapshot.hasData) {
@@ -75,7 +77,7 @@ class _MyCollectionState extends State<MyCollectionPage> {
                 child: PagedGridView(
                   builderDelegate: PagedChildBuilderDelegate(
                       itemBuilder: (context, dynamic item, index) =>
-                          new FutureBuilder(
+                          FutureBuilder(
                             future: TCG.fetchCard(item),
                             builder: (BuildContext context,
                                 AsyncSnapshot<PokemonCard> snapshot) {
@@ -84,7 +86,7 @@ class _MyCollectionState extends State<MyCollectionPage> {
                                   child: CircularProgressIndicator(),
                                 );
                               }
-                              return new PokemondGridCard(snapshot.data!);
+                              return PokemondGridCard(snapshot.data!);
                             },
                           )),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

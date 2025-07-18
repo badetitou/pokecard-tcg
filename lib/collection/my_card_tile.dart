@@ -6,14 +6,15 @@ class MyCardTile extends StatelessWidget {
   final MyCard myCard;
   final Function() onDelete;
 
-  MyCardTile({required this.myCard, required this.onDelete});
+  const MyCardTile({super.key, required this.myCard, required this.onDelete});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
           title: Text(myCard.name.toString()),
-          subtitle: Text("${myCard.etat.toString().i18n} - ${myCard.language.toString().i18n} - ${myCard.cardType}"),
+          subtitle: Text(
+              "${myCard.etat.toString().i18n} - ${myCard.language.toString().i18n} - ${myCard.cardType}"),
           trailing: IconButton(
             icon: Icon(Icons.remove),
             onPressed: onDelete,

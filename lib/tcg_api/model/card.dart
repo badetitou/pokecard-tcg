@@ -34,14 +34,14 @@ class PokemonCard {
         name: json['name'].toString(),
         supertype: json['supertype'].toString(),
         subtypes: List<String>.from(json['subtypes'] as List),
-        hp: json['hp'] != null ? json['hp'] : '',
-        number: json['number'] != null ? json['number'] : '',
-        flavorText: json['flavorText'] != null ? json['flavorText'] : '',
+        hp: json['hp'] ?? '',
+        number: json['number'] ?? '',
+        flavorText: json['flavorText'] ?? '',
         artist: json['artist'].toString(),
         images: PokemonCardImage.fromJson(json['images']),
         tcgPlayer: json['tcgplayer'] != null
             ? TCGPlayer.fromJson(json['tcgplayer'])
-            : new TCGPlayer(prices: [], url: ''),
+            : TCGPlayer(prices: [], url: ''),
         nationalPokedexNumbers: json['nationalPokedexNumbers'] != null
             ? List<int>.from(json['nationalPokedexNumbers'])
             : [],

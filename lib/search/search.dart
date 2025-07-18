@@ -12,8 +12,7 @@ class SearchResultsGridView extends StatefulWidget {
   final int minGridSize;
 
   const SearchResultsGridView(this._search,
-      {this.padding = EdgeInsets.zero, required this.minGridSize})
-      : super();
+      {super.key, this.padding = EdgeInsets.zero, required this.minGridSize});
 
   @override
   _SearchResultsGridViewState createState() =>

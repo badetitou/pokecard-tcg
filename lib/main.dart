@@ -35,6 +35,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({required this.title}) : super();
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -89,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
     initGridSize();
   }
 
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     PokedexPage(),
     MyCollectionPage()
   ];
@@ -126,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Map<String, String> _existingCategory = {
+  final Map<String, String> _existingCategory = {
     'name': 'name:',
     'id': 'id:',
     'supertype': 'supertype:',
@@ -239,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String _query = '';
 
-  _search(String text) {
+  void _search(String text) {
     setState(() => _query = text);
     controller.close();
   }
@@ -336,11 +338,11 @@ class _MyHomePageState extends State<MyHomePage> {
 class CommandExample extends StatelessWidget {
   final String text;
 
-  const CommandExample({Key? key, required this.text}) : super(key: key);
+  const CommandExample({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return Container(
         margin: const EdgeInsets.all(8.0),
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
@@ -356,11 +358,11 @@ class MyDrawer extends StatelessWidget {
 
   BuildContext originContext;
 
-  MyDrawer(this.originContext);
+  MyDrawer(this.originContext, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    this.database = context.read<Database>();
+    database = context.read<Database>();
 
     return Drawer(
       child: ListView(
@@ -422,9 +424,9 @@ class MyDrawer extends StatelessWidget {
       final dataDir = await paths.getApplicationDocumentsDirectory();
       final dbFile = File(p.join(dataDir.path, 'db.sqlite'));
 
-      var media = new drive.Media(
+      var media = drive.Media(
           dbFile.openRead().asBroadcastStream(), await dbFile.length());
-      var driveFile = new drive.File();
+      var driveFile = drive.File();
       driveFile.name = "db.sqlite";
       driveFile.modifiedTime = DateTime.now().toUtc();
       driveFile.parents = ["appDataFolder"];

@@ -12,7 +12,7 @@ class SearchCriteria {
 class SearchPokemonPage extends StatefulWidget {
   final SearchCriteria search;
 
-  const SearchPokemonPage({required this.search}) : super();
+  const SearchPokemonPage({super.key, required this.search});
 
   @override
   _SearchPokemonState createState() => _SearchPokemonState();
@@ -24,7 +24,7 @@ class _SearchPokemonState extends State<SearchPokemonPage> {
   @override
   void initState() {
     super.initState();
-    this.initGridSize();
+    initGridSize();
   }
 
   void initGridSize() async {
@@ -36,14 +36,14 @@ class _SearchPokemonState extends State<SearchPokemonPage> {
 
   @override
   Widget build(BuildContext context) {
-    var result;
+    Widget result;
     if (minGridSize == null) {
       result = Center(
         child: CircularProgressIndicator(),
       );
     } else {
       result = SearchResultsGridView(
-          'nationalPokedexNumbers:' + widget.search.pokemonId.toString(),
+          'nationalPokedexNumbers:${widget.search.pokemonId}',
           minGridSize: minGridSize!);
     }
     return Scaffold(

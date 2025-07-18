@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:pokecard_tcg/pokedex/pokedex.i18n.dart';
 
 class PokedexPage extends StatefulWidget {
+  const PokedexPage({super.key});
+
   @override
   _PokedexState createState() => _PokedexState();
 }
@@ -16,9 +18,7 @@ class _PokedexState extends State<PokedexPage> {
   Future<List<Pokemon>> getPokemons({required BuildContext context}) async {
     String data =
         await DefaultAssetBundle.of(context).loadString('assets/pokedex.json');
-    return (json.decode(data) as List)
-        .map((e) => new Pokemon.fromJson(e))
-        .toList();
+    return (json.decode(data) as List).map((e) => Pokemon.fromJson(e)).toList();
   }
 
   Future<List<Pokemon>> filterPokemons(
@@ -110,18 +110,18 @@ class PokemonListItem extends StatelessWidget {
   final Pokemon data;
   final Database myDatabase;
 
-  PokemonListItem(this.data, this.myDatabase);
+  const PokemonListItem(this.data, this.myDatabase, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          Navigator.of(context).push(
-              _toSearch(new SearchCriteria(data.id, (data.name)['french'])));
+          Navigator.of(context)
+              .push(_toSearch(SearchCriteria(data.id, (data.name)['french'])));
         },
         child: ListTile(
-          leading: (new FutureBuilder(
+          leading: (FutureBuilder(
               initialData: false,
               future: _isCaptured(data.id, myDatabase),
               builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {

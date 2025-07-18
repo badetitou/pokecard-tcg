@@ -18,7 +18,7 @@ class MyCards extends Table {
 @DriftDatabase(tables: [MyCards])
 class Database extends _$Database {
   // we tell the database where to store the data with this constructor
-  Database(QueryExecutor e) : super(e);
+  Database(super.e);
 
   Future<List<MyCard>> get allCardEntries => select(myCards).get();
 

@@ -10,7 +10,7 @@ import 'package:pokecard_tcg/collection/card_detail.i18n.dart';
 class PokemonCardDetailPage extends StatefulWidget {
   final PokemonCard pokemonCard;
 
-  const PokemonCardDetailPage({required this.pokemonCard}) : super();
+  const PokemonCardDetailPage({super.key, required this.pokemonCard});
 
   @override
   _PokemonCardDetailState createState() => _PokemonCardDetailState();
@@ -24,11 +24,8 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
     myDatabase = Provider.of<Database>(context);
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.pokemonCard.supertype +
-              ' ' +
-              widget.pokemonCard.subtypes.toString() +
-              ' : ' +
-              widget.pokemonCard.name),
+          title: Text(
+              '${widget.pokemonCard.supertype} ${widget.pokemonCard.subtypes} : ${widget.pokemonCard.name}'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -179,7 +176,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => setState(() {
-            this._addCard();
+            _addCard();
           }),
           tooltip: 'Add card to my collection'.i18n,
           child: const Icon(Icons.add),
@@ -237,7 +234,7 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
 
 class CreateWidget extends StatefulWidget {
   final PokemonCard pokemonCard;
-  CreateWidget({Key? key, required this.pokemonCard}) : super(key: key);
+  const CreateWidget({super.key, required this.pokemonCard});
 
   @override
   State<StatefulWidget> createState() => _CreateWidgetState();
@@ -250,24 +247,25 @@ class CreateWidgetState {
 }
 
 class _CreateWidgetState extends State<CreateWidget> {
-  late CreateWidgetState wid = new CreateWidgetState();
+  late CreateWidgetState wid = CreateWidgetState();
 
+  @override
   void initState() {
     super.initState();
-    if (widget.pokemonCard.tcgPlayer.prices.length > 0) {
+    if (widget.pokemonCard.tcgPlayer.prices.isNotEmpty) {
       wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    Map<String, String> _cardStates = {
+    Map<String, String> cardStates = {
       "Mint": 'Mint'.i18n,
       "Near Mint": "Near Mint".i18n,
       "Played": "Played".i18n,
       "Damaged": "Damaged".i18n
     };
-    Map<String, String> _cardLanguages = {
+    Map<String, String> cardLanguages = {
       "English": "English".i18n,
       "French": "French".i18n,
       "Italian": "Italian".i18n,
@@ -291,9 +289,9 @@ class _CreateWidgetState extends State<CreateWidget> {
                   Text('Quality'.i18n),
                   DropdownButton(
                     value: wid._selectedCardState,
-                    items: _cardStates.entries
-                        .map((code) => new DropdownMenuItem(
-                            value: code.key, child: new Text(code.value)))
+                    items: cardStates.entries
+                        .map((code) => DropdownMenuItem(
+                            value: code.key, child: Text(code.value)))
                         .toList(),
                     onChanged: (value) {
                       setState(() {
@@ -309,9 +307,9 @@ class _CreateWidgetState extends State<CreateWidget> {
                   Text('Language'.i18n),
                   DropdownButton(
                     value: wid._selectedCardLanguage,
-                    items: _cardLanguages.entries
-                        .map((code) => new DropdownMenuItem(
-                            value: code.key, child: new Text(code.value)))
+                    items: cardLanguages.entries
+                        .map((code) => DropdownMenuItem(
+                            value: code.key, child: Text(code.value)))
                         .toList(),
                     onChanged: (value) {
                       setState(() {
@@ -329,8 +327,8 @@ class _CreateWidgetState extends State<CreateWidget> {
                     value: wid._type,
                     items: widget.pokemonCard.tcgPlayer.prices
                         .map((e) => e.type)
-                        .map((type) => new DropdownMenuItem(
-                            value: type, child: new Text(type)))
+                        .map((type) =>
+                            DropdownMenuItem(value: type, child: Text(type)))
                         .toList(),
                     onChanged: (value) {
                       setState(() {
