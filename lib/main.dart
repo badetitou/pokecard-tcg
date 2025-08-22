@@ -396,7 +396,6 @@ class MyDrawer extends StatelessWidget {
   Future<signIn.GoogleSignInAccount?> _connectToGoogle() async {
     try {
       final googleSignIn = signIn.GoogleSignIn(
-        clientId: DefaultFirebaseOptions.web.appId,
         scopes: [
           'https://www.googleapis.com/auth/drive.appdata',
           'https://www.googleapis.com/auth/drive.file',
