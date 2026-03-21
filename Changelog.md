@@ -1,4 +1,9 @@
+
 # Changelog
+
+## 1.2.12
+
+- Added image caching with cached_network_image for a smoother and offline-friendly experience.
 
 ## 1.2.9
 

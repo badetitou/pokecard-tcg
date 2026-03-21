@@ -4,6 +4,7 @@ import 'package:pokecard_tcg/collection/card_detail.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:provider/provider.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 // ignore: must_be_immutable
 class PokemondGridCard extends StatelessWidget {
@@ -16,16 +17,11 @@ class PokemondGridCard extends StatelessWidget {
   Widget build(BuildContext context) {
     _database = Provider.of<Database>(context);
     return Stack(children: [
-      Image.network(_pokemoncard.images.small, loadingBuilder:
-          (BuildContext context, Widget child,
-              ImageChunkEvent? loadingProgress) {
-        if (loadingProgress == null) {
-          return child;
-        }
-        return Center(
-          child: CircularProgressIndicator(),
-        );
-      }),
+      CachedNetworkImage(
+        imageUrl: _pokemoncard.images.small,
+        placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+        errorWidget: (context, url, error) => const Icon(Icons.error),
+      ),
       FutureBuilder(
           future: _cardAcquired(_pokemoncard),
           builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {

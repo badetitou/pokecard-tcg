@@ -5,6 +5,7 @@ import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:pokecard_tcg/tcg_api/model/prices.dart';
 import 'package:provider/provider.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pokecard_tcg/collection/card_detail.i18n.dart';
 
 class PokemonCardDetailPage extends StatefulWidget {
@@ -214,7 +215,11 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
-          return Image.network(widget.pokemonCard.images.large);
+          return CachedNetworkImage(
+            imageUrl: widget.pokemonCard.images.large,
+            placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          );
         });
   }
 
