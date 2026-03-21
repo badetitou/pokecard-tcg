@@ -11,8 +11,10 @@
 - Fixed a crash when adding cards without `nationalPokedexNumbers`.
 - Fixed Pokédex card filtering by using exact `dexId` matching (`eq:`) with TCGdex.
 - Fixed duplicated cards in infinite scrolling by preventing duplicate page listeners/requests.
+- Fixed search grids not updating when `gridSize` setting changes.
 - Added unit tests for TCGdex mapping and query translation.
 - Added a widget regression test for duplicated pagination requests on search pages.
+- Added a widget regression test for dynamic search grid size updates.
 
 ## 1.2.12
 

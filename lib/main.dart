@@ -66,7 +66,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-    Timer? _debounce;
+  Timer? _debounce;
   int _selectedIndex = 0;
   String _query = '';
   int? minGridSize;
@@ -109,7 +109,8 @@ class _MainScreenState extends State<MainScreen> {
       return const Center(child: CircularProgressIndicator());
     }
     if (_query.isNotEmpty) {
-      return SearchResultsGridView(_query, padding: const EdgeInsets.only(top: 55), minGridSize: minGridSize!);
+      return SearchResultsGridView(_query,
+          padding: const EdgeInsets.only(top: 55), minGridSize: minGridSize!);
     } else {
       return _widgetOptions.elementAt(_selectedIndex);
     }
@@ -124,15 +125,18 @@ class _MainScreenState extends State<MainScreen> {
           IconButton(
             icon: const Icon(Icons.settings),
             tooltip: 'Paramètres',
-            onPressed: () {
-              Navigator.of(context).push(
+            onPressed: () async {
+              await Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => SettingsPage()),
               );
+              if (mounted) {
+                initGridSize();
+              }
             },
           ),
         ],
       ),
-      drawer: MyDrawer(context),
+      drawer: MyDrawer(context, onSettingsUpdated: initGridSize),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -223,7 +227,6 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
   }
-
 }
 
 class CommandExample extends StatelessWidget {
@@ -248,8 +251,9 @@ class MyDrawer extends StatelessWidget {
   late Database database;
 
   BuildContext originContext;
+  final VoidCallback onSettingsUpdated;
 
-  MyDrawer(this.originContext, {super.key});
+  MyDrawer(this.originContext, {required this.onSettingsUpdated, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -265,7 +269,10 @@ class MyDrawer extends StatelessWidget {
               onTap: () => _restore(context)),
           ListTile(
               title: Text('Settings'),
-              onTap: () => _navPush(originContext, SettingsPage())),
+              onTap: () async {
+                await _navPush(originContext, SettingsPage());
+                onSettingsUpdated();
+              }),
         ],
       ),
     );
@@ -273,7 +280,7 @@ class MyDrawer extends StatelessWidget {
 
   Future<dynamic> _navPush(BuildContext context, Widget page) {
     return Navigator.of(context).push(PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => SettingsPage(),
+      pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return SharedAxisTransition(
             animation: animation,

@@ -25,8 +25,7 @@ class SearchResultsGridView extends StatefulWidget {
       this.fetchCards = TCG.fetchCards});
 
   @override
-  _SearchResultsGridViewState createState() =>
-      _SearchResultsGridViewState(minGridSize: minGridSize);
+  _SearchResultsGridViewState createState() => _SearchResultsGridViewState();
 }
 
 class _SearchResultsGridViewState extends State<SearchResultsGridView> {
@@ -35,8 +34,6 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
   final Set<int> _inFlightPageKeys = {};
 
   final _pageSize = 20;
-  final int minGridSize;
-  _SearchResultsGridViewState({required this.minGridSize});
 
   @override
   void initState() {
@@ -96,8 +93,9 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
         childAspectRatio: 100 / 140,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        crossAxisCount:
-            ((width / 200) < minGridSize) ? minGridSize : (width / 200).floor(),
+        crossAxisCount: ((width / 200) < widget.minGridSize)
+            ? widget.minGridSize
+            : (width / 200).floor(),
       ),
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate<PokemonCard>(
