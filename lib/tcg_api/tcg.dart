@@ -3,8 +3,16 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class TCG {
+  // Cache mémoire : clé = 'pageKey|pageSize|q', valeur = liste de cartes
+  static final Map<String, List<PokemonCard>> _searchCache = {};
+
   static Future<List<PokemonCard>> fetchCards(pageKey,
       [int pageSize = 250, String q = ""]) async {
+    final cacheKey = '$pageKey|$pageSize|$q';
+    if (_searchCache.containsKey(cacheKey)) {
+      return _searchCache[cacheKey]!;
+    }
+
     final response =
         await http.get(Uri.https('api.pokemontcg.io', '/v2/cards', {
       'page': ((pageKey / pageSize).ceil()).toString(),
@@ -13,14 +21,12 @@ class TCG {
     }));
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
       Iterable cards = jsonDecode(response.body)['data'];
-      return List<PokemonCard>.from(
+      final result = List<PokemonCard>.from(
           cards.map((json) => PokemonCard.fromJson(json)));
+      _searchCache[cacheKey] = result;
+      return result;
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
       return [];
     }
   }

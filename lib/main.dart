@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:i18n_extension/i18n_extension.dart';
-import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/my_collection/my_collection.dart';
 import 'package:pokecard_tcg/pokedex/pokedex.dart';
@@ -35,110 +34,58 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Provider<Database>(
-      create: (context) => constructDb(),
-      dispose: (context, db) => db.close(),
+    return MultiProvider(
+      providers: [
+        Provider<Database>(create: (_) => constructDb()),
+      ],
       child: MaterialApp(
-        title: 'Pokécard TCG',
+        title: 'Pokecard TCG',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          useMaterial3: true,
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            elevation: 4,
-          ),
+          primarySwatch: Colors.amber,
         ),
-        localizationsDelegates: [
+        localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
-          const Locale('en', "US"),
-          const Locale('fr', "FR"),
+        supportedLocales: const [
+          Locale('en', ''),
+          Locale('fr', ''),
         ],
-        darkTheme: ThemeData(
-            colorSchemeSeed: Colors.brown,
-            brightness: Brightness.dark,
-            useMaterial3: true),
-        home: I18n(child: MyHomePage(title: 'Pokécard TCG')),
+        home: MainScreen(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
+class MainScreen extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainScreenState extends State<MainScreen> {
+    Timer? _debounce;
   int _selectedIndex = 0;
-  final FloatingSearchBarController controller = FloatingSearchBarController();
+  String _query = '';
   int? minGridSize;
+  final List<Widget> _widgetOptions = [
+    PokedexPage(),
+    MyCollectionPage(),
+  ];
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     initGridSize();
   }
-
-  static final List<Widget> _widgetOptions = <Widget>[
-    PokedexPage(),
-    MyCollectionPage()
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
-      drawer: MyDrawer(context),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'Pokédex',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_to_photos_outlined),
-            label: 'My Collection'.i18n,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
-      body: buildSearchBar(),
-    );
-  }
-
-  final Map<String, String> _existingCategory = {
-    'name': 'name:',
-    'id': 'id:',
-    'supertype': 'supertype:',
-    'subtypes': 'subtypes:',
-    'hp': 'hp:',
-    'types': 'types:',
-    'attacks name': 'attacks.name:',
-    'artist': 'artist:',
-    'nationalPokedexNumbers': 'nationalPokedexNumbers:',
-  };
 
   void initGridSize() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
@@ -147,192 +94,136 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  Widget buildSearchBar() {
-    final List<FloatingSearchBarAction> actions = <FloatingSearchBarAction>[
-      FloatingSearchBarAction(
-        showIfClosed: false,
-        showIfOpened: true,
-        child: CircularButton(
-          icon: const Icon(Icons.help),
-          onPressed: () {
-            _showSearchHelper(context);
-          },
-        ),
-      ),
-      FloatingSearchBarAction.searchToClear(
-        showIfClosed: true,
-      ),
-      FloatingSearchBarAction(
-        showIfOpened: false,
-        showIfClosed: _query != '',
-        child: IconButton(
-          icon: const Icon(Icons.clear),
-          onPressed: () {
-            setState(() {
-              _query = '';
-              controller.clear();
-            });
-          },
-        ),
-      )
-    ];
-
-    final bool isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
-
-    return FloatingSearchBar(
-        automaticallyImplyBackButton: false,
-        controller: controller,
-        hint: 'Search... [name:bulba*]'.i18n,
-        scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
-        iconColor: Colors.grey,
-        transitionCurve: Curves.easeInOutCubic,
-        physics: const BouncingScrollPhysics(),
-        axisAlignment: isPortrait ? 0.0 : -1.0,
-        openAxisAlignment: 0.0,
-        actions: actions,
-        title: _query != '' ? Text(_query) : Text('Pokecard TCG'),
-        debounceDelay: const Duration(milliseconds: 500),
-        // onKeyEvent: (KeyEvent keyEvent) {
-        //   if (keyEvent.logicalKey == LogicalKeyboardKey.escape) {
-        //     controller.query = '';
-        //     controller.close();
-        //   }
-        // },
-        transition: CircularFloatingSearchBarTransition(spacing: 16),
-        onSubmitted: (query) {
-          _search(query);
-        },
-        body: Container(
-            child: Padding(
-          padding: const EdgeInsets.only(top: 55),
-          child: buildBody(),
-        )),
-        builder: (context, transition) {
-          return ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Material(
-                color: Theme.of(context).colorScheme.surface,
-                elevation: 4.0,
-                child: Builder(
-                  builder: (context) {
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: _existingCategory.entries
-                          .map(
-                            (term) => ListTile(
-                              title: Text(
-                                term.key,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              onTap: () {
-                                controller.query += term.value;
-                              },
-                            ),
-                          )
-                          .toList(),
-                    );
-                  },
-                )),
-          );
-        });
-  }
-
-  String _query = '';
-
   void _search(String text) {
     setState(() => _query = text);
-    controller.close();
+  }
+
+  @override
+  void dispose() {
+    _debounce?.cancel();
+    super.dispose();
   }
 
   Widget buildBody() {
     if (minGridSize == null) {
-      return Center(child: CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator());
     }
-    if (_query != '') {
-      return SearchResultsGridView(
-        _query,
-        padding: const EdgeInsets.only(top: 55),
-        minGridSize: minGridSize!,
-      );
+    if (_query.isNotEmpty) {
+      return SearchResultsGridView(_query, padding: const EdgeInsets.only(top: 55), minGridSize: minGridSize!);
     } else {
       return _widgetOptions.elementAt(_selectedIndex);
     }
   }
 
-  void _showSearchHelper(context) {
-    showModalBottomSheet(
-        context: context,
-        isScrollControlled: true,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-        builder: (BuildContext bc) {
-          return Padding(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Pokecard TCG'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: 'Paramètres',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => SettingsPage()),
+              );
+            },
+          ),
+        ],
+      ),
+      drawer: MyDrawer(context),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list),
+            label: 'Pokédex',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_to_photos_outlined),
+            label: 'My Collection',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
+      body: Column(
+        children: [
+          Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Text.rich(TextSpan(
-                  text: 'Request:'.i18n,
-                  style: TextStyle(fontWeight: FontWeight.bold, height: 3),
-                )),
-                Text.rich(TextSpan(
-                  text: 'Keyword matching:'.i18n,
-                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
-                )),
-                Text.rich(TextSpan(
-                  text:
-                      'Search for all cards that have "charizard" in the name field:'
-                          .i18n,
-                )),
-                CommandExample(
-                  text: 'name:charizard',
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search... [name:bulba*]'.i18n,
+                      prefixIcon: const Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+                    controller: TextEditingController(text: _query),
+                    onSubmitted: (query) {
+                      _search(query);
+                    },
+                    onChanged: (value) {
+                      if (_debounce?.isActive ?? false) _debounce!.cancel();
+                      _debounce = Timer(const Duration(milliseconds: 300), () {
+                        _search(value);
+                      });
+                    },
+                  ),
                 ),
-                Text.rich(TextSpan(
-                  text:
-                      'Search for "charizard" in the name field AND the type "mega" in the subtypes field:'
-                          .i18n,
-                )),
-                CommandExample(
-                  text: 'name:charizard subtypes:mega',
+                if (_query.isNotEmpty)
+                  IconButton(
+                    icon: const Icon(Icons.clear),
+                    onPressed: () {
+                      setState(() {
+                        _query = '';
+                      });
+                    },
+                  ),
+                IconButton(
+                  icon: const Icon(Icons.help_outline),
+                  tooltip: 'Aide recherche',
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: Text('Aide recherche'),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text('Exemples de recherche :'),
+                            CommandExample(text: 'name:bulba*'),
+                            CommandExample(text: 'type:fire'),
+                            CommandExample(text: 'hp>100'),
+                            CommandExample(text: 'rarity:rare'),
+                            SizedBox(height: 8),
+                            Text('Vous pouvez combiner plusieurs filtres !'),
+                          ],
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.of(context).pop(),
+                            child: const Text('Fermer'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
-                Text.rich(TextSpan(
-                  text:
-                      'Search for "charizard" in the name field AND either the subtypes of "mega" or "vmax":'
-                          .i18n,
-                )),
-                CommandExample(
-                  text: 'name:charizard (subtypes:mega OR subtypes:vmax)',
-                ),
-                Text.rich(TextSpan(
-                  text: 'Wildcard Matching:'.i18n,
-                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
-                )),
-                Text.rich(TextSpan(
-                  text:
-                      'Search for any card that starts with "char" in the name field:'
-                          .i18n,
-                )),
-                CommandExample(
-                  text: 'name:char*',
-                ),
-                Text.rich(TextSpan(
-                  text: 'Range Searches:'.i18n,
-                  style: TextStyle(fontWeight: FontWeight.bold, height: 2),
-                )),
-                Text.rich(TextSpan(
-                  text:
-                      'Search for only cards that feature the original 151 pokemon:'
-                          .i18n,
-                )),
-                CommandExample(text: 'nationalPokedexNumbers:[1 TO 151]'),
               ],
             ),
-          );
-        });
+          ),
+          Expanded(child: buildBody()),
+        ],
+      ),
+    );
   }
+
 }
 
 class CommandExample extends StatelessWidget {

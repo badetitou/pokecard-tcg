@@ -25,7 +25,6 @@ dependencies:
     sdk: flutter
   http: ^1.1.0
   infinite_scroll_pagination: ^4.0.0
-  material_floating_search_bar_2: ^0.5.0
   animations: ^2.0.0
   drift: ^2.12.1
   path_provider: ^2.0.1
