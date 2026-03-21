@@ -4,15 +4,25 @@ import 'package:pokecard_tcg/collection/pokemon_grid_card.dart';
 import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:pokecard_tcg/tcg_api/tcg.dart';
 
+typedef FetchCardsCallback = Future<List<PokemonCard>> Function(
+  int pageKey,
+  int pageSize,
+  String query,
+);
+
 class SearchResultsGridView extends StatefulWidget {
   final String _search;
 
   final EdgeInsets padding;
 
   final int minGridSize;
+  final FetchCardsCallback fetchCards;
 
   const SearchResultsGridView(this._search,
-      {super.key, this.padding = EdgeInsets.zero, required this.minGridSize});
+      {super.key,
+      this.padding = EdgeInsets.zero,
+      required this.minGridSize,
+      this.fetchCards = TCG.fetchCards});
 
   @override
   _SearchResultsGridViewState createState() =>
@@ -22,6 +32,7 @@ class SearchResultsGridView extends StatefulWidget {
 class _SearchResultsGridViewState extends State<SearchResultsGridView> {
   final PagingController<int, PokemonCard> _pagingController =
       PagingController(firstPageKey: 1);
+  final Set<int> _inFlightPageKeys = {};
 
   final _pageSize = 20;
   final int minGridSize;
@@ -30,6 +41,16 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
   @override
   void initState() {
     super.initState();
+    _pagingController.addPageRequestListener(_fetchPage);
+  }
+
+  @override
+  void didUpdateWidget(covariant SearchResultsGridView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget._search != widget._search) {
+      _inFlightPageKeys.clear();
+      _pagingController.refresh();
+    }
   }
 
   @override
@@ -38,27 +59,33 @@ class _SearchResultsGridViewState extends State<SearchResultsGridView> {
     super.dispose();
   }
 
+  Future<void> _fetchPage(int pageKey) async {
+    if (_inFlightPageKeys.contains(pageKey)) {
+      return;
+    }
+
+    _inFlightPageKeys.add(pageKey);
+    try {
+      final newItems =
+          await widget.fetchCards(pageKey, _pageSize, widget._search);
+
+      final isLastPage = newItems.length < _pageSize;
+      if (isLastPage) {
+        _pagingController.appendLastPage(newItems);
+      } else {
+        final nextPageKey = pageKey + newItems.length;
+        _pagingController.appendPage(newItems, nextPageKey);
+      }
+    } catch (error) {
+      _pagingController.error = error;
+    } finally {
+      _inFlightPageKeys.remove(pageKey);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    _pagingController.addPageRequestListener((pageKey) async {
-      try {
-        final newItems =
-            await TCG.fetchCards(pageKey, _pageSize, widget._search);
-
-        final isLastPage = newItems.length < _pageSize;
-        if (isLastPage) {
-          _pagingController.appendLastPage(newItems);
-        } else {
-          final nextPageKey = pageKey + newItems.length;
-          _pagingController.appendPage(newItems, nextPageKey);
-        }
-      } catch (error) {
-        _pagingController.error = error;
-      }
-    });
-
     double width = MediaQuery.of(context).size.width;
-    _pagingController.refresh();
     return PagedGridView<int, PokemonCard>(
       padding: EdgeInsets.only(
           top: 8 + widget.padding.top, bottom: 8, right: 8, left: 8),

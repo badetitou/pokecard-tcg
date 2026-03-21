@@ -4,6 +4,7 @@ import 'package:pokecard_tcg/collection/my_card_tile.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/tcg_api/model/card.dart';
 import 'package:pokecard_tcg/tcg_api/model/prices.dart';
+import 'package:pokecard_tcg/tcg_api/tcg.dart';
 import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pokecard_tcg/collection/card_detail.i18n.dart';
@@ -19,177 +20,208 @@ class PokemonCardDetailPage extends StatefulWidget {
 
 class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
   late Database myDatabase;
+  late Future<PokemonCard> _cardFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _cardFuture = _loadCardDetails();
+  }
+
+  Future<PokemonCard> _loadCardDetails() async {
+    try {
+      return await TCG.fetchCard(widget.pokemonCard.id);
+    } catch (_) {
+      // Keep local/brief data available when remote details are unavailable.
+      return widget.pokemonCard;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     myDatabase = Provider.of<Database>(context);
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-              '${widget.pokemonCard.supertype} ${widget.pokemonCard.subtypes} : ${widget.pokemonCard.name}'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Card(
-                  child: Column(
-                      // Header
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                    ListTile(
-                      title: Text(widget.pokemonCard.name),
-                      subtitle: Text(widget.pokemonCard.id),
-                      trailing: Text.rich(
-                          TextSpan(text: widget.pokemonCard.hp, children: [
-                        TextSpan(text: ' HP '),
-                      ])),
-                    ),
-                    Divider(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text.rich(TextSpan(
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                        text: 'Price:'.i18n,
-                      )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: DataTable(
-                            columns: <DataColumn>[
-                              DataColumn(
-                                label: Text(
-                                  'Type',
-                                  style: TextStyle(fontStyle: FontStyle.italic),
-                                ),
-                              ),
-                              DataColumn(
-                                label: Text(
-                                  'Market'.i18n,
-                                  style: TextStyle(fontStyle: FontStyle.italic),
-                                ),
-                              ),
-                              DataColumn(
-                                label: Text(
-                                  'Low'.i18n,
-                                  style: TextStyle(fontStyle: FontStyle.italic),
-                                ),
-                              ),
-                              DataColumn(
-                                label: Text(
-                                  'Mid'.i18n,
-                                  style: TextStyle(fontStyle: FontStyle.italic),
-                                ),
-                              ),
-                              DataColumn(
-                                label: Text(
-                                  'High'.i18n,
-                                  style: TextStyle(fontStyle: FontStyle.italic),
-                                ),
-                              ),
-                            ],
-                            rows: prices(widget.pokemonCard.tcgPlayer.prices),
+    return FutureBuilder<PokemonCard>(
+      future: _cardFuture,
+      builder: (context, cardSnapshot) {
+        final displayedCard = cardSnapshot.data ?? widget.pokemonCard;
+        return Scaffold(
+            appBar: AppBar(
+              title: Text(
+                  '${displayedCard.supertype} ${displayedCard.subtypes} : ${displayedCard.name}'),
+            ),
+            body: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Card(
+                      child: Column(
+                          // Header
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                        ListTile(
+                          title: Text(displayedCard.name),
+                          subtitle: Text(displayedCard.id),
+                          trailing: Text.rich(
+                              TextSpan(text: displayedCard.hp, children: [
+                            TextSpan(text: ' HP '),
+                          ])),
+                        ),
+                        Divider(),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text.rich(TextSpan(
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                            text: 'Price:'.i18n,
                           )),
-                    ),
-                    Divider(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Column(
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: displayedCard.tcgPlayer.prices.isEmpty
+                              ? Text('No pricing data available')
+                              : SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: DataTable(
+                                    columns: <DataColumn>[
+                                      DataColumn(
+                                        label: Text(
+                                          'Type',
+                                          style: TextStyle(
+                                              fontStyle: FontStyle.italic),
+                                        ),
+                                      ),
+                                      DataColumn(
+                                        label: Text(
+                                          'Market'.i18n,
+                                          style: TextStyle(
+                                              fontStyle: FontStyle.italic),
+                                        ),
+                                      ),
+                                      DataColumn(
+                                        label: Text(
+                                          'Low'.i18n,
+                                          style: TextStyle(
+                                              fontStyle: FontStyle.italic),
+                                        ),
+                                      ),
+                                      DataColumn(
+                                        label: Text(
+                                          'Mid'.i18n,
+                                          style: TextStyle(
+                                              fontStyle: FontStyle.italic),
+                                        ),
+                                      ),
+                                      DataColumn(
+                                        label: Text(
+                                          'High'.i18n,
+                                          style: TextStyle(
+                                              fontStyle: FontStyle.italic),
+                                        ),
+                                      ),
+                                    ],
+                                    rows:
+                                        prices(displayedCard.tcgPlayer.prices),
+                                  )),
+                        ),
+                        Divider(),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
                             children: [
-                              Text.rich(TextSpan(
-                                text: 'Illustrator: '.i18n,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, height: 2),
-                              )),
-                              Text.rich(TextSpan(
-                                text: widget.pokemonCard.artist,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.normal, height: 2),
-                              )),
+                              Column(
+                                children: [
+                                  Text.rich(TextSpan(
+                                    text: 'Illustrator: '.i18n,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold, height: 2),
+                                  )),
+                                  Text.rich(TextSpan(
+                                    text: displayedCard.artist,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        height: 2),
+                                  )),
+                                ],
+                              ),
+                              Expanded(child: Container()),
+                              OutlinedButton(
+                                  onPressed: () {
+                                    _showCardImage(context, displayedCard);
+                                  },
+                                  child: Text('View Card'.i18n)),
                             ],
                           ),
-                          Expanded(child: Container()),
-                          OutlinedButton(
-                              onPressed: () {
-                                _showCardImage(context);
-                              },
-                              child: Text('View Card'.i18n)),
-                        ],
-                      ),
-                    ),
-                    Divider(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        widget.pokemonCard.flavorText.toString(),
-                        style: TextStyle(fontStyle: FontStyle.italic),
-                        softWrap: true,
-                      ),
-                    ),
-                  ])),
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.all(10.0),
-                  child: FutureBuilder(
-                    future: myDatabase.allCardWithId(widget.pokemonCard.id),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<List<MyCard>> snapshot) {
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-
-                      List<Widget> widgets = snapshot.data!.map((item) {
-                        return MyCardTile(
-                          myCard: item,
-                          onDelete: () => setState(
-                            () {
-                              _removeCard(item);
-                            },
+                        ),
+                        Divider(),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            displayedCard.flavorText.toString(),
+                            style: TextStyle(fontStyle: FontStyle.italic),
+                            softWrap: true,
                           ),
-                        );
-                      }).toList();
+                        ),
+                      ])),
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: FutureBuilder(
+                        future: myDatabase.allCardWithId(displayedCard.id),
+                        builder: (BuildContext context,
+                            AsyncSnapshot<List<MyCard>> snapshot) {
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
 
-                      if (widgets.isNotEmpty) {
-                        return Column(children: <Widget>[
-                          Expanded(
-                            flex: 1,
-                            child: ListView(
-                              children: widgets,
-                            ),
-                          )
-                        ]);
-                      }
-                      return Center(child: Text('Add a Card'.i18n));
-                    },
+                          List<Widget> widgets = snapshot.data!.map((item) {
+                            return MyCardTile(
+                              myCard: item,
+                              onDelete: () => setState(
+                                () {
+                                  _removeCard(item);
+                                },
+                              ),
+                            );
+                          }).toList();
+
+                          if (widgets.isNotEmpty) {
+                            return Column(children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: ListView(
+                                  children: widgets,
+                                ),
+                              )
+                            ]);
+                          }
+                          return Center(child: Text('Add a Card'.i18n));
+                        },
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => setState(() {
-            _addCard();
-          }),
-          tooltip: 'Add card to my collection'.i18n,
-          child: const Icon(Icons.add),
-        ));
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () => setState(() {
+                _addCard(displayedCard);
+              }),
+              tooltip: 'Add card to my collection'.i18n,
+              child: const Icon(Icons.add),
+            ));
+      },
+    );
   }
 
-  Future<void> _addCard() async {
+  Future<void> _addCard(PokemonCard currentCard) async {
     CreateWidgetState? cardState = await showDialog<CreateWidgetState>(
         context: context,
         builder: (BuildContext context) {
           return CreateWidget(
-            pokemonCard: widget.pokemonCard,
+            pokemonCard: currentCard,
           );
         });
     if (cardState == null) {
@@ -197,13 +229,15 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
     }
     setState(() {
       myDatabase.addCard(MyCardsCompanion(
-          name: drift.Value(widget.pokemonCard.name),
+          name: drift.Value(currentCard.name),
           etat: drift.Value(cardState._selectedCardState),
-          nationalPokedexNumbers:
-              drift.Value(widget.pokemonCard.nationalPokedexNumbers.first),
+          nationalPokedexNumbers: drift.Value(
+              currentCard.nationalPokedexNumbers.isNotEmpty
+                  ? currentCard.nationalPokedexNumbers.first
+                  : null),
           language: drift.Value(cardState._selectedCardLanguage),
           cardType: drift.Value(cardState._type),
-          cardID: drift.Value(widget.pokemonCard.id)));
+          cardID: drift.Value(currentCard.id)));
     });
   }
 
@@ -211,13 +245,14 @@ class _PokemonCardDetailState extends State<PokemonCardDetailPage> {
     myDatabase.removeCard(item.id);
   }
 
-  void _showCardImage(context) {
+  void _showCardImage(BuildContext context, PokemonCard card) {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
           return CachedNetworkImage(
-            imageUrl: widget.pokemonCard.images.large,
-            placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+            imageUrl: card.images.large,
+            placeholder: (context, url) =>
+                const Center(child: CircularProgressIndicator()),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           );
         });
@@ -253,13 +288,18 @@ class CreateWidgetState {
 
 class _CreateWidgetState extends State<CreateWidget> {
   late CreateWidgetState wid = CreateWidgetState();
+  late List<String> _availableCardTypes;
 
   @override
   void initState() {
     super.initState();
-    if (widget.pokemonCard.tcgPlayer.prices.isNotEmpty) {
-      wid._type = widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).first;
+    _availableCardTypes =
+        widget.pokemonCard.tcgPlayer.prices.map((e) => e.type).toSet().toList();
+
+    if (_availableCardTypes.isEmpty) {
+      _availableCardTypes = ['normal'];
     }
+    wid._type = _availableCardTypes.first;
   }
 
   @override
@@ -330,8 +370,7 @@ class _CreateWidgetState extends State<CreateWidget> {
                   Text('Type'),
                   DropdownButton(
                     value: wid._type,
-                    items: widget.pokemonCard.tcgPlayer.prices
-                        .map((e) => e.type)
+                    items: _availableCardTypes
                         .map((type) =>
                             DropdownMenuItem(value: type, child: Text(type)))
                         .toList(),
