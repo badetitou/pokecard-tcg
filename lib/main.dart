@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:i18n_extension/i18n_extension.dart';
+// import 'package:i18n_extension/i18n_extension.dart';
 import 'package:pokecard_tcg/model/database.dart';
 import 'package:pokecard_tcg/my_collection/my_collection.dart';
 import 'package:pokecard_tcg/pokedex/pokedex.dart';
@@ -17,7 +17,7 @@ import 'package:path_provider/path_provider.dart' as paths;
 import 'package:path/path.dart' as p;
 
 import 'package:googleapis/drive/v3.dart' as drive;
-import 'package:google_sign_in/google_sign_in.dart' as signIn;
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'GoogleAuthClient.dart';
@@ -291,22 +291,23 @@ class MyDrawer extends StatelessWidget {
     ));
   }
 
-  Future<signIn.GoogleSignInAccount?> _connectToGoogle() async {
+  Future<GoogleSignInAccount?> _connectToGoogle() async {
     try {
-      final googleSignIn = signIn.GoogleSignIn(
-        scopes: [
-          'https://www.googleapis.com/auth/drive.appdata',
-          'https://www.googleapis.com/auth/drive.file',
-        ],
-      );
-      final account = await googleSignIn.signIn();
-      if (account != null) {
-        print("User account: ${account.email}");
-        return account;
-      } else {
-        print("L'utilisateur a annulé la connexion.");
-        return null;
-      }
+      await GoogleSignIn.instance.initialize();
+      await GoogleSignIn.instance.authenticate();
+      final completer = Completer<GoogleSignInAccount?>();
+      late StreamSubscription sub;
+      sub = GoogleSignIn.instance.authenticationEvents.listen((event) {
+        if (event is GoogleSignInAuthenticationEventSignIn) {
+          print("User account: " + event.user.email);
+          completer.complete(event.user);
+          sub.cancel();
+        }
+      }, onError: (e) {
+        completer.complete(null);
+        sub.cancel();
+      });
+      return completer.future;
     } catch (e) {
       print("Erreur d'authentification Google: $e");
       return null;
@@ -314,7 +315,7 @@ class MyDrawer extends StatelessWidget {
   }
 
   void _save(context) async {
-    final signIn.GoogleSignInAccount? account = await _connectToGoogle();
+    final GoogleSignInAccount? account = await _connectToGoogle();
     if (account != null) {
       drive.DriveApi driveApi = await configureDriveApi(account);
 
@@ -337,16 +338,14 @@ class MyDrawer extends StatelessWidget {
     }
   }
 
-  Future<drive.DriveApi> configureDriveApi(
-      signIn.GoogleSignInAccount account) async {
-    // Récupération du token d'accès via authorizationClient
-    final authentication = await account.authentication;
-    final accessToken = authentication.accessToken;
-    if (accessToken == null) {
+  Future<drive.DriveApi> configureDriveApi(GoogleSignInAccount account) async {
+    final auth = await account.authentication;
+    final idToken = auth.idToken;
+    if (idToken == null) {
       throw Exception('Impossible de récupérer le token Google.');
     }
     final authHeaders = {
-      'Authorization': 'Bearer $accessToken',
+      'Authorization': 'Bearer $idToken',
       'X-Goog-AuthUser': '0',
     };
     final authenticateClient = GoogleAuthClient(authHeaders);
@@ -355,7 +354,7 @@ class MyDrawer extends StatelessWidget {
   }
 
   void _restore(context) async {
-    final signIn.GoogleSignInAccount? account = await _connectToGoogle();
+    final GoogleSignInAccount? account = await _connectToGoogle();
     if (account != null) {
       drive.DriveApi driveApi = await configureDriveApi(account);
 
