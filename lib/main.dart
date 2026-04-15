@@ -288,33 +288,49 @@ class MyDrawer extends StatelessWidget {
     database = context.read<Database>();
 
     return Drawer(
-      child: ListView(
-        children: [
-          ListTile(
-              title: Text('Backup Pokédex'.i18n),
-              onTap: () async {
-                Navigator.of(context).pop();
-                await _save(originContext);
-              }),
-          ListTile(
-              title: Text('Restore Pokédex'.i18n),
-              onTap: () async {
-                Navigator.of(context).pop();
-                await _restore(originContext);
-              }),
-          ListTile(
-              title: Text('Disconnect Google'.i18n),
-              onTap: () async {
-                Navigator.of(context).pop();
-                await _disconnectGoogle(originContext);
-              }),
-          ListTile(
-              title: Text('Settings'),
-              onTap: () async {
-                await _navPush(originContext, SettingsPage());
-                onSettingsUpdated();
-              }),
-        ],
+      child: FutureBuilder<GoogleSignInAccount?>(
+        future: _getConnectedGoogleAccount(),
+        builder: (context, snapshot) {
+          final connectedAccount = snapshot.data;
+
+          return ListView(
+            children: [
+              if (connectedAccount != null)
+                ListTile(
+                  leading: const Icon(Icons.account_circle_outlined),
+                  title: Text('Connected as'.i18n),
+                  subtitle: Text(
+                    connectedAccount.displayName ?? connectedAccount.email,
+                  ),
+                ),
+              ListTile(
+                  title: Text('Backup Pokédex'.i18n),
+                  onTap: () async {
+                    Navigator.of(context).pop();
+                    await _save(originContext);
+                  }),
+              ListTile(
+                  title: Text('Restore Pokédex'.i18n),
+                  onTap: () async {
+                    Navigator.of(context).pop();
+                    await _restore(originContext);
+                  }),
+              if (connectedAccount != null)
+                ListTile(
+                    title: Text('Disconnect Google'.i18n),
+                    onTap: () async {
+                      Navigator.of(context).pop();
+                      await _disconnectGoogle(originContext);
+                    }),
+              ListTile(
+                  title: Text('Settings'),
+                  onTap: () async {
+                    await _navPush(originContext, SettingsPage());
+                    onSettingsUpdated();
+                  }),
+            ],
+          );
+        },
       ),
     );
   }
@@ -332,7 +348,7 @@ class MyDrawer extends StatelessWidget {
     ));
   }
 
-  Future<GoogleSignInAccount?> _connectToGoogle() async {
+  Future<GoogleSignInAccount?> _getConnectedGoogleAccount() async {
     try {
       if (!_googleSignInInitialized) {
         await GoogleSignIn.instance.initialize();
@@ -347,10 +363,23 @@ class MyDrawer extends StatelessWidget {
           GoogleSignIn.instance.attemptLightweightAuthentication();
       final lightweightAccount =
           lightweightAuth == null ? null : await lightweightAuth;
+      _cachedGoogleAccount = lightweightAccount;
+      return lightweightAccount;
+    } catch (e) {
+      print("Erreur de récupération Google silencieuse: $e");
+      return null;
+    }
+  }
 
-      final account = lightweightAccount ??
-          await GoogleSignIn.instance
-              .authenticate(scopeHint: [_driveAppDataScope]);
+  Future<GoogleSignInAccount?> _connectToGoogle() async {
+    try {
+      final existingAccount = await _getConnectedGoogleAccount();
+      if (existingAccount != null) {
+        return existingAccount;
+      }
+
+      final account = await GoogleSignIn.instance
+          .authenticate(scopeHint: [_driveAppDataScope]);
       _cachedGoogleAccount = account;
       print("User account: ${account.email}");
       return account;

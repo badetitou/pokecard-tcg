@@ -59,6 +59,10 @@ extension Localization on String {
         "fr-FR": "Compte Google déconnecté",
       } +
       {
+        "en-US": "Connected as",
+        "fr-FR": "Connecté en tant que",
+      } +
+      {
         "en-US": "OK",
         "fr-FR": "OK",
       } +
