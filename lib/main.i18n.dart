@@ -19,6 +19,38 @@ extension Localization on String {
         "fr-FR": "Pokédex restauré !",
       } +
       {
+        "en-US": "Backup complete",
+        "fr-FR": "Sauvegarde terminée",
+      } +
+      {
+        "en-US": "Restore complete",
+        "fr-FR": "Restauration terminée",
+      } +
+      {
+        "en-US": "Saved cards",
+        "fr-FR": "Cartes sauvegardées",
+      } +
+      {
+        "en-US": "Restored cards",
+        "fr-FR": "Cartes restaurées",
+      } +
+      {
+        "en-US": "Error",
+        "fr-FR": "Erreur",
+      } +
+      {
+        "en-US": "An error occurred",
+        "fr-FR": "Une erreur est survenue",
+      } +
+      {
+        "en-US": "No backup found",
+        "fr-FR": "Aucune sauvegarde trouvée",
+      } +
+      {
+        "en-US": "OK",
+        "fr-FR": "OK",
+      } +
+      {
         "en-US": "Backup Pokédex",
         "fr-FR": "Sauvegarder le Pokédex",
       } +

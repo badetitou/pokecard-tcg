@@ -19,6 +19,8 @@ import 'package:path/path.dart' as p;
 import 'package:googleapis/drive/v3.dart' as drive;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:drift/drift.dart' show Value;
+import 'package:drift/native.dart';
 
 import 'GoogleAuthClient.dart';
 
@@ -34,6 +36,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -61,6 +65,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
@@ -299,7 +305,7 @@ class MyDrawer extends StatelessWidget {
       late StreamSubscription sub;
       sub = GoogleSignIn.instance.authenticationEvents.listen((event) {
         if (event is GoogleSignInAuthenticationEventSignIn) {
-          print("User account: " + event.user.email);
+          print("User account: ${event.user.email}");
           completer.complete(event.user);
           sub.cancel();
         }
@@ -314,10 +320,42 @@ class MyDrawer extends StatelessWidget {
     }
   }
 
+  Future<void> _showStatusPopup(
+    BuildContext context, {
+    required String title,
+    required String message,
+    bool isError = false,
+  }) async {
+    await showDialog<void>(
+      context: context,
+      builder: (dialogContext) {
+        return AlertDialog(
+          icon: Icon(
+            isError ? Icons.error_outline : Icons.check_circle_outline,
+            color: isError ? Colors.red : Colors.green,
+          ),
+          title: Text(title),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(dialogContext).pop(),
+              child: Text('OK'.i18n),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void _save(context) async {
-    final GoogleSignInAccount? account = await _connectToGoogle();
-    if (account != null) {
+    try {
+      final GoogleSignInAccount? account = await _connectToGoogle();
+      if (account == null) {
+        return;
+      }
+
       drive.DriveApi driveApi = await configureDriveApi(account);
+      final cardCount = (await database.allCardEntries).length;
 
       final dataDir = await paths.getApplicationDocumentsDirectory();
       final dbFile = File(p.join(dataDir.path, 'db.sqlite'));
@@ -331,15 +369,24 @@ class MyDrawer extends StatelessWidget {
 
       final result = await driveApi.files.create(driveFile, uploadMedia: media);
       print("Upload result: $result");
-      SnackBar backupSnack = SnackBar(
-        content: Text('Backed up!'.i18n),
+
+      await _showStatusPopup(
+        context,
+        title: 'Backup complete'.i18n,
+        message: '${'Saved cards'.i18n}: $cardCount',
       );
-      ScaffoldMessenger.of(context).showSnackBar(backupSnack);
+    } catch (error) {
+      await _showStatusPopup(
+        context,
+        title: 'Error'.i18n,
+        message: '${'An error occurred'.i18n}: $error',
+        isError: true,
+      );
     }
   }
 
   Future<drive.DriveApi> configureDriveApi(GoogleSignInAccount account) async {
-    final auth = await account.authentication;
+    final auth = account.authentication;
     final idToken = auth.idToken;
     if (idToken == null) {
       throw Exception('Impossible de récupérer le token Google.');
@@ -354,34 +401,72 @@ class MyDrawer extends StatelessWidget {
   }
 
   void _restore(context) async {
-    final GoogleSignInAccount? account = await _connectToGoogle();
-    if (account != null) {
+    try {
+      final GoogleSignInAccount? account = await _connectToGoogle();
+      if (account == null) {
+        return;
+      }
+
       drive.DriveApi driveApi = await configureDriveApi(account);
 
       drive.FileList fileList = await driveApi.files
           .list(spaces: "appDataFolder", q: "name contains 'db.sqlite'");
+      if (fileList.files == null || fileList.files!.isEmpty) {
+        await _showStatusPopup(
+          context,
+          title: 'Error'.i18n,
+          message: 'No backup found'.i18n,
+          isError: true,
+        );
+        return;
+      }
+
       print(fileList.files?.first.name);
-      await database.close();
       final dataDir = await paths.getApplicationDocumentsDirectory();
-      final dbFile = File(p.join(dataDir.path, 'db.sqlite'));
-      await dbFile.delete();
+      final restoredDbFile = File(p.join(dataDir.path, 'db.restore.sqlite'));
       drive.Media response = await driveApi.files.get(fileList.files!.first.id!,
           downloadOptions: drive.DownloadOptions.fullMedia) as drive.Media;
 
-      List<int> dataStore = [];
-      response.stream.listen((data) {
-        print("DataReceived: ${data.length}");
-        dataStore.insertAll(dataStore.length, data);
-      }, onDone: () async {
-        await dbFile.writeAsBytes(dataStore);
-        print("Task Done");
-      }, onError: (error) {
-        print("Some Error");
+      final dataStore = await response.stream.expand((chunk) => chunk).toList();
+      await restoredDbFile.writeAsBytes(dataStore, flush: true);
+
+      final restoredDatabase = Database(NativeDatabase(restoredDbFile));
+      final restoredCards = await restoredDatabase.allCardEntries;
+      final restoredCount = restoredCards.length;
+
+      await database.transaction(() async {
+        await database.delete(database.myCards).go();
+        for (final card in restoredCards) {
+          await database.into(database.myCards).insert(
+                MyCardsCompanion.insert(
+                  name: card.name,
+                  language: card.language,
+                  etat: card.etat,
+                  cardType: card.cardType,
+                  cardID: card.cardID,
+                  nationalPokedexNumbers: Value(card.nationalPokedexNumbers),
+                ),
+              );
+        }
       });
-      SnackBar snackBar = SnackBar(
-        content: Text('Restored!'.i18n),
+
+      await restoredDatabase.close();
+      if (await restoredDbFile.exists()) {
+        await restoredDbFile.delete();
+      }
+
+      await _showStatusPopup(
+        context,
+        title: 'Restore complete'.i18n,
+        message: '${'Restored cards'.i18n}: $restoredCount',
       );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } catch (error) {
+      await _showStatusPopup(
+        context,
+        title: 'Error'.i18n,
+        message: '${'An error occurred'.i18n}: $error',
+        isError: true,
+      );
     }
   }
 }
