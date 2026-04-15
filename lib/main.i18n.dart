@@ -47,6 +47,18 @@ extension Localization on String {
         "fr-FR": "Aucune sauvegarde trouvée",
       } +
       {
+        "en-US": "Disconnect Google",
+        "fr-FR": "Déconnecter Google",
+      } +
+      {
+        "en-US": "Disconnected",
+        "fr-FR": "Déconnecté",
+      } +
+      {
+        "en-US": "Google account disconnected",
+        "fr-FR": "Compte Google déconnecté",
+      } +
+      {
         "en-US": "OK",
         "fr-FR": "OK",
       } +

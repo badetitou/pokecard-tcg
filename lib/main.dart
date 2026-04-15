@@ -76,10 +76,8 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   String _query = '';
   int? minGridSize;
-  final List<Widget> _widgetOptions = [
-    PokedexPage(),
-    MyCollectionPage(),
-  ];
+  int _pokedexRefreshVersion = 0;
+  int _myCollectionRefreshVersion = 0;
 
   @override
   void initState() {
@@ -104,6 +102,14 @@ class _MainScreenState extends State<MainScreen> {
     setState(() => _query = text);
   }
 
+  void _refreshPokedexAfterRestore() {
+    setState(() {
+      _pokedexRefreshVersion++;
+      _myCollectionRefreshVersion++;
+      _selectedIndex = 0;
+    });
+  }
+
   @override
   void dispose() {
     _debounce?.cancel();
@@ -117,9 +123,12 @@ class _MainScreenState extends State<MainScreen> {
     if (_query.isNotEmpty) {
       return SearchResultsGridView(_query,
           padding: const EdgeInsets.only(top: 55), minGridSize: minGridSize!);
-    } else {
-      return _widgetOptions.elementAt(_selectedIndex);
     }
+
+    if (_selectedIndex == 0) {
+      return PokedexPage(key: ValueKey(_pokedexRefreshVersion));
+    }
+    return MyCollectionPage(key: ValueKey(_myCollectionRefreshVersion));
   }
 
   @override
@@ -142,7 +151,11 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
       ),
-      drawer: MyDrawer(context, onSettingsUpdated: initGridSize),
+      drawer: MyDrawer(
+        context,
+        onSettingsUpdated: initGridSize,
+        onPokedexRestoreCompleted: _refreshPokedexAfterRestore,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -257,13 +270,18 @@ class MyDrawer extends StatelessWidget {
   static const String _driveAppDataScope =
       'https://www.googleapis.com/auth/drive.appdata';
   static bool _googleSignInInitialized = false;
+  static GoogleSignInAccount? _cachedGoogleAccount;
 
   late Database database;
 
   BuildContext originContext;
   final VoidCallback onSettingsUpdated;
+  final VoidCallback onPokedexRestoreCompleted;
 
-  MyDrawer(this.originContext, {required this.onSettingsUpdated, super.key});
+  MyDrawer(this.originContext,
+      {required this.onSettingsUpdated,
+      required this.onPokedexRestoreCompleted,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -273,10 +291,23 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         children: [
           ListTile(
-              title: Text('Backup Pokédex'.i18n), onTap: () => _save(context)),
+              title: Text('Backup Pokédex'.i18n),
+              onTap: () async {
+                Navigator.of(context).pop();
+                await _save(originContext);
+              }),
           ListTile(
               title: Text('Restore Pokédex'.i18n),
-              onTap: () => _restore(context)),
+              onTap: () async {
+                Navigator.of(context).pop();
+                await _restore(originContext);
+              }),
+          ListTile(
+              title: Text('Disconnect Google'.i18n),
+              onTap: () async {
+                Navigator.of(context).pop();
+                await _disconnectGoogle(originContext);
+              }),
           ListTile(
               title: Text('Settings'),
               onTap: () async {
@@ -308,8 +339,19 @@ class MyDrawer extends StatelessWidget {
         _googleSignInInitialized = true;
       }
 
-      final account = await GoogleSignIn.instance
-          .authenticate(scopeHint: [_driveAppDataScope]);
+      if (_cachedGoogleAccount != null) {
+        return _cachedGoogleAccount;
+      }
+
+      final lightweightAuth =
+          GoogleSignIn.instance.attemptLightweightAuthentication();
+      final lightweightAccount =
+          lightweightAuth == null ? null : await lightweightAuth;
+
+      final account = lightweightAccount ??
+          await GoogleSignIn.instance
+              .authenticate(scopeHint: [_driveAppDataScope]);
+      _cachedGoogleAccount = account;
       print("User account: ${account.email}");
       return account;
     } catch (e) {
@@ -324,8 +366,13 @@ class MyDrawer extends StatelessWidget {
     required String message,
     bool isError = false,
   }) async {
+    if (!context.mounted) {
+      return;
+    }
+
     await showDialog<void>(
       context: context,
+      useRootNavigator: true,
       builder: (dialogContext) {
         return AlertDialog(
           icon: Icon(
@@ -345,7 +392,7 @@ class MyDrawer extends StatelessWidget {
     );
   }
 
-  void _save(context) async {
+  Future<void> _save(BuildContext context) async {
     try {
       final GoogleSignInAccount? account = await _connectToGoogle();
       if (account == null) {
@@ -385,9 +432,13 @@ class MyDrawer extends StatelessWidget {
 
   Future<drive.DriveApi> configureDriveApi(GoogleSignInAccount account) async {
     final authHeaders = await account.authorizationClient.authorizationHeaders(
-      [_driveAppDataScope],
-      promptIfNecessary: true,
-    );
+          [_driveAppDataScope],
+          promptIfNecessary: false,
+        ) ??
+        await account.authorizationClient.authorizationHeaders(
+          [_driveAppDataScope],
+          promptIfNecessary: true,
+        );
     if (authHeaders == null) {
       throw Exception(
           'Impossible d\'obtenir un token Drive. Vérifiez les permissions Google Drive.');
@@ -398,7 +449,29 @@ class MyDrawer extends StatelessWidget {
     return driveApi;
   }
 
-  void _restore(context) async {
+  Future<void> _disconnectGoogle(BuildContext context) async {
+    try {
+      if (_googleSignInInitialized) {
+        await GoogleSignIn.instance.disconnect();
+      }
+      _cachedGoogleAccount = null;
+
+      await _showStatusPopup(
+        context,
+        title: 'Disconnected'.i18n,
+        message: 'Google account disconnected'.i18n,
+      );
+    } catch (error) {
+      await _showStatusPopup(
+        context,
+        title: 'Error'.i18n,
+        message: '${'An error occurred'.i18n}: $error',
+        isError: true,
+      );
+    }
+  }
+
+  Future<void> _restore(BuildContext context) async {
     try {
       final GoogleSignInAccount? account = await _connectToGoogle();
       if (account == null) {
@@ -452,6 +525,8 @@ class MyDrawer extends StatelessWidget {
       if (await restoredDbFile.exists()) {
         await restoredDbFile.delete();
       }
+
+      onPokedexRestoreCompleted();
 
       await _showStatusPopup(
         context,
