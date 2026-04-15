@@ -254,6 +254,10 @@ class CommandExample extends StatelessWidget {
 
 // ignore: must_be_immutable
 class MyDrawer extends StatelessWidget {
+  static const String _driveAppDataScope =
+      'https://www.googleapis.com/auth/drive.appdata';
+  static bool _googleSignInInitialized = false;
+
   late Database database;
 
   BuildContext originContext;
@@ -299,21 +303,15 @@ class MyDrawer extends StatelessWidget {
 
   Future<GoogleSignInAccount?> _connectToGoogle() async {
     try {
-      await GoogleSignIn.instance.initialize();
-      await GoogleSignIn.instance.authenticate();
-      final completer = Completer<GoogleSignInAccount?>();
-      late StreamSubscription sub;
-      sub = GoogleSignIn.instance.authenticationEvents.listen((event) {
-        if (event is GoogleSignInAuthenticationEventSignIn) {
-          print("User account: ${event.user.email}");
-          completer.complete(event.user);
-          sub.cancel();
-        }
-      }, onError: (e) {
-        completer.complete(null);
-        sub.cancel();
-      });
-      return completer.future;
+      if (!_googleSignInInitialized) {
+        await GoogleSignIn.instance.initialize();
+        _googleSignInInitialized = true;
+      }
+
+      final account = await GoogleSignIn.instance
+          .authenticate(scopeHint: [_driveAppDataScope]);
+      print("User account: ${account.email}");
+      return account;
     } catch (e) {
       print("Erreur d'authentification Google: $e");
       return null;
@@ -386,15 +384,15 @@ class MyDrawer extends StatelessWidget {
   }
 
   Future<drive.DriveApi> configureDriveApi(GoogleSignInAccount account) async {
-    final auth = account.authentication;
-    final idToken = auth.idToken;
-    if (idToken == null) {
-      throw Exception('Impossible de récupérer le token Google.');
+    final authHeaders = await account.authorizationClient.authorizationHeaders(
+      [_driveAppDataScope],
+      promptIfNecessary: true,
+    );
+    if (authHeaders == null) {
+      throw Exception(
+          'Impossible d\'obtenir un token Drive. Vérifiez les permissions Google Drive.');
     }
-    final authHeaders = {
-      'Authorization': 'Bearer $idToken',
-      'X-Goog-AuthUser': '0',
-    };
+
     final authenticateClient = GoogleAuthClient(authHeaders);
     final driveApi = drive.DriveApi(authenticateClient);
     return driveApi;
